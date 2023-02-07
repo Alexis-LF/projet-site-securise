@@ -95,3 +95,4 @@ INSERT INTO type_de_document VALUES ("Autre document");
 #------------------------------------------------------------
 # Table : site
 #------------------------------------------------------------
+source hopitaux.sql
