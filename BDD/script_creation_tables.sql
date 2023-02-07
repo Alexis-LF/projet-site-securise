@@ -23,7 +23,7 @@ CREATE TABLE patients(
 
 DROP TABLE IF EXISTS profession;
 CREATE TABLE profession(
-        nom Varchar (50) NOT NULL
+        nom Varchar (100) NOT NULL
 	,CONSTRAINT profession_PK PRIMARY KEY (nom)
 )ENGINE=InnoDB;
 
