@@ -91,3 +91,8 @@ INSERT INTO type_de_document VALUES ("Ordonnance");
 INSERT INTO type_de_document VALUES ("Formulaire à compléter");
 INSERT INTO type_de_document VALUES ("Attestation");
 INSERT INTO type_de_document VALUES ("Autre document");
+
+#------------------------------------------------------------
+# Table : site
+#------------------------------------------------------------
+source hopitaux.sql
