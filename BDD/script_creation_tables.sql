@@ -15,7 +15,11 @@ DROP TABLE IF EXISTS patients;
 DROP TABLE IF EXISTS mode_paiement;
 DROP TABLE IF EXISTS profession;
 DROP TABLE IF EXISTS site;
-DROP TABLE IF EXISTS ville;
+DROP TABLE IF EXISTS cities;
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
 
 #------------------------------------------------------------
 # Table: patients
@@ -61,15 +65,10 @@ CREATE TABLE mode_paiement(
 
 
 #------------------------------------------------------------
-# Table: ville
+# Table: cities
 #------------------------------------------------------------
 
-CREATE TABLE ville(
-        code_insee   Varchar (5) NOT NULL ,
-        code_postal  Varchar (5) NOT NULL ,
-        nom          Varchar (50) NOT NULL
-	,CONSTRAINT ville_PK PRIMARY KEY (code_insee)
-)ENGINE=InnoDB;
+SOURCE cities.sql
 
 
 #------------------------------------------------------------
@@ -82,11 +81,11 @@ CREATE TABLE personne(
         prenom         Varchar (255) ,
         telephone      Int ,
         date_naissance Date ,
-        code_insee     Varchar (5) NOT NULL
+        id             Int NOT NULL
 	,CONSTRAINT personne_PK PRIMARY KEY (mail)
 
 	,CONSTRAINT personne_patients_FK FOREIGN KEY (mail) REFERENCES patients(mail)
-	,CONSTRAINT personne_ville0_FK FOREIGN KEY (code_insee) REFERENCES ville(code_insee)
+	,CONSTRAINT personne_cities0_FK FOREIGN KEY (id) REFERENCES cities(id)
 )ENGINE=InnoDB;
 
 
@@ -95,12 +94,12 @@ CREATE TABLE personne(
 #------------------------------------------------------------
 
 CREATE TABLE site(
-        nom        Varchar (35) NOT NULL ,
-        adresse    Varchar (255) NOT NULL ,
-        code_insee Varchar (5) NOT NULL
+        nom     Varchar (35) NOT NULL ,
+        adresse Varchar (255) NOT NULL ,
+        id      Int NOT NULL
 	,CONSTRAINT site_PK PRIMARY KEY (nom)
 
-	,CONSTRAINT site_ville_FK FOREIGN KEY (code_insee) REFERENCES ville(code_insee)
+	,CONSTRAINT site_cities_FK FOREIGN KEY (id) REFERENCES cities(id)
 )ENGINE=InnoDB;
 
 
@@ -171,7 +170,7 @@ CREATE TABLE documents(
 #------------------------------------------------------------
 
 CREATE TABLE est_specialiste_de(
-        nom  Varchar (50) NOT NULL ,
+        nom  Varchar (100) NOT NULL ,
         mail Varchar (255) NOT NULL
 	,CONSTRAINT est_specialiste_de_PK PRIMARY KEY (nom,mail)
 
