@@ -1,0 +1,5 @@
+# clés secrètes
+id_rsa*
+*.env
+# fichiers particuliers
+French-zip-code-3.0.0-SQL.zip
