@@ -1,6 +1,7 @@
 #------------------------------------------------------------
 # Table : profession
 #------------------------------------------------------------
+DELETE FROM profession;
 INSERT INTO profession VALUES ("Acupuncteur / Acupunctrice");
 INSERT INTO profession VALUES ("Agent thermal / Agente thermale");
 INSERT INTO profession VALUES ("Aide-soignante / Aide-soignant");
@@ -72,3 +73,11 @@ INSERT INTO profession VALUES ("Secrétaire médical / Secrétaire médicale");
 INSERT INTO profession VALUES ("Technicien / Technicienne biologiste");
 INSERT INTO profession VALUES ("Technicien / Technicienne de laboratoire médical");
 INSERT INTO profession VALUES ("Visiteur médical / Visiteuse médicale");
+
+#------------------------------------------------------------
+# Table : mode_paiement
+#------------------------------------------------------------
+DELETE FROM mode_paiement;
+INSERT INTO mode_paiement VALUES ("Carte bancaire");
+INSERT INTO mode_paiement VALUES ("Espèces");
+INSERT INTO mode_paiement VALUES ("Chèque");
