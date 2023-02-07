@@ -81,3 +81,13 @@ DELETE FROM mode_paiement;
 INSERT INTO mode_paiement VALUES ("Carte bancaire");
 INSERT INTO mode_paiement VALUES ("Espèces");
 INSERT INTO mode_paiement VALUES ("Chèque");
+
+
+#------------------------------------------------------------
+# Table : type_de_document
+#------------------------------------------------------------
+DELETE FROM type_de_document;
+INSERT INTO type_de_document VALUES ("Ordonnance");
+INSERT INTO type_de_document VALUES ("Formulaire à compléter");
+INSERT INTO type_de_document VALUES ("Attestation");
+INSERT INTO type_de_document VALUES ("Autre document");
