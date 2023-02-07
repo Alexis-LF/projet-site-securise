@@ -27,10 +27,13 @@ def recupRequetesSQL():
 
 def ajoutDonnesSQL():
     import pandas
+    noms = []
     df = pandas.read_csv("lst_hopitaux_adresses_id_malforme.csv",sep=";")
     lst = df.values.tolist()
     for ligne in lst:
         if ligne[2] != 35853:
-            print(f'INSERT INTO site VALUES ("{ligne[0]}","{ligne[1]}",{ligne[2]});')
+            if ligne[0] not in noms:
+                noms.append(ligne[0])
+                print(f'INSERT INTO site VALUES ("{ligne[0]}","{ligne[1]}",{ligne[2]});')
 
 ajoutDonnesSQL()

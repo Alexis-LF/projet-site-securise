@@ -94,7 +94,7 @@ CREATE TABLE personne(
 #------------------------------------------------------------
 
 CREATE TABLE site(
-        nom     Varchar (35) NOT NULL ,
+        nom     Varchar (255) NOT NULL ,
         adresse Varchar (255) NOT NULL ,
         id      Int NOT NULL
 	,CONSTRAINT site_PK PRIMARY KEY (nom)
