@@ -1,13 +1,22 @@
 #------------------------------------------------------------
 #        Script MySQL.
 #------------------------------------------------------------
-
+DROP TABLE IF EXISTS documents;
+DROP TABLE IF EXISTS est_specialiste_de;
+DROP TABLE IF EXISTS docteurs;
+DROP TABLE IF EXISTS type_de_document;
+DROP TABLE IF EXISTS personne;
+DROP TABLE IF EXISTS facture;
+DROP TABLE IF EXISTS patients;
+DROP TABLE IF EXISTS mode_paiement;
+DROP TABLE IF EXISTS profession;
+DROP TABLE IF EXISTS site;
+DROP TABLE IF EXISTS ville;
 
 #------------------------------------------------------------
 # Table: patients
 #------------------------------------------------------------
 
-DROP TABLE IF EXISTS patients;
 CREATE TABLE patients(
         mail                       Varchar (255) NOT NULL ,
         mot_de_passe               Varchar (255) ,
@@ -21,7 +30,6 @@ CREATE TABLE patients(
 # Table: profession
 #------------------------------------------------------------
 
-DROP TABLE IF EXISTS profession;
 CREATE TABLE profession(
         nom Varchar (100) NOT NULL
 	,CONSTRAINT profession_PK PRIMARY KEY (nom)
@@ -32,7 +40,6 @@ CREATE TABLE profession(
 # Table: type_de_document
 #------------------------------------------------------------
 
-DROP TABLE IF EXISTS type_de_document;
 CREATE TABLE type_de_document(
         type Varchar (255) NOT NULL
 	,CONSTRAINT type_de_document_PK PRIMARY KEY (type)
@@ -43,7 +50,6 @@ CREATE TABLE type_de_document(
 # Table: mode_paiement
 #------------------------------------------------------------
 
-DROP TABLE IF EXISTS mode_paiement;
 CREATE TABLE mode_paiement(
         mode_de_paiement Varchar (50) NOT NULL
 	,CONSTRAINT mode_paiement_PK PRIMARY KEY (mode_de_paiement)
@@ -54,7 +60,6 @@ CREATE TABLE mode_paiement(
 # Table: ville
 #------------------------------------------------------------
 
-DROP TABLE IF EXISTS ville;
 CREATE TABLE ville(
         code_insee   Varchar (5) NOT NULL ,
         code_postal  Varchar (5) NOT NULL ,
@@ -67,7 +72,6 @@ CREATE TABLE ville(
 # Table: personne
 #------------------------------------------------------------
 
-DROP TABLE IF EXISTS personne;
 CREATE TABLE personne(
         mail           Varchar (255) NOT NULL ,
         nom            Varchar (255) NOT NULL ,
@@ -86,7 +90,6 @@ CREATE TABLE personne(
 # Table: site
 #------------------------------------------------------------
 
-DROP TABLE IF EXISTS site;
 CREATE TABLE site(
         nom        Varchar (35) NOT NULL ,
         adresse    Varchar (255) NOT NULL ,
@@ -101,7 +104,6 @@ CREATE TABLE site(
 # Table: facture
 #------------------------------------------------------------
 
-DROP TABLE IF EXISTS facture;
 CREATE TABLE facture(
         identifiant      Int  Auto_increment  NOT NULL ,
         prix_ttc         Float NOT NULL ,
@@ -124,7 +126,6 @@ CREATE TABLE facture(
 # Table: docteurs 
 #------------------------------------------------------------
 
-DROP TABLE IF EXISTS docteurs;
 CREATE TABLE docteurs(
         mail           Varchar (255) NOT NULL ,
         nom            Varchar (255) NOT NULL ,
@@ -144,7 +145,6 @@ CREATE TABLE docteurs(
 # Table: documents 
 #------------------------------------------------------------
 
-DROP TABLE IF EXISTS documents;
 CREATE TABLE documents(
         id                Int  Auto_increment  NOT NULL ,
         nom_doc           Varchar (80) NOT NULL ,
@@ -166,7 +166,6 @@ CREATE TABLE documents(
 # Table: est_specialiste_de
 #------------------------------------------------------------
 
-DROP TABLE IF EXISTS est_specialiste_de;
 CREATE TABLE est_specialiste_de(
         nom  Varchar (50) NOT NULL ,
         mail Varchar (255) NOT NULL
