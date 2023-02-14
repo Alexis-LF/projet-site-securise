@@ -6,3 +6,5 @@ French-zip-code-3.0.0-SQL.zip
 .fuse_hidden*
 perso.md
 BACK_END/api/0.01/vendor/*
+BACK_END/api/0.01/bin/*
+composer.lock
