@@ -28,8 +28,7 @@ function professions()
 
 function recherche()
 {
-    echo "fonction recherche()<br>";
-    exit;
+    return "SELECT * FROM docteurs;";
 }
 
 
