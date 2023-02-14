@@ -3,13 +3,13 @@
 function requetesGet(){
     switch ($_SERVER["PATH_INFO"]) {
     case "/villes":
-        villes();
+        return villes();
         break;
     case "/professions":
-        professions();
+        return professions();
         break;
     case "/recherche":
-        recherche();
+        return recherche();
         break;        
     default:
        return "false";
