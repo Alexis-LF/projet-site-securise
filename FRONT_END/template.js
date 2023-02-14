@@ -37,22 +37,22 @@ function w3_open() {
   }
 
 
-  function afficheMedecins(liste_medecins){
+  function afficheDocteurs(liste_docteurs){
+    console.log(liste_docteurs);
 
   
-    let html_mere=document.getElementById("medecin"); //parent
-    console.log(liste_docteurs);
-    // let docteur=liste_docteurs[0];
+    let html_mere=document.getElementById("liste_medecins"); //parent
+    let docteur=liste_docteurs[0];
     
-    //   // let variable1 = document.createElement("div");
-    //   let nom = document.createElement("p"); // enfant
-    //   nom.appendChild(document.createTextNode('Nom : '+ docteur["nom"]));
-    //   // variable1.appendChild(nom);
-    // liste_medecin.appendChild(nom);
+    let div = document.createElement("div");
+    let nom = document.createElement("p"); // enfant
+    nom.appendChild(document.createTextNode('Nom : '+ docteur["nom"]));
+    div.appendChild(nom);
+    html_mere.appendChild(nom);
 
 
   }
-  ajaxRequest('GET', 'http://api.projetm1.fr/0.01/', afficheMedecins);
+  ajaxRequest('GET', 'http://api.projetm1.fr/0.01/', afficheDocteurs);
 
 
 
