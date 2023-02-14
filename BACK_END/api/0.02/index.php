@@ -2,18 +2,33 @@
 include_once("php/pdo.php");
 include_once("php/get.php");
 
+function debug(){
+    $uri = $_SERVER['REQUEST_URI'];
+    var_dump($uri);
+    echo "<br>GET :<br><pre>";
+    var_dump($_GET);
+    echo "</pre> POST :<br><pre>";
+    var_dump($_POST);
+    echo "</pre> SERVER :<br><pre>";
+    var_dump($_SERVER);
+    echo "</pre>";
+
+    exit;
+}
+
 // la variable bdd est l'objet avec lequel intéragir pour intérroger la base de donnée
 $bdd = connexionBDD();
 
 $verbe = $_SERVER['REQUEST_METHOD'];
-echo $verbe;
-exit;
 
 $phraseRequete = "";
 
 if($verbe=="GET"){
-    
+    $phraseRequete = requetesGet();
 }
+
+echo $phraseRequete;
+exit;
 
 // lancement d'une requête
 $reponse = requeteBDD($bdd , "SELECT * FROM docteurs;");
