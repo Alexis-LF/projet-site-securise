@@ -1,0 +1,39 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", 'Gill Sans', 'Gill Sans MT', Arial, 'Trebuchet MS', sans-serif, Helvetica, sans-serif}
+.mySlides {display: none}
+img{
+    width:100%;margin-bottom:-6px;
+}
+.cursor{
+    cursor:pointer;
+}
+
+.margin260{
+    margin-left:260px;
+}
+.margin1000{
+    margin-left:1000px;
+}
+.margin500{
+    margin-left:500px;
+}
+.margin260_index{
+    z-index:3;width:260px;
+}
+.margin1000_index{
+    z-index:3;width:1000px;
+}
+
+.margin80{
+    margin-left:80px;
+}
+.image{
+    width:100%;cursor:pointer;
+}
+
+.width30{
+    width:30px;
+}
+
+.center{
+    text-align:center;
+}

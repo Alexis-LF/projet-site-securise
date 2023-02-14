@@ -102,29 +102,6 @@ CREATE TABLE site(
 	,CONSTRAINT site_cities_FK FOREIGN KEY (id) REFERENCES cities(id)
 )ENGINE=InnoDB;
 
-
-#------------------------------------------------------------
-# Table: facture
-#------------------------------------------------------------
-
-CREATE TABLE facture(
-        identifiant      Int  Auto_increment  NOT NULL ,
-        prix_ttc         Float NOT NULL ,
-        tva              Float ,
-        prix_sans_taxe   Float ,
-        date_facturation Datetime ,
-        date_paiement    Datetime ,
-        mail             Varchar (255) NOT NULL ,
-        mode_de_paiement Varchar (50) NOT NULL ,
-        nom              Varchar (35)
-	,CONSTRAINT facture_PK PRIMARY KEY (identifiant)
-
-	,CONSTRAINT facture_patients_FK FOREIGN KEY (mail) REFERENCES patients(mail)
-	,CONSTRAINT facture_mode_paiement0_FK FOREIGN KEY (mode_de_paiement) REFERENCES mode_paiement(mode_de_paiement)
-	,CONSTRAINT facture_site1_FK FOREIGN KEY (nom) REFERENCES site(nom)
-)ENGINE=InnoDB;
-
-
 #------------------------------------------------------------
 # Table: docteurs 
 #------------------------------------------------------------
@@ -135,14 +112,11 @@ CREATE TABLE docteurs(
         prenom         Varchar (255) NOT NULL ,
         telephone      Int ,
         date_naissance Date NOT NULL ,
-        nom_site       Varchar (35) NOT NULL ,
-        identifiant    Int NOT NULL
+        nom_site       Varchar (255) NOT NULL
 	,CONSTRAINT docteurs_PK PRIMARY KEY (mail)
 
 	,CONSTRAINT docteurs_site_FK FOREIGN KEY (nom_site) REFERENCES site(nom)
-	,CONSTRAINT docteurs_facture0_FK FOREIGN KEY (identifiant) REFERENCES facture(identifiant)
 )ENGINE=InnoDB;
-
 
 #------------------------------------------------------------
 # Table: documents 
@@ -166,6 +140,31 @@ CREATE TABLE documents(
 
 
 #------------------------------------------------------------
+# Table: facture
+#------------------------------------------------------------
+
+CREATE TABLE facture(
+        identifiant      Int  Auto_increment  NOT NULL ,
+        prix_ttc         Float NOT NULL ,
+        tva              Float ,
+        prix_sans_taxe   Float ,
+        date_facturation Datetime ,
+        date_paiement    Datetime ,
+        mail             Varchar (255) NOT NULL ,
+        mail_docteurs    Varchar (255) ,
+        mode_de_paiement Varchar (50) NOT NULL ,
+        nom              Varchar (255)
+	,CONSTRAINT facture_PK PRIMARY KEY (identifiant)
+
+	,CONSTRAINT facture_patients_FK FOREIGN KEY (mail) REFERENCES patients(mail)
+	,CONSTRAINT facture_docteurs0_FK FOREIGN KEY (mail_docteurs) REFERENCES docteurs(mail)
+	,CONSTRAINT facture_mode_paiement1_FK FOREIGN KEY (mode_de_paiement) REFERENCES mode_paiement(mode_de_paiement)
+	,CONSTRAINT facture_site2_FK FOREIGN KEY (nom) REFERENCES site(nom)
+)ENGINE=InnoDB;
+
+
+
+#------------------------------------------------------------
 # Table: est_specialiste_de
 #------------------------------------------------------------
 
@@ -177,4 +176,3 @@ CREATE TABLE est_specialiste_de(
 	,CONSTRAINT est_specialiste_de_profession_FK FOREIGN KEY (nom) REFERENCES profession(nom)
 	,CONSTRAINT est_specialiste_de_docteurs0_FK FOREIGN KEY (mail) REFERENCES docteurs(mail)
 )ENGINE=InnoDB;
-
