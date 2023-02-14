@@ -12,6 +12,8 @@ if ($reponse)
 {
     // headers pour la mise à jour de la page et pour le JSON
     header('Content-Type: application/json; charset=utf-8');
+    header('Content-Type: application/json; charset=utf-8');
+    header('Access-Control-Allow-Origin: *');
     header('Cache-control: no-store, no-cache, must-revalidate');
     header('Pragma: no-cache');
     if ($requestMethod == 'POST')
