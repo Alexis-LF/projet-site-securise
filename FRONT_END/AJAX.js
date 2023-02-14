@@ -1,9 +1,12 @@
 
-//On crée un objet XMLHttpRequest
+
+function AJAX(){
+    console.log("Entrée dans la console")
+    //On crée un objet XMLHttpRequest
 let xhr = new XMLHttpRequest();
 
 //On initialise notre requête avec open()
-xhr.open("GET", "une/url");
+xhr.open("GET", "http://api.projetm1.fr/0.01/");
 
 //On veut une réponse au format JSON
 xhr.responseType = "json";
@@ -16,16 +19,16 @@ xhr.onload = function(){
     //Si le statut HTTP n'est pas 200...
     if (xhr.status != 200){ 
         //...On affiche le statut et le message correspondant
-        alert("Erreur " + xhr.status + " : " + xhr.statusText);
+        console.log("Erreur " + xhr.status + " : " + xhr.statusText);
     //Si le statut HTTP est 200, on affiche le nombre d'octets téléchargés et la réponse
     }else{ 
-        alert(xhr.response.length + " octets  téléchargés\n" + JSON.stringify(xhr.response));
+        console.log(xhr.response.length + " octets  téléchargés\n" + JSON.stringify(xhr.response));
     }
 };
 
 //Si la requête n'a pas pu aboutir...
 xhr.onerror = function(){
-    alert("La requête a échoué");
+    console.log("La requête a échoué");
 };
 
 //Pendant le téléchargement...
@@ -34,8 +37,10 @@ xhr.onprogress = function(event){
     if (event.lengthComputable){
         //loaded = contient le nombre d'octets téléchargés
         //total = contient le nombre total d'octets à télécharger
-        alert(event.loaded + " octets reçus sur un total de " + event.total);
+        console.log(event.loaded + " octets reçus sur un total de " + event.total);
     }
 };
 
-
+    let reponse=xhr.response;
+    return reponse;
+}
