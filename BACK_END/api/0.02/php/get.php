@@ -18,8 +18,7 @@ function requetesGet(){
 
 function villes()
 {
-    echo "fonction villes()<br>";
-    exit;
+    return "SELECT id, zip_code, name FROM cities;";
 }
 
 function professions()

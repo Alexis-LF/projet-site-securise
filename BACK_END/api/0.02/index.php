@@ -27,11 +27,8 @@ if($verbe=="GET"){
     $phraseRequete = requetesGet();
 }
 
-echo $phraseRequete;
-exit;
-
 // lancement d'une requête
-$reponse = requeteBDD($bdd , "SELECT * FROM docteurs;");
+$reponse = requeteBDD($bdd , $phraseRequete);
 
 
 if ($reponse)
