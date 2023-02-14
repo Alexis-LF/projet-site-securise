@@ -27,9 +27,18 @@ if($verbe=="GET"){
     $phraseRequete = requetesGet();
 }
 
-// lancement d'une requête
-$reponse = requeteBDD($bdd , $phraseRequete);
+if($phraseRequete == "false"){
+    header('HTTP/1.1 400 Bad Request');
+    echo "Bad Request";
+    exit;
+}
 
+// echo $phraseRequete;
+// exit;
+
+// lancement d'une requête
+$phraseRequete = str_replace(";","LIMIT 200;",$phraseRequete);
+$reponse = requeteBDD($bdd , $phraseRequete);
 
 if ($reponse)
 {
@@ -49,5 +58,7 @@ if ($reponse)
 }
 // Mauvaise requête envoyée.
 header('HTTP/1.1 400 Bad Request');
+echo "Bad Request";
+exit;
 ?>
 
