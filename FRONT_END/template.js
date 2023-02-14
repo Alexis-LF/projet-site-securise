@@ -1,5 +1,4 @@
 
-document.write('<script type="text/javascript" src="fichier1.js"></script>');
 
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
@@ -37,20 +36,23 @@ function w3_open() {
     dots[slideIndex-1].className += " w3-opacity-off";
   }
 
-    let liste_medecin=document.getElementById("medecin");
+
+  function afficheMedecins(liste_medecins){
+
+  
+    let html_mere=document.getElementById("medecin"); //parent
+    console.log(liste_docteurs);
+    // let docteur=liste_docteurs[0];
+    
+    //   // let variable1 = document.createElement("div");
+    //   let nom = document.createElement("p"); // enfant
+    //   nom.appendChild(document.createTextNode('Nom : '+ docteur["nom"]));
+    //   // variable1.appendChild(nom);
+    // liste_medecin.appendChild(nom);
 
 
-    let liste_docteurs= AJAX();
-    let docteur=liste_docteurs[0];
-    console.log(docteur);
-      // let variable1 = document.createElement("div");
-      let nom = document.createElement("p");
-      nom.innerHTML("nom :"+docteur["nom"]);
-      // variable1.appendChild(nom);
-
-      liste_medecin.appendChild(nom);
-   
-
+  }
+  ajaxRequest('GET', 'http://api.projetm1.fr/0.01/', afficheMedecins);
 
 
 
