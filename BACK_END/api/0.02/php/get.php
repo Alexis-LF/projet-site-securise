@@ -23,8 +23,7 @@ function villes()
 
 function professions()
 {
-    echo "fonction professions()<br>";
-    exit;
+    return "SELECT nom FROM profession;";
 }
 
 function recherche()
