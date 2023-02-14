@@ -102,15 +102,15 @@ function w3_open() {
       div.setAttribute("class", "w3-button w3-block w3-green w3-left-align", "submit");
       div.appendChild(rdv_button);
       div.appendChild(rdv_button);
+      rdv_button.addEventListener('click', function() {window.location.href = 'page_de_confirmation.html'; });
 
 
       html_mere.appendChild(div);
   
       
-     
+    };
     }
     
-  }
   ajaxRequest('GET', 'http://api.projetm1.fr/0.01/', afficheDocteurs);
   
 
