@@ -37,22 +37,58 @@ function w3_open() {
   }
 
 
-  function afficheDocteurs(liste_docteurs){
-    console.log(liste_docteurs);
+  // function afficheDocteurs(liste_docteurs){
+  //   console.log(liste_docteurs);
 
   
-    let html_mere=document.getElementById("liste_medecins"); //parent
-    let docteur=liste_docteurs[0];
+  //   let html_mere=document.getElementById("liste_medecins"); //parent
+  //   let docteur=liste_docteurs[0];
     
-    let div = document.createElement("div");
-    let nom = document.createElement("p"); // enfant
-    nom.appendChild(document.createTextNode('Nom : '+ docteur["nom"]));
-    div.appendChild(nom);
-    html_mere.appendChild(nom);
+  //   let div = document.createElement("div");
+  //   let nom = document.createElement("p"); // enfant
+  //   nom.appendChild(document.createTextNode('Nom : '+ docteur["nom"]));
+  //   div.appendChild(nom);
+  //   html_mere.appendChild(nom);
 
+
+  // }
+  // ajaxRequest('GET', 'http://api.projetm1.fr/0.01/', afficheDocteurs);
+
+
+  for (let i = 0; i <= 4; i++) {
+    function afficheDocteurs(liste_docteurs){
+      console.log(liste_docteurs);
+  
+    
+      let html_mere=document.getElementById("liste_medecins"); //parent
+      let docteur=liste_docteurs[i];
+      
+      let div = document.createElement("div");
+      let nom = document.createElement("p"); // enfant
+      nom.appendChild(document.createTextNode('Nom : '+ docteur["nom"]));
+      div.appendChild(nom);
+      html_mere.appendChild(nom);
+  
+  
+    }
 
   }
+
   ajaxRequest('GET', 'http://api.projetm1.fr/0.01/', afficheDocteurs);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
