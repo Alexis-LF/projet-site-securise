@@ -8,6 +8,8 @@ include_once("constantes.php");
 // Se connecter à la base de données pour pouvoir intéragir avec elle
 // via la variable $bdd
 //=============================================================================
+echo "Entrée dans pdo.php<br>";
+
 function connexionBDD(){
    try{
      //on passe les identifients de la BDD définis dans constantes.php
@@ -54,6 +56,8 @@ function requeteBDD($bdd , $phraseRequete){
   return $reponse;   
 }
 
+$bdd = connexionBDD();
 
+$reponse = requeteBDD($bdd , $phraseRequete)
 
 ?>
