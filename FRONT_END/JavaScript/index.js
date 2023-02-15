@@ -1,6 +1,7 @@
+
 function lister_villes(liste_des_villes){
         let html_mere=document.getElementById("liste_ville"); //parent
-        let villesAjoutees=[];
+        
 
     for (let i = 0; i < liste_des_villes.length; i++) {
           
@@ -38,8 +39,8 @@ function villeTapee(){
 
 
 ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/professions', lister_professions);
+// ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/docteurs', lister_villes);
 let texte = document.getElementById("texte_ville");
-
-
+var villesAjoutees=[];
 // Ajouter un événement de saisie au champ de recherche
 texte.addEventListener("input", villeTapee);
