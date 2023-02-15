@@ -18,7 +18,8 @@ type de requête : *GET*
 type de requête : *GET*
 
 ```
-/index.php/recherche?d.nom=NOM&p.nom=PROFESSION&c.name=VILLE
+/index.php/recherche?d.nom=NOM&p.nom=PROFESSION&c.id=ID_VILLE
+
 ```
 # Version 0.01 → 0.02 (inclus)
 ## liste des endpoints :
