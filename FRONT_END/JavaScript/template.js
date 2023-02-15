@@ -105,7 +105,7 @@ function w3_open() {
       
   
       let profession=liste_des_professions[i];
-      console.log(profession);
+      // console.log(profession);
       // Ajouter des options à la liste
       let option = document.createElement("option");
       option.setAttribute("value", profession["nom"]);
