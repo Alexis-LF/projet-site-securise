@@ -1,5 +1,8 @@
 
 
+
+
+
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
@@ -36,12 +39,12 @@ function w3_open() {
     dots[slideIndex-1].className += " w3-opacity-off";
   }
   // Fonction affiche docteurs 
+
+
     function afficheDocteurs(liste_docteurs){
-      for (let i = 0; i <= liste_docteurs.length; i++) {
-      console.log(liste_docteurs);
-  
-    
       let html_mere=document.getElementById("liste_medecins"); //parent
+      for (let i = 0; i < liste_docteurs.length; i++) {
+     
       let docteur=liste_docteurs[i];
       
       let div = document.createElement("div");
@@ -79,10 +82,12 @@ function w3_open() {
 
       let rdv_button = document.createElement("button"); // enfant
       rdv_button.appendChild(document.createTextNode('Prendre rendez-vous'));
-      div.setAttribute("class", "w3-button w3-block w3-green w3-left-align", "submit");
+      div.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
       div.appendChild(rdv_button);
       div.appendChild(rdv_button);
       rdv_button.addEventListener('click', function() {window.location.href = 'page_de_confirmation.html'; });
+
+
 
 
       html_mere.appendChild(div);
@@ -92,6 +97,22 @@ function w3_open() {
     }
     
 
-  ajaxRequest('GET', 'http://api.projetm1.fr/0.01/', afficheDocteurs);
+ 
   
+  function lister_professions(liste_des_professions){
+    let html_mere=document.getElementById("liste_profession"); //parent
+    for (let i = 0; i < liste_des_professions.length; i++) {
+      
   
+      let profession=liste_des_professions[i];
+      console.log(profession);
+      // Ajouter des options à la liste
+      let option = document.createElement("option");
+      option.setAttribute("value", profession["nom"]);
+      // Ajouter le champ de saisie et la liste de suggestions au document
+      html_mere.appendChild(option);
+
+
+  }
+}
+

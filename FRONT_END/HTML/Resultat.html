@@ -12,8 +12,10 @@
       href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="../javascript/AJAX.js" defer></script>
-    <script src="../javascript/template.js" defer></script>
+    <script src="../javascript/AJAX.js"></script>
+    <script src="../javascript/template.js"></script>
+    <script defer>ajaxRequest('GET', 'http://api.projetm1.fr/0.01/', afficheDocteurs);</script>
+
   </head>
   <body class="w3-content w3-border-left w3-border-right">
 
@@ -68,6 +70,7 @@
         <div id="liste_medecins"></div>
       </div>
     </div>
-
+    
+    
   </body>
 </html>

@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="CSS/Style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="javascript/AJAX.js"></script>
+<script src="javascript/template.js"></script>
+<script defer>ajaxRequest('GET', 'http://api.projetm1.fr/0.02/index.php/professions', lister_professions);</script>
 
 </head>
 <body class="w3-content w3-border-left w3-border-right">
@@ -64,9 +67,12 @@
 
     <h3>Consultez le profil de vos praticiens</h3>
       <p><label><i class=""></i> Nom :</label></p>
-      <input class="w3-input w3-border" type="text" placeholder="nom" name="CheckIn" required> 
+      <input class="w3-input w3-border" type="text" placeholder="nom" required> 
       <p><label><i class=""></i> Profession :</label></p>
-      <input class="w3-input w3-border" type="text" placeholder="profession" name="CheckIn" required> 
+      <input list="liste_profession" class="w3-input w3-border" type="text" placeholder="profession" required> 
+      <datalist id="liste_profession"></datalist>
+      <p><label><i class=""></i> Ville :</label></p>
+      <input class="w3-input w3-border" type="text" placeholder="nom" required>
       <h2><p><button class="w3-button w3-block w3-green w3-center-align" type="submit"><i class="fa fa- w3-margin-right"></i><a href="html/Resultat.html">Rechercher</a></button></p></h2>
 
       <h2 class="w3-text-green">Qui sommes nous ?</h2>
@@ -122,46 +128,7 @@
   </div>
 </div>
 
-<script>
-// Script to open and close sidebar when on tablets and phones
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
 
-// Slideshow Apartment Images
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
-  }
-  x[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " w3-opacity-off";
-}
-</script>
 
 </body>
 </html>
