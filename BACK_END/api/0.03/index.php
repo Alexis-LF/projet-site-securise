@@ -37,7 +37,7 @@ if($phraseRequete == "false"){
 // exit;
 
 // lancement d'une requête
-$phraseRequete = str_replace(";"," LIMIT 200;",$phraseRequete);
+$phraseRequete = str_replace(";"," LIMIT 4500;",$phraseRequete);
 $reponse = requeteBDD($bdd , $phraseRequete);
 
 if ($reponse)
