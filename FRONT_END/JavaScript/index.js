@@ -28,15 +28,16 @@ function lister_villes(liste_des_villes){
 function villeTapee(){
     let texte = document.getElementById("texte_ville");
     if(texte.value.length>2){
-        // ajaxRequest('GET', 'http://api.projetm1.fr/0.02/index.php/villes', lister_villes);
-        console.log("TEST");
+        
+        ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/villes?name='+ texte.value, lister_villes);
+        
         
       }
       
     }
 
 
-ajaxRequest('GET', 'http://api.projetm1.fr/0.02/index.php/professions', lister_professions);
+ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/professions', lister_professions);
 let texte = document.getElementById("texte_ville");
 
 
