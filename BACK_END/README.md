@@ -14,6 +14,13 @@ type de requête : *GET*
 ```
 /index.php/professions
 ```
+
+### Récupérer la liste des mails, prénoms et noms des docteurs 
+type de requête : *GET*
+
+```
+/index.php/docteurs
+```
 ### Recherche par e-mail de docteur, profession et ville
 type de requête : *GET*
 

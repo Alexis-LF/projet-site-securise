@@ -11,6 +11,9 @@ function requetesGet(){
     case "/recherche":
         return recherche();
         break;
+        case "/docteurs":
+            return docteurs();
+            break;
     default:
        return "false";
     }
@@ -27,6 +30,11 @@ function villes()
 function professions()
 {
     return "SELECT nom FROM profession;";
+}
+
+function docteurs()
+{
+    return "SELECT mail, CONCAT(prenom,' ',nom) AS 'prenom_nom' FROM docteurs;";
 }
 
 function recherche()
