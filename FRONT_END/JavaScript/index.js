@@ -39,7 +39,7 @@ function villeTapee(){
 
 
 ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/professions', lister_professions);
-// ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/docteurs', lister_villes);
+ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/docteurs', lister_docteurs);
 let texte = document.getElementById("texte_ville");
 var villesAjoutees=[];
 // Ajouter un événement de saisie au champ de recherche

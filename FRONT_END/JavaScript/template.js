@@ -116,19 +116,18 @@ function w3_open() {
   }
 }
 
-// function lister_docteurs(liste_des_docteurs){
-//   let html_mere=document.getElementById("liste_docteur"); //parent
-//   for (let i = 0; i < liste_des_docteurs.length; i++) {
+function lister_docteurs(liste_des_docteurs){
+  let html_mere=document.getElementById("liste_docteur"); //parent
+  for (let i = 0; i < liste_des_docteurs.length; i++) {
     
+    let docteur=liste_des_docteurs[i];
+    // console.log(profession);
+    // Ajouter des options à la liste
+    let option = document.createElement("option");
+    option.setAttribute("value", docteur["prenom_nom"]);
+    // Ajouter le champ de saisie et la liste de suggestions au document
+    html_mere.appendChild(option);
 
-//     let docteur=liste_des_docteurs[i];
-//     // console.log(profession);
-//     // Ajouter des options à la liste
-//     let option = document.createElement("option");
-//     option.setAttribute("value", docteur["nom"]);
-//     // Ajouter le champ de saisie et la liste de suggestions au document
-//     html_mere.appendChild(option);
 
-
-// }
-// }
+}
+}
