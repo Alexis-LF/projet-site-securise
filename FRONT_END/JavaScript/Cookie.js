@@ -27,5 +27,22 @@ function setCookie(name, value, expirationDays) { // Permet de créer un nouveau
     }
   }
   
-  // Exemple d'utilisation pour définir un cookie de connexion d'une durée de 7 jours
-  setCookie("username", "JohnDoe", 7);
+// Récupération des données à partir des cookies
+var nom = getCookie("liste_docteur");
+var profession = getCookie("liste_profession");
+var ville = getCookie("liste_ville");
+
+// Utilisation des données récupérées
+console.log("Nom : " + nom);
+console.log("Profession : " + profession);
+console.log("Ville : " + ville);
+
+// Récupération des données entrées par l'utilisateur
+var nom = document.getElementById("liste_docteur").value;
+var profession = document.getElementById("liste_profession").value;
+var ville = document.getElementById("liste_ville").value;
+
+// Enregistrement des données dans des cookies
+setCookie("liste_docteur", nom);
+setCookie("liste_profession", profession);
+setCookie("liste_ville", ville);
