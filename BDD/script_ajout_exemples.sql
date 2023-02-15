@@ -9,9 +9,13 @@ INSERT INTO est_specialiste_de VALUES ("Chirurgien","laurent.dubois@gmail.com");
 
 INSERT INTO docteurs VALUES ("john.morston@gmail.com","MORSTON", "John", 0754665213, "1975-01-12","CLINIQUE DE LA MISERICORDE CAEN");
 INSERT INTO est_specialiste_de VALUES ("Cardiologue", "john.morston@gmail.com");
+INSERT INTO est_specialiste_de VALUES ("Orthoptiste", "john.morston@gmail.com");
 
 INSERT INTO docteurs VALUES ("arthur.morgann@gmail.com","MORGANN", "Arthur", 0644551321, "1972-08-18","POLYCLINIQUE DU TREGOR");
 INSERT INTO est_specialiste_de VALUES ("Allergologue","arthur.morgann@gmail.com");
 
 INSERT INTO docteurs VALUES ("leon.kennedy@gmail.com","KENNEDY", "LEON", 0679563214, "1980-06-04","CLINIQUE DES GRAINETIERES");
 INSERT INTO est_specialiste_de VALUES ("Orthoptiste","leon.kennedy@gmail.com");
+
+INSERT INTO docteurs VALUES ("leona.kenneda@gmail.com","KENNEDA", "LEONA", 0679563214, "1980-06-04","POLYCLINIQUE DU TREGOR");
+INSERT INTO est_specialiste_de VALUES ("Orthoptiste","leona.kenneda@gmail.com");
