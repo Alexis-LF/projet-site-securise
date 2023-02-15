@@ -18,7 +18,10 @@ function requetesGet(){
 
 function villes()
 {
-    return "SELECT id, zip_code, name FROM cities;";
+    if (isset($_GET["name"]) && (strlen($_GET["name"]) >= 3) ){
+        return "SELECT id, zip_code, name FROM cities WHERE name LIKE \"%".$_GET["name"]."%\" ;";
+    }
+    return "false";
 }
 
 function professions()
