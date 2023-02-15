@@ -11,9 +11,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="javascript/AJAX.js"></script>
 <script src="javascript/template.js"></script>
+<script src="javascript/index.js"></script>
 
 <script defer>ajaxRequest('GET', 'http://api.projetm1.fr/0.02/index.php/professions', lister_professions);</script>
-
+<script defer>ajaxRequest('GET', 'http://api.projetm1.fr/0.02/index.php/villes', lister_villes);</script>
 </head>
 <body class="w3-content w3-border-left w3-border-right">
 
@@ -68,13 +69,13 @@
 
     <h3>Consultez le profil de vos praticiens</h3>
       <p><label><i class=""></i> Nom :</label></p>
-      <input class="w3-input w3-border" type="text" placeholder="nom" required> 
+      <input class="w3-input w3-border" type="text" placeholder="Nom de votre praticien" required> 
       <p><label><i class=""></i> Profession :</label></p>
-      <input list="liste_profession" class="w3-input w3-border" type="text" placeholder="profession" required> 
+      <input list="liste_profession" class="w3-input w3-border" type="text" placeholder="Entrez la profession demandée" required> 
       <datalist id="liste_profession"></datalist>
       <p><label><i class=""></i> Ville :</label></p>
-      <input id="texte_ville" list="liste_ville" class="w3-input w3-border" type="text" placeholder="nom" required>
-      <datalist id="liste_ville "></datalist>
+      <input id="texte_ville" list="liste_ville" class="w3-input w3-border" type="text" placeholder="Entrez le nom de votre ville" required>
+      <datalist id="liste_ville"></datalist>
       <h2><p><button class="w3-button w3-block w3-green w3-center-align" type="submit"><i class="fa fa- w3-margin-right"></i><a href="html/Resultat.html">Rechercher</a></button></p></h2>
 
       <h2 class="w3-text-green">Qui sommes nous ?</h2>

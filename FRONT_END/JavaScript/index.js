@@ -7,7 +7,7 @@ let texte = document.getElementById("texte_ville");
 texte.addEventListener("input", function() {
     const query = texte.value.substring(0,999999);
     if(query.length>2)
-    console.log("Les premières lettres sont :" + query);
+    // console.log("Les premières lettres sont :" + query);
 });
 
 
@@ -19,10 +19,10 @@ function lister_villes(liste_des_villes){
       
   
       let ville=liste_des_villes[i];
-      console.log(ville);
+      // console.log(ville);
       // Ajouter des options à la liste
       let option = document.createElement("option");
-      option.setAttribute("value", ville["nom"]);
+      option.setAttribute("value", ville["name"]);
       // Ajouter le champ de saisie et la liste de suggestions au document
       html_mere.appendChild(option);
 
