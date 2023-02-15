@@ -45,18 +45,21 @@ function recherche()
         return $requete;
     }
 
-    // // ajout des conditions de recherche
-    // $recherche = "WHERE ";
+    // ajout des conditions de recherche
+    $recherche = "WHERE ";
 
-    // foreach ($_GET[""] as $clef => $valeur) {
-    //     // on ajoute "AND" si ce n'est pas la 1re condition citée
-    //     if($recherche != "WHERE "){
-    //         $recherche .= "AND ";
-    //     }
-    //     $recherche .= $clef." LIKE %".$valeur."% ";
 
-    // }
+    foreach ($_GET as $clef => $valeur) {
+        // on ajoute "AND" si ce n'est pas la 1re condition citée
+        if($recherche != "WHERE "){
+            $recherche .= "AND ";
+        }
+        $recherche .= $clef." LIKE \"%".$valeur."%\" ";
 
+    }
+    $requete .= $recherche.";";
+    echo $requete;
+    exit;
     return $requete;
 
 }
