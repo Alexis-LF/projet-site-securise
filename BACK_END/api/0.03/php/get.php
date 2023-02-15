@@ -60,8 +60,8 @@ function recherche()
 
     }
     $requete .= $recherche.";";
-    echo $requete;
-    exit;
+    // echo $requete;
+    // exit;
     return $requete;
 
 }
