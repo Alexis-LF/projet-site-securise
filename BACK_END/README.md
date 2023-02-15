@@ -1,4 +1,4 @@
-# Back end (api)
+# Back end (API)
 # Version 0.03 → version courante
 ## liste des endpoints :
 ### Récupérer la liste des villes
@@ -25,8 +25,14 @@ type de requête : *GET*
 type de requête : *GET*
 
 ```
-/index.php/recherche?d.mail=MAIL&p.nom=PROFESSION&c.id=ID_VILLE
+/index.php/recherche?d.prenom_nom=PRENOM NOM&p.nom=PROFESSION&c.name=VILLE
 ```
+Ici, tous les paramètres ne sont pas nécessaire. On peut renseigner **un ou plusieurs** (ou aucun) **paramètres au choix** parmi la liste de clés suivantes:
+- `d.prenom_nom` *Le prénom et le nom du docteur séparés par un espace*
+- `p.nom` *le nom de la profession*
+- `c.name` *le nom de la ville*
+
+
 # Version 0.01 → 0.02 (inclus)
 ## liste des endpoints :
 ### Récupérer la liste des villes

@@ -39,7 +39,7 @@ function docteurs()
 
 function recherche()
 {
-    $requete = "SELECT d.nom, d.prenom, p.nom AS 'profession', d.telephone, d.mail, s.nom AS 'site', s.adresse, c.zip_code, c.name AS 'ville' ";
+    $requete = "SELECT d.nom, d.prenom, CONCAT(d.prenom,' ',d.nom) AS 'prenom_nom', p.nom AS 'profession', d.telephone, d.mail, s.nom AS 'site', s.adresse, c.zip_code, c.name AS 'ville' ";
     $requete .= "FROM est_specialiste_de e ";
     $requete .= "JOIN docteurs d ON d.mail = e.mail ";
     $requete .= "JOIN profession p ON p.nom = e.nom ";
@@ -64,7 +64,16 @@ function recherche()
         // dans les champs clefs du GET (dans l'URI), les . sont remplacés par des _ : on corrige ça
         $clef = preg_replace('/' . "_" . '/', ".", $clef, 1);
 
-        $recherche .= $clef." LIKE \"%".$valeur."%\" ";
+        if($clef=="d.prenom_nom"){
+        $recherche .= "CONCAT(d.prenom,' ',d.nom) LIKE \"%".$valeur."%\" ";
+        }
+        else{
+            $recherche .= $clef." LIKE \"%".$valeur."%\" ";
+        }
+        
+
+
+
 
     }
     $requete .= $recherche.";";
