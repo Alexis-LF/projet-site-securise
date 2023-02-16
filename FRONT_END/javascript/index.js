@@ -24,6 +24,21 @@ function lister_villes(liste_des_villes){
 }
 }
 
+function recherche(){
+  let docteur = document.getElementById("imput_nom_docteur");
+  let profession = document.getElementById("imput_nom_profession");
+  let ville = document.getElementById("texte_ville");
+  if(docteur.value.length>2){
+    ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/docteurs'+ docteur.value, lister_docteurs);
+  }
+  if(profession.value.length>2){
+    ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/professions'+ profession.value, lister_professions);
+  }
+  if (getCookie("ville")!==""){
+    ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/villes?name='+ ville.value, lister_villes);
+  }
+
+}
 
 
 function villeTapee(){
