@@ -2,13 +2,8 @@
 
 include_once("constantes.php");
 
-//=============================================================================
-// fonction connexionBDD
-//
 // Se connecter à la base de données pour pouvoir intéragir avec elle
 // via la variable $bdd
-//=============================================================================
-
 function connexionBDD(){
    try{
      //on passe les identifients de la BDD définis dans constantes.php
@@ -25,13 +20,9 @@ function connexionBDD(){
 }
 
 
-//===========================================================================
-// fonction requeteBDD
-//
 // Passer la requête SQL, 
 // récupérer les données voulues dans la base de données,
 // et les renvoyer en JSON
-//===========================================================================
 function requeteBDD($bdd , $phraseRequete){
   try{
     $declaRequete = $bdd->prepare($phraseRequete);
@@ -54,5 +45,4 @@ function requeteBDD($bdd , $phraseRequete){
   //retour des données
   return $reponse;   
 }
-
 ?>

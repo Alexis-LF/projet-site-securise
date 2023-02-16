@@ -6,4 +6,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(".");
 $dotenv->load();
 // les variables sont désormais dans  $_ENV[]
+
+define("LIMITE_RESULTATS", 4500);
+define("RECHERCHE_VILLE_MINI", 3);
 ?>
