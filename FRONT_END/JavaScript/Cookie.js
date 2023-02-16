@@ -1,3 +1,5 @@
+
+
 function setCookie(name, value, expirationDays) { // Permet de créer un nouveau cookie de connexion
     const date = new Date();
     date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000)); // Définit la date du jour et la durée de validité de connexion
@@ -27,22 +29,3 @@ function setCookie(name, value, expirationDays) { // Permet de créer un nouveau
     }
   }
   
-// Récupération des données à partir des cookies
-var nom = getCookie("liste_docteur");
-var profession = getCookie("liste_profession");
-var ville = getCookie("liste_ville");
-
-// Utilisation des données récupérées
-console.log("Nom : " + nom);
-console.log("Profession : " + profession);
-console.log("Ville : " + ville);
-
-// Récupération des données entrées par l'utilisateur
-var nom = document.getElementById("liste_docteur").value;
-var profession = document.getElementById("liste_profession").value;
-var ville = document.getElementById("liste_ville").value;
-
-// Enregistrement des données dans des cookies
-setCookie("liste_docteur", nom);
-setCookie("liste_profession", profession);
-setCookie("liste_ville", ville);

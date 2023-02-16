@@ -5,13 +5,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="CSS/W3C.css">
-<link rel="stylesheet" href="CSS/Style.css">
+<link rel="stylesheet" href="CSS/w3c.css">
+<link rel="stylesheet" href="CSS/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="javascript/AJAX.js"></script>
+<script src="javascript/ajax.js"></script>
 <script src="javascript/template.js"></script>
 <script src="javascript/index.js" defer></script>
+<script src="javascript/cookie.js"></script>
 
 
 </head>
@@ -32,17 +33,17 @@
       <p><label><i class="fa fa-google"></i> Continuer avec google :</label></p>
       <input class="w3-input w3-border" type="submit" value="Google" name="Adults" min="1" max="6">              
       </a><p><label><i class="fa fa-address-book-o"></i> Inscription</label></p></a>
-      <a href="html/Inscription.html"><p class="w3-input w3-border">Inscrivez-vous</p></a>
+      <a href="html/inscription.html"><p class="w3-input w3-border">Inscrivez-vous</p></a>
       <p><button class="w3-button w3-block w3-green w3-left-align" type="submit"><i class="fa fa-search w3-margin-right"></i>Se connecter</button></p>
     </form>
   </div>
   <div class="w3-bar-block">
-    <a href="html/Documents.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-folder"></i> Vos documents</a>
-    <a href="html/Factures.html" class="w3-bar-item w3-button w3-padding-16" onclick="document.getElementById('subscribe').style.display='block'"><i class="fa fa-eur"></i> Vos factures</a>
-    <a href="html/Médecins.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-user-md"></i> Vos médecins</a>
-    <a href="html/CGU.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-file-text"></i> Conditions générales d'utilisation</a>
-    <a href="html/Parametres.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-gears"></i> Parametres du compte</a>
-    <a href="html/Déconnexion.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-caret-left"></i> Se déconnecter</a>
+    <a href="html/documents.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-folder"></i> Vos documents</a>
+    <a href="html/factures.html" class="w3-bar-item w3-button w3-padding-16" onclick="document.getElementById('subscribe').style.display='block'"><i class="fa fa-eur"></i> Vos factures</a>
+    <a href="html/medecins.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-user-md"></i> Vos médecins</a>
+    <a href="html/cgu.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-file-text"></i> Conditions générales d'utilisation</a>
+    <a href="html/parametres.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-gears"></i> Parametres du compte</a>
+    <a href="html/deconnexion.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-caret-left"></i> Se déconnecter</a>
   </div>
 </nav>
 
@@ -68,15 +69,15 @@
 
     <h3>Consultez le profil de vos praticiens</h3>
       <p><label><i class=""></i> Nom :</label></p>
-      <input list="liste_docteur" class="w3-input w3-border" type="text" placeholder="Nom de votre praticien" required> 
+      <input id="imput_nom_docteur"list="liste_docteur" class="w3-input w3-border" type="text" placeholder="Nom de votre praticien" required> 
       <datalist id="liste_docteur"></datalist>
       <p><label><i class=""></i> Profession :</label></p>
-      <input list="liste_profession" class="w3-input w3-border" type="text" placeholder="Entrez la profession demandée" required> 
+      <input id="imput_nom_profession" list="liste_profession" class="w3-input w3-border" type="text" placeholder="Entrez la profession demandée" required> 
       <datalist id="liste_profession"></datalist>
       <p><label><i class=""></i> Ville :</label></p>
       <input id="texte_ville" list="liste_ville" class="w3-input w3-border" type="text" placeholder="Entrez le nom de votre ville" required>
       <datalist id="liste_ville"></datalist>
-      <h2><p><button class="w3-button w3-block w3-green w3-center-align" type="submit"><i class="fa fa- w3-margin-right"></i><a href="html/Resultat.html">Rechercher</a></button></p></h2>
+      <h2><p><button id="bouton_recherche" class="w3-button w3-block w3-green w3-center-align" type="submit"><i class="fa fa- w3-margin-right"></i><a  href="html/resultats.html">Rechercher</a></button></p></h2>
 
       <h2 class="w3-text-green">Qui sommes nous ?</h2>
       <h4>Libdocto est la platerforme de santé française la plus sécurisée. Nous sommes une équipe d'experts en cybersécurité travaillant main dans la main avec des praticiens et des consultants en médecine.</h4>

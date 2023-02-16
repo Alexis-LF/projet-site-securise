@@ -85,7 +85,7 @@ function w3_open() {
       div.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
       div.appendChild(rdv_button);
       div.appendChild(rdv_button);
-      rdv_button.addEventListener('click', function() {window.location.href = 'page_de_confirmation.html'; });
+      rdv_button.addEventListener('click', function() {window.location.href = 'pageDeConfirmation.html'; });
 
 
 
@@ -95,6 +95,7 @@ function w3_open() {
       
     };
     }
+    
     
 
  
@@ -131,3 +132,38 @@ function lister_docteurs(liste_des_docteurs){
 
 }
 }
+
+function afficheDocteurs(){
+  let html_mere=document.getElementById("test"); //parent
+  
+
+  let div = document.createElement("div");
+  let nom = document.createElement("p"); // enfant
+  nom.appendChild(document.createTextNode('Nom et prénom :'+getCookie("docteur")));
+  div.appendChild(nom);
+  div.appendChild(nom);
+
+  let profession = document.createElement("p"); // enfant
+  profession.appendChild(document.createTextNode('Profession :'+getCookie("profession")));
+  div.appendChild(profession);
+  div.appendChild(profession);
+
+  let ville = document.createElement("p"); // enfant
+  ville.appendChild(document.createTextNode('Ville : '+getCookie("ville")));
+  div.appendChild(ville);
+  div.appendChild(ville);
+  div.setAttribute("class", "encadrement");
+  div.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
+
+  let rdv_button = document.createElement("button"); // enfant
+      rdv_button.appendChild(document.createTextNode('Prendre rendez-vous'));
+      div.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
+      div.appendChild(rdv_button);
+      div.appendChild(rdv_button);
+      rdv_button.addEventListener('click', function() {window.location.href = 'pageDeConfirmation.html'; });
+
+
+  html_mere.appendChild(div);
+
+  
+};

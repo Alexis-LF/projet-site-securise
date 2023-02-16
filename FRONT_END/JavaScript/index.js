@@ -44,3 +44,24 @@ let texte = document.getElementById("texte_ville");
 var villesAjoutees=[];
 // Ajouter un événement de saisie au champ de recherche
 texte.addEventListener("input", villeTapee);
+
+
+
+// Enregistrement des données dans des cookies
+function cookieEnregistrement() {
+  var nom = document.getElementById("imput_nom_docteur").value;
+  var profession = document.getElementById("imput_nom_profession").value;
+  var ville = document.getElementById("texte_ville").value;
+
+  // Stockage des valeurs dans des cookies
+  setCookie("docteur", nom);
+  setCookie("profession", profession);
+  setCookie("ville", ville);
+
+  // Affichage des données récupérées dans la console
+  console.log("Nom : " + nom);
+  console.log("Profession : " + profession);
+  console.log("Ville : " + ville);
+}
+
+document.getElementById("bouton_recherche").addEventListener("click", cookieEnregistrement);
