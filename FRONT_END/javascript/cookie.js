@@ -4,6 +4,13 @@ function setCookie(name, value, expirationDays) { // Permet de créer un nouveau
     const expires = "expires=" + date.toUTCString(); // Permet de formater la date 
     document.cookie = name + "=" + value + ";" + expires + ";path=/"; // Définit le cookie le nom, la valeur du cookie, la date d'expiration et le chemin de validité (ici la racine de la page web)
   }
+
+//   if (document.cookie.includes("connexion=true")) {
+//     // L'utilisateur est connecté, afficher le contenu protégé
+// } else {
+//     // L'utilisateur n'est pas connecté, rediriger vers la page de connexion
+//     window.location.href = "connexion.html";
+// }
   
   function getCookie(name) {
     const decodedCookie = decodeURIComponent(document.cookie); // permet de parcourir la chaîne de caractères des cookies pour trouver le cookie correspondant au nom spécifié
@@ -19,11 +26,13 @@ function setCookie(name, value, expirationDays) { // Permet de créer un nouveau
   }
   
   function checkCookie() { // Regarde si le cookie de connexion est présent
-    const user = getCookie("username"); // Récupère le cookie de connexion correspondant à l'utilisateur "username"
-    if (user !== "") { // Si le cookie est présent,
-      // L'utilisateur est connecté
+    let user = getCookie("docteur"); // Récupère le cookie de connexion correspondant à l'utilisateur "username"
+    let profession = getCookie("profession");
+    let ville = getCookie("ville");
+    if (user !== "" ) { // Si le cookie est présent,
+      console.log("L'utilisateur est connecté");
     } else { // Sinon il ne l'est pas et il y a 
-      // Redirection vers la page de connexion
+      console.log("Redirection vers la page de connexion");
     }
   }
   
