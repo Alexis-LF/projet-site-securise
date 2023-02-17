@@ -23,24 +23,6 @@ function lister_villes(liste_des_villes){
 
 }
 }
-
-function recherche(){
-  let docteur = document.getElementById("imput_nom_docteur");
-  let profession = document.getElementById("imput_nom_profession");
-  let ville = document.getElementById("texte_ville");
-  if(docteur.value.length>2){
-    ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/docteurs'+ docteur.value, lister_docteurs);
-  }
-  if(profession.value.length>2){
-    ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/professions'+ profession.value, lister_professions);
-  }
-  if (getCookie("ville")!==""){
-    ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/villes?name='+ ville.value, lister_villes);
-  }
-
-}
-
-
 function villeTapee(){
     let texte = document.getElementById("texte_ville");
     if(texte.value.length>2){
@@ -52,17 +34,7 @@ function villeTapee(){
       
     }
 
-
-ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/professions', lister_professions);
-ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/docteurs', lister_docteurs);
-let texte = document.getElementById("texte_ville");
-var villesAjoutees=[];
-// Ajouter un événement de saisie au champ de recherche
-texte.addEventListener("input", villeTapee);
-
-
-
-// Enregistrement des données dans des cookies
+    // Enregistrement des données dans des cookies
 function cookieEnregistrement() {
   var nom = document.getElementById("imput_nom_docteur").value;
   var profession = document.getElementById("imput_nom_profession").value;
@@ -79,4 +51,15 @@ function cookieEnregistrement() {
   console.log("Ville : " + ville);
 }
 
+
+
 document.getElementById("bouton_recherche").addEventListener("click", cookieEnregistrement);
+ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/professions', lister_professions);
+ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/docteurs', lister_docteurs);
+let texte = document.getElementById("texte_ville");
+var villesAjoutees=[];
+// Ajouter un événement de saisie au champ de recherche
+texte.addEventListener("input", villeTapee);
+
+
+

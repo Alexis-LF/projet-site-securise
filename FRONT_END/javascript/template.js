@@ -41,60 +41,7 @@ function w3_open() {
   // Fonction affiche docteurs 
 
 
-    function afficheDocteurs(liste_docteurs){
-      let html_mere=document.getElementById("liste_medecins"); //parent
-      for (let i = 0; i < liste_docteurs.length; i++) {
-     
-      let docteur=liste_docteurs[i];
-      
-      let div = document.createElement("div");
-      let nom = document.createElement("p"); // enfant
-      nom.appendChild(document.createTextNode('Nom : '+ docteur["nom"]));
-      div.appendChild(nom);
-      div.appendChild(nom);
-
-      let prenom = document.createElement("p"); // enfant
-      prenom.appendChild(document.createTextNode('Prénom : '+ docteur["prenom"]));
-      div.appendChild(prenom);
-      div.appendChild(prenom);
-  
-      let mail = document.createElement("p"); // enfant
-      mail.appendChild(document.createTextNode('Email : '+ docteur["mail"]));
-      div.appendChild(mail);
-      div.appendChild(mail);
-  
-      let num = document.createElement("p"); // enfant
-      num.appendChild(document.createTextNode('Téléphone : 0'+ docteur["telephone"]));
-      div.setAttribute("class", "encadrement");
-      div.appendChild(num);
-      div.appendChild(num);
-  
-
-      let site = document.createElement("p"); // enfant
-      site.appendChild(document.createTextNode('Site : '+ docteur["nom_site"]));
-      div.appendChild(site);
-      div.appendChild(site);
-
-      let rdv = document.createElement("p"); // enfant
-      div.setAttribute("class", "");
-      div.appendChild(rdv);
-      div.appendChild(rdv);
-
-      let rdv_button = document.createElement("button"); // enfant
-      rdv_button.appendChild(document.createTextNode('Prendre rendez-vous'));
-      div.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
-      div.appendChild(rdv_button);
-      div.appendChild(rdv_button);
-      rdv_button.addEventListener('click', function() {window.location.href = 'pageDeConfirmation.html'; });
-
-
-
-
-      html_mere.appendChild(div);
-  
-      
-    };
-    }
+    
     
     
 
