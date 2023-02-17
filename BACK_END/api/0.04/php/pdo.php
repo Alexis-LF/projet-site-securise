@@ -77,12 +77,7 @@ function reponseJSONrequeteSQL($phraseRequete){
     // Pour que le CORS du navigateur ne bloque pas le chargement
     header('Access-Control-Allow-Origin: *');
     // code de réponse HTTP
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        header('HTTP/1.1 201 Created');
-    }
-    else{
-        header('HTTP/1.1 200 OK');
-    }
+    header('HTTP/1.1 200 OK');
     // envoi des données
     echo json_encode($reponse);
     exit;
