@@ -17,7 +17,8 @@ function requetesPost(){
 function identification(){
     // on fait exprès de ne pas sécuriser pour se faire passer pour quelqu'un d'autre assez facilement
     $bdd = connexionBDD();
-    $phraseRequete = "SELECT mail FROM patients WHERE mail=".$_POST["mail"].";";
+    // $phraseRequete = "SELECT mail FROM patients WHERE mail=".$_POST["mail"].";";
+    $phraseRequete = "SELECT mail FROM patients WHERE mail=\"".$_GET["mail"]."\";";
     $reponse = requeteBDD($bdd , $phraseRequete);
     if ($reponse){
         return (string) $reponse[0]["mail"];
@@ -32,8 +33,8 @@ function connexion()
     $mail = identification();
     // Connexion réussie
     if ($mail!="false"){
-        $jwt = encodeJWT($_POST["mail"]);
-        header('Content-Type: text/plain; charset=utf-8');
+        $jwt = encodeJWT($mail);
+        header('Content-Type: text/html; charset=utf-8');
         header('Cache-control: no-store, no-cache, must-revalidate');
         header('Pragma: no-cache');
         header('Access-Control-Allow-Origin: *');
