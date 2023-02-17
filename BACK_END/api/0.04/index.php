@@ -4,15 +4,13 @@ include_once("php/get.php");
 include_once("php/post.php");
 include_once("php/fonctions.php");
 
-// contiendra la phrase à taper sur mysql
-$phraseRequete = "";
-
 // On vérifie si c'est un GET, POST, PUT, et on redirige le traitement aux fonctions appropriées
 switch ($_SERVER['REQUEST_METHOD']) {
+    // case "GET":
+    //     reponseJSONrequeteSQL(requetesGet());
+    //     break;
+    // case "POST":
     case "GET":
-        reponseJSONrequeteSQL(requetesGet());
-        break;
-    case "POST":
         requetesPost();
         break;
     default:
@@ -20,7 +18,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
         echo "Bad Request";
         exit;
 }
-
 
 
 ?>
