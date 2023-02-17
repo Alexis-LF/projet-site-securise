@@ -20,7 +20,12 @@ function encodeJWT($mail)
 function decodeJWT($jwt){
     $publicKey = Keys::getPublicKey();
     // Get public key from the private key
-    $decoded = JWT::decode($jwt, new Key($publicKey, 'RS256'));
+    try {
+        $decoded = JWT::decode($jwt, new Key($publicKey, 'RS256'));
+    }
+    catch (Exception $e) {
+        return "false";
+    }
     return $decoded;
 }
 

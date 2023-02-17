@@ -8,6 +8,9 @@ function requetesPost(){
     case "/connexion":
         return connexion();
         break;
+    case "/test_connecte":
+        return test_connecte();
+        break;
     default:
        return "false";
     }
@@ -48,5 +51,27 @@ function connexion()
     echo "Connexion failed, please check your id and pwd";
     exit;
 }
+
+function test_connecte(){
+    $decoded = decodeJWT($_GET["jwt"]);
+    if ($decoded!="false"){
+        header('Content-Type: text/html; charset=utf-8');
+        header('Cache-control: no-store, no-cache, must-revalidate');
+        header('Pragma: no-cache');
+        header('Access-Control-Allow-Origin: *');
+        // code de réponse HTTP
+        header('HTTP/1.1 201 Created');
+        echo "<pre>";
+        var_dump($decoded);
+        echo "</pre>";
+        exit;
+    }
+    // Échec du test de connexion avec le token.
+    header('HTTP/1.1 401 Unauthorized');
+    echo "Bad token, please sign in again";
+    exit;
+}
+
+
 
 ?>
