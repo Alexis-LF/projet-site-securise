@@ -1,3 +1,4 @@
+
 function ajaxRequest(type, url, callback, data = null)
 {
   let xhr;

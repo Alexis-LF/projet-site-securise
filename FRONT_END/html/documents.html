@@ -8,12 +8,13 @@
 <link rel="stylesheet" href="../CSS/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../javascript/template.js"></script>
 
 </head>
 <body class="w3-content w3-border-left w3-border-right">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3;width:260px" id="mySidebar">
+<nav class="w3-sidebar w3-light-grey w3-collapse w3-top margin260_index" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
     <h3>Mes documents</h3>
@@ -24,7 +25,7 @@
     <a href="../index.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-arrow-left"></i> Retour à l'accueil</a>
     <a href="documents.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-folder"></i> Vos documents</a>
     <a href="factures.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-eur"></i> Vos factures</a>
-    <a href="medecins.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-user-md"></i> Vos médecins</a>
+    
     <a href="cgu.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-file-text"></i> Conditions générales d'utilisation</a>
     <a href="parametres.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-gears"></i> Parametres du compte</a>
     <a href="deconnexion.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-caret-left"></i> Se déconnecter</a>
@@ -33,18 +34,20 @@
 
 <!-- Top menu on small screens -->
 <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-  <span class="w3-bar-item">Rental</span>
-  <a href="javascript:void(0)" class="w3-right w3-bar-item w3-button" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+  <span class="w3-bar-item">Libdocto</span>
+  <a href="javascript:void(0)" class="w3-right w3-bar-item w3-button"
+    onclick="w3_open()"><i class="fa fa-bars"></i></a>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large cursor" onclick="w3_close()"
+  title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main w3-white" style="margin-left:260px">
+<div class="w3-main w3-white margin260">
 
   <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:80px"></div>
+  <div class="w3-hide-large margin80"></div>
 
   <!-- Slideshow Header -->
   <div class="w3-container" id="apartment">

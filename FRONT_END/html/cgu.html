@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Site web sécurisé</title>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../CSS/w3c.css">
 <link rel="stylesheet" href="../CSS/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../javascript/template.js"></script>
 
 </head>
+
 <body class="w3-content w3-border-left w3-border-right">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-light-grey w3-collapse w3-top" style="z-index:3;width:260px" id="mySidebar">
+<nav class="w3-sidebar w3-light-grey w3-collapse w3-top margin260_index" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
     <h3>CGU</h3>
@@ -24,7 +28,6 @@
     <a href="../index.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-arrow-left"></i> Retour à l'accueil</a>
     <a href="documents.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-folder"></i> Vos documents</a>
     <a href="factures.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-eur"></i> Vos factures</a>
-    <a href="medecins.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-user-md"></i> Vos médecins</a>
     <a href="cgu.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-file-text"></i> Conditions générales d'utilisation</a>
     <a href="parametres.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-gears"></i> Parametres du compte</a>
     <a href="deconnexion.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-caret-left"></i> Se déconnecter</a>
@@ -33,198 +36,64 @@
 
 <!-- Top menu on small screens -->
 <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-  <span class="w3-bar-item">Rental</span>
-  <a href="javascript:void(0)" class="w3-right w3-bar-item w3-button" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+  <span class="w3-bar-item">Libdocto</span>
+  <a href="javascript:void(0)" class="w3-right w3-bar-item w3-button"
+    onclick="w3_open()"><i class="fa fa-bars"></i></a>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large cursor" onclick="w3_close()"
+title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main w3-white" style="margin-left:260px">
+<div class="w3-main w3-white margin260">
 
   <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:80px"></div>
+  <div class="w3-hide-large margin80"></div>
 
   <!-- Slideshow Header -->
   <div class="w3-container" id="apartment">
     <h2 class="w3-text-green">Conditions Générales d'Utilisation</h2>
-    <h4>Règlement (UE) 2016/679 du Parlement européen et du Conseil du 27 avril 2016, relatif à la protection des personnes physiques à l'égard du traitement des données à caractère personnel et à la libre circulation de ces données, et abrogeant la directive 95/46/CE (règlement général sur la protection des données).</h4>
-      <h5>
-      CHAPITRE I - Dispositions générales 
+    <h5>Règlement (UE) 2016/679 du Parlement européen et du Conseil du 27 avril 2016, relatif à la protection des personnes physiques à l'égard du traitement des données à caractère personnel et à la libre circulation de ces données, et abrogeant la directive 95/46/CE (règlement général sur la protection des données).</h5>
+<h5>CHAPITRE I - Dispositions générales</h5>
+<ul>
+  <li>Article premier - Objet et objectifs</li>
+  <li>Article 2 - Champ d'application matériel</li>
+  <li>Article 3 - Champ d'application territorial</li>
+  <li>Article 4 - Définitions</li>
+</ul>
 
-Article premier - Objet et objectifs
-Article 2 - Champ d'application matériel
-Article 3 - Champ d'application territorial
-Article 4 - Définitions
+<h5>CHAPITRE II - Principes</h5>
+<ul>
+  <li>Article 5 - Principes relatifs au traitement des données à caractère personnel</li>
+  <li>Article 6- Licéité du traitement</li>
+  <li>Article 7 - Conditions applicables au consentement</li>
+  <li>Article 8 - Conditions applicables au consentement des enfants en ce qui concerne les services de la société de l'information</li>
+  <li>Article 9 - Traitement portant sur des catégories particulières de données à caractère personnel</li>
+  <li>Article 10 - Traitement des données à caractère personnel relatives aux condamnations pénales et aux infractions</li>
+  <li>Article 11 - Traitement ne nécessitant pas l'identification</li>
+</ul>
 
-CHAPITRE II - Principes
-
-Article 5 - Principes relatifs au traitement des données à caractère personnel 
-Article 6- Licéité du traitement
-Article 7 - Conditions applicables au consentement
-Article 8 - Conditions applicables au consentement des enfants en ce qui concerne les services de la société de l'information 
-Article 9 - Traitement portant sur des catégories particulières de données à caractère personnel
-Article 10 - Traitement des données à caractère personnel relatives aux condamnations pénales et aux infractions 
-Article 11 - Traitement ne nécessitant pas l'identification 
-
-CHAPITRE III - Droits de la personne concernée 
-
-Section 1 - Transparence et modalités
-
-Article 12 - Transparence des informations et des communications et modalités de l'exercice des droits de la personne concernée
-
-Section 2 - Information et accès aux données à caractère personnel
-
-Article 13 - Informations à fournir lorsque des données à caractère personnel sont collectées auprès de la personne concernée 
-Article 14 - Informations à fournir lorsque les données à caractère personnel n'ont pas été collectées auprès de la personne concernée 
-Article 15 - Droit d'accès de la personne concernée 
-
-Section 3 - Rectification et effacement
-
-Article 16 - Droit de rectification 
-Article 17 - Droit à l'effacement («droit à l'oubli») 
-Article 18 - Droit à la limitation du traitement 
-Article 19 - Obligation de notification en ce qui concerne la rectification ou l'effacement de données à caractère personnel ou la limitation du traitement 
-Article 20 - Droit à la portabilité des données 
-
-Section 4 - Droit d'opposition et prise de décision individuelle automatisée 
-
-Article 21 - Droit d'opposition 
-Article 22 - Décision individuelle automatisée, y compris le profilage 
-
-Section 5 - Limitations 
-
-Article 23 - Limitations 
-
-CHAPITRE IV - Responsable du traitement et sous-traitant 
-
-Section 1 - Obligations générales 
-
-Article 24 - Responsabilité du responsable du traitement 
-Article 25 - Protection des données dès la conception et protection des données par défaut 
-Article 26 - Responsables conjoints du traitement 
-Article 27 - Représentants des responsables du traitement ou des sous-traitants qui ne sont pas établis dans l'Union. 
-Article 28 - Sous-traitant 
-Article 29 - Traitement effectué sous l'autorité du responsable du traitement ou du sous-traitant 
-Article 30 - Registre des activités de traitement 
-Article 31 - Coopération avec l'autorité de contrôle 
-
-Section 2 - Sécurité des données à caractère personnel 
-
-Article 32 - Sécurité du traitement
-Article 33 - Notification à l'autorité de contrôle d'une violation de données à caractère personnel 
-Article 34 - Communication à la personne concernée d'une violation de données à caractère personnel
-
-Section 3 - Analyse d'impact relative à la protection des donnés et consultation préalable
-
-Article 35 - Analyse d'impact relative à la protection des données 
-Article 36 - Consultation préalable 
-
-Section 4 - Délégué à la protection des données 
-
-Article 37 - Désignation du délégué à la protection des données 
-Article 38 - Fonction du délégué à la protection des données 
-Article 39 - Missions du délégué à la protection des données 
-
-Section 5 - Codes de conduite et certification
-
-Article 40 - Codes de conduite 
-Article 41 - Suivi des codes de conduite approuvés 
-Article 42 - Certification 
-Article 43 - Organismes de certification 
-
-CHAPITRE V - Transferts de données à caractère personnel vers des pays tiers ou à des organisations internationales 
-
-Article 44 - Principe général applicable aux transferts 
-Article 45 - Transferts fondés sur une décision d'adéquation 
-Article 46 - Transferts moyennant des garanties appropriées 
-Article 47 - Règles d'entreprise contraignantes 
-Article 48 - Transferts ou divulgations non autorisés par le droit de l'Union 
-Article 49 - Dérogations pour des situations particulières 
-Article 50 - Coopération internationale dans le domaine de la protection des données à caractère personnel
-
-CHAPITRE VI - Autorités de contrôle indépendantes
-
-Section 1 - Statut d'indépendance
-
-Article 51 - Autorité de contrôle 
-Article 52 - Indépendance 
-Article 53 - Conditions générales applicables aux membres de l'autorité de contrôle 
-Article 54 - Règles relatives à l'établissement de l'autorité de contrôle
-
-Section 2 - Compétence, missions et pouvoirs
-
-Article 55 - Compétence
-Article 56 - Compétence de l'autorité de contrôle chef de file 
-Article 57 - Missions 
-Article 58 - Pouvoirs 
-Article 59 - Rapports d'activité 
-
-CHAPITRE VII - Coopération et cohérence
-
-Section 1 - Coopération
-
-Article 60 - Coopération entre l'autorité de contrôle chef de file et les autres autorités de contrôle concernées
-Article 61 - Assistance mutuelle
-Article 62 - Opérations conjointes des autorités de contrôle 
-
-Section 2 - Cohérence
-
-Article 63 - Mécanisme de contrôle de la cohérence 
-Article 64 - Avis du comité 
-Article 65 - Règlement des litiges par le comité 
-Article 66 - Procédure d'urgence 
-Article 67 - Échange d'informations
-
-Section 3 - Comité européen de la protection des données
-
-Article 68 - Comité européen de la protection des données
-Article 69 - Indépendance
-Article 70 - Missions du comité
-Article 71 - Rapports 
-Article 72 - Procédure 
-Article 73 - Président 
-Article 74 - Missions du président 
-Article 75 - Secrétariat 
-Article 76 - Confidentialité 
-
-CHAPITRE VIII - Voies de recours, responsabilité et sanctions
-
-Article 77 - Droit d'introduire une réclamation auprès d'une autorité de contrôle 
-Article 78 - Droit à un recours juridictionnel effectif contre une autorité de contrôle 
-Article 79 - Droit à un recours juridictionnel effectif contre un responsable du traitement ou un sous-traitant 
-Article 80 - Représentation des personnes concernées 
-Article 81 - Suspension d'une action 
-Article 82 - Droit à réparation et responsabilité 
-Article 83 - Conditions générales pour imposer des amendes administratives 
-Article 84 - Sanctions 
-
-CHAPITRE IX -  Dispositions relatives à des situations particulières de traitement
-
-Article 85 -  Traitement et liberté d'expression et d'information 
-Article 86 - Traitement et accès du public aux documents officiels 
-Article 87 - Traitement du numéro d'identification national 
-Article 88 - Traitement de données dans le cadre des relations de travail 
-Article 89 - Garanties et dérogations applicables au traitement à des fins archivistiques dans l'intérêt public, à des fins de recherche scientifique ou historique ou à des fins statistiques 
-Article 90 - Obligations de secret 
-Article 91 - Règles existantes des églises et associations religieuses en matière de protection des données 
-
-CHAPITRE X - Actes délégués et actes d'exécution 
-
-Article 92 - Exercice de la délégation
-Article 93 - Comité
-
-CHAPITRE XI - Dispositions finales
-
-Article 94 - Abrogation de la directive 95/46/CE 
-Article 95 - Relation avec la directive 2002/58/CE 
-Article 96 - Relation avec les accords conclus antérieurement 
-Article 97 - Rapports de la Commission. 
-Article 98 - Réexamen d'autres actes juridiques de l'Union relatifs à la protection des données 
-Article 99 - Entrée en vigueur et application
-</h5>
+<h5>CHAPITRE III - Droits de la personne concernée</h5>
+<ul>
+  <li>Section 1 - Transparence et modalités</li>
+  <li>Article 12 - Transparence des informations et des communications et modalités de l'exercice des droits de la personne concernée</li>
+  <li>Section 2 - Information et accès aux données à caractère personnel</li>
+  <li>Article 13 - Informations à fournir lorsque des données à caractère personnel sont collectées auprès de la personne concernée</li>
+  <li>Article 14 - Informations à fournir lorsque les données à caractère personnel n'ont pas été collectées auprès de la personne concernée</li>
+  <li>Article 15 - Droit d'accès de la personne concernée</li>
+  <li>Section 3 - Rectification et effacement</li>
+  <li>Article 16 - Droit de rectification</li>
+  <li>Article 17 - Droit à l'effacement («droit à l'oubli»)</li>
+  <li>Article 18 - Droit à la limitation du traitement</li>
+  <li>Article 19 - Obligation de notification en ce qui concerne la rectification ou l'effacement de données à caractère personnel ou la limitation du traitement</li>
+  <li>Article 20 - Droit à la portabilité des données</li>
+  <li>Section 4 - Droit d'opposition et prise de décision individuelle automatisée</li>
+  <li>Article 21 - Droit d'opposition</li>
+  <li>Article 22 - Décision individuelle automatis
+</ul>
     <div class="w3-display-container mySlides">
+
     
 
   
