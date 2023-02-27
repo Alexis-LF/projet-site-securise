@@ -53,13 +53,7 @@ function cookieEnregistrement() {
   console.log("Nom : " + nom);
   console.log("Profession : " + profession);
   console.log("Ville : " + ville);
-  if(email!="" && mdp!=""){
-    // let num = document.createElement("p"); // enfant
-   // num.appendChild(document.createTextNode('Téléphone : 0'+ docteur["telephone"]));
-    // div.setAttribute("class", "display:none");
-    // div.appendChild(num);
-    // div.appendChild(num);
-  }
+  
 }
 
 document.getElementById("bouton_recherche").addEventListener("click", cookieEnregistrement);
