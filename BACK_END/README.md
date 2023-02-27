@@ -42,7 +42,12 @@
 #### Réponse :
 ##### Succès
 - Code HTTP : `201`
-- Corps de la réponse : **Jeton JWT** à sauvegarder
+- Corps de la réponse : Tableau :
+  - `mail`
+  - `nom`
+  - `prénom`
+  - `ville`
+  - `jwt` : **Jeton de connexion JWT** à sauvegarder
 ##### Échec
 - Code HTTP : `401`
 - Corps de la réponse : *Connexion failed, please check your id and pwd*

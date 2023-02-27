@@ -44,14 +44,19 @@ function connexion()
     // Connexion réussie
     if ($mail!="false"){
         $jwt = encodeJWT($mail);
-        header('Content-Type: text/html; charset=utf-8');
-        header('Cache-control: no-store, no-cache, must-revalidate');
-        header('Pragma: no-cache');
-        header('Access-Control-Allow-Origin: *');
-        // code de réponse HTTP
-        header('HTTP/1.1 201 Created');
-        echo $jwt;
-        exit;
+        $bdd = connexionBDD();
+        $reponse = requeteBDD($bdd , infos_patient($mail));
+        if ($reponse){
+            $reponse[0]["jwt"] = $jwt;
+            header('Content-Type: application/json; charset=utf-8');
+            header('Cache-control: no-store, no-cache, must-revalidate');
+            header('Pragma: no-cache');
+            header('Access-Control-Allow-Origin: *');
+            // code de réponse HTTP
+            header('HTTP/1.1 201 Created');        
+            echo json_encode($reponse);
+            exit;
+        }
     }
     // Échec de la connexion.
     header('HTTP/1.1 401 Unauthorized');

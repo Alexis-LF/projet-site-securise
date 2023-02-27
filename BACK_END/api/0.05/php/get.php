@@ -42,6 +42,15 @@ function docteurs()
     return "SELECT mail, CONCAT(prenom,' ',nom) AS 'prenom_nom' FROM docteurs;";
 }
 
+function infos_patient($mail){
+    $requete = "SELECT pa.mail AS mail, pe.prenom, pe.nom, c.name AS \"ville\" ";
+    $requete .="FROM patients pa ";
+    $requete .="JOIN personne pe ON pa.mail = pe.mail ";
+    $requete .="JOIN cities c ON pe.id = c.id ";
+    $requete .="WHERE pa.mail = \"".$mail."\";";
+    return $requete;
+}
+
 // recherche avec filtrage par critères
 function recherche()
 {
