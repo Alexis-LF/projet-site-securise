@@ -46,7 +46,7 @@ xhr.onload = () =>
 
 
 function connexion_reussie(jwt){
-  cookie("jwt", jwt);
+  setCookie("jwt", jwt);
   est_connecte();
 
   }
@@ -56,3 +56,5 @@ function est_connecte(){
     div.setAttribute("class", "w3-button w3-block encadrement w3-left-align");
   }
 }
+
+document.getElementById("cookieDeConnexion").addEventListener("click", ajaxConnexion);
