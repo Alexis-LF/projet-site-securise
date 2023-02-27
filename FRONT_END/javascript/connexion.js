@@ -56,7 +56,6 @@ function est_connecte(){
 
 function connexion_reussie(jwt){
   setCookie("jwt", jwt);
-  console.log(jwt);
   est_connecte();
   alert("La connexion est réussie !")
   
