@@ -53,8 +53,9 @@ function connexion_reussie(jwt){
   }
 function est_connecte(){
   if (getCookie("jwt")){
-    document.getElementById("champs_de_connexion");
-    div.setAttribute("class", "w3-button w3-block encadrement w3-left-align");
+    let div = document.getElementById("champs_de_connexion");
+    div.setAttribute("style", "display:none");
+    
   }
 }
 
@@ -64,5 +65,4 @@ function connexion_appuyee(){
   ajaxConnexion('POST', 'http://api.projetm1.fr/0.04/index.php/connexion', identifiant.value, mdp.value, connexion_reussie);
     
   }
-alert('Coucou');
 document.getElementById("cookieDeConnexion").addEventListener("click", connexion_appuyee());
