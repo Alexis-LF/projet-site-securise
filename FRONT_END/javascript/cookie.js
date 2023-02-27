@@ -1,7 +1,10 @@
-function setCookie(name, value, expirationDays) { // Permet de créer un nouveau cookie de connexion
+function setCookie(name, value) { // Permet de créer un nouveau cookie de connexion
+  
+  let expirationDays=1;
     const date = new Date();
     date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000)); // Définit la date du jour et la durée de validité de connexion
     const expires = "expires=" + date.toUTCString(); // Permet de formater la date 
+
     document.cookie = name + "=" + value + ";" + expires + ";path=/"; // Définit le cookie le nom, la valeur du cookie, la date d'expiration et le chemin de validité (ici la racine de la page web)
   }
 
