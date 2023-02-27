@@ -40,8 +40,7 @@ function cookieEnregistrement() {
   var nom = document.getElementById("imput_nom_docteur").value;
   var profession = document.getElementById("imput_nom_profession").value;
   var ville = document.getElementById("texte_ville").value;
-  var email = document.getElementById("imput_email").value;
-  var mdp = document.getElementById("imput_mdp").value;
+  
 
   // Stockage des valeurs dans des cookies
   setCookie("docteur", nom);

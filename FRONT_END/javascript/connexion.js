@@ -49,7 +49,7 @@ xhr.send(data);
 function connexion_reussie(jwt){
   setCookie("jwt", jwt);
   est_connecte();
-
+  alert("La connexion est réussie !")
   }
 function est_connecte(){
   if (getCookie("jwt")){
@@ -61,8 +61,8 @@ function est_connecte(){
 function connexion_appuyee(){
   let mdp = document.getElementById("imput_mdp");
   let identifiant = document.getElementById("imput_email")
-  ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/connexion'+ texte.value, lister_villes);
+  ajaxConnexion('POST', 'http://api.projetm1.fr/0.04/index.php/connexion', identifiant.value, mdp.value, connexion_reussie);
     
   }
-
-document.getElementById("cookieDeConnexion").addEventListener("click", ajaxConnexion(POST, 'http://api.projetm1.fr/0.03/index.php/connexion', 'mail@test.com','password',connexion_reussie));
+alert('Coucou');
+document.getElementById("cookieDeConnexion").addEventListener("click", connexion_appuyee());
