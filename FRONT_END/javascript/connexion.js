@@ -14,22 +14,23 @@ if (type!='POST' && url!=""){
 var data = new FormData();
 data.append("mail", id);
 data.append("password", pwd);
-
+console.log(id);
 var xhr = new XMLHttpRequest();
 
 xhr.withCredentials = false;
 
 xhr.open(type, url);
 
-xhr.addEventListener("readystatechange", stage);
+// xhr.addEventListener("readystatechange", stage);
 
-xhr.send(data);
+
 
 xhr.onload = () =>
 {
     switch(xhr.status)
     {
         case 201:
+          console.log(xhr.responseText);
             callback((xhr.responseText));
             break;
         case 401: 
@@ -40,7 +41,7 @@ xhr.onload = () =>
     }
 }
 
-
+xhr.send(data);
 }
 
 
@@ -57,4 +58,11 @@ function est_connecte(){
   }
 }
 
-document.getElementById("cookieDeConnexion").addEventListener("click", ajaxConnexion);
+function connexion_appuyee(){
+  let mdp = document.getElementById("imput_mdp");
+  let identifiant = document.getElementById("imput_email")
+  ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/connexion'+ texte.value, lister_villes);
+    
+  }
+
+document.getElementById("cookieDeConnexion").addEventListener("click", ajaxConnexion(POST, 'http://api.projetm1.fr/0.03/index.php/connexion', 'mail@test.com','password',connexion_reussie));
