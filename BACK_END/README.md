@@ -1,6 +1,34 @@
 # Back end (API)
-# Version 0.04 → Courante
-## liste des endpoints d'authentification :
+> Toutes les requêtes des précédentes versions sont valables pour la version coutante, sauf si elle a été redéfinie dans une version postérieure.
+# Version 0.05
+## Liste des endpoints GET :
+### Récupérer la liste de documents
+> ( site non-sécurisé) Le Front-end vérifie au préalable si l'utilisateur est connecté avant d'éffectuer la requête
+#### type de requête : 
+**GET**
+#### URI : 
+```
+/index.php/documents?mail=MAIL
+```
+#### Paramètres :
+- `mail` :  e-mail de l'utilisateur
+#### Réponse :
+- Tableau :
+  - `nom_doc` : Nom affiché à l'écran
+  - `type` : nature du document (ordonnance, fomulaire etc.)
+  - `chemin` : Où se trouve le fichier sur le serveur : sert pour le bouton *télécharger le document*
+  - `date_depot` '*(peut être nul)* : Moment auquel le document a été déposé
+  - `signature_docteur` '*(peut être nul)* : Date de signature du docteur
+  - `prenom_nom` : Prénom et nom du docteur
+  - `mail_docteurs` : adresse e-mail du docteur *(pourquoi pas mettre en lien hypertexte mailto:mail@docteur.com)*
+  - `telephone` : téléphone du docteur
+  - `nom_site` : nom du lieu de profession
+  - `adresse` : rue du site
+  - `zip_code` : code postal
+  - `ville` : nom de la ville
+
+# Version 0.04
+## Liste des endpoints d'authentification :
 ### Se connecter : recevoir le token JWT
 #### type de requête : 
 **POST**
@@ -38,56 +66,23 @@
 - Code HTTP : `401`
 - Corps de la réponse : *Bad token, please sign in again*
 
-## liste des endpoints GET :
-### Récupérer la liste des villes
-type de requête : *GET*
-
-```
-/index.php/villes?name=NOM
-```
-
-### Récupérer la liste des professions
-type de requête : *GET*
-
-```
-/index.php/professions
-```
-
-### Récupérer la liste des mails, prénoms et noms des docteurs 
-type de requête : *GET*
-
-```
-/index.php/docteurs
-```
-### Recherche par e-mail de docteur, profession et ville
-type de requête : *GET*
-
-```
-/index.php/recherche?d.prenom_nom=PRENOM NOM&p.nom=PROFESSION&c.name=VILLE
-```
-Ici, tous les paramètres ne sont pas nécessaire. On peut renseigner **un ou plusieurs** (ou aucun) **paramètres au choix** parmi la liste de clés suivantes:
-- `d.prenom_nom` *Le prénom et le nom du docteur séparés par un espace*
-- `p.nom` *le nom de la profession*
-- `c.name` *le nom de la ville*
-
-
 # Version 0.03
-## liste des endpoints :
-### Récupérer la liste des villes
+## Liste des endpoints GET :
+### Récupérer la Liste des villes
 type de requête : *GET*
 
 ```
 /index.php/villes?name=NOM
 ```
 
-### Récupérer la liste des professions
+### Récupérer la Liste des professions
 type de requête : *GET*
 
 ```
 /index.php/professions
 ```
 
-### Récupérer la liste des mails, prénoms et noms des docteurs 
+### Récupérer la Liste des mails, prénoms et noms des docteurs 
 type de requête : *GET*
 
 ```
@@ -99,21 +94,21 @@ type de requête : *GET*
 ```
 /index.php/recherche?d.prenom_nom=PRENOM NOM&p.nom=PROFESSION&c.name=VILLE
 ```
-Ici, tous les paramètres ne sont pas nécessaire. On peut renseigner **un ou plusieurs** (ou aucun) **paramètres au choix** parmi la liste de clés suivantes:
+Ici, tous les paramètres ne sont pas nécessaire. On peut renseigner **un ou plusieurs** (ou aucun) **paramètres au choix** parmi la Liste de clés suivantes:
 - `d.prenom_nom` *Le prénom et le nom du docteur séparés par un espace*
 - `p.nom` *le nom de la profession*
 - `c.name` *le nom de la ville*
 
 
 # Version 0.01 → 0.02 (inclus)
-## liste des endpoints :
-### Récupérer la liste des villes
+## Liste des endpoints GET :
+### Récupérer la Liste des villes
 type de requête : *GET*
 
 ```
 /index.php/villes
 ```
-### Récupérer la liste des professions
+### Récupérer la Liste des professions
 type de requête : *GET*
 
 ```
