@@ -66,7 +66,8 @@
 #### Réponse :
 ##### Succès
 - Code HTTP : `201`
-- Corps de la réponse : *You are connected as `e-mail de l'utilisateur`.*
+- Corps de la réponse :
+  - `mail` : e-mail de l'utilisateur connecté
 ##### Échec
 - Code HTTP : `401`
 - Corps de la réponse : *Bad token, please sign in again*

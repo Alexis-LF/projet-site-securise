@@ -69,13 +69,14 @@ function connexion()
 function valider_connexion(){
     $decoded = decodeJWT($_POST["jwt"]);
     if ($decoded!="false"){
-        header('Content-Type: text/html; charset=utf-8');
+        header('Content-Type: application/json; charset=utf-8');
         header('Cache-control: no-store, no-cache, must-revalidate');
         header('Pragma: no-cache');
         header('Access-Control-Allow-Origin: *');
         // code de réponse HTTP
         header('HTTP/1.1 201 Created');
-        echo "You are connected as ".$decoded->mail.".";
+        $reponse = array('mail' => $decoded->mail);
+        echo json_encode($reponse);
         exit;
     }
     // Échec du test de connexion avec le token.
