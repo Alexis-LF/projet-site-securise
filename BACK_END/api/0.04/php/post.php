@@ -1,5 +1,6 @@
 <?php
 include_once("fonctions_jwt.php");
+include_once("fonctions.php");
 include_once("pdo.php");
 
 // Aiguillage des requêtes de type POST
@@ -10,6 +11,9 @@ function requetesPost(){
         break;
     case "/test_connecte":
         return test_connecte();
+        break;
+    case "/debug":
+        return debug();
         break;
     default:
        return "false";
@@ -22,8 +26,8 @@ function identification(){
     $bdd = connexionBDD();
     // $phraseRequete = "SELECT mail FROM patients WHERE mail=".$_POST["mail"].";";
     $phraseRequete = "SELECT mail FROM patients ";
-    $phraseRequete .="WHERE mail=\"".$_GET["mail"]."\" ";
-    $phraseRequete .="AND mot_de_passe=\"".$_GET["password"]."\";";
+    $phraseRequete .="WHERE mail=\"".$_POST["mail"]."\" ";
+    $phraseRequete .="AND mot_de_passe=\"".$_POST["password"]."\";";
 
     // echo $phraseRequete;
     // exit;
@@ -58,7 +62,7 @@ function connexion()
 }
 
 function test_connecte(){
-    $decoded = decodeJWT($_GET["jwt"]);
+    $decoded = decodeJWT($_POST["jwt"]);
     if ($decoded!="false"){
         header('Content-Type: text/html; charset=utf-8');
         header('Cache-control: no-store, no-cache, must-revalidate');
@@ -76,7 +80,6 @@ function test_connecte(){
     echo "Bad token, please sign in again";
     exit;
 }
-
 
 
 ?>

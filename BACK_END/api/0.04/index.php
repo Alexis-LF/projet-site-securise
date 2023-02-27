@@ -10,7 +10,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
     //     reponseJSONrequeteSQL(requetesGet());
     //     break;
     // case "POST":
-    case "GET":
+    case "POST":
         requetesPost();
         break;
     default:
