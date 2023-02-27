@@ -21,7 +21,12 @@ function identification(){
     // on fait exprès de ne pas sécuriser pour se faire passer pour quelqu'un d'autre assez facilement
     $bdd = connexionBDD();
     // $phraseRequete = "SELECT mail FROM patients WHERE mail=".$_POST["mail"].";";
-    $phraseRequete = "SELECT mail FROM patients WHERE mail=\"".$_GET["mail"]."\";";
+    $phraseRequete = "SELECT mail FROM patients ";
+    $phraseRequete .="WHERE mail=\"".$_GET["mail"]."\" ";
+    $phraseRequete .="AND mot_de_passe=\"".$_GET["password"]."\";";
+
+    // echo $phraseRequete;
+    // exit;
     $reponse = requeteBDD($bdd , $phraseRequete);
     if ($reponse){
         return (string) $reponse[0]["mail"];
