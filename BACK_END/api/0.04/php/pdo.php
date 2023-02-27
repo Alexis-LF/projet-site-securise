@@ -45,4 +45,49 @@ function requeteBDD($bdd , $phraseRequete){
   //retour des données
   return $reponse;   
 }
+
+// Fonction qui 
+function reponseJSONrequeteSQL($phraseRequete){
+    // Message d'erreur si mauvaise requête écrite
+    if($phraseRequete == "false"){
+    header('HTTP/1.1 400 Bad Request');
+    echo "Bad Request";
+    exit;
+    }
+
+    // Décommenter les lignes ci-dessous pour afficher les requêtes SQL prêtes à être envoyées
+    // echo $phraseRequete;
+    // exit;
+    
+    // On rajoute une limite à la requête SQL pour ne pas faire planter le traitement des données du front-end
+    $phraseRequete = str_replace(";"," LIMIT ".LIMITE_RESULTATS.";",$phraseRequete);
+
+    // la variable bdd est l'objet avec lequel intéragir pour intérroger la base de donnée
+    $bdd = connexionBDD();
+
+    // lancement d'une requête
+    $reponse = requeteBDD($bdd , $phraseRequete);
+
+    if ($reponse)
+    {
+    // headers pour la mise à jour de la page et pour le JSON
+    header('Content-Type: application/json; charset=utf-8');
+    header('Cache-control: no-store, no-cache, must-revalidate');
+    header('Pragma: no-cache');
+    // Pour que le CORS du navigateur ne bloque pas le chargement
+    header('Access-Control-Allow-Origin: *');
+    // code de réponse HTTP
+    header('HTTP/1.1 200 OK');
+    // envoi des données
+    echo json_encode($reponse);
+    exit;
+    }
+    // Mauvaise requête envoyée.
+    header('HTTP/1.1 400 Bad Request');
+    echo "Bad Request";
+    exit;
+}
+
 ?>
+
+

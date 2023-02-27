@@ -37,3 +37,7 @@ img{
 .center{
     text-align:center;
 }
+
+.encadrement{
+    border: 1px solid black;
+}
