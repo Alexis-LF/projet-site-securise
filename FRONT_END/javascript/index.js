@@ -35,23 +35,32 @@ function villeTapee(){
     }
 
     // Enregistrement des données dans des cookies
+
 function cookieEnregistrement() {
   var nom = document.getElementById("imput_nom_docteur").value;
   var profession = document.getElementById("imput_nom_profession").value;
   var ville = document.getElementById("texte_ville").value;
+  var email = document.getElementById("imput_email").value;
+  var mdp = document.getElementById("imput_mdp").value;
 
   // Stockage des valeurs dans des cookies
   setCookie("docteur", nom);
   setCookie("profession", profession);
   setCookie("ville", ville);
 
+
   // Affichage des données récupérées dans la console
   console.log("Nom : " + nom);
   console.log("Profession : " + profession);
   console.log("Ville : " + ville);
+  if(email!="" && mdp!=""){
+    // let num = document.createElement("p"); // enfant
+   // num.appendChild(document.createTextNode('Téléphone : 0'+ docteur["telephone"]));
+    // div.setAttribute("class", "display:none");
+    // div.appendChild(num);
+    // div.appendChild(num);
+  }
 }
-
-
 
 document.getElementById("bouton_recherche").addEventListener("click", cookieEnregistrement);
 ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/professions', lister_professions);

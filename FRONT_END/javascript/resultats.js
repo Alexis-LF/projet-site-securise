@@ -3,7 +3,7 @@ function recherche(){
     let url="http://api.projetm1.fr/0.03/index.php";
     let recherche = "/recherche?";
     if(getCookie("docteur") !=""){
-      if(recherche != "/recherch?"){
+      if(recherche != "/recherche?"){
         recherche +="&";
       }
       recherche+="d.prenom_nom="+getCookie("docteur");
@@ -78,7 +78,6 @@ function recherche(){
 
 
     let rdv = document.createElement("p"); // enfant
-    div.setAttribute("class", "");
     div.appendChild(rdv);
     div.appendChild(rdv);
 
