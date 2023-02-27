@@ -9,11 +9,8 @@ function requetesPost(){
     case "/connexion":
         return connexion();
         break;
-    case "/test_connecte":
-        return test_connecte();
-        break;
-    case "/debug":
-        return debug();
+    case "/valider_connexion":
+        return valider_connexion();
         break;
     default:
        return "false";
@@ -39,7 +36,8 @@ function identification(){
 
 }
 
-
+// Connexion d'un utilisateur en lui envoyant son jeton de connexion JWT
+// Ce jeton permet de vérifier l'identité de l'utilisateur
 function connexion()
 {
     $mail = identification();
@@ -61,7 +59,9 @@ function connexion()
     exit;
 }
 
-function test_connecte(){
+// Vérifier que l'utilisateur est bien connecté grâce au jeton obtenu lors
+// de la connexion
+function valider_connexion(){
     $decoded = decodeJWT($_POST["jwt"]);
     if ($decoded!="false"){
         header('Content-Type: text/html; charset=utf-8');
@@ -70,9 +70,7 @@ function test_connecte(){
         header('Access-Control-Allow-Origin: *');
         // code de réponse HTTP
         header('HTTP/1.1 201 Created');
-        echo "<pre>";
-        var_dump($decoded);
-        echo "</pre>";
+        echo "You are connected as ".$decoded->mail.".";
         exit;
     }
     // Échec du test de connexion avec le token.
