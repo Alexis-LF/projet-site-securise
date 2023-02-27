@@ -16,6 +16,9 @@ function requetesGet(){
     case "/docteurs":
         return docteurs();
         break;
+    case "/documents":
+        return documents();
+        break;
     default:
        return "false";
     }
@@ -91,4 +94,26 @@ function recherche()
     $requete .= $recherche.";";
     return $requete;
 }
+
+// envoi des documents selon un utilisateur
+function documents()
+{
+    if (isset($_GET["mail"])){
+        $phraseRequete  = "SELECT d.nom_doc, d.type, d.chemin, d.depot_patient AS \"date_depot\", ";
+        $phraseRequete .= "d.signature_docteur, CONCAT(m.prenom,' ',m.nom) AS 'prenom_nom', ";
+        $phraseRequete .= "d.mail_docteurs, m.telephone, m.nom_site, ";
+        $phraseRequete .= "s.adresse, c.zip_code, c.name AS 'ville' ";
+        $phraseRequete .= "FROM documents d ";
+        $phraseRequete .= "JOIN docteurs m ON d.mail_docteurs = m.mail ";
+        $phraseRequete .= "JOIN site s ON m.nom_site = s.nom ";
+        $phraseRequete .= "JOIN cities c ON s.id = c.id ";
+        $phraseRequete .= "WHERE d.mail = \"".$_GET["mail"]."\";";
+        return $phraseRequete;
+    }
+    return "false";
+}
+
+
+
+
 ?>
