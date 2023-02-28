@@ -22,8 +22,13 @@
 #### Réponse :
 ##### Succès
 - Code HTTP : `201`
-##### Échec
+##### Compte déjà existant
 - Code HTTP : `401`
+##### Échec
+- Code HTTP : `400`
+
+  *Un échec peut survenir si les informations du formulaire d'inscription n'ont pas bien été rentés au format attendu*
+
 # Version 0.05
 ## Liste des endpoints GET :
 ### Récupérer la liste de documents
