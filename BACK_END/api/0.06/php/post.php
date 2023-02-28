@@ -12,6 +12,9 @@ function requetesPost(){
     case "/valider_connexion":
         return valider_connexion();
         break;
+        case "/inscription":
+            return inscription();
+            break;
     default:
        return "false";
     }
@@ -85,5 +88,83 @@ function valider_connexion(){
     exit;
 }
 
+/*
+
+Note : pour supprimer un utilisateur il faut faire
+DELETE FROM personne WHERE mail="samagace@gmail.com";
+DELETE FROM patients WHERE mail="samagace@gmail.com";
+
+*/
+
+// Inscription d'un nouveau patient
+function inscription()
+{
+    // 1. on vérife que tous les paramètres sont présents
+    $valRequises = array("nom","prenom","dateNaissance","email","motDePasse","numeroPortable");
+    $paramPresents = 0;
+    foreach ($valRequises as $val) {
+        if (isset($_POST[$val])){
+            $paramPresents++;
+        }
+    }
+    if ($paramPresents != count($valRequises)){
+        // mauvais paramètres passés
+        return "false";
+    }
+    
+    $bdd = connexionBDD();
+
+    // 2. On vérifie que le patient ne possède pas un compte
+    $requetePresence = "SELECT mail FROM patients WHERE mail='".$_POST["email"]."';";
+
+    $reponse = requeteBDD($bdd , $requetePresence);
+    if ($reponse){
+        // Échec de la connexion.
+        header('HTTP/1.1 401 Unauthorized');
+        echo "This account already exists";
+        exit;
+    }
+    
+
+    // 3. On enregistre l'identifiant & mdp du patient
+    $requeteAuth  = "INSERT INTO patients(mail,mot_de_passe) VALUES ";
+    $requeteAuth .= "('".$_POST["email"]."','".$_POST["motDePasse"]."');";
+
+    $reponse = requeteBDD($bdd , $requeteAuth);
+    if ($reponse){
+        // Échec de l'inscription
+        return "false";
+    }
+    
+// TODO : ajouter la ville
+    
+    // 4. On enregistre les coordonnées et infos personnelles du patient
+    $requeteCoordonnees  = "INSERT INTO personne(mail,nom,prenom,telephone, ";
+    $requeteCoordonnees  .= "date_naissance,id) VALUES ('";
+    $requeteCoordonnees .= $_POST["email"]."','".$_POST["nom"]."','";
+    $requeteCoordonnees .= $_POST["prenom"]."',".$_POST["numeroPortable"].", '";
+    $requeteCoordonnees .= $_POST["dateNaissance"]."',16658);";
+
+    $reponse = requeteBDD($bdd , $requeteCoordonnees);
+
+    if ($reponse){
+        // Échec de l'ajout des coordonées dans la bdd, on annule l'inscription
+        requeteBDD(
+            $bdd ,
+            "DELETE FROM patients WHERE mail='".$_POST["email"]."';"
+        );
+        return "false";
+    }
+    else{
+        header('Content-Type: application/json; charset=utf-8');
+        header('Cache-control: no-store, no-cache, must-revalidate');
+        header('Pragma: no-cache');
+        header('Access-Control-Allow-Origin: *');
+        // code de réponse HTTP
+        header('HTTP/1.1 201 Created');
+        exit;
+    }
+    return "false";
+}
 
 ?>
