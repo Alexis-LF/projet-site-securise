@@ -1,3 +1,4 @@
+
 function ajaxRequest(type, url, callback, data = null)
 {
   let xhr;
@@ -6,6 +7,9 @@ function ajaxRequest(type, url, callback, data = null)
   xhr = new XMLHttpRequest();
   if (type == 'GET' && data != null)
     url += '?' + data;
+
+  
+
   xhr.open(type, url);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
