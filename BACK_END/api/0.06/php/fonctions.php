@@ -12,4 +12,3 @@ function debug(){
     echo "</pre>";
     exit;
 }
-?>

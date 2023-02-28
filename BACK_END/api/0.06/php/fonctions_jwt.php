@@ -28,6 +28,3 @@ function decodeJWT($jwt){
     }
     return $decoded;
 }
-
-
-?>

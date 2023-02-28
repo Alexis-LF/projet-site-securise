@@ -9,4 +9,3 @@ $dotenv->load();
 
 define("LIMITE_RESULTATS", 4500);
 define("RECHERCHE_VILLE_MINI", 3);
-?>

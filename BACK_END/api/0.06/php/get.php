@@ -146,5 +146,3 @@ function factures()
     }
     return "false";
 }
-
-?>

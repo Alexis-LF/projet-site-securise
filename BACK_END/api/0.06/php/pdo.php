@@ -89,7 +89,3 @@ function reponseJSONrequeteSQL($phraseRequete){
     echo "Bad Request";
     exit;
 }
-
-?>
-
-
