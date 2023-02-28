@@ -39,10 +39,6 @@
     xhr.send(data);
     }
     
-  function cheminAccess(){
-    
-  }
-
     function afficheDocuments(liste_documents){
         let html_mere=document.getElementById("liste_docs"); //parent
         for (i = 0; i < liste_documents.length; i++) {
