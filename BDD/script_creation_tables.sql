@@ -147,7 +147,6 @@ CREATE TABLE facture(
         identifiant      Int  Auto_increment  NOT NULL ,
         prix_ttc         Float NOT NULL ,
         tva              Float ,
-        prix_sans_taxe   Float ,
         date_facturation Datetime ,
         date_paiement    Datetime ,
         mail             Varchar (255) NOT NULL ,
