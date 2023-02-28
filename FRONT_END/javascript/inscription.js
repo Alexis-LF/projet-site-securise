@@ -34,26 +34,22 @@ if(texte.value.length>2){
 }
 
 // Enregistrement des données dans des cookies
+function ajaxInscription(){
 
-function cookieEnregistrement() {
-var nom = document.getElementById("imput_nom_docteur").value;
-var profession = document.getElementById("imput_nom_profession").value;
-var ville = document.getElementById("texte_ville").value;
-
-
-// Stockage des valeurs dans des cookies
-setCookie("docteur", nom);
-setCookie("profession", profession);
-setCookie("ville", ville);
-
-
-// Affichage des données récupérées dans la console
-console.log("Nom : " + nom);
-console.log("Profession : " + profession);
-console.log("Ville : " + ville);
 
 }
+function enregistrement() {
+var nom = document.getElementById("imput_nom").value;
+var prenom = document.getElementById("imput_prenom").value;
+var ville = document.getElementById("texte_ville").value;
+var date_naissance = document.getElementById("date_naissance").value;
+var mail = document.getElementById("mail").value;
+var mdp = document.getElementById("mdp").value; 
+var telephone = document.getElementById("telephone").value;
+// ajaxRequest('POST', 'http://api.projetm1.fr/0.06/index.php/inscription', )
+}
 
+document.getElementById("bouton_inscription").addEventListener("click", enregistrement);
 let texte = document.getElementById("texte_ville");
 var villesAjoutees=[];
 // Ajouter un événement de saisie au champ de recherche

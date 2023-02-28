@@ -145,5 +145,5 @@ if(getCookie("jwt")!=""){
     
 }
 else{
-    // alert("Erreur");
+    alert("Erreur");
 }

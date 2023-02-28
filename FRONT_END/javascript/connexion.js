@@ -35,9 +35,10 @@ xhr.onload = () =>
             callback(JSON.parse(xhr.responseText));
             break;
         case 401: 
-            alert("Mauvais identifiant mdp");
+            alert("Mauvais identifiant ou mdp");
             break;
         default:
+            alert("Erreur, veuillez vous reconnecter")
             httpErrors(xhr.status);
     }
 }
@@ -87,7 +88,7 @@ function connexion_appuyee(){
   let prenom = document.createElement("p"); // enfant
   prenom.appendChild(document.createTextNode('Vous êtes connecté en tant que : '+ identifiant));
 
-  ajaxConnexion('POST', 'http://api.projetm1.fr/0.04/index.php/connexion', identifiant.value, mdp.value, connexion_reussie);
+  ajaxConnexion('POST', 'http://api.projetm1.fr/0.06/index.php/connexion', identifiant.value, mdp.value, connexion_reussie);
   
   }
   function ajaxReponse(type, url, jwt){
