@@ -19,7 +19,10 @@ function requetesGet(){
     case "/documents":
         return documents();
         break;
-    default:
+    case "/factures":
+        return factures();
+        break;
+        default:
        return "false";
     }
 }
@@ -112,6 +115,34 @@ function documents()
     }
     return "false";
 }
+
+
+// envoi des (ou d'1) facture(s) selon un utilisateur
+function factures()
+{
+    if (isset($_GET["mail"])){
+
+        $phraseRequete  = "SELECT f.identifiant, f.prix_ttc, f.tva, f.date_facturation, ";
+        $phraseRequete .= "f.date_paiement, f.mode_de_paiement, f.mail_docteurs, ";
+        $phraseRequete .= "CONCAT(d.prenom,' ',d.nom) AS 'prenom_nom', d.telephone, ";
+        $phraseRequete .= "f.nom AS 'nom_site', s.adresse, c.zip_code, c.name AS 'ville' ";
+        $phraseRequete .= "FROM facture f ";
+        $phraseRequete .= "JOIN docteurs d ON f.mail_docteurs = d.mail ";
+        $phraseRequete .= "JOIN site s ON f.nom = s.nom ";
+        $phraseRequete .= "JOIN cities c ON s.id = c.id ";
+        $phraseRequete .= "WHERE f.mail = '".$_GET["mail"]."' ";
+        // Sélecyion 
+        if(isset($_GET["id"])){
+            $phraseRequete .= "AND f.identifiant = '".$_GET["id"]."' ";
+        }
+        $phraseRequete .= ";";
+
+        return $phraseRequete;
+    }
+    return "false";
+}
+
+
 
 
 

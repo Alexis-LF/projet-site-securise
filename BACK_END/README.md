@@ -1,6 +1,6 @@
 # Back end (API)
 > Toutes les requêtes des précédentes versions sont valables pour la version coutante, sauf si elle a été redéfinie dans une version postérieure.
-# Version 0.05
+# Version 0.05 → Courante
 ## Liste des endpoints GET :
 ### Récupérer la liste de documents
 > ( site non-sécurisé) Le Front-end vérifie au préalable si l'utilisateur est connecté avant d'éffectuer la requête
@@ -21,6 +21,33 @@
   - `signature_docteur` '*(peut être nul)* : Date de signature du docteur
   - `prenom_nom` : Prénom et nom du docteur
   - `mail_docteurs` : adresse e-mail du docteur *(pourquoi pas mettre en lien hypertexte mailto:mail@docteur.com)*
+  - `telephone` : téléphone du docteur
+  - `nom_site` : nom du lieu de profession
+  - `adresse` : rue du site
+  - `zip_code` : code postal
+  - `ville` : nom de la ville
+
+### Récupérer une ou plusieurs facutures
+> ( site non-sécurisé) Le Front-end vérifie au préalable si l'utilisateur est connecté avant d'éffectuer la requête
+#### type de requête : 
+**GET**
+#### URI : 
+```
+/index.php/factures?mail=MAIL&id=IDENTIFIANT
+```
+#### Paramètres :
+- `mail` :  e-mail de l'utilisateur
+- `id`  **optionnel** :  identifiant de la facture *(récupérée au préalable en réponse de la liste de toute les factures)*. Si renseignée, le tableau en réponse contiendra uniquement la facture désirée.
+#### Réponse :
+- Tableau :
+  - `identifiant` : Numéro unique du document interne à la base de données, sert à le sélectionner ensuite pour visualiser 1 facture
+  - `prix_ttc` : Prix toutes taxes comprises
+  - `tva` *(peut être nul)* : Montant de la TVA incluse dans le prix TTC
+  - `date_facturation` '*(peut être nul)* : Date à laquelle le patient a été facturé
+  - `date_paiement` '*(peut être nul)* : Date de paiement du patient
+  - `mode_de_paiement` : Moyen de paiement utilisé
+  - `mail_docteurs` : adresse e-mail du docteur *(pourquoi pas mettre en lien hypertexte mailto:mail@docteur.com)*
+  - `prenom_nom` : Prénom et nom du docteur
   - `telephone` : téléphone du docteur
   - `nom_site` : nom du lieu de profession
   - `adresse` : rue du site
