@@ -39,7 +39,9 @@
     xhr.send(data);
     }
     
-
+  function cheminAccess(){
+    
+  }
 
     function afficheDocuments(liste_documents){
         let html_mere=document.getElementById("liste_docs"); //parent
@@ -54,10 +56,15 @@
         let nom_doc = document.createElement("p"); // enfant
         nom_doc.appendChild(document.createTextNode('Nom du document : '+ documents["nom_doc"]));
         download.appendChild(document.createTextNode('Télécharger ce document'));
-        div.appendChild(download);
         download.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
+        div.appendChild(download);
         div.appendChild(nom_doc);
-        div.appendChild(nom_doc);
+        
+        
+      // Ajouter le div au DOM
+      document.body.appendChild(div);
+        
+        
         
     
         let type = document.createElement("p"); // enfant
@@ -65,6 +72,8 @@
         div.appendChild(type);
         div.appendChild(type);
         console.log(documents["type"]);
+
+        document.body.appendChild(div);
     
         let chemin = document.createElement("p"); // enfant
         chemin.appendChild(document.createTextNode('Chemin : '+ documents["chemin"]));
@@ -106,6 +115,11 @@
         ville.appendChild(document.createTextNode('Ville : '+ documents["ville"]));
         div.appendChild(ville);
         div.appendChild(ville);
+
+        download.onclick = function cheminAccess() {
+          window.location.href = documents["chemin"];
+      }
+      
 
         div.setAttribute("class", "w3-button w3-block encadrement w3-left-align");
         
