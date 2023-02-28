@@ -17,6 +17,7 @@
 - `email` : ce sera l'identifiant de l'utilisateur
 - `motDePasse` : **/!\ Site non sécurisé : transit et stockage en clair**
 - `numeroPortable` : au format *0000000000*
+- `ville` *(optionnel)* : nom exact de la ville (comme proposé dans la liste déroulante sur le front end)
 
 #### Réponse :
 ##### Succès
