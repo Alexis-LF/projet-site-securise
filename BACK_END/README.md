@@ -1,6 +1,29 @@
 # Back end (API)
 > Toutes les requêtes des précédentes versions sont valables pour la version coutante, sauf si elle a été redéfinie dans une version postérieure.
-# Version 0.05 → Courante
+# Version 0.06 → Courante
+## Liste des endpoints d'authentification :
+### S'inscrire
+#### type de requête : 
+**POST**
+#### URI : 
+```
+/index.php/inscription
+```
+#### Payload :
+
+- `nom`
+- `prenom`
+- `dateNaissance` : au format *AAAA-MM-JJ*
+- `email` : ce sera l'identifiant de l'utilisateur
+- `motDePasse` : **/!\ Site non sécurisé : transit et stockage en clair**
+- `numeroPortable` : au format *0000000000*
+
+#### Réponse :
+##### Succès
+- Code HTTP : `201`
+##### Échec
+- Code HTTP : `401`
+# Version 0.05
 ## Liste des endpoints GET :
 ### Récupérer la liste de documents
 > ( site non-sécurisé) Le Front-end vérifie au préalable si l'utilisateur est connecté avant d'éffectuer la requête
@@ -65,7 +88,7 @@
 ```
 #### Payload :
 - `mail` : e-mail de l'utilisateur
-- `password` : mot de passe de l'utilisateur
+- `password` : **/!\ Site non sécurisé : transit et stockage en clair**, mot de passe de l'utilisateur 
 #### Réponse :
 ##### Succès
 - Code HTTP : `201`
