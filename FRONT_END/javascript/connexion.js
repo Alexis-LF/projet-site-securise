@@ -57,17 +57,28 @@ function connexion_reussie(reponse){
   alert("La connexion est réussie !")
   let div = document.getElementById("champs_de_connexion");
   div.setAttribute("style", "display:none");
-  
   }
 
   
 function est_connecte(){
-  if (getCookie("jwt")){
+    
+  
+  if (getCookie("jwt")!=""){
       
-    let div = document.getElementById("champs_de_connexion");
-    div.setAttribute("style", "display:none");
-      
+    let displayoff = document.getElementById("champs_de_connexion");
+    displayoff.setAttribute("style", "display:none");
+    let div = document.getElementById("formulaire");
+    div.setAttribute("style", "display:inherit"); 
   }
+  else{
+    let display = document.getElementById("champs_de_connexion");
+    display.setAttribute("style", "display:inherit");
+    let displayon = document.getElementById("formulaire");
+    displayon.setAttribute("style", "display:none");
+  }
+    
+  
+    
 }
 
 function connexion_appuyee(){
@@ -160,6 +171,6 @@ function connexion_appuyee(){
     }
 
 document.getElementById("cookieDeConnexion").addEventListener("click", connexion_appuyee);
-
+est_connecte();
 
 
