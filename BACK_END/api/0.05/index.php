@@ -13,9 +13,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
         requetesPost();
         break;
     default:
-        header('HTTP/1.1 400 Bad Request');
-        echo "Bad Request";
-        exit;
+        //  ça fera le bad request ci-dessous
+        break;
 }
+header('HTTP/1.1 400 Bad Request');
+echo "Bad Request";
+exit;
 ?>
 
