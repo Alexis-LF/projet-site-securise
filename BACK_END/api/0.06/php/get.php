@@ -122,7 +122,6 @@ function documents()
     return "false";
 }
 
-
 // envoi des (ou d'1) facture(s) selon un utilisateur
 function factures()
 {
@@ -147,10 +146,5 @@ function factures()
     }
     return "false";
 }
-
-
-
-
-
 
 ?>

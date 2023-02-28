@@ -63,6 +63,7 @@ function connexion()
     }
     // Échec de la connexion.
     header('HTTP/1.1 401 Unauthorized');
+    header('Access-Control-Allow-Origin: *');
     echo "Connexion failed, please check your id and pwd";
     exit;
 }
@@ -84,6 +85,7 @@ function valider_connexion(){
     }
     // Échec du test de connexion avec le token.
     header('HTTP/1.1 401 Unauthorized');
+    header('Access-Control-Allow-Origin: *');
     echo "Bad token, please sign in again";
     exit;
 }
@@ -121,6 +123,7 @@ function inscription()
     if ($reponse){
         // Échec de la connexion.
         header('HTTP/1.1 401 Unauthorized');
+        header('Access-Control-Allow-Origin: *');
         echo "This account already exists";
         exit;
     }

@@ -46,11 +46,12 @@ function requeteBDD($bdd , $phraseRequete){
   return $reponse;   
 }
 
-// Fonction qui 
+// Envoie un JSON tel une API avec une requête SQL en paramètre
 function reponseJSONrequeteSQL($phraseRequete){
     // Message d'erreur si mauvaise requête écrite
     if($phraseRequete == "false"){
     header('HTTP/1.1 400 Bad Request');
+    header('Access-Control-Allow-Origin: *');
     echo "Bad Request";
     exit;
     }
@@ -84,6 +85,7 @@ function reponseJSONrequeteSQL($phraseRequete){
     }
     // Mauvaise requête envoyée.
     header('HTTP/1.1 400 Bad Request');
+    header('Access-Control-Allow-Origin: *');
     echo "Bad Request";
     exit;
 }

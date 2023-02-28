@@ -17,6 +17,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
 }
 header('HTTP/1.1 400 Bad Request');
+header('Access-Control-Allow-Origin: *');
 echo "Bad Request";
 exit;
 ?>
