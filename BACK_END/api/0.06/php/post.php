@@ -101,13 +101,13 @@ function inscription()
 {
     // 1. on vérife que tous les paramètres sont présents
     $valRequises = array("nom","prenom","dateNaissance","email","motDePasse","numeroPortable");
-    $paramPresents = 0;
+    $paramAbsents = 0;
     foreach ($valRequises as $val) {
-        if (isset($_POST[$val])){
-            $paramPresents++;
+        if (!isset($_POST[$val])){
+            $paramAbsents++;
         }
     }
-    if ($paramPresents != count($valRequises)){
+    if ($paramAbsents){
         // mauvais paramètres passés
         return "false";
     }
@@ -136,14 +136,25 @@ function inscription()
         return "false";
     }
     
-// TODO : ajouter la ville
     
     // 4. On enregistre les coordonnées et infos personnelles du patient
     $requeteCoordonnees  = "INSERT INTO personne(mail,nom,prenom,telephone, ";
     $requeteCoordonnees  .= "date_naissance,id) VALUES ('";
     $requeteCoordonnees .= $_POST["email"]."','".$_POST["nom"]."','";
     $requeteCoordonnees .= $_POST["prenom"]."',".$_POST["numeroPortable"].", '";
-    $requeteCoordonnees .= $_POST["dateNaissance"]."',16658);";
+    $requeteCoordonnees .= $_POST["dateNaissance"]."', ";
+    // On met une ville par défaut si elle n'est pas renseignée
+    if (!isset($_POST["ville"])){
+        $_POST["ville"] = "Brest";
+    }
+    $idVille = requeteBDD($bdd , villeID($_POST["ville"]));
+    try{
+        $idVille = (int) $idVille[0]["id"];
+    }
+    catch (Exception $e) {
+        return "false";
+    }
+    $requeteCoordonnees .= $idVille."); ";
 
     $reponse = requeteBDD($bdd , $requeteCoordonnees);
 
