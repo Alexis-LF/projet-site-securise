@@ -16,7 +16,13 @@ function requetesGet(){
     case "/docteurs":
         return docteurs();
         break;
-    default:
+    case "/documents":
+        return documents();
+        break;
+    case "/factures":
+        return factures();
+        break;
+        default:
        return "false";
     }
 }
@@ -91,4 +97,54 @@ function recherche()
     $requete .= $recherche.";";
     return $requete;
 }
+
+// envoi des documents selon un utilisateur
+function documents()
+{
+    if (isset($_GET["mail"])){
+        $phraseRequete  = "SELECT d.nom_doc, d.type, d.chemin, d.depot_patient AS \"date_depot\", ";
+        $phraseRequete .= "d.signature_docteur, CONCAT(m.prenom,' ',m.nom) AS 'prenom_nom', ";
+        $phraseRequete .= "d.mail_docteurs, m.telephone, m.nom_site, ";
+        $phraseRequete .= "s.adresse, c.zip_code, c.name AS 'ville' ";
+        $phraseRequete .= "FROM documents d ";
+        $phraseRequete .= "JOIN docteurs m ON d.mail_docteurs = m.mail ";
+        $phraseRequete .= "JOIN site s ON m.nom_site = s.nom ";
+        $phraseRequete .= "JOIN cities c ON s.id = c.id ";
+        $phraseRequete .= "WHERE d.mail = \"".$_GET["mail"]."\";";
+        return $phraseRequete;
+    }
+    return "false";
+}
+
+
+// envoi des (ou d'1) facture(s) selon un utilisateur
+function factures()
+{
+    if (isset($_GET["mail"])){
+
+        $phraseRequete  = "SELECT f.identifiant, f.prix_ttc, f.tva, f.date_facturation, ";
+        $phraseRequete .= "f.date_paiement, f.mode_de_paiement, f.mail_docteurs, ";
+        $phraseRequete .= "CONCAT(d.prenom,' ',d.nom) AS 'prenom_nom', d.telephone, ";
+        $phraseRequete .= "f.nom AS 'nom_site', s.adresse, c.zip_code, c.name AS 'ville' ";
+        $phraseRequete .= "FROM facture f ";
+        $phraseRequete .= "JOIN docteurs d ON f.mail_docteurs = d.mail ";
+        $phraseRequete .= "JOIN site s ON f.nom = s.nom ";
+        $phraseRequete .= "JOIN cities c ON s.id = c.id ";
+        $phraseRequete .= "WHERE f.mail = '".$_GET["mail"]."' ";
+        // Sélecyion 
+        if(isset($_GET["id"])){
+            $phraseRequete .= "AND f.identifiant = '".$_GET["id"]."' ";
+        }
+        $phraseRequete .= ";";
+
+        return $phraseRequete;
+    }
+    return "false";
+}
+
+
+
+
+
+
 ?>
