@@ -41,7 +41,6 @@ function cookieEnregistrement() {
   var profession = document.getElementById("imput_nom_profession").value;
   var ville = document.getElementById("texte_ville").value;
   
-
   // Stockage des valeurs dans des cookies
   setCookie("docteur", nom);
   setCookie("profession", profession);
@@ -54,14 +53,13 @@ function cookieEnregistrement() {
   console.log("Ville : " + ville);
   
 }
-
 document.getElementById("bouton_recherche").addEventListener("click", cookieEnregistrement);
 ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/professions', lister_professions);
 ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/docteurs', lister_docteurs);
 let texte = document.getElementById("texte_ville");
 var villesAjoutees=[];
 // Ajouter un événement de saisie au champ de recherche
-texte.addEventListener("input", villeTapee);
+texte.addEventListener("imput", villeTapee);
 
 
 

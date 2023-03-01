@@ -152,7 +152,8 @@ function afficheFactures(liste_factures){
   function verificationConnexionReussie(mail, identifiant){
     setCookie("mail", mail);
     setCookie("identifiant", identifiant);
-    ajaxRequest('GET', URL_FACTURE_FINAL, afficheFactures);
+    ajaxRequest('GET', URL_FACTURE_FINAL.replace("MAIL", mail["mail"]), afficheFactures);
+    
   }
   
   if(getCookie("jwt")!=""){

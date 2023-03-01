@@ -83,7 +83,7 @@ function recherche(){
 
     let rdv_button = document.createElement("button"); // enfant
     rdv_button.appendChild(document.createTextNode('Prendre rendez-vous'));
-    div.setAttribute("class", "w3-button w3-block encadrement w3-left-align");
+    div.setAttribute("class", "w3-block encadrement w3-left-align");
     div.appendChild(rdv_button);
     div.appendChild(rdv_button);
     rdv_button.addEventListener('click', function() {window.location.href = 'pageDeConfirmation.html'; });

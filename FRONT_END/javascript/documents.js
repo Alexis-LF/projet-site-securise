@@ -54,10 +54,8 @@
         nom_doc.appendChild(document.createTextNode('Nom du document : '+ documents["nom_doc"]));
         download.appendChild(document.createTextNode('Télécharger ce document'));
         download.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
-        impression.appendChild(document.createTextNode('Imprimer ce document'));
-        impression.setAttribute("class", "w3-button w3-block w3-cyan w3-left-align");
+        
         div.appendChild(download);
-        div.appendChild(impression);
         div.appendChild(nom_doc);
         
         
@@ -120,9 +118,7 @@
           window.location.href = documents["chemin"];
         }
 
-        impression.onclick = function imprimer_page(){
-          window.print();
-        }
+       
       
 
         div.setAttribute("class", "w3-block encadrement w3-left-align");
@@ -138,7 +134,7 @@
 
 function verificationConnexionReussie(mail){
   setCookie("mail", mail);
-  ajaxRequest('GET', URL_DOCUMENT_FINAL, afficheDocuments);
+  ajaxRequest('GET', URL_DOCUMENT_FINAL.replace("MAIL", mail["mail"]), afficheDocuments);
 }
 
 if(getCookie("jwt")!=""){
