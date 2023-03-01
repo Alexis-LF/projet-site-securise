@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Site web sécurisé</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/w3c.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../javascript/gestionMotDePasse.js"></script>
+
+</head>
+<body class="w3-content w3-border-left w3-border-right">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-light-grey w3-collapse w3-top margin1000_index" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
+    <h3>Inscription</h3>
+    
+    <h6>Veuillez saisir vos informations personnelles</h6>
+    <hr>
+    
+    <p><label><i class=""></i> Nom :</label></p>
+    <input class="w3-input w3-border" type="text" placeholder="nom" name="nom" required>
+  
+    <p><label><i class=""></i> Prénom :</label></p>
+    <input class="w3-input w3-border" type="text" placeholder="prénom" name="prenom" required>
+  
+    <p><label><i class=""></i> Date de naissance :</label></p>
+    <input class="w3-input w3-border" type="date" placeholder="date de naissance" name="dateNaissance" required>
+  
+    <p><label><i class=""></i> Saisissez votre email :</label></p>
+    <input class="w3-input w3-border" type="text" placeholder="email" name="email" required>
+  
+    <p><label id="motDePasse"><i class="fa fa-key"></i> Mot de passe :</label></p>
+    <input class="w3-input w3-border" type="password" placeholder="mot de passe" name="motDePasse" required>
+  
+    <p><label><i class="fa fa-key"></i> Confirmation du mot de passe :</label></p>
+    <input class="w3-input w3-border" type="text" placeholder="confirmation du mot de passe" name="confirmationMotDePasse" required>
+
+    <p><label><i class="fa fa-phone"></i> Numéro de portable :</label></p>
+   <input class="w3-input w3-border" type="text" placeholder="numéro" name="numeroPortable" required>
+    
+      <button class="w3-button w3-block w3-green w3-left-align" onclick="validerFormulaire()">Valider</button>
+  </hr>
+   
+  </div>
+
+</body>
+</html>

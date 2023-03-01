@@ -1,9 +1,14 @@
-function setCookie(name, value, expirationDays) { // Permet de créer un nouveau cookie de connexion
+function setCookie(name, value) { // Permet de créer un nouveau cookie de connexion
+  
+  let expirationDays=1;
     const date = new Date();
     date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000)); // Définit la date du jour et la durée de validité de connexion
     const expires = "expires=" + date.toUTCString(); // Permet de formater la date 
+
     document.cookie = name + "=" + value + ";" + expires + ";path=/"; // Définit le cookie le nom, la valeur du cookie, la date d'expiration et le chemin de validité (ici la racine de la page web)
   }
+
+
   
   function getCookie(name) {
     const decodedCookie = decodeURIComponent(document.cookie); // permet de parcourir la chaîne de caractères des cookies pour trouver le cookie correspondant au nom spécifié
@@ -19,13 +24,10 @@ function setCookie(name, value, expirationDays) { // Permet de créer un nouveau
   }
   
   function checkCookie() { // Regarde si le cookie de connexion est présent
-    const user = getCookie("username"); // Récupère le cookie de connexion correspondant à l'utilisateur "username"
+    let user = getCookie("username"); // Récupère le cookie de connexion correspondant à l'utilisateur "username"
     if (user !== "") { // Si le cookie est présent,
       // L'utilisateur est connecté
     } else { // Sinon il ne l'est pas et il y a 
       // Redirection vers la page de connexion
     }
   }
-  
-  // Exemple d'utilisation pour définir un cookie de connexion d'une durée de 7 jours
-  setCookie("username", "JohnDoe", 7);

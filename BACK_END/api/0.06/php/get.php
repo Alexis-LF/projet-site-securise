@@ -36,6 +36,12 @@ function villes()
     return "false";
 }
 
+// Renvoi de l'ID de la ville
+function villeID($ville)
+{
+    return "SELECT id FROM cities WHERE name LIKE \"".$ville."\" ;";
+}
+
 // envoi de la liste des professions médicales
 function professions()
 {
@@ -116,7 +122,6 @@ function documents()
     return "false";
 }
 
-
 // envoi des (ou d'1) facture(s) selon un utilisateur
 function factures()
 {
@@ -141,10 +146,3 @@ function factures()
     }
     return "false";
 }
-
-
-
-
-
-
-?>
