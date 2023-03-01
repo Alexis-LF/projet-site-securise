@@ -24,15 +24,16 @@ function lister_villes(liste_des_villes){
 }
 }
 function villeTapee(){
-    let texte = document.getElementById("texte_ville");
-    if(texte.value.length>2){
-        
-        ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/villes?name='+ texte.value, lister_villes);
-        
-        
-      }
+  let texte = document.getElementById("texte_ville");
+  console.log(texte);
+  if(texte.value.length>2){
+      
+      ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/villes?name='+ texte.value, lister_villes);
+      
       
     }
+    
+  }
 
     // Enregistrement des données dans des cookies
 
@@ -59,7 +60,7 @@ ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/docteurs', lister_doct
 let texte = document.getElementById("texte_ville");
 var villesAjoutees=[];
 // Ajouter un événement de saisie au champ de recherche
-texte.addEventListener("imput", villeTapee);
+texte.addEventListener("input", villeTapee);
 
 
 
