@@ -52,12 +52,12 @@
     <input id="mdp" class="w3-input w3-border" type="password" placeholder="mot de passe" name="motDePasse" required>
   
     <p><label><i class="fa fa-key"></i> Confirmation du mot de passe :</label></p>
-    <input class="w3-input w3-border" type="text" placeholder="confirmation du mot de passe" name="confirmationMotDePasse" required>
+    <input class="w3-input w3-border" type="password" placeholder="confirmation du mot de passe" name="confirmationMotDePasse" required>
 
     <p><label><i class="fa fa-phone"></i> Numéro de portable :</label></p>
    <input id="telephone" class="w3-input w3-border" type="text" placeholder="numéro" name="numeroPortable" required>
     
-      <button id="bouton_inscription" class="w3-button w3-block w3-green w3-left-align" onclick="validerFormulaire()">Valider</button>
+      <button id="bouton_inscription" class="w3-button w3-block w3-green w3-left-align" onclick="validerFormulaire(), requestInscription()">Valider</button>
   </hr>
    
   </div>

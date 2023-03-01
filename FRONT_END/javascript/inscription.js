@@ -24,6 +24,7 @@ for (let i = 0; i < liste_des_villes.length; i++) {
 }
 function villeTapee(){
 let texte = document.getElementById("texte_ville");
+console.log(texte);
 if(texte.value.length>2){
     
     ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/villes?name='+ texte.value, lister_villes);
@@ -33,23 +34,66 @@ if(texte.value.length>2){
   
 }
 
-// Enregistrement des données dans des cookies
-function ajaxInscription(){
 
-
-}
-function enregistrement() {
+function requestInscription(){
 var nom = document.getElementById("imput_nom").value;
 var prenom = document.getElementById("imput_prenom").value;
 var ville = document.getElementById("texte_ville").value;
 var date_naissance = document.getElementById("date_naissance").value;
-var mail = document.getElementById("mail").value;
+var email = document.getElementById("mail").value;
 var mdp = document.getElementById("mdp").value; 
 var telephone = document.getElementById("telephone").value;
-// ajaxRequest('POST', 'http://api.projetm1.fr/0.06/index.php/inscription', )
+
+var data=new FormData();
+data.append("nom", nom);
+data.append("prenom", prenom);
+data.append("ville", ville);
+data.append("dateNaissance", date_naissance);
+data.append("email", email);
+data.append("motDePasse", mdp);
+data.append("numeroPortable", telephone);
+
+var xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+
+    xhr.addEventListener("readystatechange", function() {
+    if(this.readyState === 4) {
+        console.log(this.responseText);
+    }
+    });
+
+    xhr.open("POST", "http://api.projetm1.fr/0.06/index.php/inscription");
+
+    xhr.onload = () =>
+{
+    switch(xhr.status)
+    {
+        case 201:
+            console.log(xhr.responseText);
+            // callback(JSON.parse(xhr.responseText));
+            break;
+        case 401: 
+            alert("Mauvais identifiant ou mdp");
+            break;
+        default:
+            alert("Erreur, veuillez vous reconnecter")
+            httpErrors(xhr.status);
+    }
 }
 
-document.getElementById("bouton_inscription").addEventListener("click", enregistrement);
+    xhr.send(data);
+
+
+// ajaxRequest('POST', 'http://api.projetm1.fr/0.06/index.php/inscription', function() {
+//   console.log("Les données ont été envoyées avec succès !");
+//   alert("Les données ont été envoyées avec succès !")
+// }, data);
+
+}
+
+
+
+// document.getElementById("bouton_inscription").addEventListener("click", enregistrement);
 let texte = document.getElementById("texte_ville");
 var villesAjoutees=[];
 // Ajouter un événement de saisie au champ de recherche

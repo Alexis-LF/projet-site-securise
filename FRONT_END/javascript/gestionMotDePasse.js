@@ -7,6 +7,7 @@ function validerFormulaire() {
     const confirmationMotDePasse = document.getElementsByName("confirmationMotDePasse")[0].value;
     const numeroPortable = document.getElementsByName("numeroPortable")[0].value;
 
+    
     // Vérifier que tous les champs sont remplis
     if (!nom || !prenom || !dateNaissance || !email || !motDePasse || !confirmationMotDePasse || !numeroPortable) {
       alert("Veuillez remplir tous les champs du formulaire.");
