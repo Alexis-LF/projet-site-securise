@@ -38,7 +38,8 @@
     
     xhr.send(data);
     }
-    
+
+
     function afficheDocuments(liste_documents){
         let html_mere=document.getElementById("liste_docs"); //parent
         for (i = 0; i < liste_documents.length; i++) {
@@ -53,13 +54,16 @@
         nom_doc.appendChild(document.createTextNode('Nom du document : '+ documents["nom_doc"]));
         download.appendChild(document.createTextNode('Télécharger ce document'));
         download.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
+        impression.appendChild(document.createTextNode('Imprimer ce document'));
+        impression.setAttribute("class", "w3-button w3-block w3-cyan w3-left-align");
         div.appendChild(download);
+        div.appendChild(impression);
         div.appendChild(nom_doc);
         
         
       // Ajouter le div au DOM
       document.body.appendChild(div);
-        
+      
         
         
     
@@ -114,10 +118,14 @@
 
         download.onclick = function cheminAccess() {
           window.location.href = documents["chemin"];
-      }
+        }
+
+        impression.onclick = function imprimer_page(){
+          window.print();
+        }
       
 
-        div.setAttribute("class", "w3-button w3-block encadrement w3-left-align");
+        div.setAttribute("class", "w3-block encadrement w3-left-align");
         
         console.log(documents);
     
@@ -128,22 +136,18 @@
       };
       }
 
-function enregistrerMail(mail){
+function verificationConnexionReussie(mail){
   setCookie("mail", mail);
+  ajaxRequest('GET', URL_DOCUMENT_FINAL, afficheDocuments);
 }
 
 if(getCookie("jwt")!=""){
     console.log(getCookie("jwt"));
-    ajaxReponse('POST', 'http://api.projetm1.fr/0.04/index.php/valider_connexion', getCookie("jwt"), enregistrerMail);
-    let mail=getCookie("mail");
-    if(mail==""){
-      alert('Veuillez vous reconnecter');
-    }
-    else{
-      ajaxRequest('GET', URL_DOCUMENT_FINAL, afficheDocuments);
-    }
+    ajaxReponse('POST', 'http://api.projetm1.fr/0.04/index.php/valider_connexion', getCookie("jwt"), verificationConnexionReussie);
+    
     
 }
 else{
-    alert("Erreur");
+    alert("Veuillez vous connecter !");
+    window.location.href = "../index.html";
 }

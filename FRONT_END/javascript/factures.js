@@ -44,14 +44,17 @@ function afficheFactures(liste_factures){
     let factures=liste_factures[i];
 
     let download=document.createElement("button");
-    
+    let impression=document.createElement("button");
     
     let div = document.createElement("div");
     let identifiant = document.createElement("p"); // enfant
     identifiant.appendChild(document.createTextNode('Identifiant : '+ factures["identifiant"]));
     download.appendChild(document.createTextNode('Télécharger ce document'));
     download.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
+    impression.appendChild(document.createTextNode('Imprimer ce document'));
+    impression.setAttribute("class", "w3-button w3-block w3-cyan w3-left-align");
     div.appendChild(download);
+    div.appendChild(impression);
     div.appendChild(identifiant);
     
     
@@ -128,10 +131,14 @@ function afficheFactures(liste_factures){
     
     download.onclick = function cheminAccess() {
       window.location.href = documents["chemin"];
-  }
+   }
+
+    impression.onclick = function imprimer_page(){
+      window.print();
+    }
   
 
-    div.setAttribute("class", "w3-button w3-block encadrement w3-left-align");
+    div.setAttribute("class", "w3-block encadrement w3-left-align");
     
     console.log(factures);
 
@@ -142,23 +149,18 @@ function afficheFactures(liste_factures){
   };
   }
 
-  function enregistrerMailIdentifiant(mail, identifiant){
+  function verificationConnexionReussie(mail, identifiant){
     setCookie("mail", mail);
     setCookie("identifiant", identifiant);
+    ajaxRequest('GET', URL_FACTURE_FINAL, afficheFactures);
   }
   
   if(getCookie("jwt")!=""){
       console.log(getCookie("jwt"));
-      ajaxReponse('POST', 'http://api.projetm1.fr/0.04/index.php/valider_connexion', getCookie("jwt"), enregistrerMailIdentifiant);
-      let mail=getCookie("mail");
-      if(mail==""){
-        alert('Veuillez vous reconnecter');
-      }
-      else{
-        ajaxRequest('GET', URL_FACTURE_FINAL, afficheFactures);
-      }
+      ajaxReponse('POST', 'http://api.projetm1.fr/0.04/index.php/valider_connexion', getCookie("jwt"), verificationConnexionReussie);
       
   }
   else{
-      alert("erreur 2");
+    alert("Veuillez vous connecter !");
+    window.location.href = "../index.html";
   }
