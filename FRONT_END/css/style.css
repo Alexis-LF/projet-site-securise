@@ -42,3 +42,8 @@ img{
     border: 1px solid black;
 }
 
+@media print {
+    .imprimer {
+      display: none;
+    }
+  }
