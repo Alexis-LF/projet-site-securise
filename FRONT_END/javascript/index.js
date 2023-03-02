@@ -1,6 +1,6 @@
 
 function lister_villes(liste_des_villes){
-        let html_mere=document.getElementById("liste_ville"); //parent
+        let html_mere=document.getElementById("liste_ville"); 
         
 
     for (let i = 0; i < liste_des_villes.length; i++) {
@@ -8,7 +8,6 @@ function lister_villes(liste_des_villes){
             console.log(villesAjoutees);
           let ville=liste_des_villes[i];
           let nomVille= ville["name"];
-          // console.log(ville);
           // Ajouter des options à la liste
           if (!villesAjoutees.includes(nomVille)){
             let option = document.createElement("option");
@@ -19,7 +18,6 @@ function lister_villes(liste_des_villes){
           
         }
     
-   
 
 }
 }
@@ -34,7 +32,6 @@ function villeTapee(){
     }
     
   }
-
     // Enregistrement des données dans des cookies
 
 function cookieEnregistrement() {

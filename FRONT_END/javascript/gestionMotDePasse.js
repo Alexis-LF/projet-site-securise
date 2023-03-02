@@ -24,9 +24,8 @@ function validerFormulaire() {
     }
 
     // Rediriger l'utilisateur vers la page index.html
-    // if (!nom || !prenom || !dateNaissance || !email || !motDePasse || !confirmationMotDePasse || !numeroPortable || !regexMotDePasse.test(motDePasse) ){
     window.location.href = "../index.html";
-    // }
+    
   }
 
   function redirectionIndex(){

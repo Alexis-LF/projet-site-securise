@@ -22,16 +22,12 @@ xhr.withCredentials = false;
 
 xhr.open(type, url);
 
-// xhr.addEventListener("readystatechange", stage);
-
-
-
 xhr.onload = () =>
 {
     switch(xhr.status)
     {
         case 201:
-          // console.log(xhr.responseText);
+          
             callback(JSON.parse(xhr.responseText));
             break;
         case 401: 
@@ -85,7 +81,7 @@ function est_connecte(){
 function connexion_appuyee(){
   let mdp = document.getElementById("imput_mdp");
   let identifiant = document.getElementById("imput_email")
-  let prenom = document.createElement("p"); // enfant
+  let prenom = document.createElement("p"); 
   prenom.appendChild(document.createTextNode('Vous êtes connecté en tant que : '+ identifiant));
 
   ajaxConnexion('POST', 'http://api.projetm1.fr/0.06/index.php/connexion', identifiant.value, mdp.value, connexion_reussie);
@@ -105,7 +101,6 @@ function connexion_appuyee(){
   
   xhr.open(type, url);
   
-  // xhr.addEventListener("readystatechange", stage);
   
   
   
@@ -114,7 +109,7 @@ function connexion_appuyee(){
       switch(xhr.status)
       {
           case 201:
-            // console.log(xhr.responseText);
+          
             console.log(JSON.parse(xhr.responseText));
             return JSON.parse(xhr.responseText);
             break;
@@ -145,8 +140,6 @@ function connexion_appuyee(){
     
     xhr.open(type, url);
     
-    // xhr.addEventListener("readystatechange", stage);
-    
     
     
     xhr.onload = () =>
@@ -154,7 +147,7 @@ function connexion_appuyee(){
         switch(xhr.status)
         {
             case 201:
-              // console.log(xhr.responseText);
+              
                 callback(JSON.parse(xhr.responseText));
                 return mail;
                 break;

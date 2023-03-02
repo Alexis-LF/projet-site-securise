@@ -1,5 +1,5 @@
 function lister_villes(liste_des_villes){
-    let html_mere=document.getElementById("liste_ville"); //parent
+    let html_mere=document.getElementById("liste_ville"); 
     
 
 for (let i = 0; i < liste_des_villes.length; i++) {
@@ -7,7 +7,6 @@ for (let i = 0; i < liste_des_villes.length; i++) {
         console.log(villesAjoutees);
       let ville=liste_des_villes[i];
       let nomVille= ville["name"];
-      // console.log(ville);
       // Ajouter des options à la liste
       if (!villesAjoutees.includes(nomVille)){
         let option = document.createElement("option");
@@ -70,7 +69,7 @@ var xhr = new XMLHttpRequest();
     {
         case 201:
             console.log(xhr.responseText);
-            // callback(JSON.parse(xhr.responseText));
+            
             break;
         case 401: 
             alert("Mauvais identifiant ou mdp");
@@ -83,17 +82,9 @@ var xhr = new XMLHttpRequest();
 
     xhr.send(data);
 
-
-// ajaxRequest('POST', 'http://api.projetm1.fr/0.06/index.php/inscription', function() {
-//   console.log("Les données ont été envoyées avec succès !");
-//   alert("Les données ont été envoyées avec succès !")
-// }, data);
-
 }
 
 
-
-// document.getElementById("bouton_inscription").addEventListener("click", enregistrement);
 let texte = document.getElementById("texte_ville");
 var villesAjoutees=[];
 // Ajouter un événement de saisie au champ de recherche

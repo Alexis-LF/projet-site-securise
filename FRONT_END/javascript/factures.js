@@ -11,15 +11,12 @@ function ajaxReponse(type, url, jwt, callback){
     
     xhr.open(type, url);
     
-    // xhr.addEventListener("readystatechange", stage);
-    
     
     xhr.onload = () =>
     {
         switch(xhr.status)
         {
             case 201:
-              // console.log(xhr.responseText);
                 callback(JSON.parse(xhr.responseText));
                 
                 
@@ -42,7 +39,7 @@ function ajaxReponse(type, url, jwt, callback){
 
     function afficheFactures(liste_factures){
 
-      let html_mere=document.getElementById("liste_facts"); //parent
+      let html_mere=document.getElementById("liste_facts"); 
       for (i = 0; i < liste_factures.length; i++) {
     
         let factures=liste_factures[i];
@@ -84,34 +81,30 @@ function ajaxReponse(type, url, jwt, callback){
         mail_docteurs.appendChild(document.createTextNode('Mail du praticien : '+ factures["mail_docteurs"]));
         div.appendChild(mail_docteurs);
     
-        let prenom_nom = document.createElement("p"); // enfant
+        let prenom_nom = document.createElement("p"); 
         prenom_nom.appendChild(document.createTextNode('Nom et prénom du patient : '+ factures["prenom_nom"]));
         div.appendChild(prenom_nom);
-        div.appendChild(prenom_nom);
+        
 
-        let telephone = document.createElement("p"); // enfant
+        let telephone = document.createElement("p"); 
         telephone.appendChild(document.createTextNode('Telephone : 0'+ factures["telephone"]));
         div.appendChild(telephone);
-        div.appendChild(telephone);
+        
 
-        let nom_site = document.createElement("p"); // enfant
+        let nom_site = document.createElement("p"); 
         nom_site.appendChild(document.createTextNode('Nom du site : '+ factures["nom_site"]));
         div.appendChild(nom_site);
-        div.appendChild(nom_site);
 
-        let adresse = document.createElement("p"); // enfant
+        let adresse = document.createElement("p"); 
         adresse.appendChild(document.createTextNode('Adresse : '+ factures["adresse"]));
         div.appendChild(adresse);
-        div.appendChild(adresse);
 
-        let zip_code = document.createElement("p"); // enfant
+        let zip_code = document.createElement("p"); 
         zip_code.appendChild(document.createTextNode('Zip code : '+ factures["zip_code"]));
         div.appendChild(zip_code);
-        div.appendChild(zip_code);
 
-        let ville = document.createElement("p"); // enfant
+        let ville = document.createElement("p"); 
         ville.appendChild(document.createTextNode('Ville : '+ factures["ville"]));
-        div.appendChild(ville);
         div.appendChild(ville);
     
         
