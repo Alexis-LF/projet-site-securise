@@ -123,16 +123,25 @@ function ajaxReponse(type, url, jwt, callback){
         // Ajouter le div au DOM
         html_mere.appendChild(div);
     
+
+        
+
         // Ajouter la fonction d'impression au bouton d'impression
         impression.onclick = function imprimer_page(){
+          download.setAttribute("class","displayOff");
+          impression.setAttribute("class","displayOff");
           let contenu_facture = div.innerHTML;
           let page_a_imprimer = '<html><head><title>Facture</title></head><body>' + contenu_facture + '</body></html>';
           let fenetre_impression = window.open('', '', 'height=500,width=500');
+          
+          location.reload();
+          
           fenetre_impression.document.write(page_a_imprimer);
           fenetre_impression.document.close();
           fenetre_impression.focus();
           fenetre_impression.print();
           fenetre_impression.close();
+          
         }
       }
     }

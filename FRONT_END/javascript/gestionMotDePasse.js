@@ -28,3 +28,9 @@ function validerFormulaire() {
     window.location.href = "../index.html";
     // }
   }
+
+  function redirectionIndex(){
+    alert('Votre message a bien été envoyé !');
+    window.location.href = "/index.html";
+  }
+  

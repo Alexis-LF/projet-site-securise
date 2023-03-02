@@ -42,8 +42,12 @@ img{
     border: 1px solid black;
 }
 
-@media print {
-    .imprimer {
+.displayOff {
       display: none;
-    }
-  }
+}
+.displayOn{
+    display:inherit;
+}
+
+
+ 

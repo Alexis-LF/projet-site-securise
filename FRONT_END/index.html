@@ -103,10 +103,10 @@
     <i class="fa fa-envelope width"> </i> Email: libdocto.service@gmail.com<br>
     <p>Vous avez encore des questions ?</p>
     <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-border" type="text" placeholder="nom" required name="Nom"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="email" required name="Email"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="message" required name="Message"></p>
-    <button type="submit" class="w3-button w3-green w3-third">Envoyer un message</button>
+      <p><input id="message_nom"class="w3-input w3-border" type="text" placeholder="nom" required name="Nom"></p>
+      <p><input id="message_email" class="w3-input w3-border" type="text" placeholder="email" required name="Email"></p>
+      <p><input id="message" class="w3-input w3-border" type="text" placeholder="message" required name="Message"></p>
+    <button type="submit" class="w3-button w3-green w3-third" onclick=redirectionIndex()>Envoyer un message</button>
     </form>
   </div>
   
