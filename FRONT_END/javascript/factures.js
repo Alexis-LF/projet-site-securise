@@ -37,27 +37,25 @@ function ajaxReponse(type, url, jwt, callback){
     xhr.send(data);
     }
 
+
+
+
     function afficheFactures(liste_factures){
+
       let html_mere=document.getElementById("liste_facts"); //parent
       for (i = 0; i < liste_factures.length; i++) {
     
         let factures=liste_factures[i];
     
-        let download=document.createElement("button");
         let impression=document.createElement("button");
     
         let div = document.createElement("div");
         let identifiant = document.createElement("p");
         identifiant.appendChild(document.createTextNode('Identifiant : '+ factures["identifiant"]));
     
-        
-        download.appendChild(document.createTextNode('Télécharger ce document'));
-        download.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
-    
-        impression.appendChild(document.createTextNode('Imprimer ce document'));
+        impression.appendChild(document.createTextNode('Imprimer cette facture'));
         impression.setAttribute("class", "w3-button w3-block w3-cyan w3-left-align");
     
-        div.appendChild(download);
         div.appendChild(impression);
         div.appendChild(identifiant);
     
@@ -116,20 +114,14 @@ function ajaxReponse(type, url, jwt, callback){
         div.appendChild(ville);
         div.appendChild(ville);
     
-        download.onclick = function cheminAccess() {
-        window.location.href = documents["chemin"];
-        }
-    
-        // Ajouter le div au DOM
-        html_mere.appendChild(div);
+        
     
 
         
 
         // Ajouter la fonction d'impression au bouton d'impression
         impression.onclick = function imprimer_page(){
-          download.setAttribute("class","displayOff");
-          impression.setAttribute("class","displayOff");
+          div.removeChild(impression);
           let contenu_facture = div.innerHTML;
           let page_a_imprimer = '<html><head><title>Facture</title></head><body>' + contenu_facture + '</body></html>';
           let fenetre_impression = window.open('', '', 'height=500,width=500');
@@ -143,6 +135,7 @@ function ajaxReponse(type, url, jwt, callback){
           fenetre_impression.close();
           
         }
+        html_mere.appendChild(div);
       }
     }
 
@@ -267,10 +260,11 @@ function ajaxReponse(type, url, jwt, callback){
   
   if(getCookie("jwt")!=""){
       console.log(getCookie("jwt"));
-      ajaxReponse('POST', 'http://api.projetm1.fr/0.04/index.php/valider_connexion', getCookie("jwt"), verificationConnexionReussie);
+      ajaxReponse('POST', 'http://api.projetm1.fr/0.06/index.php/valider_connexion', getCookie("jwt"), verificationConnexionReussie);
       
   }
   else{
     alert("Veuillez vous connecter !");
     window.location.href = "../index.html";
   }
+  
