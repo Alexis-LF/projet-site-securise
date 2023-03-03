@@ -141,7 +141,7 @@ function ajaxReponse(type, url, jwt, callback){
   
   if(getCookie("jwt")!=""){
       console.log(getCookie("jwt"));
-      ajaxReponse('POST', 'http://api.projetm1.fr/0.06/index.php/valider_connexion', getCookie("jwt"), verificationConnexionReussie);
+      ajaxReponse('POST',  BASE_URL+'/'+API_VERSION+'/index.php/valider_connexion', getCookie("jwt"), verificationConnexionReussie);
       
   }
   else{

@@ -26,7 +26,7 @@ let texte = document.getElementById("texte_ville");
 console.log(texte);
 if(texte.value.length>2){
     
-    ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/villes?name='+ texte.value, lister_villes);
+    ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/villes?name='+ texte.value, lister_villes);
     
     
   }
@@ -61,7 +61,7 @@ var xhr = new XMLHttpRequest();
     }
     });
 
-    xhr.open("POST", "http://api.projetm1.fr/0.06/index.php/inscription");
+    xhr.open("POST",  BASE_URL+'/'+API_VERSION+"/index.php/inscription");
 
     xhr.onload = () =>
 {

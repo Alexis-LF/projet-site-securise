@@ -84,7 +84,7 @@ function connexion_appuyee(){
   let prenom = document.createElement("p"); 
   prenom.appendChild(document.createTextNode('Vous êtes connecté en tant que : '+ identifiant));
 
-  ajaxConnexion('POST', 'http://api.projetm1.fr/0.06/index.php/connexion', identifiant.value, mdp.value, connexion_reussie);
+  ajaxConnexion('POST',  BASE_URL+'/'+API_VERSION+'/index.php/connexion', identifiant.value, mdp.value, connexion_reussie);
   
   }
   function ajaxReponse(type, url, jwt){
