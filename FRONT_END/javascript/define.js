@@ -1,5 +1,5 @@
-const BASE_URL="http://api.projetm1.fr";
-const API_VERSION="0.07";
+const BASE_URL="http://10.10.43.209:5678";
+const API_VERSION="0.08";
 
 const URL_DOCUMENT="index.php/documents?mail=MAIL";
 
