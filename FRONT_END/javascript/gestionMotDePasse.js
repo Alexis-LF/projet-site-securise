@@ -23,8 +23,7 @@ function validerFormulaire() {
       return;
     }
 
-    // Rediriger l'utilisateur vers la page index.html
-    window.location.href = "../index.html";
+
     
   }
 

@@ -60,8 +60,8 @@ var xhr = new XMLHttpRequest();
         console.log(this.responseText);
     }
     });
-
-    xhr.open("POST",  BASE_URL+'/'+API_VERSION+"/index.php/inscription");
+    let url = BASE_URL+'/'+API_VERSION+"/index.php/inscription";
+    xhr.open("POST",  url);
 
     xhr.onload = () =>
 {
@@ -69,6 +69,8 @@ var xhr = new XMLHttpRequest();
     {
         case 201:
             console.log(xhr.responseText);
+            // Rediriger l'utilisateur vers la page index.html
+            window.location.href = "../index.html";
             
             break;
         case 401: 
