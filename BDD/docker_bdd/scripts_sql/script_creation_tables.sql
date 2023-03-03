@@ -68,7 +68,7 @@ CREATE TABLE mode_paiement(
 # Table: cities
 #------------------------------------------------------------
 
-SOURCE cities.sql
+SOURCE /docker-entrypoint-initdb.d/scripts_sql/cities.sql
 
 
 #------------------------------------------------------------

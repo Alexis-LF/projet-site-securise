@@ -99,4 +99,4 @@ INSERT INTO type_de_document (`type`) VALUES
 #------------------------------------------------------------
 # Table : site
 #------------------------------------------------------------
-source hopitaux.sql
+source /docker-entrypoint-initdb.d/scripts_sql/hopitaux.sql
