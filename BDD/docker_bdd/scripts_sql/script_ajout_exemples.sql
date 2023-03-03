@@ -48,19 +48,7 @@ INSERT INTO documents (nom_doc,chemin,mail,mail_docteurs,`type`) VALUES ("Radio 
 #------------------------------------------------------------
 # Table : facture
 #------------------------------------------------------------
--- +------------------+--------------+------+-----+---------+
--- | Field            | Type         | Null | Key | Default |
--- +------------------+--------------+------+-----+---------+
--- | identifiant      | int autoicrem| NO   | PRI | NULL    |
--- | prix_ttc         | float        | NO   |     | NULL    |
--- | tva              | float        | YES  |     | NULL    |
--- | date_facturation | datetime     | YES  |     | NULL    |
--- | date_paiement    | datetime     | YES  |     | NULL    |
--- | mail             | varchar(255) | NO   | MUL | NULL    |
--- | mail_docteurs    | varchar(255) | YES  | MUL | NULL    |
--- | mode_de_paiement | varchar(50)  | NO   | MUL | NULL    |
--- | nom              | varchar(255) | YES  | MUL | NULL    |
--- +------------------+--------------+------+-----+---------+
+
 INSERT INTO facture (prix_ttc,tva,date_facturation,date_paiement,mail,mail_docteurs,mode_de_paiement,nom) VALUES 
 (64.99,10.22,"2022-09-20 10:38:00","2023-10-05 17:05:00","mail@test.com","david.legall@gmail.com","Chèque","CENTRE HOSPITALIER FOUGERES"),
 (42.00,5.21,"2023-02-28 8:28:00","2023-02-28 8:29:00","mail@test.com","arthur.morgann@gmail.com","Carte bancaire","POLYCLINIQUE DU TREGOR"),
