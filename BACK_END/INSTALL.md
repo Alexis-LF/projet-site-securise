@@ -24,7 +24,8 @@ Pour la **connexion** entre la **base de données** et le backend, il est néces
    
 Pour le bon **fonctionnement** des fonctions d'**authentification** des patients fait par le **backend**, il est nécessaire d'avoir de générer des clés de chiffrement asymétriques.
 1. Se placer dans le dossier `BACK_END/api/0.08`
-2. Dans un terminal (linux ou git bash sous windows), exécuter la commande suivante :
+2. Créer un nouveau dossier dans `src` se nommant `.ssh` (sauf s'il existe déjà)
+3. Dans un terminal (linux ou git bash sous windows), exécuter la commande suivante :
      ```
      ssh-keygen -t rsa -m pem -f src/.ssh/id_rsa -N ""
     ```
@@ -39,7 +40,7 @@ Une fois les étapes précédentes établies
     Une fois l'image créée, il est conseillé à chaque nouvelle utilisation du conteneur de créer de nouveau l'image en générant une nouvelle clé asymétrique
 ### Lancer un conteneur serveur backend
 #### Commande
-Une fois l'image créée, lancer la commane suivante :
+Une fois l'image créée, lancer la commane suivante en changeant les paramètres en majusucules :
 ```bash
 docker run --rm --detach -p PORT:80/tcp  --name NOM_DU_SERVEUR projet_m1_backend:1.0
 ```
