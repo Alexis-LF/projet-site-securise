@@ -1,6 +1,6 @@
 
 function recherche(){
-    let url="http://api.projetm1.fr/0.03/index.php";
+    let url=BASE_URL+'/'+API_VERSION+'/index.php'; 
     let recherche = "/recherche?";
     if(getCookie("docteur") !=""){
       if(recherche != "/recherche?"){

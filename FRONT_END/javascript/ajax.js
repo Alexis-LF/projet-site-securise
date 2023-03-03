@@ -23,7 +23,7 @@ function ajaxRequest(type, url, callback, data = null)
         callback(JSON.parse(xhr.responseText));
         break;
       default:
-        httpErrors(xhr.status);
+        // httpErrors(xhr.status);
     }
   };
 
