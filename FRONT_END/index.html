@@ -31,16 +31,17 @@
       <p><label><i class="glyphicon glyphicon-user"></i> Identifiant :</label></p>
       <input id="imput_email" class="w3-input w3-border" type="text" placeholder="email" name="CheckIn" required>          
       <p><label><i class="fa fa-key"></i> Mot de passe :</label></p>
-      <input id="imput_mdp" class="w3-input w3-border" type="text" placeholder="mot de passe" name="CheckOut" required>         
-      <p><label><i class="fa fa-google"></i> Continuer avec google :</label></p>
-      <input class="w3-input w3-border" type="submit" value="Google" name="Adults" min="1" max="6">              
+      <input id="imput_mdp" class="w3-input w3-border" type="password" placeholder="mot de passe" name="CheckOut" required>
+      <p ><a id="cookieDeConnexion" href="#" class="w3-button w3-block w3-green w3-left-align"><i class="fa fa-search w3-margin-right"></i>Se connecter</a></p>         
+      <!-- <p><label><i class="fa fa-google"></i> Continuer avec google :</label></p>
+      <input class="w3-input w3-border" type="submit" value="Google" name="Adults" min="1" max="6"> -->             
       </a><p><label><i class="fa fa-address-book-o"></i> Inscription</label></p></a>
       <a href="html/inscription.html"><p class="w3-input w3-border">Inscrivez-vous</p></a>
-      <p ><a id="cookieDeConnexion" href="#" class="w3-button w3-block w3-green w3-left-align"><i class="fa fa-search w3-margin-right"></i>Se connecter</a></p>
+      
     <!-- </form> -->
 
   </div>
-  <div class="w3-bar-block">
+  <div id="formulaire" class="w3-bar-block">
     <a href="html/documents.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-folder"></i> Vos documents</a>
     <a href="html/factures.html" class="w3-bar-item w3-button w3-padding-16" onclick="document.getElementById('subscribe').style.display='block'"><i class="fa fa-eur"></i> Vos factures</a>
     <a href="html/cgu.html" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-file-text"></i> Conditions générales d'utilisation</a>
@@ -85,20 +86,12 @@
       <h4>Libdocto est la platerforme de santé française la plus sécurisée. Nous sommes une équipe d'experts en cybersécurité travaillant main dans la main avec des praticiens et des consultants en médecine.</h4>
 
    
-  <div class="">
-    <div class="w3-col s3">
-      <img class="" src="Images/medecin.webp"  onclick="currentDiv(1)" title="Medecin">
-    </div>
-    <div class="w3-col s3">
-      <img class="" src="Images/ingenieur_cyber2.jpg" onclick="currentDiv(2)" title="Ingenieur cyber2">
-    </div>
-    <div class="w3-col s3">
-      <img class="" src="Images/ingenieur_cyber.jpg" onclick="currentDiv(3)" title="Ingenieur cyber">
-    </div>
-    <div class="w3-col s3">
-      <img class="" src="Images/secrétaire.jpg" onclick="currentDiv(4)" title="Secretaire">
-    </div>
-  </div>
+  
+      
+          <img class="w3-image" src="Images/medecin.webp" title="Medecin" style="width:100%">
+      
+
+
 
 
   
@@ -110,10 +103,10 @@
     <i class="fa fa-envelope width"> </i> Email: libdocto.service@gmail.com<br>
     <p>Vous avez encore des questions ?</p>
     <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-border" type="text" placeholder="nom" required name="Nom"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="email" required name="Email"></p>
-      <p><input class="w3-input w3-border" type="text" placeholder="message" required name="Message"></p>
-    <button type="submit" class="w3-button w3-green w3-third">Envoyer un message</button>
+      <p><input id="message_nom"class="w3-input w3-border" type="text" placeholder="nom" required name="Nom"></p>
+      <p><input id="message_email" class="w3-input w3-border" type="text" placeholder="email" required name="Email"></p>
+      <p><input id="message" class="w3-input w3-border" type="text" placeholder="message" required name="Message"></p>
+    <button type="submit" class="w3-button w3-green w3-third" onclick=redirectionIndex()>Envoyer un message</button>
     </form>
   </div>
   

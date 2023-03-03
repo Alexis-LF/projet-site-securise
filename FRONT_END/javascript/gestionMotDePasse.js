@@ -7,6 +7,7 @@ function validerFormulaire() {
     const confirmationMotDePasse = document.getElementsByName("confirmationMotDePasse")[0].value;
     const numeroPortable = document.getElementsByName("numeroPortable")[0].value;
 
+    
     // Vérifier que tous les champs sont remplis
     if (!nom || !prenom || !dateNaissance || !email || !motDePasse || !confirmationMotDePasse || !numeroPortable) {
       alert("Veuillez remplir tous les champs du formulaire.");
@@ -23,7 +24,12 @@ function validerFormulaire() {
     }
 
     // Rediriger l'utilisateur vers la page index.html
-    // if (!nom || !prenom || !dateNaissance || !email || !motDePasse || !confirmationMotDePasse || !numeroPortable || !regexMotDePasse.test(motDePasse) ){
     window.location.href = "../index.html";
-    // }
+    
   }
+
+  function redirectionIndex(){
+    alert('Votre message a bien été envoyé !');
+    window.location.href = "/index.html";
+  }
+  

@@ -1,8 +1,4 @@
 
-
-
-
-
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
@@ -38,8 +34,6 @@ function w3_open() {
     x[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " w3-opacity-off";
   }
-  // Fonction affiche docteurs 
-
 
     
     
@@ -48,12 +42,12 @@ function w3_open() {
  
   
   function lister_professions(liste_des_professions){
-    let html_mere=document.getElementById("liste_profession"); //parent
+    let html_mere=document.getElementById("liste_profession"); 
     for (let i = 0; i < liste_des_professions.length; i++) {
       
   
       let profession=liste_des_professions[i];
-      // console.log(profession);
+      
       // Ajouter des options à la liste
       let option = document.createElement("option");
       option.setAttribute("value", profession["nom"]);
@@ -65,7 +59,7 @@ function w3_open() {
 }
 
 function lister_docteurs(liste_des_docteurs){
-  let html_mere=document.getElementById("liste_docteur"); //parent
+  let html_mere=document.getElementById("liste_docteur"); 
   for (let i = 0; i < liste_des_docteurs.length; i++) {
     
     let docteur=liste_des_docteurs[i];
@@ -81,28 +75,28 @@ function lister_docteurs(liste_des_docteurs){
 }
 
 function afficheDocteurs(){
-  let html_mere=document.getElementById("test"); //parent
+  let html_mere=document.getElementById("test"); 
   
 
   let div = document.createElement("div");
-  let nom = document.createElement("p"); // enfant
+  let nom = document.createElement("p"); 
   nom.appendChild(document.createTextNode('Nom et prénom :'+getCookie("docteur")));
   div.appendChild(nom);
   div.appendChild(nom);
 
-  let profession = document.createElement("p"); // enfant
+  let profession = document.createElement("p"); 
   profession.appendChild(document.createTextNode('Profession :'+getCookie("profession")));
   div.appendChild(profession);
   div.appendChild(profession);
 
-  let ville = document.createElement("p"); // enfant
+  let ville = document.createElement("p"); 
   ville.appendChild(document.createTextNode('Ville : '+getCookie("ville")));
   div.appendChild(ville);
   div.appendChild(ville);
   div.setAttribute("class", "encadrement");
   div.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
 
-  let rdv_button = document.createElement("button"); // enfant
+  let rdv_button = document.createElement("button"); 
       rdv_button.appendChild(document.createTextNode('Prendre rendez-vous'));
       div.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
       div.appendChild(rdv_button);

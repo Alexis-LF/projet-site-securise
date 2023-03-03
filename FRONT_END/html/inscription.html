@@ -10,13 +10,20 @@
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <script src="../javascript/gestionMotDePasse.js"></script>
+<script src="../javascript/template.js"></script>
+<script src="../javascript/define.js"></script>
+<script src="../javascript/inscription.js" defer></script>
+<script src="../javascript/ajax.js"></script>
+<script src="../javascript/cookie.js"></script>
+
 
 </head>
 <body class="w3-content w3-border-left w3-border-right">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-light-grey w3-collapse w3-top margin1000_index" id="mySidebar">
+<nav class="w3-light-grey w3-collapse w3-top margin1000_index" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-transparent w3-display-topright"></i>
     <h3>Inscription</h3>
@@ -25,27 +32,32 @@
     <hr>
     
     <p><label><i class=""></i> Nom :</label></p>
-    <input class="w3-input w3-border" type="text" placeholder="nom" name="nom" required>
+    <input id="imput_nom" class="w3-input w3-border" type="text" placeholder="nom" name="nom" required>
   
     <p><label><i class=""></i> Prénom :</label></p>
-    <input class="w3-input w3-border" type="text" placeholder="prénom" name="prenom" required>
-  
+    <input id="imput_prenom" class="w3-input w3-border" type="text" placeholder="prénom" name="prenom" required>
+
+
+    <p><label><i class=""></i> Ville :</label></p>
+    <input id="texte_ville" list="liste_ville" class="w3-input w3-border" type="text" placeholder="Entrez le nom de votre ville" required>
+    <datalist id="liste_ville"></datalist>
+
     <p><label><i class=""></i> Date de naissance :</label></p>
-    <input class="w3-input w3-border" type="date" placeholder="date de naissance" name="dateNaissance" required>
+    <input id="date_naissance" class="w3-input w3-border" type="date" placeholder="date de naissance" name="dateNaissance" required>
   
     <p><label><i class=""></i> Saisissez votre email :</label></p>
-    <input class="w3-input w3-border" type="text" placeholder="email" name="email" required>
+    <input id="mail" class="w3-input w3-border" type="text" placeholder="email" name="email" required>
   
     <p><label id="motDePasse"><i class="fa fa-key"></i> Mot de passe :</label></p>
-    <input class="w3-input w3-border" type="password" placeholder="mot de passe" name="motDePasse" required>
+    <input id="mdp" class="w3-input w3-border" type="password" placeholder="mot de passe" name="motDePasse" required>
   
     <p><label><i class="fa fa-key"></i> Confirmation du mot de passe :</label></p>
-    <input class="w3-input w3-border" type="text" placeholder="confirmation du mot de passe" name="confirmationMotDePasse" required>
+    <input class="w3-input w3-border" type="password" placeholder="confirmation du mot de passe" name="confirmationMotDePasse" required>
 
     <p><label><i class="fa fa-phone"></i> Numéro de portable :</label></p>
-   <input class="w3-input w3-border" type="text" placeholder="numéro" name="numeroPortable" required>
+   <input id="telephone" class="w3-input w3-border" type="text" placeholder="numéro" name="numeroPortable" required>
     
-      <button class="w3-button w3-block w3-green w3-left-align" onclick="validerFormulaire()">Valider</button>
+      <button id="bouton_inscription" class="w3-button w3-block w3-green w3-left-align" onclick="validerFormulaire(), requestInscription()">Valider</button>
   </hr>
    
   </div>

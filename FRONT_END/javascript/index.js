@@ -1,6 +1,6 @@
 
 function lister_villes(liste_des_villes){
-        let html_mere=document.getElementById("liste_ville"); //parent
+        let html_mere=document.getElementById("liste_ville"); 
         
 
     for (let i = 0; i < liste_des_villes.length; i++) {
@@ -8,7 +8,6 @@ function lister_villes(liste_des_villes){
             console.log(villesAjoutees);
           let ville=liste_des_villes[i];
           let nomVille= ville["name"];
-          // console.log(ville);
           // Ajouter des options à la liste
           if (!villesAjoutees.includes(nomVille)){
             let option = document.createElement("option");
@@ -19,21 +18,20 @@ function lister_villes(liste_des_villes){
           
         }
     
-   
 
 }
 }
 function villeTapee(){
-    let texte = document.getElementById("texte_ville");
-    if(texte.value.length>2){
-        
-        ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/villes?name='+ texte.value, lister_villes);
-        
-        
-      }
+  let texte = document.getElementById("texte_ville");
+  console.log(texte);
+  if(texte.value.length>2){
+      
+      ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/villes?name='+ texte.value, lister_villes);
+      
       
     }
-
+    
+  }
     // Enregistrement des données dans des cookies
 
 function cookieEnregistrement() {
@@ -41,7 +39,6 @@ function cookieEnregistrement() {
   var profession = document.getElementById("imput_nom_profession").value;
   var ville = document.getElementById("texte_ville").value;
   
-
   // Stockage des valeurs dans des cookies
   setCookie("docteur", nom);
   setCookie("profession", profession);
@@ -54,10 +51,9 @@ function cookieEnregistrement() {
   console.log("Ville : " + ville);
   
 }
-
 document.getElementById("bouton_recherche").addEventListener("click", cookieEnregistrement);
-ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/professions', lister_professions);
-ajaxRequest('GET', 'http://api.projetm1.fr/0.03/index.php/docteurs', lister_docteurs);
+ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/professions', lister_professions);
+ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/docteurs', lister_docteurs);
 let texte = document.getElementById("texte_ville");
 var villesAjoutees=[];
 // Ajouter un événement de saisie au champ de recherche

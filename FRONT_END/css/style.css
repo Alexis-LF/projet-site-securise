@@ -42,3 +42,12 @@ img{
     border: 1px solid black;
 }
 
+.displayOff {
+      display: none;
+}
+.displayOn{
+    display:inherit;
+}
+
+
+ 
