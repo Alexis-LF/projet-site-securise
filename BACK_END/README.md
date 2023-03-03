@@ -1,6 +1,9 @@
 # Back end (API)
 > Toutes les requêtes des précédentes versions sont valables pour la version coutante, sauf si elle a été redéfinie dans une version postérieure.
-# Version 0.06 → Courante
+# Installation du serveur Backend 
+## Lire [`BACK_END/INSTALL.md` pour suivre les instruction d'installation et de lancement](INSTALL.md)
+
+# Version 0.06 → Courante (0.08)
 ## Liste des endpoints d'authentification :
 ### S'inscrire
 #### type de requête : 
