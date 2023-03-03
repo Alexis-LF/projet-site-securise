@@ -13,7 +13,7 @@ INSERT INTO profession (nom) VALUES
 ("Assistant / Assistante de régulation médicale - ARM"),
 ("Assistant médical / Assistante médicale"),
 ("Assistante dentaire / Assistant dentaire"),
-("Attaché / Attachée d’administration hospitalière —,Audioprothésiste");
+("Attaché / Attachée d’administration hospitalière —,Audioprothésiste"),
 ("Auxiliaire de puériculture - AP"),
 ("Cadre de santé"),
 ("Cardiologue"),
@@ -25,7 +25,7 @@ INSERT INTO profession (nom) VALUES
 ("Dermatologue"),
 ("Diététicien / Diététicienne"),
 ("Directeur / Directrice des soins — DS"),
-("Directeur / Directrice d'établissement sanitaire, social et,médico-social — DESSMS");
+("Directeur / Directrice d'établissement sanitaire, social et,médico-social — DESSMS"),
 ("Directeur / Directrice d’hôpital — DH"),
 ("Equithérapeute"),
 ("Ergothérapeute"),
@@ -42,7 +42,7 @@ INSERT INTO profession (nom) VALUES
 ("Ingénieur / Ingénieure en recherche clinique"),
 ("Ingénieur / Ingénieure sécurité sanitaire"),
 ("Ingénieur hospitalier / Ingénieure hospitalière"),
-("Inspecteur / Inspectrice de l’action sanitaire et sociale —,IASS");
+("Inspecteur / Inspectrice de l’action sanitaire et sociale —,IASS"),
 ("Kinésithérapeute"),
 ("Manipulatrice / Manipulateur d'électroradiologie médicale"),
 ("Médecin"),
