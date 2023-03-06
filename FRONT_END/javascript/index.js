@@ -22,7 +22,6 @@ function lister_villes(liste_des_villes){
 }
 function villeTapee(){
   let texte = document.getElementById("texte_ville");
-  console.log(texte);
   if(texte.value.length>2){
       
       ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/villes?name='+ texte.value, lister_villes);
