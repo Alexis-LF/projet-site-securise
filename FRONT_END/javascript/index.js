@@ -5,7 +5,6 @@ function lister_villes(liste_des_villes){
 
     for (let i = 0; i < liste_des_villes.length; i++) {
           
-            console.log(villesAjoutees);
           let ville=liste_des_villes[i];
           let nomVille= ville["name"];
           // Ajouter des options à la liste
