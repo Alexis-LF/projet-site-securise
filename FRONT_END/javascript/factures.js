@@ -140,7 +140,6 @@ function ajaxReponse(type, url, jwt, callback){
   }
   
   if(getCookie("jwt")!=""){
-      console.log(getCookie("jwt"));
       ajaxReponse('POST',  BASE_URL+'/'+API_VERSION+'/index.php/valider_connexion', getCookie("jwt"), verificationConnexionReussie);
       
   }

@@ -59,13 +59,15 @@ function connexion_reussie(reponse){
 
   
   function est_connecte(){
+  let menuConnecte = document.getElementById("menuConnecte");
+  let champsConnexion = document.getElementById("champs_de_connexion");
   // Est connecté
   if (getCookie("jwt")!=""){
     // afficher & masquer les menus
-    let displayoff = document.getElementById("champs_de_connexion");
-    displayoff.setAttribute("style", "display:none");
-    let div = document.getElementById("formulaire");
-    div.setAttribute("style", "display:inherit"); 
+    if(champsConnexion != null){
+      champsConnexion.setAttribute("style", "display:none");
+      menuConnecte.setAttribute("style", "display:inherit"); 
+    }
     
     // affichage du nom prénom & mail
     let divNom = document.createElement("h5"); 
@@ -82,16 +84,13 @@ function connexion_reussie(reponse){
 
     divNom.setAttribute("class","w3-bar-item w3-padding-16");
     divNom.setAttribute("title",getCookie("mail_patient"));
-    console.log(divNom);
-    div.appendChild(divNom);
+    menuConnecte.appendChild(divNom);
 
   }
   // Pas connecté
   else{
-    let display = document.getElementById("champs_de_connexion");
-    display.setAttribute("style", "display:inherit");
-    let displayon = document.getElementById("formulaire");
-    displayon.setAttribute("style", "display:none");
+    champsConnexion.setAttribute("style", "display:inherit");
+    menuConnecte.setAttribute("style", "display:none");
   }
     
   
