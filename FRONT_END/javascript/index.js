@@ -49,6 +49,8 @@ function cookieEnregistrement() {
   console.log("Ville : " + ville);
   
 }
+document.getElementById("cookieDeConnexion").addEventListener("click", connexion_appuyee);
+
 document.getElementById("bouton_recherche").addEventListener("click", cookieEnregistrement);
 ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/professions', lister_professions);
 ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/docteurs', lister_docteurs);
