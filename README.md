@@ -1,7 +1,15 @@
 # projet-site-securise
 Projet M1 pédagogique d'élaboration d'un site web avec une version sécurisée et non sécurisée
-Test
-Test2
+
+# Installation
+1. Télécharger le code source (sur la branche *main*)
+2. Installer la base de données : [BDD/README.md](BDD/README.md)
+3. Installer le backend : [BACK_END/INSTALL.md](BACK_END/INSTALL.md)
+4. Installer le front end : [FRONT_END/README.md](FRONT_END/README.md)
+
+# Utilisation
+[FRONT_END/README.md](FRONT_END/README.md)
+
 # sources
 ## front end
 - [Template sélectionné](https://www.w3schools.com/w3css/tryw3css_templates_apartment_rental.htm)
