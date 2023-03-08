@@ -76,9 +76,7 @@ function connexion_reussie(reponse){
 
     let aNom = document.createElement("a"); 
 
-    aNom.appendChild(document.createTextNode(
-      getCookie("prenom_patient") + " " + getCookie("nom_patient")
-    ));
+    aNom.innerHTML = getCookie("prenom_patient") + " " + getCookie("nom_patient");
     aNom.setAttribute("href","mailto:"+getCookie("mail_patient"));
     divNom.appendChild(aNom);
 
