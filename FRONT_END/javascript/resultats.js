@@ -118,9 +118,9 @@ function criteresRecherche() {
 }
 // Écrire sur la page web 1 critère de recherche de l'utilisateur 
 // provenant des cookies, selon son identifiant HTML
-function ecrireCritereRecherche(idHtml, nomCookie){
-  let critere = getCookie(nomCookie);
-  if (critere != ""){
+function ecrireCritereRecherche(idHtml,nom){
+  const critere = new URL(window.location.toLocaleString()).searchParams.get(nom);
+  if (critere != null){
     document.getElementById(idHtml).innerHTML = critere;
   }
 }
