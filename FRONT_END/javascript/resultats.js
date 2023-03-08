@@ -1,27 +1,37 @@
+// Récupérer les paramètres passés par l'url 
+// et former l'URI (les paramètres requête) pour le backend en string
+function getParamsURL() {
+  // string retouné : s'il est que de longueur 1 
+  // alors pas de "&" à mettre au bout
+  let uri ="?";
+  // on récupère les paramètres de l'URL
+  const urlParams = new URL(window.location.toLocaleString()).searchParams;
+  for (let [cle,valeur] of urlParams) {
+    switch (cle) {
+      case "docteur":
+        uri += (uri.length > 1 ? "&" : "") + "d.prenom_nom=" + valeur;
+        break;
+      case "profession":
+        uri += (uri.length > 1 ? "&" : "") + "p.nom=" + valeur;
+        break;
+      case "ville":
+        uri += (uri.length > 1 ? "&" : "") + "c.name=" + valeur;
+        break;
+      default:
+        break;
+    }
+
+  }
+  return uri;
+}
+
+
+
 
 function recherche(){
     let url=BASE_URL+'/'+API_VERSION+'/index.php'; 
-    let recherche = "/recherche?";
-    if(getCookie("docteur") !=""){
-      if(recherche != "/recherche?"){
-        recherche +="&";
-      }
-      recherche+="d.prenom_nom="+getCookie("docteur");
-    }
-  
-    if(getCookie("profession") !=""){
-      if(recherche != "/recherche?"){
-        recherche +="&";
-      }
-      recherche +="p.nom="+getCookie("profession");
-    }
-  
-    if(getCookie("ville") !=""){
-      if(recherche != "/recherche?"){
-        recherche+="&";
-      }
-      recherche+="c.name="+getCookie("ville");
-    }
+    let recherche = "/recherche";
+    recherche += getParamsURL();
     console.log(recherche);
     url=url+recherche;
     console.log(url);
