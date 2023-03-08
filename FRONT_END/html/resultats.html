@@ -14,7 +14,7 @@
     <script src="../javascript/template.js"></script>
     <script src="../javascript/cookie.js"></script>
     <script src="../javascript/define.js"></script>
-    <script src="../javascript/resultats.js"></script>
+    <script src="../javascript/resultats.js" defer></script>
     
    
   </head>
@@ -67,6 +67,15 @@
       <div class="w3-container" id="apartment">
         <h2 class="w3-text-green">Trouver vos practiciens :</h2>
 
+        <h3>Votre recherche :</h3>
+        <div class="w3-row w3-large">
+          <div class="w3-col s6">
+            <p><i class="fa fa-fw fa-address-card"></i> Docteur : <span id="docteurCherche">tous les noms de docteurs</span></p>
+            <p><i class="fa fa-fw fa-user-md"></i> Profession : <span id="professionCherche">tout type de spécialité</span></p>
+            <p><i class="fa fa-fw fa-map-marker"></i> Lieu : <span id="lieuCherche">partout en France</span></p>
+          </div>
+        </div>
+        <h3>Résultats :</h3>
         <div id="liste_medecins"></div>
         <div id="test"></div>
         

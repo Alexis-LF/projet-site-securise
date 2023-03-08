@@ -97,6 +97,24 @@ function recherche(){
   };
   }
 
+
+// Remplacer les 3 critères de recherches de l'utilisateur
+function criteresRecherche() {
+  ecrireCritereRecherche("docteurCherche", "docteur");
+  ecrireCritereRecherche("professionCherche", "profession");
+  ecrireCritereRecherche("lieuCherche", "ville");
+
   
-    let url = recherche();
+}
+// Écrire sur la page web 1 critère de recherche de l'utilisateur 
+// provenant des cookies, selon son identifiant HTML
+function ecrireCritereRecherche(idHtml, nomCookie){
+  critere = getCookie(nomCookie);
+  if (critere != ""){
+    document.getElementById(idHtml).innerHTML = critere;
+  }
+}
+
+criteresRecherche();
+let url = recherche();
  ajaxRequest('GET', url, afficheDocteurs);
