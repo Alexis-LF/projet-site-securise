@@ -1,10 +1,19 @@
+/*
+Pour compiler :
+gcc -o dos.exe dos.c -lcurl
+
+Note, la librairie qui fournit curl/curl.h peut être installée ainsi
+- sudo dnf install libcurl-devel
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <curl/curl.h>
 
-#define BASE_URL "http://10.10.43.209:5678"
+// Marquer l'adresse IP et le port du backend, voir projet-site-securise/BACK_END/INSTALL.md pour plus d'infos
+#define BASE_URL "http://127.0.0.1:5678"
 #define API_VERSION "0.08"
+
 #define URL_LEN 100
 
 int main() {
@@ -15,6 +24,7 @@ int main() {
 
     curl = curl_easy_init();
 
+    // On envoie en boucle des requêtes avec plusieurs débuts de noms de villes différents
     while(1) {
         snprintf(url, URL_LEN, "%s/%s/index.php/villes?name=%s", BASE_URL, API_VERSION, "sai");
         curl_easy_setopt(curl, CURLOPT_URL, url);
