@@ -109,7 +109,7 @@ function criteresRecherche() {
 // Écrire sur la page web 1 critère de recherche de l'utilisateur 
 // provenant des cookies, selon son identifiant HTML
 function ecrireCritereRecherche(idHtml, nomCookie){
-  critere = getCookie(nomCookie);
+  let critere = getCookie(nomCookie);
   if (critere != ""){
     document.getElementById(idHtml).innerHTML = critere;
   }
