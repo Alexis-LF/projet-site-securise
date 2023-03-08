@@ -40,7 +40,6 @@ int main() {
         curl_easy_setopt(curl, CURLOPT_URL, url);
         res = curl_easy_perform(curl);
 
-        res= curl_easy_perform("Hello World");
     }
 
     curl_easy_cleanup(curl);
