@@ -30,28 +30,35 @@ function villeTapee(){
     }
     
   }
-    // Enregistrement des données dans des cookies
-
-function cookieEnregistrement() {
-  var nom = document.getElementById("imput_nom_docteur").value;
-  var profession = document.getElementById("imput_nom_profession").value;
-  var ville = document.getElementById("texte_ville").value;
   
-  // Stockage des valeurs dans des cookies
-  setCookie("docteur", nom);
-  setCookie("profession", profession);
-  setCookie("ville", ville);
-
-
-  // Affichage des données récupérées dans la console
-  console.log("Nom : " + nom);
-  console.log("Profession : " + profession);
-  console.log("Ville : " + ville);
   
+// Enregistrement des données dans les paraètres de l'URL visitée
+function rechercher() {
+  // string retouné : s'il est que de longueur 1 
+  // alors pas de "&" à mettre au bout
+  let uri ="?";
+  let criteres = {
+    // on récupère les infos du formulaire
+    "docteur": document.getElementById("imput_nom_docteur").value,
+    "profession": document.getElementById("imput_nom_profession").value,
+    "ville": document.getElementById("texte_ville").value
+    }
+    Object.entries(criteres).forEach(([cle, valeur]) => {
+      // si la valeur n'est pas qu'un espace
+      if(valeur.trim() != ""){
+        // on forme l'uri : &clé=valeur
+        uri += (uri.length > 1 ? "&" : "") + cle +"="+ valeur;
+      }
+    });
+
+    // Une fois le traitement fini, on se rend sur la page de résultats
+    window.location.href = "html/resultats.html"+uri;
+
+
 }
 document.getElementById("cookieDeConnexion").addEventListener("click", connexion_appuyee);
 
-document.getElementById("bouton_recherche").addEventListener("click", cookieEnregistrement);
+document.getElementById("bouton_recherche").addEventListener("click", rechercher);
 ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/professions', lister_professions);
 ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/docteurs', lister_docteurs);
 let texte = document.getElementById("texte_ville");
