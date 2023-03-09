@@ -16,7 +16,7 @@ Une fois l' étape précédente établie
     docker build -t projet_m1_frontend:1.0 .
     ```
     Une fois l'image créée, il n'est pas nécessaire de la créer de nouveau pour relancer le serveur, sauf si les fichers sources tel `Define.js` ont été modifiés
-### Lancer un conteneur serveur backend
+### Lancer un conteneur serveur frontend
 #### Commande
 Une fois l'image créée, lancer la commane suivante en changeant les paramètres en majusucules :
 ```bash
@@ -45,3 +45,15 @@ docker run --rm --detach -p PORT:80/tcp  --name NOM_DU_SERVEUR projet_m1_fronten
 - Un compte de test a été créé. Ce compte possède des documents et des factures :
   - identifiant : `mail@test.com`
   - mot de passe : `password`
+## Suivi du fonctionnement
+### Logs
+Taper dans un terminal la commande suivante
+```bash
+docker logs NOM_DU_SERVEUR 
+```
+### Récupération du système de fichiers interne
+Pour débuger le fonctionnement de l'image, il est possible de récupérer les fichiers du conteneur docker. Pendant son éxecution, taper dans un terminal la commande suivante
+```bash
+docker export -o NOM_DU_SERVEUR.tar NOM_DU_SERVEUR
+```
+Ensuite, extraire l'archive (comme un .zip) créée dans le dossier courant.
