@@ -9,3 +9,4 @@ BACK_END/api/*/vendor/*
 BACK_END/api/*/bin/*
 composer.lock
 keys.php
+*attaque-*.txt
