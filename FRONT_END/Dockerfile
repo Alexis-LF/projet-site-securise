@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:8.2.3-apache
 # Ajout du script d'installation de modules PHP
 
 # Répertoire des fichiers du site
