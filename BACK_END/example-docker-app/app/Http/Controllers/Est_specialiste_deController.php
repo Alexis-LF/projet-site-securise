@@ -9,21 +9,25 @@ use Illuminate\View\View;
 class Est_specialiste_deController extends Controller
 {
     /**
-     * Show a list of all of the mode_paiements.
+     * recherche avec filtrage par critères
      */
     public static function recherche()
     {
 
-        /*
-    $requete = "SELECT d.nom, d.prenom, CONCAT(d.prenom,' ',d.nom) AS 'prenom_nom', p.nom AS 'profession', d.telephone, d.mail, s.nom AS 'site', s.adresse, c.zip_code, c.name AS 'ville' ";
-    $requete .= "FROM est_specialiste_de e ";
-    $requete .= "JOIN docteurs d ON d.mail = e.mail ";
-    $requete .= "JOIN profession p ON p.nom = e.nom ";
-    $requete .= "JOIN site s ON s.nom = d.nom_site ";
-    $requete .= "JOIN cities c ON c.id = s.id ";
-
-        */
-        $recherche = DB::table('est_specialiste_de')->get();
+        // Tous les données retournées
+        $recherche = DB::table('est_specialiste_de')
+            ->select('docteurs.nom', 'docteurs.prenom',
+                DB::raw('CONCAT(docteurs.prenom," ",docteurs.nom) AS prenom_nom'),
+                'profession.nom AS profession', 'docteurs.telephone', 
+                'docteurs.mail', 'site.nom AS site', 'site.adresse', 
+                'cities.zip_code', 'cities.name AS ville' 
+                )
+        // Tous les jointures
+            ->leftJoin('docteurs', 'docteurs.mail', '=', 'est_specialiste_de.mail')
+            ->leftJoin('profession', 'profession.nom', '=', 'est_specialiste_de.nom')
+            ->leftJoin('site', 'site.nom', '=', 'docteurs.nom_site')
+            ->leftJoin('cities', 'cities.id', '=', 'site.id')
+            ->get();
 
         // $mode_paiements = DB::table('mode_paiement')->get();
         return $recherche;
