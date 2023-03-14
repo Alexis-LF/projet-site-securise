@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Mode_paiementController;
 use App\Http\Controllers\ProfessionController;
 use App\Http\Controllers\VillesController;
+use App\Http\Controllers\Est_specialiste_deController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,6 @@ Route::get('/villes', function () {
 
 // Recherche de docteurs, par rapport au lieu, le nom & la profession
 Route::get('/recherche', function () {
-    // return ProfessionController::noms();
+    return Est_specialiste_deController::recherche();
 });
 
