@@ -4,7 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
-use App\Http\Controllers\mode_paiementController;
+use App\Http\Controllers\Mode_paiementController;
+use App\Http\Controllers\ProfessionController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -27,3 +28,16 @@ Route::get('/test', function () {
 Route::get('/mode_paiement', function () {
     return Mode_paiementController::mode_de_paiement();
 });
+
+Route::get('/professions', function () {
+    return ProfessionController::noms();
+});
+
+Route::get('/villes', function () {
+    return VillesController::villes();
+});
+
+Route::get('/recherche', function () {
+    // return ProfessionController::noms();
+});
+
