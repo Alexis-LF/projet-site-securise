@@ -25,5 +25,5 @@ Route::get('/test', function () {
 });
 
 Route::get('/mode_paiement', function () {
-    return Mode_paiementController::mode_paiement();
+    return Mode_paiementController::mode_de_paiement();
 });

@@ -9,11 +9,11 @@ use Illuminate\View\View;
 class Mode_paiementController extends Controller
 {
     /**
-     * Show a list of all of the application's mode_paiements.
+     * Show a list of all of the mode_paiements.
      */
-    public static function mode_paiement()
+    public static function mode_de_paiement()
     {
-        $mode_paiements = DB::select('select * from mode_paiement');
+        $mode_paiements = DB::table('mode_paiement')->get();
         return $mode_paiements;
     }
 }
