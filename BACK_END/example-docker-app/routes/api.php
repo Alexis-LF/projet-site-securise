@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\mode_paiementController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,4 +22,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/test', function () {
     return "api !";
+});
+
+Route::get('/mode_paiement', function () {
+    $obj = new Mode_paiementController();
+    $obj->index();
+    echo "<br>fin du programme<br>";
+    return;
 });

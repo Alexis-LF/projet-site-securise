@@ -1,0 +1,25 @@
+<?php
+ 
+namespace App\Http\Controllers;
+ 
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
+ 
+class Mode_paiementController extends Controller
+{
+    /**
+     * Show a list of all of the application's mode_paiements.
+     */
+    public function index()
+    {
+        $mode_paiements = DB::select('select * from mode_paiement');
+        
+        foreach ($mode_paiements as $element) {
+            echo "<pre>";
+            echo var_dump($element);
+            echo "</pre>";
+        }
+        return;
+    }
+}

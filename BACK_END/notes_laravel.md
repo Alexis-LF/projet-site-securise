@@ -57,3 +57,17 @@ dans `routes/`
   - Ce sont dans ces fichiers qu'on appelle les modèles, mais de manière générique
   - Dans `routes\api.php`, on retournera dans un endpoint un `PatientsResource` *par exemple* avec les paramètres tel l'objet et son id si nécessaire.
   - Pour retourner 1 élément, c'est une **ressource**. Pour **plusieurs** éléments, c'est une **collection** de ressources.
+
+# étapes de configuration de laravel
+## bdd
+### .env
+```sh
+DB_CONNECTION=mysql
+DB_HOST=ADRESSE_IP_BDD_DU_RÉSEAU (10.10.xx.xx par ex.)
+DB_PORT=PORT (1234 par exemple)
+DB_DATABASE=Projet_M1
+DB_USERNAME=backend
+DB_PASSWORD="mot de passe défini au lancement de la BDD"
+```
+### commandes laravel
+
