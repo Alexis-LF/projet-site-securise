@@ -1,5 +1,5 @@
 const BASE_URL="http://127.0.0.1:5678";
-const API_VERSION="0.08";
+const API_VERSION="1.00";
 
 const URL_DOCUMENT="index.php/documents?mail=MAIL";
 

@@ -14,7 +14,7 @@ client.connect(target_port, target_host, function() {
 // Envoyer des requêtes GET
 for (let i = 0; i < 5; i++) {
   for (let j = 0; j < 1000000; j++) {
-    const request = Buffer.from(`GET http://10.10.43.209:5678/0.08/index.php HTTP/1.1\r\nHost: ${target_host}\r\n\r\n`);
+    const request = Buffer.from(`GET http://10.10.43.209:5678/1.00/index.php HTTP/1.1\r\nHost: ${target_host}\r\n\r\n`);
     client.write(request);
   }
 }

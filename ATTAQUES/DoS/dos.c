@@ -12,7 +12,7 @@ Note, la librairie qui fournit curl/curl.h peut être installée ainsi
 
 // Marquer l'adresse IP et le port du backend, voir projet-site-securise/BACK_END/INSTALL.md pour plus d'infos
 #define BASE_URL "http://127.0.0.1:5678"
-#define API_VERSION "0.08"
+#define API_VERSION "1.00"
 
 #define URL_LEN 100
 

@@ -2,7 +2,7 @@ import requests
 
 # Marquer l'adresse IP et le port du backend, voir projet-site-securise/BACK_END/INSTALL.md pour plus d'infos
 BASE_URL = "http://127.0.0.1:5678"
-API_VERSION = "0.08"
+API_VERSION = "1.00"
 
 url = BASE_URL + '/' + API_VERSION + '/index.php/villes?name='
 

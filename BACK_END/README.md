@@ -3,7 +3,7 @@
 # Installation du serveur Backend 
 ## Lire [`BACK_END/INSTALL.md` pour suivre les instruction d'installation et de lancement](INSTALL.md)
 
-# Version 0.06 → Courante (0.08)
+# Version 0.06 → Courante (1.00)
 ## Liste des endpoints d'authentification :
 ### S'inscrire
 #### type de requête : 
