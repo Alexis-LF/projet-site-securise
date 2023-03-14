@@ -25,6 +25,5 @@ Route::get('/test', function () {
 });
 
 Route::get('/mode_paiement', function () {
-    $obj = new Mode_paiementController();
-    return $obj->index();
+    return Mode_paiementController::mode_paiement();
 });
