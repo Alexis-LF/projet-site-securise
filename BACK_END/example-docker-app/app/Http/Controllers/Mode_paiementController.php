@@ -14,12 +14,6 @@ class Mode_paiementController extends Controller
     public function index()
     {
         $mode_paiements = DB::select('select * from mode_paiement');
-        
-        foreach ($mode_paiements as $element) {
-            echo "<pre>";
-            echo var_dump($element);
-            echo "</pre>";
-        }
-        return;
+        return $mode_paiements;
     }
 }
