@@ -33,6 +33,10 @@ php artisan serve
 
 > ### Note importante
 > remplacer `php` par `./vendor/bin/sail` pour l'utilisation avec docker
+> Pour ne pas s'embêter : faire un alias : 
+> ```bash
+> echo "alias php='./vendor/bin/sail'" >> ~/.bashrc && source ~/.bashrc
+> ```
 ### lister les endpoints mis en place
 ```bash
 php artisan route:list
@@ -60,6 +64,11 @@ dans `routes/`
 
 # étapes de configuration de laravel
 ## bdd
+### tester la connexion à la bdd
+Cela va lancer un client mysql :
+```bash
+php artisan db
+```
 ### .env
 ```sh
 DB_CONNECTION=mysql
