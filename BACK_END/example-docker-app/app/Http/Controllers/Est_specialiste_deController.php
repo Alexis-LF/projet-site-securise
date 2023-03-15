@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
  
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
  
@@ -11,7 +12,7 @@ class Est_specialiste_deController extends Controller
     /**
      * recherche avec filtrage par critères
      */
-    public static function recherche()
+    public static function recherche(Request $request)
     {
         // Tous les données retournées
         $recherche = DB::table('est_specialiste_de')
@@ -28,7 +29,8 @@ class Est_specialiste_deController extends Controller
             ->leftJoin('cities', 'cities.id', '=', 'site.id');
 
         // s'il n'y a aucun paramètre de recherche on exécute la requête sans conditions de recherche
-        if (count($_GET)==0){
+        $getInput = $request->collect();
+        if (count($getInput)==0){
             return $recherche->get();
         }
         
@@ -39,7 +41,7 @@ class Est_specialiste_deController extends Controller
             "c.name" => "cities.name"
         );
 
-        foreach ($_GET as $key => $value) {
+        foreach ($getInput as $key => $value) {
             // dans les champs clefs du GET (dans l'URI), les . sont remplacés par des _ : on corrige ça
             $key = preg_replace('/' . "_" . '/', ".", $key, 1);
             // On traite uniquement les paramètres de recherches définis
