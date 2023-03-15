@@ -26,10 +26,16 @@ class Est_specialiste_deController extends Controller
             ->leftJoin('docteurs', 'docteurs.mail', '=', 'est_specialiste_de.mail')
             ->leftJoin('profession', 'profession.nom', '=', 'est_specialiste_de.nom')
             ->leftJoin('site', 'site.nom', '=', 'docteurs.nom_site')
-            ->leftJoin('cities', 'cities.id', '=', 'site.id')
-            ->get();
+            ->leftJoin('cities', 'cities.id', '=', 'site.id');
 
-        // $mode_paiements = DB::table('mode_paiement')->get();
-        return $recherche;
+        // s'il n'y a aucun paramètre de recherche on exécute la requête sans conditions de recherche
+        if (count($_GET)==0){
+            return $recherche->get();
+        }
+        
+        // $paramRecherche = array();
+        
+
+        return $recherche->get();
     }
 }
