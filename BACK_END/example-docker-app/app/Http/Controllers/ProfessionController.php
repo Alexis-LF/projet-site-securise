@@ -9,7 +9,7 @@ use Illuminate\View\View;
 class ProfessionController extends Controller
 {
     /**
-     * Show a list of all of the mode_paiements.
+     * Enumére la liste des professions 
      */
     public static function noms()
     {
