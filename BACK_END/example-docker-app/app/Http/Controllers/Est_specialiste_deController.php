@@ -38,9 +38,12 @@ class Est_specialiste_deController extends Controller
             "c.name" => "dd"
         );
         foreach ($_GET as $key => $value) {
+            // dans les champs clefs du GET (dans l'URI), les . sont remplacés par des _ : on corrige ça
+            $key = preg_replace('/' . "_" . '/', ".", $key, 1);
+            // on fait la correspondance aux colonnes de la base de données
             switch ($key) {
                 case "d.prenom_nom":
-                    $recherche->where('CONCAT(docteurs.prenom," ",docteurs.nom)','LIKE','%'.$value.'%');
+                    $recherche->where(DB::raw('CONCAT(docteurs.prenom," ",docteurs.nom)'),'LIKE','%'.$value.'%');
                     break;
                 case "p.nom":
                     $recherche->where('profession.nom','LIKE','%'.$value.'%');
