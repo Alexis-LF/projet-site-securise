@@ -14,6 +14,8 @@ class DocteursController extends Controller
  */
 public static function docteurs()
 {
-    return DB::select("SELECT mail, CONCAT(prenom,' ',nom) AS prenom_nom FROM docteurs");
+    $docteurs=DB::table('docteurs')
+    ->select('mail', DB::raw('CONCAT(prenom,"  ",nom) AS prenom_nom'))->get();
+    return $docteurs;
 }
 }
