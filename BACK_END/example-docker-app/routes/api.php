@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfessionController;
 use App\Http\Controllers\VillesController;
 use App\Http\Controllers\Est_specialiste_deController;
 use App\Http\Controllers\DocteursController;
+use App\Http\Controllers\FacturesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,6 @@ Route::get('/docteurs', function () {
 
 // Recherche de factures 
 
-Route::get('/factures', function () {
-    return FacturesController::factures();
+Route::get('/factures', function (Request $request) {
+    return FacturesController::factures($request);
 });

@@ -9,7 +9,7 @@ use Illuminate\View\View;
 
 class FacturesController extends Controller
 {
-    function factures(Request $request){
+    public static function factures(Request $request){
         if ($request->has('mail')) {
             $resultat=DB::table('factures')
             ->select('f.identifiant', 'f.prix_ttc', 'f.tva', 'f.date_facturation', 'f.date_paiement', 'f.mode_de_paiement', 
@@ -21,11 +21,10 @@ class FacturesController extends Controller
             ->where('f.mail', '=', $request->input('mail'));
 
             if ($request->has('id')) {
-                $resultat->where('f.identifiant', '=', $request->)
+                $resultat->where('f.identifiant', '=', $request->input('id'));
             }
+            return $resultat->get();
+        }
+        return "Conditions non vérifiées";
     }
-
-
-
-}
 }
