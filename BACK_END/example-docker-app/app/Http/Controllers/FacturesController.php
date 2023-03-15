@@ -25,6 +25,6 @@ class FacturesController extends Controller
             }
             return $resultat->get();
         }
-        return "Conditions non vérifiées";
+        return response()->json(['error' => 'Conditions non respectées !']);
     }
 }

@@ -19,6 +19,6 @@ class VillesController extends Controller
             $resultat=DB::table('cities')->select('id', 'zip_code', 'name')->where('name', 'like', $request->input('name').'%')->get();
             return response()->json($resultat);
         }
-        return response()->json(['error' => 'Conditions non respectée !']);
+        return response()->json(['error' => 'Conditions non respectées !']);
     }
 }
