@@ -8,6 +8,7 @@ use App\Http\Controllers\Mode_paiementController;
 use App\Http\Controllers\ProfessionController;
 use App\Http\Controllers\VillesController;
 use App\Http\Controllers\Est_specialiste_deController;
+use App\Http\Controllers\DocteursController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +46,10 @@ Route::get('/mode_paiement', function () {
 Route::get('/professions', function () {
     return ProfessionController::noms();
 });
-// Fonction qui retourne les villes 
-Route::get('/villes', function () {
-    return VillesController::villes();
+// Fonction qui retourne les villes
+/// Route::get('/villes', [VillesController::class, 'villes']);
+Route::get('/villes', function (Request $request) {
+    return VillesController::villes($request);
 });
 
 // Recherche de docteurs, par rapport au lieu, le nom & la profession
@@ -55,3 +57,7 @@ Route::get('/recherche', function () {
     return Est_specialiste_deController::recherche();
 });
 
+// Recherche de docteurs
+Route::get('/docteurs', function () {
+    return DocteursController::docteurs();
+});
