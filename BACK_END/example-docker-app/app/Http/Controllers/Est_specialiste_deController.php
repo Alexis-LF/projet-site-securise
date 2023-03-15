@@ -32,30 +32,24 @@ class Est_specialiste_deController extends Controller
             return $recherche->get();
         }
         
+        // Liste des paramètres définis dans https://github.com/Alexis-LF/projet-site-securise/blob/non_secure/BACK_END/README.md#r%C3%A9cup%C3%A9rer-la-liste-des-mails-pr%C3%A9noms-et-noms-des-docteurs
         $paramRecherche = array(
-            "d.prenom_nom" => "docteurs.prenom_nom",
-            "p.nom" => "dd",
-            "c.name" => "dd"
+            "d.prenom_nom" => DB::raw('CONCAT(docteurs.prenom," ",docteurs.nom)'),
+            "p.nom" => "profession.nom",
+            "c.name" => "cities.name"
         );
+
         foreach ($_GET as $key => $value) {
             // dans les champs clefs du GET (dans l'URI), les . sont remplacés par des _ : on corrige ça
             $key = preg_replace('/' . "_" . '/', ".", $key, 1);
-            // on fait la correspondance aux colonnes de la base de données
-            switch ($key) {
-                case "d.prenom_nom":
-                    $recherche->where(DB::raw('CONCAT(docteurs.prenom," ",docteurs.nom)'),'LIKE','%'.$value.'%');
-                    break;
-                case "p.nom":
-                    $recherche->where('profession.nom','LIKE','%'.$value.'%');
-                    break;
-                case "c.name":
-                    $recherche->where('cities.name','LIKE','%'.$value.'%');
-                        break;
-                default:
-                    break;
-
+            // On traite uniquement les paramètres de recherches définis
+            if (isset($paramRecherche[$key])){
+                $recherche->where(
+                    // on fait la correspondance aux colonnes de la base de données
+                    $paramRecherche[$key],
+                    'LIKE','%'.$value.'%'
+                );
             }
-        
         }
         return $recherche->get();
     }
