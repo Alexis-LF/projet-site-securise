@@ -27,8 +27,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // Fonction de débuggage À DÉSACTIVER quand inutilisé
 // affiche le contenu des GET et des POST
-Route::get('/debug', function () {
-    return  array("GET"=>$_GET, "POST"=>$_POST);
+Route::get('/debug', function (Request $request) {
+    return  array("GET"=>$_GET, "POST"=>$_POST,'request'=>$request->collect());
 });
 
 // un "ping" de l'api
@@ -53,11 +53,17 @@ Route::get('/villes', function (Request $request) {
 });
 
 // Recherche de docteurs, par rapport au lieu, le nom & la profession
-Route::get('/recherche', function () {
-    return Est_specialiste_deController::recherche();
+Route::get('/recherche', function (Request $request) {
+    return Est_specialiste_deController::recherche($request);
 });
 
 // Recherche de docteurs
 Route::get('/docteurs', function () {
     return DocteursController::docteurs();
+});
+
+// Recherche de factures 
+
+Route::get('/factures', function () {
+    return FacturesController::factures();
 });
