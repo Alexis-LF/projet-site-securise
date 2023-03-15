@@ -13,7 +13,6 @@ class Est_specialiste_deController extends Controller
      */
     public static function recherche()
     {
-
         // Tous les données retournées
         $recherche = DB::table('est_specialiste_de')
             ->select('docteurs.nom', 'docteurs.prenom',
@@ -33,9 +32,28 @@ class Est_specialiste_deController extends Controller
             return $recherche->get();
         }
         
-        // $paramRecherche = array();
-        
+        $paramRecherche = array(
+            "d.prenom_nom" => "docteurs.prenom_nom",
+            "p.nom" => "dd",
+            "c.name" => "dd"
+        );
+        foreach ($_GET as $key => $value) {
+            switch ($key) {
+                case "d.prenom_nom":
+                    $recherche->where('CONCAT(docteurs.prenom," ",docteurs.nom)','LIKE','%'.$value.'%');
+                    break;
+                case "p.nom":
+                    $recherche->where('profession.nom','LIKE','%'.$value.'%');
+                    break;
+                case "c.name":
+                    $recherche->where('cities.name','LIKE','%'.$value.'%');
+                        break;
+                default:
+                    break;
 
+            }
+        
+        }
         return $recherche->get();
     }
 }
