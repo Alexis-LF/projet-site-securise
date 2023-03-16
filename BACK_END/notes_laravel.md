@@ -85,5 +85,16 @@ php artisan make:migration create_patients
 ```
 
 
-### commandes laravel
+# Larvel breeze
+## étapes
+1. installer laravel classique avec docker
+2. installer breeze via composer
+3. ...
+
+## installation de breeze
+*sail est rempladé par php*
+```bash
+php composer require laravel/breeze --dev
+```
+
 
