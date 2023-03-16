@@ -78,5 +78,12 @@ DB_DATABASE=Projet_M1
 DB_USERNAME=backend
 DB_PASSWORD="mot de passe défini au lancement de la BDD"
 ```
+### Migrations
+#### créer une migration
+```bash
+php artisan make:migration create_patients
+```
+
+
 ### commandes laravel
 
