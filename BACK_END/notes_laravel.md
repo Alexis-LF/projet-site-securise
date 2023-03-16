@@ -88,13 +88,28 @@ php artisan make:migration create_patients
 # Larvel breeze
 ## étapes
 1. installer laravel classique avec docker
-2. installer breeze via composer
-3. ...
+2. ajouter breeze via composer
+3. faire les migrations
+4. installer breeze
+5. lancer npm
 
-## installation de breeze
+## ajout de la dépendance breeze
 *sail est rempladé par php*
 ```bash
 php composer require laravel/breeze --dev
 ```
+## Éxécuter les migrations 
+```
+php artisan migrate
+```
 
+## installation de breeze
+```
+php artisan breeze:install
+```
 
+## lancer npm
+php fait référence avec sail, pas nécessaire si docker pas utilisé
+```
+php npm install
+```
