@@ -10,6 +10,7 @@ use App\Http\Controllers\VillesController;
 use App\Http\Controllers\Est_specialiste_deController;
 use App\Http\Controllers\DocteursController;
 use App\Http\Controllers\FacturesController;
+use App\Http\Controllers\DocumentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,4 +68,10 @@ Route::get('/docteurs', function () {
 
 Route::get('/factures', function (Request $request) {
     return FacturesController::factures($request);
+});
+
+// Recherche de documents    
+
+Route::get('/documents', function (Request $request) {
+    return DocumentsController::documents($request);
 });

@@ -11,20 +11,21 @@ class FacturesController extends Controller
 {
     public static function factures(Request $request){
         if ($request->has('mail')) {
-            $resultat=DB::table('factures')
-            ->select('f.identifiant', 'f.prix_ttc', 'f.tva', 'f.date_facturation', 'f.date_paiement', 'f.mode_de_paiement', 
-            'f.mail_docteurs', DB::raw('CONCAT(d.prenom, " ", d.nom) AS prenom_nom'), 'd.telephone', 'f.nom AS nom_site', 
+            $resultat=DB::table('facture')
+            ->select('facture.identifiant', 'facture.prix_ttc', 'facture.tva', 'facture.date_facturation', 'facture.date_paiement', 'facture.mode_de_paiement', 
+            'facture.mail_docteurs', DB::raw('CONCAT(d.prenom, " ", d.nom) AS prenom_nom'), 'd.telephone', 'facture.nom AS nom_site', 
             's.adresse', 'c.zip_code', 'c.name AS ville')
-            ->join('docteurs AS d', 'f.mail_docteurs', '=', 'd.mail')
-            ->join('site AS s', 'f.nom', '=', 's.nom')
+            ->join('docteurs AS d', 'facture.mail_docteurs', '=', 'd.mail')
+            ->join('site AS s', 'facture.nom', '=', 's.nom')
             ->join('cities AS c', 's.id', '=', 'c.id')
-            ->where('f.mail', '=', $request->input('mail'));
+            ->where('facture.mail', '=', $request->input('mail'));
 
             if ($request->has('id')) {
-                $resultat->where('f.identifiant', '=', $request->input('id'));
+                $resultat->where('facture.identifiant', '=', $request->input('id'));
             }
-            return $resultat->get();
+            return ($resultat->get());
         }
         return response()->json(['error' => 'Conditions non respectées !']);
     }
 }
+
