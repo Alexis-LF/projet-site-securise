@@ -31,3 +31,4 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+FRONT_END/frontend-laravel/package-lock.json
