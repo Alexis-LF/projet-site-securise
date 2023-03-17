@@ -115,3 +115,6 @@ php npm install
 ```
 # personnalisation de breeze
 - dans `app\Http\Controllers\Auth\RegisteredUserController.php` l'inscription se fait ici. Il faudrait remplir en même temps la BDD de personne
+
+## seeds (remplissage de la db automatiquement)
+- `php artisan db:seed` pour ajouter les données de `database\seeders\DatabaseSeeder.php`
