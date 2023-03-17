@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
+use Illuminate\Support\Facades\DB;
+
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -40,11 +43,13 @@ class RegisteredUserController extends Controller
         //  TODO fill person table
 
         DB::table('personne')->insert([
-            'mail' => 'kayla@example.com',
+            'mail' => $request->email,
             'nom' => $request->nom,
             'telephone' => $request->telephone,
             'date_naissance' => $request->date_naissance,
-            'prenom' => $request->prenom
+            'prenom' => $request->prenom,
+            'prenom' => $request->prenom,
+            'id'=>16658
         ]);
 
         $user = User::create([

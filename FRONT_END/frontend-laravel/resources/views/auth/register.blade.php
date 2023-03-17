@@ -33,30 +33,30 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
         
-        <!-- Prénom -->
-        <div>
-            <x-input-label for="prénom" :value="__('Prénom')" />
-            <x-text-input id="prénom" class="block mt-1 w-full" type="text" name="prénom" :value="old('prénom')" required autofocus autocomplete="prénom" />
-            <x-input-error :messages="$errors->get('prénom')" class="mt-2" />
+        <!-- Prenom -->
+        <div class="mt-4">
+            <x-input-label for="prenom" :value="__('Prénom')" />
+            <x-text-input id="prenom" class="block mt-1 w-full" type="text" name="prenom" :value="old('prenom')" required autofocus autocomplete="prenom" />
+            <x-input-error :messages="$errors->get('prenom')" class="mt-2" />
         </div>
 
         <!-- Nom -->
-        <div>
+        <div class="mt-4">
             <x-input-label for="nom" :value="__('Nom')" />
             <x-text-input id="nom" class="block mt-1 w-full" type="text" name="nom" :value="old('nom')" required autofocus autocomplete="nom" />
             <x-input-error :messages="$errors->get('nom')" class="mt-2" />
         </div>
 
         <!-- Telephone -->
-            <div>
-            <x-input-label for="telephone" :value="__('Telephone')" />
+            <div class="mt-4">
+            <x-input-label for="telephone" :value="__('Téléphone')" />
             <x-text-input id="telephone" class="block mt-1 w-full" type="text" name="telephone" :value="old('telephone')" required autofocus autocomplete="telephone" />
             <x-input-error :messages="$errors->get('telephone')" class="mt-2" />
         </div>
 
         <!-- Date_naissance -->
-        <div>
-            <x-input-label for="date_naissance" :value="__('Date_naissance')" />
+        <div class="mt-4">
+            <x-input-label for="date_naissance" :value="__('Date de naissance')" />
             <x-text-input id="date_naissance" class="block mt-1 w-full" type="text" name="date_naissance" :value="old('date_naissance')" required autofocus autocomplete="date_naissance" />
             <x-input-error :messages="$errors->get('date_naissance')" class="mt-2" />
         </div>        

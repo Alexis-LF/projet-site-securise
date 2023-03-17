@@ -84,7 +84,6 @@ CREATE TABLE personne(
         id             Int NOT NULL
 	,CONSTRAINT personne_PK PRIMARY KEY (mail)
 
-	,CONSTRAINT personne_patients_FK FOREIGN KEY (mail) REFERENCES patients(mail)
 	,CONSTRAINT personne_cities0_FK FOREIGN KEY (id) REFERENCES cities(id)
 )ENGINE=InnoDB;
 
