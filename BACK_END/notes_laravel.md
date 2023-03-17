@@ -118,3 +118,9 @@ php npm install
 
 ## seeds (remplissage de la db automatiquement)
 - `php artisan db:seed` pour ajouter les données de `database\seeders\DatabaseSeeder.php`
+
+
+# étapes de lancement de laraval breeze (pour l'instant)
+la bdd ne sauvegarde pas les changements à chaque fois, en attendant il faut
+1. créer la bdd `test_auth`
+2. faire `php artisan migrate`
