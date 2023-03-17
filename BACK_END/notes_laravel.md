@@ -113,3 +113,5 @@ php fait référence avec sail, pas nécessaire si docker pas utilisé
 ```
 php npm install
 ```
+# personnalisation de breeze
+- dans `app\Http\Controllers\Auth\RegisteredUserController.php` l'inscription se fait ici. Il faudrait remplir en même temps la BDD de personne
