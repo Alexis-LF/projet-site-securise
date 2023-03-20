@@ -24,7 +24,7 @@ function villeTapee(){
   let texte = document.getElementById("texte_ville");
   if(texte.value.length>2){
       
-      ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/villes?name='+ texte.value, lister_villes);
+      ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/villes?name='+ texte.value, lister_villes);
       
       
     }
@@ -59,8 +59,8 @@ function rechercher() {
 document.getElementById("cookieDeConnexion").addEventListener("click", connexion_appuyee);
 
 document.getElementById("bouton_recherche").addEventListener("click", rechercher);
-ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/professions', lister_professions);
-ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/docteurs', lister_docteurs);
+ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/professions', lister_professions);
+ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/docteurs', lister_docteurs);
 let texte = document.getElementById("texte_ville");
 var villesAjoutees=[];
 // Ajouter un événement de saisie au champ de recherche
