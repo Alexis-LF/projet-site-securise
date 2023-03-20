@@ -6,7 +6,7 @@ DELETE FROM documents;
 DELETE FROM est_specialiste_de;
 DELETE FROM docteurs;
 DELETE FROM personne;
-DELETE FROM patients;
+DELETE FROM users;
 
 
 #------------------------------------------------------------
@@ -32,11 +32,11 @@ INSERT INTO est_specialiste_de(nom,mail) VALUES
 ("Orthoptiste","leona.kenneda@gmail.com");
 
 #------------------------------------------------------------
-# Table : patients et personne
+# Table : users et personne
 #------------------------------------------------------------
 
-INSERT INTO patients VALUES ("mail@test.com","password",NULL,NULL);
-INSERT INTO personne VALUES ("mail@test.com","Nastique","Jim",0605040302, "2001-02-27",16658);
+INSERT INTO users (id,email,password) VALUES (1,"mail@test.com","");
+INSERT INTO personne (mail,nom,prenom,telephone,date_naissance,id) VALUES ("mail@test.com","Nastique","Jim",0605040302,"2001-02-27",16658);
 
 #------------------------------------------------------------
 # Table : documents
