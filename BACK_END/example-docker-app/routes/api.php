@@ -27,6 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/*
 // Fonction de débuggage À DÉSACTIVER quand inutilisé
 // affiche le contenu des GET et des POST
 Route::get('/debug', function (Request $request) {
@@ -44,34 +45,41 @@ Route::get('/mode_paiement', function () {
     return Mode_paiementController::mode_de_paiement();
 });
 
-// Fonction de professions 
-Route::get('/professions', function () {
-    return ProfessionController::noms();
-});
-// Fonction qui retourne les villes
-/// Route::get('/villes', [VillesController::class, 'villes']);
-Route::get('/villes', function (Request $request) {
-    return VillesController::villes($request);
-});
+*/
 
-// Recherche de docteurs, par rapport au lieu, le nom & la profession
-Route::get('/recherche', function (Request $request) {
-    return Est_specialiste_deController::recherche($request);
-});
-
-// Recherche de docteurs
-Route::get('/docteurs', function () {
-    return DocteursController::docteurs();
-});
-
-// Recherche de factures 
-
-Route::get('/factures', function (Request $request) {
-    return FacturesController::factures($request);
-});
-
-// Recherche de documents    
-
-Route::get('/documents', function (Request $request) {
-    return DocumentsController::documents($request);
+// préfixage par la version de l'api
+Route::prefix('2.00')->group(function () {
+    
+    // Fonction de professions 
+    Route::get('/professions', function () {
+        return ProfessionController::noms();
+    });
+    // Fonction qui retourne les villes
+    /// Route::get('/villes', [VillesController::class, 'villes']);
+    Route::get('/villes', function (Request $request) {
+        return VillesController::villes($request);
+    });
+    
+    // Recherche de docteurs, par rapport au lieu, le nom & la profession
+    Route::get('/recherche', function (Request $request) {
+        return Est_specialiste_deController::recherche($request);
+    });
+    
+    // Recherche de docteurs
+    Route::get('/docteurs', function () {
+        return DocteursController::docteurs();
+    });
+    
+    // Recherche de factures 
+    
+    Route::get('/factures', function (Request $request) {
+        return FacturesController::factures($request);
+    });
+    
+    // Recherche de documents    
+    
+    Route::get('/documents', function (Request $request) {
+        return DocumentsController::documents($request);
+    });
+    
 });
