@@ -17,9 +17,6 @@ DROP TABLE IF EXISTS profession;
 DROP TABLE IF EXISTS site;
 DROP TABLE IF EXISTS cities;
 DROP TABLE IF EXISTS migrations;
-DROP TABLE IF EXISTS password_reset_tokens;
-DROP TABLE IF EXISTS failed_jobs;
-DROP TABLE IF EXISTS personal_access_tokens;
 
 #------------------------------------------------------------
 # Table: profession
@@ -86,66 +83,6 @@ CREATE TABLE docteurs(
 
 
 #------------------------------------------------------------
-# Table: migrations
-#------------------------------------------------------------
-
-CREATE TABLE migrations(
-        id        Int NOT NULL ,
-        migration Varchar (255) NOT NULL ,
-        batch     Int NOT NULL
-	,CONSTRAINT migrations_PK PRIMARY KEY (id)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: password_reset_tokens
-#------------------------------------------------------------
-
-CREATE TABLE password_reset_tokens(
-        email      Varchar (255) NOT NULL ,
-        token      Varchar (255) NOT NULL ,
-        created_at TimeStamp
-	,CONSTRAINT password_reset_tokens_PK PRIMARY KEY (email)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: failed_jobs
-#------------------------------------------------------------
-
-CREATE TABLE failed_jobs(
-        id         Int NOT NULL ,
-        uuid       Varchar (255) NOT NULL ,
-        connection Text NOT NULL ,
-        queue      Text NOT NULL ,
-        payload    Longtext NOT NULL ,
-        exception  Longtext NOT NULL ,
-        failed_at  TimeStamp NOT NULL
-	,CONSTRAINT failed_jobs_PK PRIMARY KEY (id)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
-# Table: personal_access_tokens
-#------------------------------------------------------------
-
-CREATE TABLE personal_access_tokens(
-        id             Int NOT NULL ,
-        name           Varchar (255) NOT NULL ,
-        token          Varchar (64) NOT NULL ,
-        abilities      Text ,
-        last_used_at   TimeStamp ,
-        expires_at     TimeStamp ,
-        created_at     TimeStamp ,
-        updated_at     TimeStamp ,
-        tokenable_type Varchar (255) NOT NULL ,
-        tokenable_id   Int NOT NULL
-	,CONSTRAINT personal_access_tokens_AK UNIQUE (tokenable_type,tokenable_id)
-	,CONSTRAINT personal_access_tokens_PK PRIMARY KEY (id)
-)ENGINE=InnoDB;
-
-
-#------------------------------------------------------------
 # Table: est_specialiste_de
 #------------------------------------------------------------
 
@@ -205,26 +142,6 @@ CREATE TABLE facture(
         nom              Varchar (255)
 	,CONSTRAINT facture_PK PRIMARY KEY (identifiant)
 )ENGINE=InnoDB;
-
-
-
-#------------------------------------------------------------
-# Table: users
-#------------------------------------------------------------
-
-CREATE TABLE users(
-        id                Int NOT NULL ,
-        email             Varchar (255) NOT NULL ,
-        email_verified_at TimeStamp ,
-        password          Varchar (255) NOT NULL ,
-        remember_token    Varchar (100) ,
-        created_at        TimeStamp ,
-        updated_at        TimeStamp
-	,CONSTRAINT users_PK PRIMARY KEY (id)
-)ENGINE=InnoDB;
-
-
-
 
 ALTER TABLE site
 	ADD CONSTRAINT site_cities0_FK
