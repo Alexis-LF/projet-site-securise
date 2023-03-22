@@ -11,8 +11,6 @@ composer.lock
 keys.php
 *attaque-*.txt
 
-# pour empêcher la mise dans le main pour l'instant du projet laravel frontend
-FRONT_END/frontend-laravel
 
 # Pour laravel
 /.phpunit.cache
