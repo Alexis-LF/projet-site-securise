@@ -28,3 +28,56 @@ Projet M1 pédagogique d'élaboration d'un site web avec une version sécurisée
 ## attaques
 ### xss
 - [Serveur HTTP avec Python](https://pythonbasics.org/webserver/)
+
+# Orgranigramme
+
+```mermaid
+
+flowchart TD
+    %% définitions des classes pour le style (comme le css)
+    classDef fPrincipales fill:#ff9933,stroke:#333,stroke-width:1px;
+    classDef fSecondaires fill:#ffff00,stroke:#333,stroke-width:1px;
+    classDef contraintes fill:#00cc66,stroke:#333,stroke-width:1px;
+    classDef fEstime fill:#99ffcc,stroke:#333,stroke-width:1px;
+
+    %% racine
+    id1[	projet site sécurisé	]; 
+    class id1 fPrincipales;
+
+    %% projet site sécurisé
+    id1-->	id2(    site non sécurisé	);
+    id1-->	id3(    site sécurisé	);
+    id1-->	id4(    attaques	);
+    id1-->	id5(    thématique	);
+    class id2,id3,id4,id5 fPrincipales;
+
+
+    %% site non sécurisé
+    id2-->	id6(    front end	);
+    id2-->	id7(    back end	);
+    id2-->	id8(    bdd	);
+    class id6,id7,id8 fPrincipales;
+    
+
+    %% site sécurisé
+    id3-->	id9(    front end 	);
+    id3-->	id16(   back end 	);
+    id3-->	id10(   bdd 	);
+    class id9,id16,id10 fPrincipales;
+    
+    %% attaques
+    id4-->	id11(   sql	);
+    id4-->	id12(   xss	);
+    id4-->	id13(   DDoS	);
+    id4-->	id14(   auth	);
+    id4-->	id15(   HTTPS	);
+    class id11,id12,id13,id14,id15 contraintes;
+    
+    %% thématique
+    id5-->	id18(   libdocto	);
+    class id18 fSecondaires;
+    
+    %% back end sécurisé
+    id16--> id17(   Laravel	);
+    class id17 contraintes;
+```
