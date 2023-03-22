@@ -35,7 +35,6 @@ INSERT INTO est_specialiste_de(nom,mail) VALUES
 # Table : users et personne
 #------------------------------------------------------------
 
-INSERT INTO users (id,email,password) VALUES (1,"mail@test.com","");
 INSERT INTO personne (mail,nom,prenom,telephone,date_naissance,id) VALUES ("mail@test.com","Nastique","Jim",0605040302,"2001-02-27",16658);
 
 #------------------------------------------------------------
