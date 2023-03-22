@@ -2,20 +2,23 @@
 function ajaxRequest(type, url, callback, data = null)
 {
   let xhr;
-
+  
   // Create XML HTTP request.
   xhr = new XMLHttpRequest();
   if (type == 'GET' && data != null)
     url += '?' + data;
 
   
-
+    xhr.addEventListener('loadstart', function(){
+      document.getElementsByClassName("chargement")[0].innerHTML="Chargement..."
+     });
   xhr.open(type, url);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
   // Add the onload function.
   xhr.onload = () =>
   {
+    document.getElementsByClassName("chargement")[0].innerHTML=""
     switch (xhr.status)
     {
       case 200:

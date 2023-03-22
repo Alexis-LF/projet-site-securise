@@ -26,7 +26,7 @@ let texte = document.getElementById("texte_ville");
 console.log(texte);
 if(texte.value.length>2){
     
-    ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/index.php/villes?name='+ texte.value, lister_villes);
+    ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/villes?name='+ texte.value, lister_villes);
     
     
   }
@@ -60,7 +60,7 @@ var xhr = new XMLHttpRequest();
         console.log(this.responseText);
     }
     });
-    let url = BASE_URL+'/'+API_VERSION+"/index.php/inscription";
+    let url = BASE_URL+'/'+API_VERSION+"/inscription";
     xhr.open("POST",  url);
 
     xhr.onload = () =>

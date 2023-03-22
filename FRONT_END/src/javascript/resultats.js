@@ -29,7 +29,7 @@ function getParamsURL() {
 
 
 function recherche(){
-    let url=BASE_URL+'/'+API_VERSION+'/index.php'; 
+    let url=BASE_URL+'/'+API_VERSION+''; 
     let recherche = "/recherche";
     recherche += getParamsURL();
     console.log(recherche);

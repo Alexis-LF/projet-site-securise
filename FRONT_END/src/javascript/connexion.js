@@ -99,7 +99,7 @@ function connexion_appuyee(){
   let mdp = document.getElementById("imput_mdp");
   let identifiant = document.getElementById("imput_email")
 
-  ajaxConnexion('POST',  BASE_URL+'/'+API_VERSION+'/index.php/connexion', identifiant.value, mdp.value, connexion_reussie);
+  ajaxConnexion('POST',  BASE_URL+'/'+API_VERSION+'/connexion', identifiant.value, mdp.value, connexion_reussie);
     
 }
 
