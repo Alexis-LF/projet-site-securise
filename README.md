@@ -104,7 +104,7 @@ flowchart TD
 ## Taxonomie des fonctions
 ```mermaid
 
-flowchart TD
+flowchart LR
     %% définitions des classes pour le style (comme le css)
     classDef fPrincipales fill:#ff9933,stroke:#333,stroke-width:1px;
     classDef fSecondaires fill:#ffff00,stroke:#333,stroke-width:1px;
@@ -117,8 +117,8 @@ flowchart TD
 
     %% projet site sécurisé
     id1-->	id2(    2 Sites web	);
-    id1-->	id3(    Thématique du sujet\nsite de RDV médicaux 	);
-    id1-->	id4(    Attaques\nd'après le TOP10 OWASP 2007	);
+    id1-->	id3(    Thématique du sujet :\nsite de RDV médicaux 	);
+    id1-->	id4(    Attaques d'après le\nTOP10 OWASP 2007	);
     class id2,id4 fPrincipales;
     class id3 fSecondaires;
 
@@ -140,8 +140,8 @@ flowchart TD
 
 
     %% sites web
-    id2-->	id2.1(    Version\nnon sécurisé :\nvulnérable\ndes attaques	);
-    id2-->	id2.2(    Version\nsécurisé :\nprotégé\ndes attaques	);
+    id2-->	id2.1(    Version non sécurisé :\nvulnérable des attaques	);
+    id2-->	id2.2(    Version sécurisé :\nprotégé des attaques	);
     id2-->	id2.3(    Architecure	);
     id2-->	id2.4(    Services du site	);
     id2-->	id2.5(    Opérationnel	);
@@ -160,28 +160,28 @@ flowchart TD
     class id2.3.1.1,id2.3.1.2,id2.3.1.3 fPrincipales;
 
     %% Frontend
-    id2.3.1.1-->	id2.3.1.1.1(    Même interface\npour les\ndeux versions	);
-    id2.3.1.1-->	id2.3.1.1.2(    Utilisation\nd'un template	);
+    id2.3.1.1-->	id2.3.1.1.1(    Même interface pour\nles deux versions	);
+    id2.3.1.1-->	id2.3.1.1.2(    Utilisation d'un template	);
     class id2.3.1.1.1,id2.3.1.1.2 contraintes
 
     %% Backend
-    id2.3.1.2-->	id2.3.1.2.1(    Non sécurisé : \nPHP	);
-    id2.3.1.2-->	id2.3.1.2.2(    Sécurisé : \nFramework\nLaravel	);
+    id2.3.1.2-->	id2.3.1.2.1(    Non sécurisé : PHP	);
+    id2.3.1.2-->	id2.3.1.2.2(    Sécurisé : Framework Laravel	);
     class id2.3.1.2.1,id2.3.1.2.2 contraintes
 
 
 
     %% Cloisonnement
-    id2.3.2-->	id2.3.2.1(    2 sites : \n2 instances\ndistinctes	);
-    id2.3.2-->	id2.3.2.2(    Les 3 serveurs\nclient-serveur\nsont indépendants	);
+    id2.3.2-->	id2.3.2.1(    2 sites : 2 instances distinctes	);
+    id2.3.2-->	id2.3.2.2(    Les 3 serveurs client-serveur sont indépendants	);
     class id2.3.2.1,id2.3.2.2 contraintes;
 
     %% Services du site
-    id2.4-->	id2.4.1(    Gestion des\nutilisateurs	);
-    id2.4-->	id2.4.2(    Recherche\nd'un docteur	);
-    id2.4-->	id2.4.3(    Consultation de\nressources\nprivées d'un\npatient	);
-    id2.4-->	id2.4.4(    Gestion de\nprofil patient	);
-    id2.4-->	id2.4.5(    Prise de\nRDV	);
+    id2.4-->	id2.4.1(    Gestion des utilisateurs	);
+    id2.4-->	id2.4.2(    Recherche d'un docteur	);
+    id2.4-->	id2.4.3(    Consultation de ressources\nprivées d'un patient	);
+    id2.4-->	id2.4.4(    Gestion de profil patient	);
+    id2.4-->	id2.4.5(    Prise de RDV	);
     class id2.4.1,id2.4.2,id2.4.3 fPrincipales;
     class id2.4.4,id2.4.5 fEstime;
 
@@ -189,26 +189,26 @@ flowchart TD
 
 
     %% Gestion des utilisateurs
-    id2.4.1-->	id2.4.1.1(    Inscription de\nnouveaux\nutilisateurs\npar identifiant\n et mot de passe	);
-    id2.4.1-->	id2.4.1.2("    Inscription\npar un tiers\n(conenxion\navec google)	");
+    id2.4.1-->	id2.4.1.1(    Inscription de nouveaux utilisateurs\npar identifiant et mot de passe	);
+    id2.4.1-->	id2.4.1.2("    Inscription par un tiers\n(conenxion avec google)	");
     class id2.4.1.1 fPrincipales;
     class id2.4.1.2 fEstime;
 
     %% Consultation de  ressources privées d'un patient
-    id2.4.3-->	id2.4.3.1(    Documents\nmédicaux );
+    id2.4.3-->	id2.4.3.1(    Document médicaux );
     id2.4.3-->	id2.4.3.2(    Factures	);
     class id2.4.3.1,id2.4.3.2 fPrincipales;
 
 
     %% Opérationnel
-    id2.5-->	id2.5.1(    Utilisable\npar le\npublic	);
-    id2.5-->	id2.5.2(    Sur un\nserveur	);
+    id2.5-->	id2.5.2(    Sur un serveur	);
+    id2.5-->	id2.5.1(    Utilisable par le public	);
     class id2.5.1,id2.5.2 fPrincipales
     
     %% Sur un serveur
-    id2.5.2-->	id2.5.2.1(    Serveurs de\nproduction\nsur le réseau	);
-    id2.5.2-->	id2.5.2.2(    Serveurs\nlocalhost	);
-    id2.5.2-->	id2.5.2.3(    Déploiement\nsimple	);
+    id2.5.2-->	id2.5.2.1(    Serveurs de production sur le réseau	);
+    id2.5.2-->	id2.5.2.2(    Serveurs localhost	);
+    id2.5.2-->	id2.5.2.3(    Déploiement simple	);
     class id2.5.2.2 fPrincipales;
     class id2.5.2.1 fSecondaires;
     class id2.5.2.3 fEstime;
@@ -216,12 +216,12 @@ flowchart TD
 
 
     %% attaques
-    id4-->	id4.1(   Injections\nSQL	);
-    id4-->	id4.2("   Cross Site\nScripting\n(XSS)	");
-    id4-->	id4.3("   Déni de\nservice\ndistribué\n(DDoS)	");
-    id4-->	id4.4(   Violation\nde gestion d'\nauthentification	);
-    id4-->	id4.5("   Communications\nnon sécurisées\n(HTTP-S)	");
-    id4-->	id4.6(   Tutoriels\nd'utilisation\n et d'\nexplications	);
+    id4-->	id4.1(   Injections SQL	);
+    id4-->	id4.2("   Cross Site Scripting (XSS)	");
+    id4-->	id4.3("   Déni de service distribué (DDoS)	");
+    id4-->	id4.4(   Violation de gestion d' authentification	);
+    id4-->	id4.5("   Communications non sécurisées (HTTP-S)	");
+    id4-->	id4.6(   Tutoriels d'utilisation  et d'explications	);
     class id4.1,id4.2,id4.3,id4.4,id4.5 contraintes;
     class id4.6 fPrincipales;
 
