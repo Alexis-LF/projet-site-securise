@@ -58,6 +58,15 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
+    /* Sécurisation contre les injections de type XSS */
+
+    'providers' => [
+        // ...
+        Laravel\Sanctum\SanctumServiceProvider::class,
+    ],
+    
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
