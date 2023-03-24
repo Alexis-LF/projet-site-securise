@@ -58,7 +58,8 @@ function connexion_reussie(reponse){
   }
 
   
-  function est_connecte(){
+function est_connecte(){
+  
   let menuConnecte = document.getElementById("menuConnecte");
   let champsConnexion = document.getElementById("champs_de_connexion");
   // Est connecté
@@ -141,44 +142,6 @@ function ajaxReponse(type, url, jwt){
   
   xhr.send(data);
   }
-
-  function ajaxReponse(type, url, jwt){
-
-    if (type!='POST' && url!=""){
-      return false;
-    }
-    var data = new FormData();
-    data.append("jwt", jwt);
-    
-    var xhr = new XMLHttpRequest();
-    
-    xhr.withCredentials = false;
-    
-    xhr.open(type, url);
-    
-    
-    
-    xhr.onload = () =>
-    {
-        switch(xhr.status)
-        {
-            case 201:
-              
-                callback(JSON.parse(xhr.responseText));
-                return mail;
-                break;
-            case 401: 
-                alert("Veuillez vous reconnecter");
-                return false
-                break;
-            default:
-                httpErrors(xhr.status);
-                return false;
-        }
-    }
-    
-    xhr.send(data);
-    }
 
 est_connecte();
 
