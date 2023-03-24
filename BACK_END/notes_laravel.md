@@ -107,6 +107,10 @@ php artisan migrate
 ```
 php artisan breeze:install
 ```
+ou (version quiet)
+```
+php artisan breeze:install -q blade
+```
 
 ## lancer npm
 php fait référence avec sail, pas nécessaire si docker pas utilisé

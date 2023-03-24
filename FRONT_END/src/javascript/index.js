@@ -56,7 +56,11 @@ function rechercher() {
 
 
 }
-document.getElementById("cookieDeConnexion").addEventListener("click", connexion_appuyee);
+
+// On met les URLS de define.js
+document.getElementById("cookieDeConnexion").setAttribute("href",AUTH_LOGIN_URL);
+
+document.getElementById("boutonInscription").setAttribute("href",AUTH_REGISTER_URL);
 
 document.getElementById("bouton_recherche").addEventListener("click", rechercher);
 ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/professions', lister_professions);

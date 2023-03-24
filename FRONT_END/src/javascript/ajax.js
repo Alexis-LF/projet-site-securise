@@ -2,6 +2,7 @@
 function ajaxRequest(type, url, callback, data = null)
 {
   let xhr;
+  var blocChargement = undefined;
   
   // Create XML HTTP request.
   xhr = new XMLHttpRequest();
@@ -10,7 +11,10 @@ function ajaxRequest(type, url, callback, data = null)
 
   
     xhr.addEventListener('loadstart', function(){
-      document.getElementsByClassName("chargement")[0].innerHTML="Chargement..."
+      blocChargement = document.getElementsByClassName("chargement")[0];
+      if (blocChargement != undefined) {
+        blocChargement.innerHTML="Chargement...";
+      }
      });
   xhr.open(type, url);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -18,7 +22,9 @@ function ajaxRequest(type, url, callback, data = null)
   // Add the onload function.
   xhr.onload = () =>
   {
-    document.getElementsByClassName("chargement")[0].innerHTML=""
+    if (blocChargement != undefined) {
+      blocChargement.innerHTML="";
+    }
     switch (xhr.status)
     {
       case 200:

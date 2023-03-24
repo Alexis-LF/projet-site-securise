@@ -12,6 +12,10 @@ use App\Http\Controllers\DocteursController;
 use App\Http\Controllers\FacturesController;
 use App\Http\Controllers\DocumentsController;
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\UserConnecteController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -81,5 +85,11 @@ Route::prefix('2.00')->group(function () {
     Route::get('/documents', function (Request $request) {
         return DocumentsController::documents($request);
     });
+
+    Route::get('/valider_connexion', function () {
+        // return "cc";
+        return UserConnecteController::validerConnexion();
+    })->middleware(['auth', 'verified'])->name('valider_connexion');
+    // });
     
 });
