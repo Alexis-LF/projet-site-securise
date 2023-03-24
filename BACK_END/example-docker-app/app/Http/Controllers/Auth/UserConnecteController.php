@@ -28,6 +28,6 @@ class UserConnecteController extends Controller
 
     public static function pasConnecte()
     {
-        return response()->json("pas connecté");
+        return response()->json(false);
     }
 }
