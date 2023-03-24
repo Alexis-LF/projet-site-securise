@@ -58,12 +58,13 @@ function connexion_reussie(reponse){
   }
 
   
-function est_connecte(){
+function est_connecte(reponse){
   
   let menuConnecte = document.getElementById("menuConnecte");
   let champsConnexion = document.getElementById("champs_de_connexion");
+
   // Est connecté
-  if (getCookie("jwt")!=""){
+  if (reponse!==false){
     // afficher & masquer les menus
     if(champsConnexion != null){
       champsConnexion.setAttribute("style", "display:none");
@@ -146,3 +147,4 @@ function ajaxReponse(type, url, jwt){
 est_connecte();
 
 
+ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/valider_connexion', est_connecte);

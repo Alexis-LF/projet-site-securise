@@ -18,6 +18,7 @@ function ajaxRequest(type, url, callback, data = null)
      });
   xhr.open(type, url);
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.setRequestHeader('Cookie', document.cookie);
 
   // Add the onload function.
   xhr.onload = () =>
