@@ -104,7 +104,7 @@ flowchart TD
 ## Taxonomie des fonctions
 ```mermaid
 
-flowchart TD
+flowchart LR
     %% définitions des classes pour le style (comme le css)
     classDef fPrincipales fill:#ff9933,stroke:#333,stroke-width:1px;
     classDef fSecondaires fill:#ffff00,stroke:#333,stroke-width:1px;
@@ -116,38 +116,115 @@ flowchart TD
     class id1 fPrincipales;
 
     %% projet site sécurisé
-    id1-->	id2(    Sites web	);
-    id1-->	id3(    Thématique du sujet\nsite de RDV médicaux 	);
-    id1-->	id4(    Attaques\nd'après le TOP10 OWASP 2007	);
+    id1-->	id2(    2 Sites web	);
+    id1-->	id3(    Thématique du sujet :\nsite de RDV médicaux 	);
+    id1-->	id4(    Attaques d'après le\nTOP10 OWASP 2007	);
     class id2,id4 fPrincipales;
     class id3 fSecondaires;
 
+    %% Thématique
+    id3-->	id3.1(    Exemple de\npatient exitant	);
+    id3-->	id3.2(    Peupler le site\nde données );
+    class id3.1 fPrincipales
+    class id3.2 fSecondaires
+
+    %% Données
+    id3.2-->	id3.2.1(    Profil de docteurs );
+    id3.2-->	id3.2.2(    Sites médicaux );
+    id3.2-->	id3.2.3(    Professions );
+    id3.2-->	id3.2.4(    Villes );
+
+    class id3.2.1,id3.2.2,id3.2.3,id3.2.4 fSecondaires
+
+
+
+
     %% sites web
-    id2-->	id2.4(    Fonctions du site	);
-    id2-->	id2.1(    Version non sécurisé\nvulnérable des attaques	);
-    id2-->	id2.2(    Version sécurisé\nprotégé des attaques	);
-    id2-->	id2.3(    Architecure\nclient-serveur	);
-    class id2.1,id2.2,id2.3,id2.4 fPrincipales;
+    id2-->	id2.1(    Version non sécurisé :\nvulnérable des attaques	);
+    id2-->	id2.2(    Version sécurisé :\nprotégé des attaques	);
+    id2-->	id2.3(    Architecure	);
+    id2-->	id2.4(    Services du site	);
+    id2-->	id2.5(    Opérationnel	);
+    class id2.1,id2.2,id2.3,id2.4,id2.5 fPrincipales;
+
+    %% Architecure
+    id2.3-->	id2.3.1(    Client-serveur	);
+    id2.3-->	id2.3.2(    Cloisonnement	);
+    class id2.3.1,id2.3.2 fPrincipales;
+
 
     %% Architecure client-serveur
-    id2.3-->	id2.3.1(    Frontend	);
-    id2.3-->	id2.3.2(    Backend	);
-    id2.3-->	id2.3.3(    Base de données	);
-    class id2.3.1,id2.3.2,id2.3.3 fPrincipales;
+    id2.3.1-->	id2.3.1.1(    Frontend	);
+    id2.3.1-->	id2.3.1.2(    Backend	);
+    id2.3.1-->	id2.3.1.3(    Base de données	);
+    class id2.3.1.1,id2.3.1.2,id2.3.1.3 fPrincipales;
 
-    %% Fonctionnalités du site
-    id2.4-->	id2.4.1(    Gestion utilisateurs	);
+    %% Frontend
+    id2.3.1.1-->	id2.3.1.1.1(    Même interface pour\nles deux versions	);
+    id2.3.1.1-->	id2.3.1.1.2(    Utilisation d'un template	);
+    class id2.3.1.1.1,id2.3.1.1.2 contraintes
+
+    %% Backend
+    id2.3.1.2-->	id2.3.1.2.1(    Non sécurisé : PHP	);
+    id2.3.1.2-->	id2.3.1.2.2(    Sécurisé : Framework Laravel	);
+    class id2.3.1.2.1,id2.3.1.2.2 contraintes
+
+
+
+    %% Cloisonnement
+    id2.3.2-->	id2.3.2.1(    2 sites : 2 instances distinctes	);
+    id2.3.2-->	id2.3.2.2(    Les 3 serveurs client-serveur sont indépendants	);
+    class id2.3.2.1,id2.3.2.2 contraintes;
+
+    %% Services du site
+    id2.4-->	id2.4.1(    Gestion des utilisateurs	);
     id2.4-->	id2.4.2(    Recherche d'un docteur	);
-    class id2.4.1,id2.4.2 contraintes;
+    id2.4-->	id2.4.3(    Consultation de ressources\nprivées d'un patient	);
+    id2.4-->	id2.4.4(    Gestion de profil patient	);
+    id2.4-->	id2.4.5(    Prise de RDV	);
+    class id2.4.1,id2.4.2,id2.4.3 fPrincipales;
+    class id2.4.4,id2.4.5 fEstime;
+
+
+
+
+    %% Gestion des utilisateurs
+    id2.4.1-->	id2.4.1.1(    Inscription de nouveaux utilisateurs\npar identifiant et mot de passe	);
+    id2.4.1-->	id2.4.1.2("    Inscription par un tiers\n(conenxion avec google)	");
+    class id2.4.1.1 fPrincipales;
+    class id2.4.1.2 fEstime;
+
+    %% Consultation de  ressources privées d'un patient
+    id2.4.3-->	id2.4.3.1(    Document médicaux );
+    id2.4.3-->	id2.4.3.2(    Factures	);
+    class id2.4.3.1,id2.4.3.2 fPrincipales;
+
+
+    %% Opérationnel
+    id2.5-->	id2.5.2(    Sur un serveur	);
+    id2.5-->	id2.5.1(    Utilisable par le public	);
+    class id2.5.1,id2.5.2 fPrincipales
+    
+    %% Sur un serveur
+    id2.5.2-->	id2.5.2.1(    Serveurs de production sur le réseau	);
+    id2.5.2-->	id2.5.2.2(    Serveurs localhost	);
+    id2.5.2-->	id2.5.2.3(    Déploiement simple	);
+    class id2.5.2.2 fPrincipales;
+    class id2.5.2.1 fSecondaires;
+    class id2.5.2.3 fEstime;
+
 
 
     %% attaques
-    id4-->	id4.1(   sql	);
-    id4-->	id4.2(   xss	);
-    id4-->	id4.3(   DDoS	);
-    id4-->	id4.4(   auth	);
-    id4-->	id4.5(   HTTPS	);
+    id4-->	id4.1(   Injections SQL	);
+    id4-->	id4.2("   Cross Site Scripting (XSS)	");
+    id4-->	id4.3("   Déni de service distribué (DDoS)	");
+    id4-->	id4.4(   Violation de gestion d' authentification	);
+    id4-->	id4.5("   Communications non sécurisées (HTTP-S)	");
+    id4-->	id4.6(   Tutoriels d'utilisation  et d'explications	);
     class id4.1,id4.2,id4.3,id4.4,id4.5 contraintes;
+    class id4.6 fPrincipales;
+
     
 
 ```
