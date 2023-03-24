@@ -89,7 +89,11 @@ Route::prefix('2.00')->group(function () {
     Route::get('/valider_connexion', function () {
         // return "cc";
         return UserConnecteController::validerConnexion();
-    })->middleware(['auth', 'verified'])->name('valider_connexion');
-    // });
+    })->middleware([\App\Http\Middleware\PasConnecte::class])->name('valider_connexion');
+    
+    Route::get('/pas_connecte', function (Request $request) {
+        return UserConnecteController::pasConnecte();
+    })->name("pas_connecte");
+
     
 });

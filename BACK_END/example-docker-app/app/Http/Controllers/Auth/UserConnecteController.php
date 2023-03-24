@@ -25,4 +25,9 @@ class UserConnecteController extends Controller
             ->get();
         return response()->json($personne);
     }
+
+    public static function pasConnecte()
+    {
+        return response()->json("pas connecté");
+    }
 }
