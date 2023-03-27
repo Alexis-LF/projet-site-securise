@@ -77,3 +77,36 @@ flowchart TD;
     id2-->id3("Remplacement des variables de condition \n(s'il y a un filtre)\n«SELECT colonnes FROM table \nWHERE colonne = variable;»");
     id3-->id4((Envoi\nde la chaîne de\ncaractère contenant\nla requête à\néxécuter));    
 ```
+
+## Fonctionnement des requêtes POST
+### Connnexion, valider_connexion & JWT
+
+```mermaid
+
+sequenceDiagram
+    participant f as Frontend;
+    participant p as Backend : PDO;
+    participant j as Backend : JWT;
+    participant b as Base de données;
+
+    activate f;
+    f->>p: POST /connexion <br>{mail="mail@test.com", <br>password = "password"};
+    activate p;
+    Note right of f: Requête de connexion
+    p->>b: SELECT mail FROM users WHERE mail="mail@test.com" and mot_de_passe = "password";
+    activate b;
+    Note right of p: Vérification si l'utilisateur s'est bien connecté
+    Note left of b: Le mail est retourné<br> si les bons identifiants sont rentrés
+    b->>p: [{"mail"="mail@test.com"}];
+    deactivate b;
+    p->>j: [{"mail"="mail@test.com"}];
+    activate j;
+    deactivate p;
+    Note left of j: Chiffrement
+    j->>f: z&4dP3$udDFkyD3!U*%bCPxvXD;
+    deactivate j;
+    Note right of f: Enregistrement dans un cookie
+    deactivate f;
+
+
+```
