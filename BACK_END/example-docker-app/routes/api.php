@@ -14,6 +14,7 @@ use App\Http\Controllers\DocumentsController;
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\UserConnecteController;
+use App\Http\Controllers\AuthController;
 
 
 /*
@@ -94,6 +95,16 @@ Route::prefix('2.00')->group(function () {
     Route::get('/pas_connecte', function (Request $request) {
         return UserConnecteController::pasConnecte();
     })->name("pas_connecte");
+
+    Route::post('/tokens/create', function (Request $request) {
+        $token = $request->user()->createToken($request->token_name);
+     
+        return ['token' => $token->plainTextToken];
+    });
+    // TESTS Sanctum
+    Route::post('/connexion',[AuthController::class,'connexion']);
+    Route::post('/inscription',[AuthController::class,'inscription']);
+    Route::post('/deconnexion',[AuthController::class,'deconnexion']);
 
     
 });

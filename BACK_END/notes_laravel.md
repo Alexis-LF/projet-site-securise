@@ -151,3 +151,20 @@ Ajouter dans `app/Http/Kernel.php`
     \Illuminate\Routing\Middleware\SubstituteBindings::class,
 ],
 ```
+
+# tuto laravel sanctum
+1. Créer [app/Traits/HttpResponses.php](example-docker-app/app/Traits/HttpResponses.php)
+2. Créer un controller
+    ```sh
+      php artisan make:controller AuthController
+    ```
+3. Implémenter les fonctions de connexion, déconnexion & inscription
+4. Créer
+    ```sh
+      php artisan make:request StoreUserRequest
+    ```
+    et
+    ```sh
+      php artisan make:request LoginUserRequest
+    ```
+  Puis les compléter
