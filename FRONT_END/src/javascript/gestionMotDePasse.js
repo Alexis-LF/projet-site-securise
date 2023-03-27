@@ -1,3 +1,4 @@
+// On implémente une fonction qui valide le formulaire en fonction des entrées de l'utilisateur 
 function validerFormulaire() {
     const nom = document.getElementsByName("nom")[0].value;
     const prenom = document.getElementsByName("prenom")[0].value;
@@ -26,7 +27,7 @@ function validerFormulaire() {
 
     
   }
-
+  // On implémente une fonction qui redirige les utilisateurs vers la page index.html
   function redirectionIndex(){
     alert('Votre message a bien été envoyé !');
     window.location.href = "/index.html";

@@ -19,22 +19,30 @@ function w3_open() {
     showDivs(slideIndex = n);
   }
   
-  function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length}
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
-    }
-    x[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " w3-opacity-off";
+  // La fonction showDivs prend en paramètre n, qui représente l'indice de la diapositive à afficher
+function showDivs(n) {
+  var i;
+  // Récupère tous les éléments ayant la classe "mySlides" et les stocke dans la variable x
+  var x = document.getElementsByClassName("mySlides");
+  // Récupère tous les éléments ayant la classe "demo" et les stocke dans la variable dots
+  var dots = document.getElementsByClassName("demo");
+  // Si n est supérieur au nombre d'éléments dans x, réinitialise slideIndex à 1
+  if (n > x.length) {slideIndex = 1}
+  // Si n est inférieur à 1, réinitialise slideIndex à la longueur de x
+  if (n < 1) {slideIndex = x.length}
+  // Cache toutes les diapositives en bouclant sur tous les éléments de x
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
   }
-
+  // Réinitialise toutes les classes des éléments de dots en enlevant "w3-opacity-off"
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  // Affiche la diapositive avec l'indice slideIndex en mettant son style à "block"
+  x[slideIndex-1].style.display = "block";
+  // Ajoute la classe "w3-opacity-off" à l'élément de dots correspondant à la diapositive affichée
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
     
     
     

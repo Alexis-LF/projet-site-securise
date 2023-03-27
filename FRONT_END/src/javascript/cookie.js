@@ -1,33 +1,43 @@
-function setCookie(name, value) { // Permet de créer un nouveau cookie de connexion
+// On implémente une fonction qui crée un nouveau cookie de connexion
+function setCookie(name, value) { 
   
   let expirationDays=1;
     const date = new Date();
-    date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000)); // Définit la date du jour et la durée de validité de connexion
-    const expires = "expires=" + date.toUTCString(); // Permet de formater la date 
-
-    document.cookie = name + "=" + value + ";" + expires + ";path=/"; // Définit le cookie le nom, la valeur du cookie, la date d'expiration et le chemin de validité (ici la racine de la page web)
+     // On définit la date du jour et la durée de validité de connexion
+    date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+     // On formate la date
+    const expires = "expires=" + date.toUTCString();
+    // On définit le cookie le nom, la valeur du cookie, la date d'expiration et le chemin de validité (ici la racine de la page web)
+    document.cookie = name + "=" + value + ";" + expires + ";path=/";
   }
 
 
-  
+  // On implémente une fonction getCookie qui parcourt une chaine de caractères des cookies pour trouver le cookie correspondant à l'entrée de la fonction
   function getCookie(name) {
-    const decodedCookie = decodeURIComponent(document.cookie); // permet de parcourir la chaîne de caractères des cookies pour trouver le cookie correspondant au nom spécifié
+    const decodedCookie = decodeURIComponent(document.cookie);
     const cookies = decodedCookie.split(';');
-    for (let i = 0; i < cookies.length; i++) { // Parcourt ensuite la chaîne de caracteres et renvoie le cookie demandé
+    // On parcourt ensuite la chaîne de caracteres à l'aide d'une boucle et on renvoie le cookie demandé
+    for (let i = 0; i < cookies.length; i++) { 
       const cookie = cookies[i].trim();
-      if (cookie.indexOf(name + "=") === 0) { // Vérifie si le nom du cookie correspond à celui spécifié
-        return cookie.substring(name.length + 1, cookie.length); // Extrait et retourne le cookie correspondant
+      // On vérifie si le nom du cookie correspond à celui spécifié
+      if (cookie.indexOf(name + "=") === 0) { 
+        // On extrait et on retourne le cookie correspondant
+        return cookie.substring(name.length + 1, cookie.length); 
       }
     }
-    return ""; // Retourne du vide 
+    // On retourne du vide 
+    return ""; 
 
   }
   
-  function checkCookie() { // Regarde si le cookie de connexion est présent
-    let user = getCookie("username"); // Récupère le cookie de connexion correspondant à l'utilisateur "username"
-    if (user !== "") { // Si le cookie est présent,
-      // L'utilisateur est connecté
-    } else { // Sinon il ne l'est pas et il y a 
-      // Redirection vers la page de connexion
+  // On implémente une fonction checkCookie qui regarde si le cookie de connexion est présent
+  function checkCookie() { 
+    // On récupère le cookie de connexion correspondant à l'utilisateur "username"
+    let user = getCookie("username"); 
+    // Si le cookie est présent, l'utilisateur est connecté
+    if (user !== "") { 
+    } 
+    // Sinon il ne l'est pas et il y a une redirection vers la page de connexion
+    else { 
     }
   }
