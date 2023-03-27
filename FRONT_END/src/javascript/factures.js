@@ -37,7 +37,7 @@ function ajaxReponse(type, url, jwt, callback){
 
 
 
-    function afficheFactures(liste_factures){
+    function afficheFactures(liste_factures){ // commentaires idem afficheDocteurs (similaire)
 
       let html_mere=document.getElementById("liste_facts"); 
       for (i = 0; i < liste_factures.length; i++) {

@@ -1,37 +1,37 @@
 //On implémente une fonction qui crée une liste de suggestions de villes en fonction de ce que l'utilisateur tape dans le champ de recherche
 function lister_villes(liste_des_villes){
-  // Récupération du noeud HTML pour la liste de villes
+  // On récupère le noeud HTML pour la liste des villes
   let html_mere=document.getElementById("liste_ville");
-  // Parcourir la liste des villes renvoyées par l'API
+  // On parcourt la liste des villes renvoyées par l'API
   for (let i = 0; i < liste_des_villes.length; i++) {
   let ville=liste_des_villes[i];
   let nomVille= ville["name"];
-  // Ajouter des options à la liste si la ville n'a pas déjà été ajoutée
+  //On ajoute des options à la liste si la ville n'a pas déjà été ajoutée
   if (!villesAjoutees.includes(nomVille)){
   let option = document.createElement("option");
   option.setAttribute("value", nomVille);
-  // Ajouter l'option au noeud HTML de la liste de villes
+  // On ajoute l'option au noeud HTML de la liste de villes
   html_mere.appendChild(option);
   villesAjoutees.push(nomVille);
   }
   }
   }
   
-  // Cette fonction est appelée à chaque fois que l'utilisateur tape dans le champ de recherche de villes
+  // On implémente la fonction villeTapee qui est appelée à chaque fois que l'utilisateur tape dans le champ de recherche de villes
   function villeTapee(){
   let texte = document.getElementById("texte_ville");
-  // Si l'utilisateur a tapé plus de 2 caractères
+  // Si l'utilisateur a tapé plus de 2 caractères on execute la requête ajaxRequest
   if(texte.value.length>2){
-  // Faire une requête AJAX pour récupérer les villes correspondantes
+  // On fait la requête AJAX pour récupérer les villes correspondantes
   ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/villes?name='+ texte.value, lister_villes);
   }
   }
   
-  // Cette fonction enregistre les critères de recherche dans l'URL visitée
+  // On implémente une fonction enregistre les critères de recherche dans l'URL visitée
   function rechercher() {
   let uri ="?"; // string retourné : s'il est que de longueur 1, alors pas de "&" à mettre au bout
   let criteres = {
-  // On récupère les informations du formulaire
+  // On récupère les informations du formulaire en fonction des entrées de l'utilisateur 
   "docteur": document.getElementById("imput_nom_docteur").value,
   "profession": document.getElementById("imput_nom_profession").value,
   "ville": document.getElementById("texte_ville").value

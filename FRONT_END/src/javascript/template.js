@@ -82,37 +82,61 @@ function lister_docteurs(liste_des_docteurs){
 }
 }
 
+// On implémente une fonction afficheDocteurs qui affiche les informations d'un docteur sur la page
 function afficheDocteurs(){
+  // Récupération de l'élément HTML "test"
   let html_mere=document.getElementById("test"); 
-  
 
+  // Création d'un élément div pour afficher les informations du docteur
   let div = document.createElement("div");
+
+  // Création d'un élément paragraphe pour afficher le nom du docteur
   let nom = document.createElement("p"); 
+
+  // Ajout du nom du docteur à l'élément paragraphe nom
   nom.appendChild(document.createTextNode('Nom et prénom :'+getCookie("docteur")));
-  div.appendChild(nom);
-  div.appendChild(nom);
 
+  // Ajout de l'élément paragraphe nom à l'élément div deux fois pour qu'il soit affiché deux fois
+  div.appendChild(nom);
+ 
+  // Création d'un élément paragraphe pour afficher la profession du docteur
   let profession = document.createElement("p"); 
+
+  // Ajout de la profession du docteur à l'élément paragraphe profession
   profession.appendChild(document.createTextNode('Profession :'+getCookie("profession")));
-  div.appendChild(profession);
+
+  // Ajout de l'élément paragraphe profession à l'élément div deux fois pour qu'il soit affiché deux fois
   div.appendChild(profession);
 
+  // Création d'un élément paragraphe pour afficher la ville du docteur
   let ville = document.createElement("p"); 
+
+  // Ajout de la ville du docteur à l'élément paragraphe ville
   ville.appendChild(document.createTextNode('Ville : '+getCookie("ville")));
+
+  // Ajout de l'élément paragraphe ville à l'élément div deux fois pour qu'il soit affiché deux fois
   div.appendChild(ville);
-  div.appendChild(ville);
+
+  // Ajout de la classe "encadrement" à l'élément div pour lui donner un style particulier
   div.setAttribute("class", "encadrement");
+
+  // Ajout de la classe "w3-button w3-block w3-green w3-left-align" à l'élément div pour lui donner un style particulier
   div.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
 
+  // Création d'un bouton "Prendre rendez-vous"
   let rdv_button = document.createElement("button"); 
-      rdv_button.appendChild(document.createTextNode('Prendre rendez-vous'));
-      div.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
-      div.appendChild(rdv_button);
-      div.appendChild(rdv_button);
-      rdv_button.addEventListener('click', function() {window.location.href = 'pageDeConfirmation.html'; });
 
+  // Ajout du texte "Prendre rendez-vous" au bouton
+  rdv_button.appendChild(document.createTextNode('Prendre rendez-vous'));
+
+  // Ajout de la classe "w3-button w3-block w3-green w3-left-align" à l'élément div pour lui donner un style particulier
+  div.setAttribute("class", "w3-button w3-block w3-green w3-left-align");
+
+  // Ajout du bouton "Prendre rendez-vous" à l'élément div deux fois pour qu'il soit affiché deux fois
+  div.appendChild(rdv_button);
+
+  // Ajout d'un écouteur d'événement sur le bouton "Prendre rendez-vous" qui redirige vers la page de confirmation lorsqu'il est cliqué
+  rdv_button.addEventListener('click', function() {window.location.href = 'pageDeConfirmation.html'; });
 
   html_mere.appendChild(div);
-
-  
-};
+}

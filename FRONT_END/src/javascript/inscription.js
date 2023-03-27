@@ -1,31 +1,28 @@
 function lister_villes(liste_des_villes){
-    let html_mere=document.getElementById("liste_ville"); 
-    
+    let html_mere=document.getElementById("liste_ville"); // On récupère l'élément HTML où afficher les villes
+    for (let i = 0; i < liste_des_villes.length; i++) { // On parcourt la liste des villes renvoyée par l'API
+        console.log(villesAjoutees); // On affiche dans la console la liste des villes déjà ajoutées
 
-for (let i = 0; i < liste_des_villes.length; i++) {
-      
-        console.log(villesAjoutees);
-      let ville=liste_des_villes[i];
-      let nomVille= ville["name"];
-      // Ajouter des options à la liste
-      if (!villesAjoutees.includes(nomVille)){
-        let option = document.createElement("option");
-        option.setAttribute("value", nomVille);
-        // Ajouter le champ de saisie et la liste de suggestions au document
-        html_mere.appendChild(option);
-        villesAjoutees.push(nomVille);
-      
+        let ville=liste_des_villes[i]; // On récupère de la ville courante
+        let nomVille= ville["name"]; // On récupère du nom de la ville courante
+
+        // On ajoute des options à la liste déroulante
+        if (!villesAjoutees.includes(nomVille)){ // On vérifie si la ville courante n'a pas déjà été ajoutée
+            let option = document.createElement("option"); // On crée un élément option
+            option.setAttribute("value", nomVille); // On ajoute de l'attribut value avec le nom de la ville courante
+            html_mere.appendChild(option); // On ajoute l'option à la liste déroulante
+            villesAjoutees.push(nomVille); // On ajoute le nom de la ville courante à la liste des villes déjà ajoutées
+        }
     }
-
-
-
 }
-}
+
+
 function villeTapee(){
 let texte = document.getElementById("texte_ville");
 console.log(texte);
+// On vérifie si la longueur de la chaine de caracteres entrée est strictement supérieure à 2
 if(texte.value.length>2){
-    
+    // On effectue une requête de type 'GET' pour lister les villes qui contiennent la chaine de caracteres rentrée précédement
     ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/villes?name='+ texte.value, lister_villes);
     
     
