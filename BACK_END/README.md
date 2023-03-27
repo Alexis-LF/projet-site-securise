@@ -79,33 +79,60 @@ flowchart TD;
 ```
 
 ## Fonctionnement des requêtes POST
-### Connnexion, valider_connexion & JWT
+### Connnexion
 
 ```mermaid
 
 sequenceDiagram
     participant f as Frontend;
-    participant p as Backend : PDO;
     participant j as Backend : JWT;
+    participant p as Backend : PDO;
     participant b as Base de données;
 
     activate f;
     f->>p: POST /connexion <br>{mail="mail@test.com", <br>password = "password"};
     activate p;
     Note right of f: Requête de connexion
-    p->>b: SELECT mail FROM users WHERE mail="mail@test.com" and mot_de_passe = "password";
+    p->>b: SELECT mail FROM users <br>WHERE mail="mail@test.com" AND<br> mot_de_passe = "password";
     activate b;
-    Note right of p: Vérification si l'utilisateur s'est bien connecté
+    Note over b: Vérification si l'utilisateur<br> s'est bien connecté
     Note left of b: Le mail est retourné<br> si les bons identifiants sont rentrés
     b->>p: [{"mail"="mail@test.com"}];
     deactivate b;
     p->>j: [{"mail"="mail@test.com"}];
     activate j;
     deactivate p;
-    Note left of j: Chiffrement
+    Note over j: Chiffrement
+    j->>j: z&4dP3$udDFkyD3!U*%bCPxvXD;
+
     j->>f: z&4dP3$udDFkyD3!U*%bCPxvXD;
     deactivate j;
     Note right of f: Enregistrement dans un cookie
+    deactivate f;
+
+
+```
+
+### Valider Connnexion
+```mermaid
+
+sequenceDiagram
+    participant f as Frontend;
+    participant j as Backend : JWT;
+    participant p as Backend : PDO;
+    participant b as Base de données;
+
+    activate f;
+    f->>j: POST /valider_connexion <br>{jwt="z&4dP3$udDFkyD3!U*%bCPxvXD"};
+    activate j;
+    Note right of f: Requête de<br> validation<br> de la connexion
+    Note over j: Déchiffrement
+    j->>j: [{"mail"="mail@test.com"}];
+    Note left of j: Le mail est retourné<br> si la connexion est validée
+    j->>f: "mail@test.com";
+    deactivate j;
+    Note right of f: Le jeton du patient est valide : <br>la connexion est active
+
     deactivate f;
 
 
