@@ -11,3 +11,5 @@ composer.lock
 keys.php
 *attaque-*.txt
 FRONT_END/fronend-larvel/*
+# site sécurisé
+BACK_END/example-docker-app/*
