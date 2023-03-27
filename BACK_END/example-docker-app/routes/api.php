@@ -86,7 +86,7 @@ Route::prefix('2.00')->group(function () {
         return DocumentsController::documents($request);
     });
 
-    Route::get('/valider_connexion', function () {
+    Route::get('/valider_connexion', function (Request $request) {
         // return "cc";
         return UserConnecteController::validerConnexion();
     })->middleware([\App\Http\Middleware\PasConnecte::class])->name('valider_connexion');
