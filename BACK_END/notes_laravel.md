@@ -124,7 +124,30 @@ php npm install
 - `php artisan db:seed` pour ajouter les données de `database\seeders\DatabaseSeeder.php`
 
 
-# étapes de lancement de laraval breeze (pour l'instant)
+## étapes de lancement de laraval breeze (pour l'instant)
 la bdd ne sauvegarde pas les changements à chaque fois, en attendant il faut
 1. créer la bdd `test_auth`
 2. faire `php artisan migrate`
+
+# Laravel Sanctum
+## Installation
+Installer via composer
+```sh
+composer require laravel/sanctum
+```
+Mettre en place les fichiers de config
+```sh
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+```
+Créer les tables qui retient les tokens
+```sh
+php artisan migrate
+```
+Ajouter dans `app/Http/Kernel.php`
+```php
+'api' => [
+    \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+    \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
+    \Illuminate\Routing\Middleware\SubstituteBindings::class,
+],
+```
