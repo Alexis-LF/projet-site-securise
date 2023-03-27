@@ -8,49 +8,48 @@ function stage() {
 
 // On implémente une fonction pour effectuer une requête AJAX de connexion
 function ajaxConnexion(type, url, id, pwd, callback){
-
-// On vérifie le type de requête et de l'URL fournie (Si ce n'est pas un POST on s'arrete là)
-if (type!='POST' && url!=""){
-  return false;
-}
-
-// On crée un nouvel objet FormData et on lui ajoute des informations d'identification (mail et mot de passe)
-var data = new FormData();
-data.append("mail", id);
-data.append("password", pwd);
-
-//On crée une nouvelle requête XMLHttpRequest
-var xhr = new XMLHttpRequest();
-
-// On désactive les credentials pour éviter la divulgation de données sensibles
-xhr.withCredentials = false;
-
-// On ouvre la requête avec le type et l'URL fournis
-xhr.open(type, url);
-
-// On implémente une fonction qui sera appelée lorsque la requête AJAX sera terminée
-xhr.onload = () =>
-{
-  // On crée un switch en fonction du code de la réponse obtenu 
-  switch(xhr.status)
-  {
-      // Si le code de statut est 201, la connexion est réussie et on appelle la fonction de callback en lui passant la réponse sous forme de tableau JSON
-      case 201:
-          callback(JSON.parse(xhr.responseText));
-          break;
-      // Si le code de statut est 401, les identifiants fournis sont incorrects et on affiche un message d'alerte
-      case 401: 
-          alert("Mauvais identifiant ou mdp");
-          break;
-      // Si aucun des cas précédents n'est vérifié, il y a une erreur de connexion et on affiche un message d'alerte et le code de statut de la réponse
-      default:
-          alert("Erreur, veuillez vous reconnecter")
-          httpErrors(xhr.status);
+  // On vérifie le type de requête et de l'URL fournie (Si ce n'est pas un POST on s'arrete là)
+  if (type!='POST' && url!=""){
+    return false;
   }
-}
 
-// On envoi la requête avec les données d'identification de data
-xhr.send(data);
+  // On crée un nouvel objet FormData et on lui ajoute des informations d'identification (mail et mot de passe)
+  var data = new FormData();
+  data.append("mail", id);
+  data.append("password", pwd);
+
+  //On crée une nouvelle requête XMLHttpRequest
+  var xhr = new XMLHttpRequest();
+
+  // On désactive les credentials pour éviter la divulgation de données sensibles
+  xhr.withCredentials = false;
+
+  // On ouvre la requête avec le type et l'URL fournis
+  xhr.open(type, url);
+
+  // On implémente une fonction qui sera appelée lorsque la requête AJAX sera terminée
+  xhr.onload = () =>
+  {
+    // On crée un switch en fonction du code de la réponse obtenu 
+    switch(xhr.status)
+    {
+        // Si le code de statut est 201, la connexion est réussie et on appelle la fonction de callback en lui passant la réponse sous forme de tableau JSON
+        case 201:
+            callback(JSON.parse(xhr.responseText));
+            break;
+        // Si le code de statut est 401, les identifiants fournis sont incorrects et on affiche un message d'alerte
+        case 401: 
+            alert("Mauvais identifiant ou mdp");
+            break;
+        // Si aucun des cas précédents n'est vérifié, il y a une erreur de connexion et on affiche un message d'alerte et le code de statut de la réponse
+        default:
+            alert("Erreur, veuillez vous reconnecter")
+            httpErrors(xhr.status);
+    }
+  }
+
+  // On envoi la requête avec les données d'identification de data
+  xhr.send(data);
 }
 
 // On implémente une fonction "connexion_reussie" appelée en cas de connexion réussie
@@ -74,7 +73,7 @@ function connexion_reussie(reponse){
 }
 
 // On implémente une fonction qui vérifie si l'utilisateur est connecté et qui affiche le menu de navigation si c'est le cas 
-function est_connecte() {
+function est_connecte(reponse) {
 
   let menuConnecte = document.getElementById("menuConnecte"); // Menu de navigation pour les utilisateurs connectés
   let champsConnexion = document.getElementById("champs_de_connexion"); // Champ de connexion pour les utilisateurs non connectés
@@ -168,8 +167,5 @@ function ajaxReponse(type, url, jwt){
   // On envoi la requête avec les données d'identification de data
   xhr.send(data);
 }
-
-est_connecte();
-
 
 ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/valider_connexion', est_connecte);
