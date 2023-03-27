@@ -5,7 +5,7 @@
 ### aiguillage par verble
 
 
-```sh
+```mermaid
 
 flowchart TD
 
@@ -45,6 +45,23 @@ flowchart TD;
     id3(Éxécuter de la\nrequête SQL formée) ;
     id3 --> id4(Transformation En JSON);
     id4 --> id5(("Envoi des\ndonnées\n(code 200)"));
+    
+```
+### aiguillage par chemin POST
+```mermaid
+
+flowchart TD;
+
+    %% racine
+    id1((Requêtes\nPOST));
+    id1-->	id2{chemin ?};
+
+    id2--/connexion--> idconnexion[[Fonction\nconnexion]];
+    id2--/valider_connexion--> idvalider_connexion[[Fonction\nvalider_connexion]];
+    id2--/inscription--> idinscription[[Fonction\ninscription]];
+    id2--par défaut--> iddefault((Envoi\nerreur 400\nBad request));
+
+
     
 ```
 
