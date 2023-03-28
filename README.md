@@ -24,6 +24,8 @@ Projet M1 pédagogique d'élaboration d'un site web avec une version sécurisée
 
 ### Installation des bibliothèques
 - [Installation simple des extensions PHP dans des conteneurs Docker : mlocati/docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
+- [Gestionnaire de dépendances pour PHP : Composer](https://getcomposer.org)
+
 
 ## base de données
 - [Régions, départements, villes et villages de France et d'outre-mer : data.gouv.fr](https://www.data.gouv.fr/fr/datasets/regions-departements-villes-et-villages-de-france-et-doutre-mer/#resources)
