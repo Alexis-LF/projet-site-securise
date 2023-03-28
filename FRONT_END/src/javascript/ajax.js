@@ -24,8 +24,14 @@ function ajaxRequest(type, url, callback, data = null) {
   xhr.open(type, url);
 
   // On ajoute un en-tête de type de contenu pour la requête HTTP
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xhr.setRequestHeader('Cookie', document.cookie);
+  xhr.setRequestHeader("Accept", "application/vnd.api+json");
+  xhr.setRequestHeader("Content-Type", "application/vnd.api+json");
+
+  // Si connecté : on envoie le token api
+  let api_token = getCookie("api_token");
+  if(api_token !== ""){
+    xhr.setRequestHeader('Authorization','Bearer '+api_token);
+  }
 
   // On ajoute une fonction à exécuter lorsque la requête est terminée
   xhr.onload = () => {
