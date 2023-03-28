@@ -79,6 +79,7 @@ Route::prefix('2.00')->group(function () {
     // routes où il faut être connecté
     Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::post('/deconnexion', [AuthController::class, 'deconnexion']);
+        Route::post('/valider_connexion', [AuthController::class, 'valider_connexion']);
         
         Route::get('/test', function () {
             return "coucou";

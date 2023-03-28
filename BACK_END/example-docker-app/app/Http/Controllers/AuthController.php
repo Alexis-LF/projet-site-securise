@@ -68,4 +68,17 @@ class AuthController extends Controller
     {
         return $this->success(["fonction de deconnexion"]);
     }
+
+    public function valider_connexion()
+    {
+        $personne = DB::table('personne')
+        ->select('nom','prenom','mail')
+        ->where('mail', '=', Auth::user()->email)
+        ->get()
+        ->first();
+    
+        return $this->success([
+            'personne'=>$personne
+        ]);
+    }
 }
