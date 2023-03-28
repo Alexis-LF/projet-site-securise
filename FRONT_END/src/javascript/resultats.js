@@ -27,10 +27,11 @@ function getParamsURL() {
 
 
 
-
+// Retourner l'URL de recherche du backend, à faire ensuite dans l'ajaxRequest
 function recherche(){
     let url=BASE_URL+'/'+API_VERSION+'/index.php'; 
     let recherche = "/recherche";
+    // Récupérer l'URI contenant les bons paramètres
     recherche += getParamsURL();
     console.log(recherche);
     url=url+recherche;
@@ -38,7 +39,9 @@ function recherche(){
     return url;
   }
 
-  function afficheDocteurs(liste_docteurs){
+
+
+function afficheDocteurs(liste_docteurs){
     let html_mere=document.getElementById("liste_medecins");
     for (let i = 0; i < liste_docteurs.length; i++) {
    
