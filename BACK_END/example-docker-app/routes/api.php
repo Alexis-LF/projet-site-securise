@@ -74,6 +74,8 @@ Route::prefix('2.00')->group(function () {
     Route::get('/docteurs', function () {
         return DocteursController::docteurs();
     });
+
+
     
     // Recherche de factures 
     
@@ -87,20 +89,6 @@ Route::prefix('2.00')->group(function () {
         return DocumentsController::documents($request);
     });
 
-    Route::get('/valider_connexion', function (Request $request) {
-        // return "cc";
-        return UserConnecteController::validerConnexion();
-    })->middleware([\App\Http\Middleware\PasConnecte::class])->name('valider_connexion');
-    
-    Route::get('/pas_connecte', function (Request $request) {
-        return UserConnecteController::pasConnecte();
-    })->name("pas_connecte");
-
-    Route::post('/tokens/create', function (Request $request) {
-        $token = $request->user()->createToken($request->token_name);
-     
-        return ['token' => $token->plainTextToken];
-    });
     // TESTS Sanctum
     Route::post('/connexion',[AuthController::class,'connexion']);
     Route::post('/inscription',[AuthController::class,'inscription']);
