@@ -57,7 +57,7 @@ flowchart TD
 
 ```mermaid
 
-flowchart TD
+flowchart TD;
     %% définitions des classes pour le style (comme le css)
     classDef fPrincipales fill:#ff9933,stroke:#333,stroke-width:1px;
     classDef fSecondaires fill:#ffff00,stroke:#333,stroke-width:1px;
@@ -101,10 +101,32 @@ flowchart TD
     class id17 contraintes;
 ```
 
+## Communication entre serveurs
+```mermaid
+flowchart LR;
+
+    classDef masque fill:#ffffde,stroke:#333,stroke-width:0px;
+    classDef plein fill:#ffffde,stroke:#333,stroke-width:0px;
+
+
+    subgraph id1[Frontend];
+    id1.1[	Define.js	]; 
+    end;
+    subgraph id2[Backend];
+    id2.1[ .env];
+    end;
+    subgraph id3[" Base de données "];
+    id3.1[  ]
+    class id3.1 masque;
+    end;
+    id1.1 -->id2;
+    id2.1 -->id3;
+
+```
 ## Taxonomie des fonctions
 ```mermaid
 
-flowchart LR
+flowchart LR;
     %% définitions des classes pour le style (comme le css)
     classDef fPrincipales fill:#ff9933,stroke:#333,stroke-width:1px;
     classDef fSecondaires fill:#ffff00,stroke:#333,stroke-width:1px;
@@ -142,18 +164,18 @@ flowchart LR
     %% sites web
     id2-->	id2.1(    Version non sécurisé :\nvulnérable des attaques	);
     id2-->	id2.2(    Version sécurisé :\nprotégé des attaques	);
-    id2-->	id2.3(    Architecure	);
+    id2-->	id2.3(    Architecture	);
     id2-->	id2.4(    Services du site	);
     id2-->	id2.5(    Opérationnel	);
     class id2.1,id2.2,id2.3,id2.4,id2.5 fPrincipales;
 
-    %% Architecure
+    %% Architecture
     id2.3-->	id2.3.1(    Client-serveur	);
     id2.3-->	id2.3.2(    Cloisonnement	);
     class id2.3.1,id2.3.2 fPrincipales;
 
 
-    %% Architecure client-serveur
+    %% Architecture client-serveur
     id2.3.1-->	id2.3.1.1(    Frontend	);
     id2.3.1-->	id2.3.1.2(    Backend	);
     id2.3.1-->	id2.3.1.3(    Base de données	);
