@@ -93,8 +93,8 @@ function est_connecte(reponse) {
 
     let aNom = document.createElement("a");
 
-    aNom.innerHTML = getCookie("prenom_patient") + " " + getCookie("nom_patient");
-    aNom.setAttribute("href","mailto:"+getCookie("mail_patient"));
+    aNom.innerHTML = reponse.data.personne.prenom + " " + reponse.data.personne.nom;
+    aNom.setAttribute("href","mailto:"+reponse.data.personne.mail);
     divNom.appendChild(aNom);
 
     divNom.setAttribute("class","w3-bar-item w3-padding-16");
@@ -168,4 +168,4 @@ function ajaxReponse(type, url, jwt){
   xhr.send(data);
 }
 
-ajaxRequest('GET',  BASE_URL+'/'+API_VERSION+'/valider_connexion', est_connecte);
+ajaxRequest('POST',  BASE_URL+'/'+API_VERSION+'/valider_connexion', est_connecte);
