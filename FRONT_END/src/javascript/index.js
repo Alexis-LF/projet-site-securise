@@ -47,10 +47,6 @@ function lister_villes(liste_des_villes){
   window.location.href = "html/resultats.html"+uri;
   }
   
-  // On définit les URLs de connexion et d'inscription dans la page
-  document.getElementById("cookieDeConnexion").setAttribute("href",AUTH_LOGIN_URL);
-  document.getElementById("boutonInscription").setAttribute("href",AUTH_REGISTER_URL);
-  
   // On ajoute un événement "click" au bouton de recherche
   document.getElementById("bouton_recherche").addEventListener("click", rechercher);
   
