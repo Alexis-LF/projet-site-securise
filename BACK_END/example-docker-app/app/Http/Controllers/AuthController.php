@@ -66,6 +66,6 @@ class AuthController extends Controller
     }
     public function deconnexion()
     {
-        return response()->json("fonction de deconnexion") ;
+        return $this->success(["fonction de deconnexion"]);
     }
 }
