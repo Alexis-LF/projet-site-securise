@@ -27,31 +27,6 @@ use App\Http\Controllers\AuthController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-/*
-// Fonction de débuggage À DÉSACTIVER quand inutilisé
-// affiche le contenu des GET et des POST
-Route::get('/debug', function (Request $request) {
-    return  array("GET"=>$_GET, "POST"=>$_POST,'request'=>$request->collect());
-});
-
-// un "ping" de l'api
-Route::get('/test', function () {
-    return "api !";
-});
-
-// Fonction de mode de paiement 
-// n'est pas utile, pourrait être supprimée
-Route::get('/mode_paiement', function () {
-    return Mode_paiementController::mode_de_paiement();
-});
-
-*/
-
 // préfixage par la version de l'api
 Route::prefix('2.00')->group(function () {
     
