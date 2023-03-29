@@ -64,15 +64,15 @@ function connexion_reussie(reponse){
   setCookie("nom_patient", reponse.data.personne.nom);
   setCookie("mail_patient", reponse.data.personne.mail);
 
-  // On vérifie que l'utilisateur est bien connecté grâce à la fonction définie "est_connecte"
-  est_connecte(reponse);
-
   // Affichage d'un message d'alerte pour signaler que la connexion est réussie
   alert("La connexion est réussie !");
 
-  // Masquage du formulaire de connexion (une fois connectée, les champs de connexion disparaissent)
-  let div = document.getElementById("champs_de_connexion");
-  div.setAttribute("style", "display:none");
+  // On récupère la page d'accueil
+  let url_accueil = new URL(window.location.toLocaleString()).origin;
+  // si le frontend n'est pas hébergé sur serveur, on met la page d'accueil en dur
+  url_accueil = (url_accueil == "null") ? "../index.html" : url_accueil;
+  // redirection
+  window.location.href = url_accueil;
 }
 
 // On implémente une fonction qui vérifie si l'utilisateur est connecté et qui affiche le menu de navigation si c'est le cas 
@@ -88,26 +88,28 @@ function est_connecte(reponse) {
       champsConnexion.setAttribute("style", "display:none"); // On cache le champ de connexion
       menuConnecte.setAttribute("style", "display:inherit"); // On affiche le menu de navigation pour les utilisateurs qui sont connectés
     }
-    
-    // On affiche le nom, prénom et adresse e-mail de l'utilisateur connecté dans le menu de navigation
-    let divNom = document.createElement("h5");
-    divNom.appendChild(document.createTextNode('connecté en tant que '));
-    divNom.appendChild(document.createElement("br"));
-
-    let aNom = document.createElement("a");
-
-    aNom.innerHTML = reponse.data.personne.prenom + " " + reponse.data.personne.nom;
-    aNom.setAttribute("href","mailto:"+reponse.data.personne.mail);
-    divNom.appendChild(aNom);
-
-    divNom.setAttribute("class","w3-bar-item w3-padding-16");
-    divNom.setAttribute("title",getCookie("mail_patient"));
-    menuConnecte.appendChild(divNom);
-
+    if (menuConnecte != null){
+      // On affiche le nom, prénom et adresse e-mail de l'utilisateur connecté dans le menu de navigation
+      let divNom = document.createElement("h5");
+      divNom.appendChild(document.createTextNode('connecté en tant que '));
+      divNom.appendChild(document.createElement("br"));
+  
+      let aNom = document.createElement("a");
+  
+      aNom.innerHTML = reponse.data.personne.prenom + " " + reponse.data.personne.nom;
+      aNom.setAttribute("href","mailto:"+reponse.data.personne.mail);
+      divNom.appendChild(aNom);
+  
+      divNom.setAttribute("class","w3-bar-item w3-padding-16");
+      divNom.setAttribute("title",getCookie("mail_patient"));
+      menuConnecte.appendChild(divNom);
+    }
   } else {
-    // Si l'utilisateur n'est pas connecté, on affiche le champ de connexion et on cache le menu de navigation
-    champsConnexion.setAttribute("style", "display:inherit"); // On affiche le champ de connexion pour les utilisateurs non connectés
-    menuConnecte.setAttribute("style", "display:none"); // On cache le menu de navigation pour les utilisateurs connectés
+    if (champsConnexion != null) {
+      // Si l'utilisateur n'est pas connecté, on affiche le champ de connexion et on cache le menu de navigation
+      champsConnexion.setAttribute("style", "display:inherit"); // On affiche le champ de connexion pour les utilisateurs non connectés
+      menuConnecte.setAttribute("style", "display:none"); // On cache le menu de navigation pour les utilisateurs connectés
+    }
   }
 }
 
