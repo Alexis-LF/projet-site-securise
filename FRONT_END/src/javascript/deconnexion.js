@@ -13,9 +13,5 @@ function removeCookie(name) {
   document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
 }
 
-// On appelle la fonction removeCookie pour supprimer chacun des cookies
-removeCookie("jwt");
-removeCookie("mail");
-removeCookie("nom_patient");
-removeCookie("prénom_patient");
-removeCookie("ville_patient");
+// On appelle la fonction removeAllCookies pour nettoyer la connexion terminée
+removeAllCookies();
