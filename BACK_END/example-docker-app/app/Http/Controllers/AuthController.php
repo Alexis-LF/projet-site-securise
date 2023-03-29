@@ -29,12 +29,12 @@ class AuthController extends Controller
         $personne = DB::table('personne')
             ->select('nom','prenom','mail')
             ->where('mail', '=', Auth::user()->email)
-            ->get();
+            ->get()
+            ->first();
         
         return $this->success([
-            'user' => $user,
-            'personne'=>$personne[0],
-            'token' => $user->createToken('API Token')->plainTextToken
+            'personne'=>$personne,
+            'token' => $user->createToken('API Token of '. $user->email)->plainTextToken
         ]);
 
     }
