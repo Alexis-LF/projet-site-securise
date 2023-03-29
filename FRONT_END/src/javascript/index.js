@@ -28,32 +28,34 @@ function lister_villes(liste_des_villes){
   }
   
   // Cette fonction enregistre les critères de recherche dans l'URL visitée
-  function rechercher() {
+function rechercher() {
   let uri ="?"; // string retourné : s'il est que de longueur 1, alors pas de "&" à mettre au bout
   let criteres = {
-  // On récupère les informations du formulaire
-  "docteur": document.getElementById("imput_nom_docteur").value,
-  "profession": document.getElementById("imput_nom_profession").value,
-  "ville": document.getElementById("texte_ville").value
+    // On récupère les informations du formulaire
+    "docteur": document.getElementById("imput_nom_docteur").value,
+    "profession": document.getElementById("imput_nom_profession").value,
+    "ville": document.getElementById("texte_ville").value
   }
   Object.entries(criteres).forEach(([cle, valeur]) => {
-  // Si la valeur n'est pas qu'un espace
-  if(valeur.trim() != ""){
-  // On forme l'uri : &clé=valeur
-  uri += (uri.length > 1 ? "&" : "") + cle +"="+ valeur;
-  }
+    // Si la valeur n'est pas qu'un espace
+    if(valeur.trim() != ""){
+      // On forme l'uri : &clé=valeur
+      uri += (uri.length > 1 ? "&" : "") + cle +"="+ valeur;
+    }
   });
   // Une fois le traitement fini, on se rend sur la page de résultats
   window.location.href = "html/resultats.html"+uri;
-  }
+}
   
-  // On ajoute un événement "click" au bouton de recherche
-  document.getElementById("bouton_recherche").addEventListener("click", rechercher);
-  
-  // On fait des requêtes AJAX pour récupérer les professions, les docteurs et les villes
-  ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/professions', lister_professions);
-  ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/docteurs', lister_docteurs);
-  let texte = document.getElementById("texte_ville");
-  var villesAjoutees=[];
-  // On ajoute un événement de saisie au champ de recherche de villes
-  texte.addEventListener("input", villeTapee);
+// On ajoute un événement "click" au bouton de recherche
+document.getElementById("bouton_recherche").addEventListener("click", rechercher);
+
+document.getElementById("cookieDeConnexion").addEventListener("click", connexion_appuyee);
+
+// On fait des requêtes AJAX pour récupérer les professions, les docteurs et les villes
+ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/professions', lister_professions);
+ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/docteurs', lister_docteurs);
+let texte = document.getElementById("texte_ville");
+var villesAjoutees=[];
+// On ajoute un événement de saisie au champ de recherche de villes
+texte.addEventListener("input", villeTapee);
