@@ -1,6 +1,6 @@
 
 
-  function ajaxReponse(type, url, api_token){
+  function ajaxReponse(type, url, api_token,callback){
 
   // Si la méthode HTTP n'est pas POST ou l'URL est vide, on renvoie false pour signaler une erreur
   if (type!='POST' && url!=""){
@@ -32,8 +32,9 @@
       switch(xhr.status)
       {
           // Si le code de réponse est 201 (Créé), on affiche la réponse en format JSON dans la console et renvoie l'objet parsé JSON.
+          case 200:
           case 201:
-            console.log(JSON.parse(xhr.responseText));
+            callback(JSON.parse(xhr.responseText));
             break;
 
           // Si le code de réponse est 401 (Non autorisé), affiche une alerte demandant à l'utilisateur de se reconnecter et renvoie false pour signaler une erreur.
@@ -44,7 +45,6 @@
 
           // Si le code de réponse n'est ni 201 ni 401, appelle la fonction httpErrors avec le code de réponse HTTP en tant que paramètre et renvoie false pour signaler une erreur.
           default:
-              httpErrors(xhr.status);
               return false;
       }
   }
