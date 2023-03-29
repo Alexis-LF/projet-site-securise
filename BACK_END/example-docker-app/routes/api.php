@@ -55,24 +55,20 @@ Route::prefix('2.00')->group(function () {
     Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::post('/deconnexion', [AuthController::class, 'deconnexion']);
         Route::post('/valider_connexion', [AuthController::class, 'valider_connexion']);
-        
-        Route::get('/test', function () {
-            return "coucou";
+
+        // Recherche de documents    
+        Route::get('/documents', function (Request $request) {
+            return DocumentsController::documents($request);
         });
+        
     });
     
 
     // Recherche de factures 
-    
     Route::get('/factures', function (Request $request) {
         return FacturesController::factures($request);
     });
     
-    // Recherche de documents    
-    
-    Route::get('/documents', function (Request $request) {
-        return DocumentsController::documents($request);
-    });
 
     // routes Sanctum
     Route::post('/connexion',[AuthController::class,'connexion']);
