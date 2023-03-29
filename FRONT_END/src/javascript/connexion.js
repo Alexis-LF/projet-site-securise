@@ -168,4 +168,6 @@ function ajaxReponse(type, url, jwt){
   xhr.send(data);
 }
 
-ajaxRequest('POST',  BASE_URL+'/'+API_VERSION+'/valider_connexion', est_connecte);
+if(getCookie("api_token") !== ""){
+  ajaxRequest('POST',  BASE_URL+'/'+API_VERSION+'/valider_connexion', est_connecte,null,getCookie("api_token"));
+}
