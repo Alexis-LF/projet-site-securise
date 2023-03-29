@@ -1,60 +1,5 @@
 
-
-  function ajaxReponse(type, url, api_token,callback){
-
-  // Si la méthode HTTP n'est pas POST ou l'URL est vide, on renvoie false pour signaler une erreur
-  if (type!='POST' && url!=""){
-    return false;
-  }
-
-  //On crée une nouvelle requête XMLHttpRequest
-  var xhr = new XMLHttpRequest();
-
-  
-  
-  // On désactive les credentials pour éviter la divulgation de données sensibles
-  xhr.withCredentials = false;
-  
-  // On ouvre la requête avec le type et l'URL fournis
-  xhr.open(type, url);
-  
-  // On ajoute un en-tête de type de contenu pour la requête HTTP
-  xhr.setRequestHeader("Accept", "application/vnd.api+json");
-  
-  // on envoie le token api
-  if(api_token !== null){
-    xhr.setRequestHeader('Authorization','Bearer '+api_token);
-  }
-  // On définit la fonction qui sera appelée lorsque la réponse sera reçue du serveur.
-  xhr.onload = () =>
-  {
-      // On crée un switch en fonction du code de la réponse obtenu
-      switch(xhr.status)
-      {
-          // Si le code de réponse est 201 (Créé), on affiche la réponse en format JSON dans la console et renvoie l'objet parsé JSON.
-          case 200:
-          case 201:
-            callback(JSON.parse(xhr.responseText));
-            break;
-
-          // Si le code de réponse est 401 (Non autorisé), affiche une alerte demandant à l'utilisateur de se reconnecter et renvoie false pour signaler une erreur.
-          case 401:
-              alert("Veuillez vous reconnecter");
-              return false
-              break;
-
-          // Si le code de réponse n'est ni 201 ni 401, appelle la fonction httpErrors avec le code de réponse HTTP en tant que paramètre et renvoie false pour signaler une erreur.
-          default:
-              return false;
-      }
-  }
-
-// On envoi la requête avec les données d'identification
-  xhr.send();
-}
-
-
-    // On implémente la fonction afficheDocuments qui permet d'afficher les détails des documents d'une personne
+// On implémente la fonction afficheDocuments qui permet d'afficher les détails des documents d'une personne
 function afficheDocuments(liste_documents){
   // On récupère l'élément div qui contiendra les informations sur les documents
   let html_mere=document.getElementById("liste_docs");
@@ -145,19 +90,19 @@ function afficheDocuments(liste_documents){
       // Ajout du div parent au parent HTML
       html_mere.appendChild(div);
         
-      };
-      }
+    };
+}
 
-    // On implémente une fonction pour vérifier la connexion réussie et afficher les documents
-    function connexionReussie(reponse){
-    ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/documents', afficheDocuments,null,getCookie("api_token")); // On effectue une requête Ajax pour récupérer les documents liés à cette adresse mail
-    }
-  
-    // On véréifie la présence d'un jeton d'authentification
-    if(getCookie("api_token")!=""){
-    ajaxReponse('POST', BASE_URL+'/'+API_VERSION+'/valider_connexion', getCookie("api_token"), connexionReussie); // Requête Ajax pour valider la connexion avec le jeton d'authentification
-    }
-    else{
-    alert("Veuillez vous connecter !"); // Affichage d'un message d'alerte
-    window.location.href = "../index.html"; // Redirection vers la page de connexion
-    }
+
+// On véréifie la présence d'un jeton d'authentification
+if(getCookie("api_token")!=""){
+
+  // afficher les documents
+  ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/documents', afficheDocuments,null,getCookie("api_token")); 
+  // On effectue une requête Ajax pour récupérer les documents liés à au compte du jeton d'api
+
+}
+else{
+  alert("Veuillez vous connecter !"); // Affichage d'un message d'alerte
+  window.location.href = "../index.html"; // Redirection vers la page de connexion
+}
