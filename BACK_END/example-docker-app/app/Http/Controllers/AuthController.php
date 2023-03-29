@@ -35,8 +35,8 @@ class AuthController extends Controller
         return $this->success([
             'personne'=>$personne,
             'token' => $user->createToken('API Token of '. $user->email)->plainTextToken
-        ]);
-
+        ],
+        "connexion réussie");
     }
     public function inscription(StoreUserRequest $request)
     {
@@ -58,10 +58,17 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $personne = DB::table('personne')
+        ->select('nom','prenom','mail')
+        ->where('mail', '=', $request->email)
+        ->get()
+        ->first();
+
         return $this->success([
-            'user'=>$user,
-            'token'=>$user->createToken('API Token of '. $user->email)->plainTextToken
-        ]);
+            'personne'=>$personne,
+            'token' => $user->createToken('API Token of '. $user->email)->plainTextToken
+        ],
+        "insription réussie");
 
     }
     public function deconnexion()
@@ -79,6 +86,7 @@ class AuthController extends Controller
     
         return $this->success([
             'personne'=>$personne
-        ]);
+        ],
+        "jeton d'API valide");
     }
 }

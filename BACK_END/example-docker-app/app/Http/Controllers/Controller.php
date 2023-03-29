@@ -12,7 +12,7 @@ class Controller extends BaseController
     use AuthorizesRequests, ValidatesRequests, HttpResponses;
     public function main()
     {
-        return $this->success([]);
+        return $this->success([],"l'api est fonctionnelle");
     }
 
 }
