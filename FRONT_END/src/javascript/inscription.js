@@ -35,24 +35,26 @@ if(texte.value.length>2){
 
 
 function requestInscription(){
-var nom = document.getElementById("imput_nom").value;
-var prenom = document.getElementById("imput_prenom").value;
-var ville = document.getElementById("texte_ville").value;
-var date_naissance = document.getElementById("date_naissance").value;
-var email = document.getElementById("mail").value;
-var mdp = document.getElementById("mdp").value; 
-var telephone = document.getElementById("telephone").value;
 
-var data=new FormData();
-data.append("nom", nom);
-data.append("prenom", prenom);
-data.append("ville", ville);
-data.append("dateNaissance", date_naissance);
-data.append("email", email);
-data.append("motDePasse", mdp);
-data.append("numeroPortable", telephone);
+    // on définit les clés des identifiants du frontend et de l'api au backend pour automatiser l'ajout de données
+    let liste_champs = [
+        {"backend": "email","frontend":"mail"},
+        {"backend": "password","frontend":"mdp"},
+        {"backend": "password_confirmation","frontend":"mdp_confirmation"},
+        {"backend": "nom","frontend":"imput_nom"},
+        // {"backend": "non implémentée pour l'instant","frontend":"texte_ville"},
+        {"backend": "prenom","frontend":"imput_prenom"},
+        {"backend": "telephone","frontend":"telephone"},
+    ];
 
-var xhr = new XMLHttpRequest();
+    var data=new FormData();
+
+    // ajout des données entrée par l'utilisateur 
+    liste_champs.forEach(champ => {
+        data.append(champ.backend, document.getElementById(champ.frontend).value);
+    });
+
+    var xhr = new XMLHttpRequest();
     xhr.withCredentials = false;
 
     xhr.addEventListener("readystatechange", function() {
@@ -63,27 +65,32 @@ var xhr = new XMLHttpRequest();
     let url = BASE_URL+'/'+API_VERSION+"/inscription";
     xhr.open("POST",  url);
 
+    // On ajoute un en-tête de type de contenu pour la requête HTTP
+    xhr.setRequestHeader("Accept", "application/vnd.api+json");
+
+
     xhr.onload = () =>
-{
-    switch(xhr.status)
     {
-        case 201:
-            console.log(xhr.responseText);
-            // Rediriger l'utilisateur vers la page index.html
-            window.location.href = "../index.html";
-            
-            break;
-        case 401: 
-            alert("Mauvais identifiant ou mdp");
-            break;
-        default:
-            alert("Erreur, veuillez vous reconnecter")
-            httpErrors(xhr.status);
+        switch(xhr.status)
+        {
+            case 200:
+            case 201:
+                alert("inscription réussie !");
+                connexion_reussie(JSON.parse(xhr.responseText));
+                // Rediriger l'utilisateur vers la page index.html
+                break;
+                case 422: 
+                alert("Cet e-mail est déjà associé à un compte, veuillez vous connecter");
+                window.location.href = "../index.html"; // Redirection vers la page de connexion
+            case 401: 
+                alert("Mauvais identifiant ou mdp");
+                return;
+            default:
+                alert("Erreur, veuillez vous réinscrire")
+                return;
+        }
     }
-}
-
     xhr.send(data);
-
 }
 
 
