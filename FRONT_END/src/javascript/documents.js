@@ -149,14 +149,13 @@ function afficheDocuments(liste_documents){
       }
 
     // On implémente une fonction pour vérifier la connexion réussie et afficher les documents
-    function verificationConnexionReussie(reponse){
-    setCookie("mail", reponse.data.personne.mail); // On enregistre l'adresse mail dans un cookie
-    ajaxRequest('GET', URL_DOCUMENT_FINAL.replace("MAIL", reponse.data.personne.mail), afficheDocuments); // On effectue une requête Ajax pour récupérer les documents liés à cette adresse mail
+    function connexionReussie(reponse){
+    ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/documents', afficheDocuments,null,getCookie("api_token")); // On effectue une requête Ajax pour récupérer les documents liés à cette adresse mail
     }
   
     // On véréifie la présence d'un jeton d'authentification
     if(getCookie("api_token")!=""){
-    ajaxReponse('POST', BASE_URL+'/'+API_VERSION+'/valider_connexion', getCookie("api_token"), verificationConnexionReussie); // Requête Ajax pour valider la connexion avec le jeton d'authentification
+    ajaxReponse('POST', BASE_URL+'/'+API_VERSION+'/valider_connexion', getCookie("api_token"), connexionReussie); // Requête Ajax pour valider la connexion avec le jeton d'authentification
     }
     else{
     alert("Veuillez vous connecter !"); // Affichage d'un message d'alerte
