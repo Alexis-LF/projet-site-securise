@@ -15,7 +15,7 @@ function ajaxConnexion(type, url, id, pwd, callback){
 
   // On crée un nouvel objet FormData et on lui ajoute des informations d'identification (mail et mot de passe)
   var data = new FormData();
-  data.append("mail", id);
+  data.append("email", id);
   data.append("password", pwd);
 
   //On crée une nouvelle requête XMLHttpRequest
@@ -27,6 +27,9 @@ function ajaxConnexion(type, url, id, pwd, callback){
   // On ouvre la requête avec le type et l'URL fournis
   xhr.open(type, url);
 
+  // On ajoute un en-tête de type de contenu pour la requête HTTP
+  xhr.setRequestHeader("Accept", "application/vnd.api+json");
+
   // On implémente une fonction qui sera appelée lorsque la requête AJAX sera terminée
   xhr.onload = () =>
   {
@@ -34,6 +37,7 @@ function ajaxConnexion(type, url, id, pwd, callback){
     switch(xhr.status)
     {
         // Si le code de statut est 201, la connexion est réussie et on appelle la fonction de callback en lui passant la réponse sous forme de tableau JSON
+        case 200:
         case 201:
             callback(JSON.parse(xhr.responseText));
             break;
@@ -43,8 +47,8 @@ function ajaxConnexion(type, url, id, pwd, callback){
             break;
         // Si aucun des cas précédents n'est vérifié, il y a une erreur de connexion et on affiche un message d'alerte et le code de statut de la réponse
         default:
-            alert("Erreur, veuillez vous reconnecter")
-            httpErrors(xhr.status);
+            alert("Erreur, veuillez vous reconnecter");
+            return;
     }
   }
 
@@ -55,11 +59,10 @@ function ajaxConnexion(type, url, id, pwd, callback){
 // On implémente une fonction "connexion_reussie" appelée en cas de connexion réussie
 function connexion_reussie(reponse){
   // Stockage du token JWT et des informations de profil dans des cookies
-  setCookie("jwt", reponse[0]["jwt"]);
-  setCookie("ville_patient", reponse[0]["ville"]);
-  setCookie("prenom_patient", reponse[0]["prenom"]);
-  setCookie("nom_patient", reponse[0]["nom"]);
-  setCookie("mail_patient", reponse[0]["mail"]);
+  setCookie("api_token", reponse.data.token);
+  setCookie("prenom_patient", reponse.data.personne.prenom);
+  setCookie("nom_patient", reponse.data.personne.nom);
+  setCookie("mail_patient", reponse.data.personne.mail);
 
   // On vérifie que l'utilisateur est bien connecté grâce à la fonction définie "est_connecte"
   est_connecte(reponse);
@@ -111,8 +114,8 @@ function est_connecte(reponse) {
 // On implémente une fonction appelée lorsqu'un utilisateur tente de se connecter
 function connexion_appuyee() {
   // On récupère les valeurs saisies par l'utilisateur pour l'adresse e-mail et le mot de passe
-  let mdp = document.getElementById("imput_mdp");
-  let identifiant = document.getElementById("imput_email")
+  let mdp = document.getElementById("input_mdp");
+  let identifiant = document.getElementById("input_email")
 
   // On envoi une requête HTTP POST à l'API pour tenter de connecter l'utilisateur
   ajaxConnexion('POST',  BASE_URL+'/'+API_VERSION+'/connexion', identifiant.value, mdp.value, connexion_reussie);
