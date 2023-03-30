@@ -25,7 +25,7 @@ const formInputs = document.querySelectorAll('input[id], textarea[id]');
 
 // Filtrer automatiquement tout changement dans les éléments de formulaire
 formInputs.forEach((input) => {
-    input.addEventListener('DOMSubtreeModified', () => {
+    input.addEventListener('change', () => {
         const sanitizedInput = sanitizeInput(input.value);
         input.value = sanitizedInput;
     });
