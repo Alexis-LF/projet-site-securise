@@ -93,16 +93,5 @@ function afficheDocuments(liste_documents){
     };
 }
 
-
-// On véréifie la présence d'un jeton d'authentification
-if(getCookie("api_token")!=""){
-
-  // afficher les documents
-  ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/documents', afficheDocuments,null,getCookie("api_token")); 
-  // On effectue une requête Ajax pour récupérer les documents liés à au compte du jeton d'api
-
-}
-else{
-  alert("Veuillez vous connecter !"); // Affichage d'un message d'alerte
-  window.location.href = "../index.html"; // Redirection vers la page de connexion
-}
+// requête ajax pour récupérer les documents, et msg d'erreur si échec
+authGetRequest("/documents", afficheDocuments);
