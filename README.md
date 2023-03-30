@@ -22,6 +22,11 @@ Projet M1 pédagogique d'élaboration d'un site web avec une version sécurisée
 - [Lecture de tokens d'environnement en .env : vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
 - [Authentification par JWT  : firebase/php-jwt](https://github.com/firebase/php-jwt)
 
+### Installation des bibliothèques
+- [Installation simple des extensions PHP dans des conteneurs Docker : mlocati/docker-php-extension-installer](https://github.com/mlocati/docker-php-extension-installer)
+- [Gestionnaire de dépendances pour PHP : Composer](https://getcomposer.org)
+
+
 ## base de données
 - [Régions, départements, villes et villages de France et d'outre-mer : data.gouv.fr](https://www.data.gouv.fr/fr/datasets/regions-departements-villes-et-villages-de-france-et-doutre-mer/#resources)
 - [Annuaire santé de la Cnam, établissements de santé (Etablissements PRADO) : data.gouv.fr](https://www.data.gouv.fr/fr/datasets/5ac4f20fc751df5567500c0a/#resources)
@@ -57,7 +62,7 @@ flowchart TD
 
 ```mermaid
 
-flowchart TD
+flowchart TD;
     %% définitions des classes pour le style (comme le css)
     classDef fPrincipales fill:#ff9933,stroke:#333,stroke-width:1px;
     classDef fSecondaires fill:#ffff00,stroke:#333,stroke-width:1px;
@@ -101,10 +106,32 @@ flowchart TD
     class id17 contraintes;
 ```
 
+## Communication entre serveurs
+```mermaid
+flowchart LR;
+
+    classDef masque fill:#ffffde,stroke:#333,stroke-width:0px;
+    classDef plein fill:#ffffde,stroke:#333,stroke-width:0px;
+
+
+    subgraph id1[Frontend];
+    id1.1[	Define.js	]; 
+    end;
+    subgraph id2[Backend];
+    id2.1[ .env];
+    end;
+    subgraph id3[" Base de données "];
+    id3.1[  ]
+    class id3.1 masque;
+    end;
+    id1.1 -->id2;
+    id2.1 -->id3;
+
+```
 ## Taxonomie des fonctions
 ```mermaid
 
-flowchart LR
+flowchart LR;
     %% définitions des classes pour le style (comme le css)
     classDef fPrincipales fill:#ff9933,stroke:#333,stroke-width:1px;
     classDef fSecondaires fill:#ffff00,stroke:#333,stroke-width:1px;
@@ -142,18 +169,18 @@ flowchart LR
     %% sites web
     id2-->	id2.1(    Version non sécurisé :\nvulnérable des attaques	);
     id2-->	id2.2(    Version sécurisé :\nprotégé des attaques	);
-    id2-->	id2.3(    Architecure	);
+    id2-->	id2.3(    Architecture	);
     id2-->	id2.4(    Services du site	);
     id2-->	id2.5(    Opérationnel	);
     class id2.1,id2.2,id2.3,id2.4,id2.5 fPrincipales;
 
-    %% Architecure
+    %% Architecture
     id2.3-->	id2.3.1(    Client-serveur	);
     id2.3-->	id2.3.2(    Cloisonnement	);
     class id2.3.1,id2.3.2 fPrincipales;
 
 
-    %% Architecure client-serveur
+    %% Architecture client-serveur
     id2.3.1-->	id2.3.1.1(    Frontend	);
     id2.3.1-->	id2.3.1.2(    Backend	);
     id2.3.1-->	id2.3.1.3(    Base de données	);

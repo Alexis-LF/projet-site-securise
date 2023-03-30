@@ -4,9 +4,11 @@ function getParamsURL() {
   // string retouné : s'il est que de longueur 1 
   // alors pas de "&" à mettre au bout
   let uri ="?";
-  // on récupère les paramètres de l'URL
+
+  // On récupère les paramètres ?clé=valeurs contenu dans l'URI de la page (passées par index.js)
   const urlParams = new URL(window.location.toLocaleString()).searchParams;
   for (let [cle,valeur] of urlParams) {
+    // La cle correspond à l'un des paramètres avant le =, soit l'un des crièteres de recherche
     switch (cle) {
       case "docteur":
         uri += (uri.length > 1 ? "&" : "") + "d.prenom_nom=" + valeur;
@@ -28,6 +30,7 @@ function getParamsURL() {
 
 
 
+// Retourner l'URL de recherche du backend, à faire ensuite dans l'ajaxRequest
 function recherche(){
   // On initialise l'URL avec l'adresse de base de l'API et la version de celle-ci 
   let url=BASE_URL+'/'+API_VERSION+''; 
@@ -139,12 +142,18 @@ function criteresRecherche() {
 }
 // On implémente une fonction ecrireCritereRecherche qui écrit sur la page web 1 critère de recherche de l'utilisateur provenant des cookies, selon son identifiant HTML
 function ecrireCritereRecherche(idHtml,nom){
+  // On récupère les paramètres ?clé=valeurs contenu dans l'URI de la page (passées par index.js)
+  // Le get(nom) correspond à récupérer le paramètre docteur, profession ou ville
   const critere = new URL(window.location.toLocaleString()).searchParams.get(nom);
+  // Si le criitère de recherche est défini on l'affiche
   if (critere != null){
     document.getElementById(idHtml).innerHTML = critere;
   }
 }
 
+// Afficher sur la page web les critères de la recherche
 criteresRecherche();
+// Récupérer l'URL de l'API corerespondant à la recherche souhaitée
 let url = recherche();
- ajaxRequest('GET', url, afficheDocteurs);
+// Lancer la recherche et afficher les docteurs
+ajaxRequest('GET', url, afficheDocteurs);
