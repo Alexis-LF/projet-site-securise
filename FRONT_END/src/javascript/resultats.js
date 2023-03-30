@@ -7,6 +7,7 @@ function getParamsURL() {
   // on récupère les paramètres de l'URL
   const urlParams = new URL(window.location.toLocaleString()).searchParams;
   for (let [cle,valeur] of urlParams) {
+    valeur = escapeHtml(valeur);
     switch (cle) {
       case "docteur":
         uri += (uri.length > 1 ? "&" : "") + "d.prenom_nom=" + valeur;
@@ -32,9 +33,9 @@ function recherche(){
   // On initialise l'URL avec l'adresse de base de l'API et la version de celle-ci 
   let url=BASE_URL+'/'+API_VERSION+''; 
   // Initialise la partie de l'URL pour la recherche
+  let recherche = "/recherche";  
   recherche += getParamsURL();  
   // Ajoute les paramètres de l'URL pour la recherche, récupérés à partir de la fonction getParamsURL() 
-  let recherche = "/recherche";  
   // Affiche la chaîne de caractères de la recherche dans la console
   console.log(recherche); 
   // Ajoute la recherche à l'URL complète
@@ -141,7 +142,7 @@ function criteresRecherche() {
 function ecrireCritereRecherche(idHtml,nom){
   const critere = new URL(window.location.toLocaleString()).searchParams.get(nom);
   if (critere != null){
-    document.getElementById(idHtml).innerHTML = critere;
+    document.getElementById(idHtml).innerHTML = escapeHtml(critere);
   }
 }
 
