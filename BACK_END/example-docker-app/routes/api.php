@@ -14,6 +14,7 @@ use App\Http\Controllers\DocumentsController;
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\UserConnecteController;
+use App\Http\Controllers\AuthController;
 
 
 /*
@@ -26,31 +27,6 @@ use App\Http\Controllers\Auth\UserConnecteController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-/*
-// Fonction de débuggage À DÉSACTIVER quand inutilisé
-// affiche le contenu des GET et des POST
-Route::get('/debug', function (Request $request) {
-    return  array("GET"=>$_GET, "POST"=>$_POST,'request'=>$request->collect());
-});
-
-// un "ping" de l'api
-Route::get('/test', function () {
-    return "api !";
-});
-
-// Fonction de mode de paiement 
-// n'est pas utile, pourrait être supprimée
-Route::get('/mode_paiement', function () {
-    return Mode_paiementController::mode_de_paiement();
-});
-
-*/
-
 // préfixage par la version de l'api
 Route::prefix('2.00')->group(function () {
     
@@ -73,23 +49,30 @@ Route::prefix('2.00')->group(function () {
     Route::get('/docteurs', function () {
         return DocteursController::docteurs();
     });
+
+
+    // routes où il faut être connecté
+    Route::group(['middleware' => ['auth:sanctum']], function () {
+        Route::post('/deconnexion', [AuthController::class, 'deconnexion']);
+        Route::post('/valider_connexion', [AuthController::class, 'valider_connexion']);
+
+        // Recherche de documents    
+        Route::get('/documents', function (Request $request) {
+            return DocumentsController::documents($request);
+        });
+        
+    });
     
+
     // Recherche de factures 
-    
     Route::get('/factures', function (Request $request) {
         return FacturesController::factures($request);
     });
     
-    // Recherche de documents    
-    
-    Route::get('/documents', function (Request $request) {
-        return DocumentsController::documents($request);
-    });
 
-    Route::get('/valider_connexion', function () {
-        // return "cc";
-        return UserConnecteController::validerConnexion();
-    })->middleware(['auth', 'verified'])->name('valider_connexion');
-    // });
+    // routes Sanctum
+    Route::post('/connexion',[AuthController::class,'connexion']);
+    Route::post('/inscription',[AuthController::class,'inscription']);
+
     
 });

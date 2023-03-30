@@ -37,27 +37,25 @@ function lister_villes(liste_des_villes){
   "ville": document.getElementById("texte_ville").value
   }
   Object.entries(criteres).forEach(([cle, valeur]) => {
-  // Si la valeur n'est pas qu'un espace
-  if(valeur.trim() != ""){
-  // On forme l'uri : &clé=valeur
-  uri += (uri.length > 1 ? "&" : "") + cle +"="+ valeur;
-  }
+    // Si la valeur n'est pas qu'un espace
+    if(valeur.trim() != ""){
+      // On forme l'uri : &clé=valeur
+      uri += (uri.length > 1 ? "&" : "") + cle +"="+ valeur;
+    }
   });
   // Une fois le traitement fini, on se rend sur la page de résultats
   window.location.href = "html/resultats.html"+uri;
-  }
+}
   
-  // On définit les URLs de connexion et d'inscription dans la page
-  document.getElementById("cookieDeConnexion").setAttribute("href",AUTH_LOGIN_URL);
-  document.getElementById("boutonInscription").setAttribute("href",AUTH_REGISTER_URL);
-  
-  // On ajoute un événement "click" au bouton de recherche
-  document.getElementById("bouton_recherche").addEventListener("click", rechercher);
-  
-  // On fait des requêtes AJAX pour récupérer les professions, les docteurs et les villes
-  ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/professions', lister_professions);
-  ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/docteurs', lister_docteurs);
-  let texte = document.getElementById("texte_ville");
-  var villesAjoutees=[];
-  // On ajoute un événement de saisie au champ de recherche de villes
-  texte.addEventListener("input", villeTapee);
+// On ajoute un événement "click" au bouton de recherche
+document.getElementById("bouton_recherche").addEventListener("click", rechercher);
+
+document.getElementById("cookieDeConnexion").addEventListener("click", connexion_appuyee);
+
+// On fait des requêtes AJAX pour récupérer les professions, les docteurs et les villes
+ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/professions', lister_professions);
+ajaxRequest('GET', BASE_URL+'/'+API_VERSION+'/docteurs', lister_docteurs);
+let texte = document.getElementById("texte_ville");
+var villesAjoutees=[];
+// On ajoute un événement de saisie au champ de recherche de villes
+texte.addEventListener("input", villeTapee);

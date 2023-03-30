@@ -33,7 +33,8 @@ Projet M1 pédagogique d'élaboration d'un site web avec une version sécurisée
 ## attaques
 ### xss
 - [Serveur HTTP avec Python](https://pythonbasics.org/webserver/)
-
+## backend sécurisé
+- [Tutoriel Laravel Sanctum](https://www.youtube.com/watch?v=TzAJfjCn7Ks)
 # Graphiques
 
 Légende : 

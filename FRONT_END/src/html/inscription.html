@@ -11,12 +11,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<script src="../javascript/gestionMotDePasse.js"></script>
 <script src="../javascript/template.js"></script>
 <script src="../javascript/define.js"></script>
+<script src="../javascript/connexion.js" defer></script>
 <script src="../javascript/inscription.js" defer></script>
-<script src="../javascript/ajax.js"></script>
+<script src="../javascript/gestionMotDePasse.js"></script>
 <script src="../javascript/cookie.js"></script>
+<script src="../javascript/ajax.js"></script>
 
 
 </head>
@@ -52,12 +53,12 @@
     <input id="mdp" class="w3-input w3-border" type="password" placeholder="mot de passe" name="motDePasse" required>
   
     <p><label><i class="fa fa-key"></i> Confirmation du mot de passe :</label></p>
-    <input class="w3-input w3-border" type="password" placeholder="confirmation du mot de passe" name="confirmationMotDePasse" required>
+    <input id="mdp_confirmation" class="w3-input w3-border" type="password" placeholder="confirmation du mot de passe" name="confirmationMotDePasse" required>
 
     <p><label><i class="fa fa-phone"></i> Numéro de portable :</label></p>
    <input id="telephone" class="w3-input w3-border" type="text" placeholder="numéro" name="numeroPortable" required>
     
-      <button id="bouton_inscription" class="w3-button w3-block w3-green w3-left-align" onclick="validerFormulaire(), requestInscription()">Valider</button>
+      <button id="bouton_inscription" class="w3-button w3-block w3-green w3-left-align" onclick="validerFormulaire()">Valider</button>
   </hr>
    
   </div>

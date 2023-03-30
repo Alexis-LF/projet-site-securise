@@ -13,7 +13,8 @@ function validerFormulaire() {
     if (!nom || !prenom || !dateNaissance || !email || !motDePasse || !confirmationMotDePasse || !numeroPortable) {
       alert("Veuillez remplir tous les champs du formulaire.");
       console.log("Veuillez remplir tous les champs du formulaire.")
-      return;
+      location.reload();
+      return false;
     }
 
     // Vérifier que le mot de passe répond aux exigences spécifiées
@@ -21,10 +22,12 @@ function validerFormulaire() {
     if (!regexMotDePasse.test(motDePasse)) {
       alert("Le mot de passe doit contenir au moins un caractère spécial et une majuscule.");
       console.log("Le mot de passe doit contenir au moins un caractère spécial et une majuscule.")
-      return;
+      location.reload();
+      return false;
     }
 
-
+    // si tout est bon : alors on s'inscrit
+    requestInscription();
     
   }
   // On implémente une fonction qui redirige les utilisateurs vers la page index.html
