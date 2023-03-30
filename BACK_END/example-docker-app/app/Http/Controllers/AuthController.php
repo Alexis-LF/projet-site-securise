@@ -89,4 +89,8 @@ class AuthController extends Controller
         ],
         "jeton d'API valide");
     }
+    public function pasConnecte()
+    {
+        return $this->error([],"L'api_token n'est pas ou plus valide, veuillez vous reconnecter.",401);
+    }
 }

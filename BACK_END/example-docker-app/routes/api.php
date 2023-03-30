@@ -68,12 +68,10 @@ Route::prefix('2.00')->group(function () {
         
     });
     
-
-    
-
     // routes Sanctum
     Route::post('/connexion',[AuthController::class,'connexion']);
     Route::post('/inscription',[AuthController::class,'inscription']);
 
+    Route::get('/pas_connecte',[AuthController::class,'pasConnecte'])->name("pas_connecte");
     
 });
