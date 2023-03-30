@@ -67,12 +67,19 @@ function connexion_reussie(reponse){
   // Affichage d'un message d'alerte pour signaler que la connexion est réussie
   alert("La connexion est réussie !");
 
-  // On récupère la page d'accueil
-  let url_accueil = new URL(window.location.toLocaleString()).origin;
-  // si le frontend n'est pas hébergé sur serveur, on met la page d'accueil en dur
-  url_accueil = (url_accueil == "null") ? "../index.html" : url_accueil;
-  // redirection
-  window.location.href = url_accueil;
+  // On récupère la page sur laquelle on est positionnés
+  let pageCourante = new URL(window.location.toLocaleString()).pathname
+  pageCourante = pageCourante.split("/")
+  pageCourante = pageCourante[pageCourante.length-1]
+  // Redirection sur l'accueil
+  if(pageCourante.search("inscription") != -1){
+    // depuis la page d'inscription
+    window.location.href = "../index.html"
+  }
+  else{
+    // la connexion se passe déjà sur la page d'accueil
+    window.location.href = pageCourante;
+  }
 }
 
 // On implémente une fonction qui vérifie si l'utilisateur est connecté et qui affiche le menu de navigation si c'est le cas 

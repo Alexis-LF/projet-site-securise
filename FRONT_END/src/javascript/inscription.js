@@ -72,7 +72,6 @@ function requestInscription(){
         {
             case 200:
             case 201:
-                alert("inscription réussie !");
                 connexion_reussie(JSON.parse(xhr.responseText));
                 // Rediriger l'utilisateur vers la page index.html
                 break;
