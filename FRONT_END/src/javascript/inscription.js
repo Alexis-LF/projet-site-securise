@@ -80,7 +80,9 @@ function requestInscription(){
                 alert("Cet e-mail est déjà associé à un compte, veuillez vous connecter");
                 window.location.href = "../index.html"; // Redirection vers la page de connexion
             case 401: 
-                alert("Mauvais identifiant ou mdp");
+                let erreur = JSON.parse(xhr.responseText);
+
+                alert(erreur.message +" : "+erreur.data[0][0]);
                 return;
             default:
                 alert("Erreur, veuillez vous réinscrire")
