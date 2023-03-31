@@ -42,6 +42,9 @@
 
     function afficheDocuments(liste_documents){
         let html_mere=document.getElementById("liste_docs"); 
+        if(liste_documents.length == 0){
+          html_mere.appendChild(document.createTextNode("Aucun document associé au patient."));
+        }
         for (i = 0; i < liste_documents.length; i++) {
         
         let documents=liste_documents[i];
