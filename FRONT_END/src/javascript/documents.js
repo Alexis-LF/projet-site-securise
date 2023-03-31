@@ -4,6 +4,9 @@ function afficheDocuments(liste_documents){
   // On récupère l'élément div qui contiendra les informations sur les documents
   let html_mere=document.getElementById("liste_docs");
   
+  if(liste_documents.length == 0){
+    html_mere.appendChild(document.createTextNode("Aucun document associé au patient."));
+  }
   // On parcourt chaque document de la liste des documents récupérés
   for (i = 0; i < liste_documents.length; i++) {
       

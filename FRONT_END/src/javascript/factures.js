@@ -1,6 +1,10 @@
 function afficheFactures(liste_factures){ // commentaires idem afficheDocteurs (similaire)
 
   let html_mere=document.getElementById("liste_facts"); 
+
+  if(liste_factures.length == 0){
+    html_mere.appendChild(document.createTextNode("Aucune facture associé au patient."));
+  }
   for (i = 0; i < liste_factures.length; i++) {
 
     let factures=liste_factures[i];
