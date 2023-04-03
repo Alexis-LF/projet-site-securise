@@ -32,7 +32,7 @@ class AuthController extends Controller
 
         $personne = DB::table('personne')
             ->select('nom','prenom','mail')
-            ->where('mail', '=', Auth::user()->email)
+            >where('mail', '=', $request->email)
             ->get()
             ->first();
         
