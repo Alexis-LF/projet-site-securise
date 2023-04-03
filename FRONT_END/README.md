@@ -57,3 +57,176 @@ Pour débuger le fonctionnement de l'image, il est possible de récupérer les f
 docker export -o NOM_DU_SERVEUR.tar NOM_DU_SERVEUR
 ```
 Ensuite, extraire l'archive (comme un .zip) créée dans le dossier courant.
+
+
+### Schema Mermaid Pages du site ### 
+## Page non connecté 
+
+```mermaid
+
+flowchart TD;
+
+    %% racine
+    id2((Site Libdocto\nPage principale\n index.html\n en tant\n qu'invité));
+    id2--inscription--> idinscription[[Page d'inscription\n Formulaire]];
+    idinscription--redirection\n si formulaire\n valide-->id2
+    idinscription--si formulaire\n invalide-->id3[Erreur]
+    id3-->idinscription
+
+    id2--connexion-->idconnexion[[Zone de connexion\n présente sur la page\n principale]]
+    idconnexion--Entrées valides-->idpageconnecte((Page principale\nindex.html\nen tant\nque connecté))
+    idconnexion--Entrées invalides\n-->id2
+
+    id2--recherche\n docteurs-->idrecherche[[Page resultats\nAffiche les\n docteurs\n demandés]];
+```
+
+## Page connecté 
+
+```mermaid
+
+flowchart TD;
+
+    %% racine
+    id2((Site Libdocto\nPage principale\n index.html\n en tant que\n connecté))
+
+
+    idrecherchebis--prise de rdv-->idconfirm[[Page de confirmation\n de rdv]]
+    idconfirm--redirection-->id2
+    id2--consultation\nfactures-->idfactures[[Page factures\nAffiche les factures\n du patient connecté]]
+    
+    id2--consultation\ndocuments-->iddocuments[[Page documents\nAffiche les documents\n du patient connecté]]
+
+    id2--deconnexion-->iddeconnexion[[Page de deconnexion\nConfirme la bonne déconnexion\n du patient]]
+
+    iddeconnexion--redirection-->idpagedeconnecte((Page principale\n index.html\nen tant\n qu'inconnu))
+    
+
+    id2--recherche\n docteurs-->idrecherchebis[[Page resultats\nPossibilité de\n prise de rdv\n avec les docteurs\n demandés]];
+   
+```
+
+# Schema Mermaid #
+
+## Relations entre fichiers JS et fichiers HTML ##
+
+### Fichier ajax.js ### 
+
+```mermaid
+
+flowchart TD;
+
+    %% racine
+
+    idajax{Fichier ajax.js\n contenant la fonction\najaxRequest}
+    idajax-->idconnexion[[Fichier connexion.html]]
+    idajax-->idresultats[[Fichier resultats.html]]
+    idajax-->idfactures[[Fichier factures.html]]
+    idajax-->iddocuments[[Fichier documents.html]]
+    idajax-->idindex[[Fichier index.html]]
+
+    idconnexion-->idconnexion2[Utilisation de la fonction\najaxRequest afin de\n valider la connexion\n d'un utilisateur]
+
+    idresultats-->idresultats2[Utilisation de la fonction\najaxRequest afin de récupérer\n des données depuis le serveur\n distant en utilisant l'URL spécifiée\n dans la variable url]
+
+    idfactures-->idfactures2[Utilisation de la fonction\nverificationConnexionReussie\nvérifiant que l'utilisateur\n est bien connecté]
+    idfactures2-->idfactures3[Utilisation de ajaxRequest\nrécupérant le mail de \n l'utilisateur connecté afin\n d'afficher ses factures]
+
+    iddocuments-->iddocuments2[Utilisation de la fonction\nvérificationConnexionReussie\n vérifiant que l'utilisateur\n est bien connecté ]
+    iddocuments2-->iddocuments3[Utilisation de ajaxRequest\nrécupérant le mail de \n l'utilisateur connecté afin\n d'afficher ses documents]
+
+    idindex-->idindex2[Utilisation ajaxRequest\n récupérant la liste des villes, des docteurs\net des professions pour faciliter\n la recherche]
+   
+```
+
+### Fichier connexion.js ### 
+
+```mermaid
+
+flowchart TD;
+
+    %% racine
+
+    idajax{Fichier connexion.js\n contenant les fonctions ajaxConnexion,\n connexion_reussie et estConnecte}
+    idajax-->idindex[[Fichier index.html]]
+    idajax-->idconfirm[[Fichier pageDeConfirmation.html]]
+    idajax-->idfactures[[Fichier factures.html]]
+    idajax-->iddocuments[[Fichier documents.html]]
+
+    idindex-->idindex2[Utilisation de la fonction ajaxConnexion\n afin de connecter l'utilisateur si ses\nentrées sont valides]
+    idindex--->idindex3[Utilisation de la fonction\n estConnecte vérifiant à\n chaque fois que\n l'utilisateur est bien\n connecté]
+
+    idindex2-->idindex4[Utilisation de la fonction\n connexion_reussie vérifiant que\n les entrées de l'utilisateur correspondent\n bien au compte associé]
+
+    idconfirm-->idindex3
+
+    idfactures-->idfactures2[Utilisation de la fonction\nverificationConnexionReussie\nvérifiant que l'utilisateur\n est bien connecté]
+    idfactures-->idindex3
+    
+    iddocuments-->iddocuments2[Utilisation de la fonction\nvérificationConnexionReussie\n vérifiant que l'utilisateur\n est bien connecté ]
+    iddocuments-->idindex3
+    
+
+   
+```
+
+### Fichier cookie.js ###
+
+```mermaid
+
+flowchart TD;
+
+    %% racine
+
+    idajax{Fichier connexion.js\n contenant les fonctions getCookie, checkCookie,\n setCookie, removeCookie, removeAllCookie}
+
+    idajax-->idget[[Fonction getCookie]]
+    idajax-->idset[[Fonction setCookie]]
+    idajax-->idcheck[[Fonction checkCookie]]
+    idajax-->idrm[[Fonction removeCookie]]
+    idajax-->idrmall[[Fonction removeAllCookie]]
+
+    idget-->idget2[Fonction parcourant une chaine\n de caractères de cookies pour trouver\n le cookie correspondant à\n l'entrée de la fonction ]
+
+    idset-->idset2[Fonction créant\n un nouveau cookie de connexion]
+
+    idcheck-->idcheck2[Fonction vérifiant\n si le cookie\n de connexion est présent]
+
+    idrm-->idrm2[Fonction supprimant un cookie\n désigné par son nom]
+
+    idrmall-->idrmall2[Fonction supprimant tous les cookies\n présents sur la page concernée]
+
+    
+
+   
+```
+
+### Fichier define.js ###
+
+```mermaid
+
+flowchart TD;
+
+    %% racine
+
+    idajax{Fichier connexion.js\n contenant les fonctions getCookie, checkCookie,\n setCookie, removeCookie, removeAllCookie}
+
+    idajax-->idget[[Fonction getCookie]]
+    idajax-->idset[[Fonction setCookie]]
+    idajax-->idcheck[[Fonction checkCookie]]
+    idajax-->idrm[[Fonction removeCookie]]
+    idajax-->idrmall[[Fonction removeAllCookie]]
+
+    idget-->idget2[Fonction parcourant une chaine\n de caractères de cookies pour trouver\n le cookie correspondant à\n l'entrée de la fonction ]
+
+    idset-->idset2[Fonction créant\n un nouveau cookie de connexion]
+
+    idcheck-->idcheck2[Fonction vérifiant\n si le cookie\n de connexion est présent]
+
+    idrm-->idrm2[Fonction supprimant un cookie\n désigné par son nom]
+
+    idrmall-->idrmall2[Fonction supprimant tous les cookies\n présents sur la page concernée]
+
+    
+
+   
+```
