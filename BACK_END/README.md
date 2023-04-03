@@ -1,6 +1,50 @@
 # Back end (API)
 
 # site web sécurisé
+
+## Authentification
+### Sécurisation des routes : comparatif
+#### Non sécurisé
+```mermaid
+
+sequenceDiagram
+    participant f as Frontend;
+    participant b as Backend non sécurisé;
+
+    activate f;
+    Note right of f: Seconde Requête au backend;
+    f->>b: GET /documents?mail=mail@test.com;
+    activate b;
+    Note over b: Aucune vérification d'identité<br>car le frontend l'a fait grâce<br>à une première requête au backend;
+    b->>f: Documents de "mail@test.com" : {...};
+    deactivate b;
+    Note right of f: Les documents ont été envoyés
+
+    deactivate f;
+
+
+```
+#### Sécurisé
+```mermaid
+
+sequenceDiagram
+    participant f as Frontend;
+    participant b as Backend non sécurisé;
+
+    activate f;
+    Note right of f: Unique Requête au backend
+    f->>b: GET /documents {api_token="z&4dP3$udDFkyD3!U*%bCPxvXD"};;
+    activate b;
+    Note over b: Aucune vérification d'identité<br>car le frontend l'a fait grâce<br>à une première requête au backend
+    b->>f: Documents de "mail@test.com" : {...};
+    deactivate b;
+    Note right of f: Les documents ont été envoyés
+
+    deactivate f;
+
+
+```
+
 ## Modèle - Vue - Contrôleur et routage
 ### exemples avec /villes
 ```mermaid
