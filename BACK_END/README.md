@@ -29,19 +29,18 @@ sequenceDiagram
 
 sequenceDiagram
     participant f as Frontend;
-    participant b as Backend non sécurisé;
+    participant b as Backend sécurisé;
 
     activate f;
     Note right of f: Unique Requête au backend
-    f->>b: GET /documents {api_token="z&4dP3$udDFkyD3!U*%bCPxvXD"};;
+    f->>b: GET /documents<br>{api_token="1|gAqAXNwEsI7UpS6urNvHEfVZCaFinlfPxypo9J9P"};
     activate b;
-    Note over b: Aucune vérification d'identité<br>car le frontend l'a fait grâce<br>à une première requête au backend
-    b->>f: Documents de "mail@test.com" : {...};
+    Note over b: Vérification d'identité
+    b->>f: Documents de l'utilisateur connecté : {...};
     deactivate b;
     Note right of f: Les documents ont été envoyés
 
     deactivate f;
-
 
 ```
 
