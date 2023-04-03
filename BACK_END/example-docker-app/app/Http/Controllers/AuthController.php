@@ -4,24 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\LoginUserRequest;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules;
 
 
 class AuthController extends Controller
 {
     use HttpResponses;
 
-    public function connexion(LoginUserRequest $request)
+    public function connexion(Request $request)
     {
-        $request->validated($request->all());
-        // si mauvaise connexion
-        if(!Auth::attempt($request->only(['email', 'password']))) {
-            return $this->error('', 'Mauvais identifiants de connexion', 401);
+        // on valide les données d'entrées
+        $validator = Validator::make($request->all(), [
+            'email' => ['required', 'string', 'email'],
+            'password' => ['required', 'string', 'min:6'],
+        ]);
+ 
+        if ($validator->stopOnFirstFailure()->fails()) {
+            return $this->error([],"Erreur lors de l'inscripton, vérifiez qu'aucun mauvais caractère ait été rentré",401);
         }
 
         $user = User::where('email', $request->email)->first();
@@ -38,9 +42,46 @@ class AuthController extends Controller
         ],
         "connexion réussie");
     }
-    public function inscription(StoreUserRequest $request)
+    public function inscription(Request $request)
     {
-        $request->validated($request->all());
+        // on valide les données pour voir s'il y a des mauvais caractères
+        // et si le mot de passe est assez fort
+        $rules = [
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed',
+                Rules\Password::min(6)
+                    ->letters()
+                    ->mixedCase()
+                    ->numbers()
+                    ->symbols()
+                    ->uncompromised()
+            ],
+            'nom' => ['required', 'string', 'alpha_num', 'max:255'],
+            'prenom' => ['required', 'string', 'alpha_num', 'max:255'],
+            'telephone' => ['required', 'alpha_num', 'max:11'],
+            'date_naissance' => ['required', 'max:11'],
+        ];
+
+        $messagesErreurs = [
+            'email' => "l'email entré est incorrect ou déjà utilisé",
+            'password' => "Le mot de passe doit faire au minimum 6 caractères, avec des lettres mininscules et majuscules, des caractères spéciaux, des nombres et ne doit pas avoir fuité",
+            'nom' => "le nom est mal écrit",
+            'prenom' => "le prénom est mal écrit",
+            'telephone' => "le téléphone doit être composé uniquement de chiffres",
+            'date_naissance' => "la date de naissance est invalide",
+        ];
+
+
+        // prépare la validation
+        $validator = Validator::make($request->all(),$rules,$messagesErreurs);
+ 
+        // envoi & récupération erreurs
+        if ($validator->stopOnFirstFailure()->fails()) {
+            return $this->error([$validator->errors()->all()],"Erreur lors de l'inscripton",401);
+        }
+
+
+
 
         // remplir la table personne
         DB::table('personne')->insert([
@@ -88,5 +129,9 @@ class AuthController extends Controller
             'personne'=>$personne
         ],
         "jeton d'API valide");
+    }
+    public function pasConnecte()
+    {
+        return $this->error([],"L'api_token n'est pas ou plus valide, veuillez vous reconnecter.",401);
     }
 }

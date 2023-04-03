@@ -1,4 +1,23 @@
+/* On crée la fonction "authGetRequest" qui prend en paramètre 
+  - la fin de la route (/documents ou /factures)
+  - la fonction éxécutée ensuite (pour afficher les données en général)- et des données facultatives
+  La fonction appelle ajaxRequest mais avec un token
 
+*/
+function authGetRequest(finRoute, callback, data = null) {
+  // On vérifie la présence d'un jeton d'authentification
+  if(getCookie("api_token")!=""){
+
+    // afficher les documents
+    ajaxRequest('GET', BASE_URL+'/'+API_VERSION+finRoute, callback,data,getCookie("api_token")); 
+    // On effectue une requête Ajax pour récupérer les documents liés à au compte du jeton d'api
+
+  }
+  else{
+    alert("Veuillez vous connecter !"); // Affichage d'un message d'alerte
+    window.location.href = "../index.html"; // Redirection vers la page de connexion
+  }
+}
 
 // On crée la fonction "ajaxRequest" qui prend en paramètre un type de requête, une URL, une fonction de rappel et des données facultatives
 function ajaxRequest(type, url, callback, data = null, api_token = null) {

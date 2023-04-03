@@ -88,14 +88,14 @@ function est_connecte(reponse) {
   let menuConnecte = document.getElementById("menuConnecte"); // Menu de navigation pour les utilisateurs connectés
   let champsConnexion = document.getElementById("champs_de_connexion"); // Champ de connexion pour les utilisateurs non connectés
 
-  // On vérifie la présence du cookie "jwt"
+  // On vérifie la présence du cookie "api_token"
   if (reponse!==false){
     // Si le token est présent c'est que l'utilisateur est connecté. On cache alors le champ de connexion et on affiche le menu de navigation
     if (champsConnexion != null) {
       champsConnexion.setAttribute("style", "display:none"); // On cache le champ de connexion
-      menuConnecte.setAttribute("style", "display:inherit"); // On affiche le menu de navigation pour les utilisateurs qui sont connectés
     }
     if (menuConnecte != null){
+      menuConnecte.setAttribute("style", "display:inherit"); // On affiche le menu de navigation pour les utilisateurs qui sont connectés
       // On affiche le nom, prénom et adresse e-mail de l'utilisateur connecté dans le menu de navigation
       let divNom = document.createElement("h5");
       divNom.appendChild(document.createTextNode('connecté en tant que '));

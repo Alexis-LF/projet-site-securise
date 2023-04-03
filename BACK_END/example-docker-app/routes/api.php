@@ -56,23 +56,22 @@ Route::prefix('2.00')->group(function () {
         Route::post('/deconnexion', [AuthController::class, 'deconnexion']);
         Route::post('/valider_connexion', [AuthController::class, 'valider_connexion']);
 
-        // Recherche de documents    
+        // Renvoyer les documents du patient connecté
         Route::get('/documents', function (Request $request) {
             return DocumentsController::documents($request);
+        });
+
+        // Renvoyer les factures du patient connecté
+        Route::get('/factures', function (Request $request) {
+            return FacturesController::factures($request);
         });
         
     });
     
-
-    // Recherche de factures 
-    Route::get('/factures', function (Request $request) {
-        return FacturesController::factures($request);
-    });
-    
-
     // routes Sanctum
     Route::post('/connexion',[AuthController::class,'connexion']);
     Route::post('/inscription',[AuthController::class,'inscription']);
 
+    Route::get('/pas_connecte',[AuthController::class,'pasConnecte'])->name("pas_connecte");
     
 });
