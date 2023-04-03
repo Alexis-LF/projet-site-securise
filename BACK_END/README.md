@@ -1,5 +1,55 @@
 # Back end (API)
 
+# site web sécurisé
+## Modèle - Vue - Controlleur et routage
+### exemples avec /villes
+```mermaid
+
+sequenceDiagram
+    participant f as Site Frontend;
+    participant r as Backend : <br>routes;
+    participant c as Backend : <br>Contrôleur;
+    participant m as Backend : <br>Modèle;
+    participant v as Backend : <br>Vue;
+    participant b as Base de données;
+
+    activate f;
+    f->>r: GET /villes?name=brest;
+    activate r;
+    Note right of f: Requête envoyée<br>au backend;
+    Note over r : Aiguillage<br>selon le verbe<br>et le chemin
+    activate c;
+    r->>c: VillesController::villes($request);
+    Note right of r: appel du contrôleur Villes
+    deactivate r;
+    Note over c: récupération des<br>paramètres de requête;
+    activate m;
+    c->>m: DB::table('cities')<br>->select('id', 'zip_code', 'name')<br>->where('name', 'like',<br> $request->input('name').'%')<br>->get()
+    Note right of c: appel du<br>Query Builder appropriée;
+    activate b;
+    m->>b: SELECT id,zip_code,name<br>FROM cities WHERE name LIKE "brest%";
+    Note right of m: Connexion au serveur<br>et requête SQL;
+    b->>m: +-------+----------+---------+<br>| id    | zip_code | name    |<br>+-------+----------+---------+<br>|  9620 | 27350    | Brestot |<br>| 10527 | 29200    | Brest   |<br>+-------+----------+---------+
+    Note left of b: Réponse du seveur SQL;
+    deactivate b;
+    m->>c: $resultat;
+    Note left of m: Réponse du modèle;
+    activate v;
+    c->>v: response()->json($resultat);
+    deactivate m;
+
+    Note right of c: envoi à la vue;
+    deactivate c;
+    v->>f: [{"id":9620,"zip_code":"27350","name":"Brestot"},<br>{"id":10527,"zip_code":"29200","name":"Brest"}];
+    Note left of v: envoi au frontend;
+    deactivate v;
+    
+    deactivate f;
+
+
+```
+
+# site web non sécurisé
 ## Fonctionnement de l’aiguillage des endpoints
 
 ### aiguillage par verble
@@ -137,3 +187,4 @@ sequenceDiagram
 
 
 ```
+
