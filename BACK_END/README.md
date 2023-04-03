@@ -1,7 +1,7 @@
 # Back end (API)
 
 # site web sécurisé
-## Modèle - Vue - Controlleur et routage
+## Modèle - Vue - Contrôleur et routage
 ### exemples avec /villes
 ```mermaid
 
