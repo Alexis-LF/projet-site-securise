@@ -251,17 +251,21 @@ flowchart TD;
 
 ```mermaid
 
-flowchart TD;
+flowchart LR;
     
     %% racine
     
-    idajax((Fichier index.js contenant\n les fonctions utilisées\n lors de la recherche de docteurs))
+    idajax((Fichier\nindex.js contenant\n les fonctions utilisées\n lors de la recherche\nde docteurs))
 
-    idajax---->idlistvilles[[Fonction lister_villes prenant\n la liste de toutes les villes de France]]
+    idajax--au démarrage-->idlisteProfeessions[[Chargement de la liste des professions dans le champ de recherche]]
 
-    idajax--->idvilletapee[[Fonction villeTapee qui est appelée à chaque fois\n que l'utilisateur tape plus de 3 lettres\n dans le champ de recherche de villes\n et qui affiche la ville correspondante]]
+    idajax--au démarrage-->idlisteDocteurs[[Chargement de la liste des docteurs dans le champ de recherche]]
 
-    idajax-->idrecherche[[Fonction récupérant les entrées de villes,\n professions et docteurs puis qui les enregistre\n avant de rediriger l'utilisateur sur resultats.js]]
+    idajax--3 lettres rapées-->idlistvilles[[Chargement des villes corrspondant au début du nom tapé]]
+
+    idajax--bouton de recherche appuyé-->idrecherche[[Récupération de la ville, profession et docteur tapés\n et redirection de l'utilisateur sur la page de résultats avec les critères]]
+
+
 ```
 
 ### Fichier protectionXSS.js ### 
