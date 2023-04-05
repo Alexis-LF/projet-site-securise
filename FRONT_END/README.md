@@ -66,8 +66,12 @@ Ensuite, extraire l'archive (comme un .zip) créée dans le dossier courant.
 
 flowchart TD;
 
+    
+
     %% racine
-    id2((Site Libdocto\nPage principale\n index.html\n en tant\n qu'invité));
+
+    id2((Site Libdocto\nPage principale index.html\n en tant qu'invité)) 
+    
     id2--inscription--> idinscription[[Page d'inscription\n Formulaire]];
     idinscription--redirection\n si formulaire\n valide-->id2
     idinscription--si formulaire\n invalide-->id3[Erreur]
@@ -88,6 +92,7 @@ flowchart TD;
 
     %% racine
     id2((Site Libdocto\nPage principale\n index.html\n en tant que\n connecté))
+    
 
 
     idrecherchebis--prise de rdv-->idconfirm[[Page de confirmation\n de rdv]]
@@ -117,7 +122,7 @@ flowchart TD;
 
     %% racine
 
-    idajax{Fichier ajax.js\n contenant la fonction\najaxRequest}
+    idajax((Fichier ajax.js\n contenant la fonction\najaxRequest))
     idajax-->idconnexion[[Fichier connexion.html]]
     idajax-->idresultats[[Fichier resultats.html]]
     idajax-->idfactures[[Fichier factures.html]]
@@ -146,7 +151,7 @@ flowchart TD;
 
     %% racine
 
-    idajax{Fichier connexion.js\n contenant les fonctions ajaxConnexion,\n connexion_reussie et estConnecte}
+    idajax((Fichier connexion.js\n contenant les fonctions ajaxConnexion,\n connexion_reussie et estConnecte))
     idajax-->idindex[[Fichier index.html]]
     idajax-->idconfirm[[Fichier pageDeConfirmation.html]]
     idajax-->idfactures[[Fichier factures.html]]
@@ -177,7 +182,7 @@ flowchart TD;
 
     %% racine
 
-    idajax{Fichier connexion.js\n contenant les fonctions getCookie, checkCookie,\n setCookie, removeCookie, removeAllCookie}
+    idajax((Fichier cookie.js\n contenant les fonctions getCookie, checkCookie,\n setCookie, removeCookie, removeAllCookie))
 
     idajax-->idget[[Fonction getCookie]]
     idajax-->idset[[Fonction setCookie]]
@@ -200,7 +205,7 @@ flowchart TD;
    
 ```
 
-### Fichier define.js ###
+### Fichier documents.js et factures.js ###
 
 ```mermaid
 
@@ -208,25 +213,90 @@ flowchart TD;
 
     %% racine
 
-    idajax{Fichier connexion.js\n contenant les fonctions getCookie, checkCookie,\n setCookie, removeCookie, removeAllCookie}
-
-    idajax-->idget[[Fonction getCookie]]
-    idajax-->idset[[Fonction setCookie]]
-    idajax-->idcheck[[Fonction checkCookie]]
-    idajax-->idrm[[Fonction removeCookie]]
-    idajax-->idrmall[[Fonction removeAllCookie]]
-
-    idget-->idget2[Fonction parcourant une chaine\n de caractères de cookies pour trouver\n le cookie correspondant à\n l'entrée de la fonction ]
-
-    idset-->idset2[Fonction créant\n un nouveau cookie de connexion]
-
-    idcheck-->idcheck2[Fonction vérifiant\n si le cookie\n de connexion est présent]
-
-    idrm-->idrm2[Fonction supprimant un cookie\n désigné par son nom]
-
-    idrmall-->idrmall2[Fonction supprimant tous les cookies\n présents sur la page concernée]
-
-    
+    idajax((Fichier documents.js et \nfactures.js contenant les fonctions\n afficheDocuments et afficheFactures))
 
    
+    idaffiche-->idaffiche2[Fonction permettant d'afficher les détails\n des documents et/ou des factures du patient connecté\n dans la page HTML concernée]
+
+    idajax-->idajax2[[Fonction ajaxRequest]]
+    idajax2-->idajax3[Fonction effectuant une requête ajax\n pour récupérer les documents et\n les factures ]
+    idajax3--Erreur-->iderreur[Echec de la récupèration des \n documents du patient]
+    idajax3--Succès-->idsuccess[Récupération des documents\n ou factures effectuée avec succès ]
+    idsuccess--Activation\n de afficheX-->idaffiche
+
+   
+```
+### Fichier gestionMotDePasse.js ###
+
+```mermaid
+
+flowchart TD;
+
+    %% racine
+
+    idajax((Fichier gestionMotDePasse.js assurant\n la bonne validité des entrées\n utilisateurs lors de l'inscription))
+
+    idajax--utilisé lors de\n l'inscription-->idvalide[[Fonction validerFormulaire]]
+
+    idvalide-->idvalide2[Permettant une robustesse des\n nouveaux mots de passe utilisateurs\contre les attaques par\nbrute force]
+
+    idvalide-->idvalide3[Assurant une protection contre\nles attaques par injection  SQL\nen filtrant les entrées]
+   
+   idvalide-->idvalide4[Assurant que tous les champs\n d'inscription soit correctement remplis]
+
+   idvalide-->idvalide5[Si toutes les conditions\n sont validées, alors l'inscription\n du nouvel utilisateur est effectuée]
+```
+
+### Fichier index.js ###
+
+```mermaid
+
+flowchart TD;
+    
+    %% racine
+    
+    idajax((Fichier index.js contenant\n les fonctions utilisées\n lors de la recherche de docteurs))
+
+    idajax---->idlistvilles[[Fonction lister_villes prenant\n la liste de toutes les villes de France]]
+
+    idajax--->idvilletapee[[Fonction villeTapee qui est appelée à chaque fois\n que l'utilisateur tape plus de 3 lettres\n dans le champ de recherche de villes\n et qui affiche la ville correspondante]]
+
+    idajax-->idrecherche[[Fonction récupérant les entrées de villes,\n professions et docteurs puis qui les enregistre\n avant de rediriger l'utilisateur sur resultats.js]]
+```
+
+### Fichier protectionXSS.js ### 
+
+```mermaid
+
+flowchart TD;
+
+    %% racine
+
+    idajax((Fichier protectionXSS.js assurant\n une protection optimale contre\n les injections XSS))
+
+    idajax-->idescape[[Fonction escapeHTML permettant\n d'échapper les caractères spéciaux]]
+
+    idajax-->idsanitized[[Fonction filtrant les entrées \nutilisateurs et regardant les changements\n dans le formulaire]]
+    
+```
+
+### Fichier resultats.js ###
+
+```mermaid
+
+flowchart TD;
+
+    %% racine
+
+    idajax((Fichier resultats.js affichant\n les résultats de recherche des utilisateurs))
+
+    idajax-->iddocteurs[[Fonction afficheDocteurs\n affichant la liste des docteurs\n correspondant à la recherche]]
+
+    idajax-->idurl[[Fonction getParamsURL créant le nouvel URI\n composé des paramètres de requêtes\n pour le backend]]
+
+    idajax-->idcriteres[[Fonction criteresRecherche remplaçant les 3 critères\n de recherches de l'utilisateur]]
+
+    idajax-->idrequest[[Fonction ajaxRequest récupèrant la liste de\n docteurs en fonction des\n critères de recherche]]
+
+
 ```
