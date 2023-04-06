@@ -336,11 +336,11 @@ flowchart TD;
 
 ```mermaid
 
-flowchart TD;
+flowchart LR;
 
     id1((Former\nla requête\nSQL));
-    id1-->id2("Initialisation de la requête SQL de base\n«SELECT colonnes FROM table»");
-    id2-->id3("Remplacement des variables de condition \n(s'il y a un filtre)\n«SELECT colonnes FROM table \nWHERE colonne = variable;»");
+    id1-->id2("Initialisation\nde la requête SQL\n de base «SELECT \ncolonnes FROM table»");
+    id2-->id3("Remplacement des\nvariables de condition \n(s'il y a un filtre)\n«SELECT colonnes\nFROM table \nWHERE colonne\n= variable;»");
     id3-->id4((Envoi\nde la chaîne de\ncaractère contenant\nla requête à\néxécuter));    
 ```
 
