@@ -72,16 +72,16 @@ flowchart TD;
 
     id2((Site Libdocto\nPage principale index.html\n en tant qu'invité)) 
     
-    id2--inscription--> idinscription[[Page d'inscription\n Formulaire]];
+    id2--inscription--> idinscription(Page d'inscription\n Formulaire);
     idinscription--redirection\n si formulaire\n valide-->id2
-    idinscription--si formulaire\n invalide-->id3[Erreur]
+    idinscription--si formulaire\n invalide-->id3(Erreur)
     id3-->idinscription
 
-    id2--connexion-->idconnexion[[Zone de connexion\n présente sur la page\n principale]]
+    id2--connexion-->idconnexion(Zone de connexion\n présente sur la page\n principale)
     idconnexion--Entrées valides-->idpageconnecte((Page principale\nindex.html\nen tant\nque connecté))
     idconnexion--Entrées invalides\n-->id2
 
-    id2--recherche\n docteurs-->idrecherche[[Page resultats\nAffiche les\n docteurs\n demandés]];
+    id2--recherche\n docteurs-->idrecherche(Page resultats\nAffiche les\n docteurs\n demandés);
 ```
 
 ## Page connecté 
@@ -118,7 +118,7 @@ flowchart TD;
 
 ```mermaid
 
-flowchart TD;
+flowchart LR;
 
     %% racine
 
@@ -178,27 +178,27 @@ flowchart TD;
 
 ```mermaid
 
-flowchart TD;
+flowchart LR;
 
     %% racine
 
-    idajax((Fichier cookie.js\n contenant les fonctions getCookie, checkCookie,\n setCookie, removeCookie, removeAllCookie))
+    idajax((Fichier cookie.js\n contenant les fonctions\n getCookie, checkCookie,\n setCookie, removeCookie,\n removeAllCookie))
 
-    idajax-->idget[[Fonction getCookie]]
-    idajax-->idset[[Fonction setCookie]]
-    idajax-->idcheck[[Fonction checkCookie]]
-    idajax-->idrm[[Fonction removeCookie]]
-    idajax-->idrmall[[Fonction removeAllCookie]]
+    idajax-->idget(Fonction\ngetCookie)
+    idajax-->idset(Fonction\nsetCookie)
+    idajax-->idcheck(Fonction\ncheckCookie)
+    idajax-->idrm(Fonction\nremoveCookie)
+    idajax-->idrmall(Fonction\nremoveAllCookie)
 
-    idget-->idget2[Fonction parcourant une chaine\n de caractères de cookies pour trouver\n le cookie correspondant à\n l'entrée de la fonction ]
+    idget-->idget2(Parcourt une chaine\n de caractères de cookies\n pour trouver\n celui correspondant\n à l'entrée de la fonction)
 
-    idset-->idset2[Fonction créant\n un nouveau cookie de connexion]
+    idset-->idset2(Créée un nouveau\n cookie de connexion)
 
-    idcheck-->idcheck2[Fonction vérifiant\n si le cookie\n de connexion est présent]
+    idcheck-->idcheck2(Vérifie si le cookie\n de connexion\n est présent)
 
-    idrm-->idrm2[Fonction supprimant un cookie\n désigné par son nom]
+    idrm-->idrm2(Supprime un cookie\n désigné par son nom)
 
-    idrmall-->idrmall2[Fonction supprimant tous les cookies\n présents sur la page concernée]
+    idrmall-->idrmall2(Fonction supprimant\n tous les cookies\n présents sur\n la page concernée)
 
     
 
@@ -230,7 +230,7 @@ flowchart TD;
 
 ```mermaid
 
-flowchart TD;
+flowchart LR;
 
     %% racine
 
@@ -251,20 +251,20 @@ flowchart TD;
 
 ```mermaid
 
-flowchart TD;
+flowchart LR;
     
     %% racine
     
-    idajax((Fichier index.js contenant\n les fonctions utilisées\n lors de la recherche de docteurs))
+    idajax((Fichier index.js\n contenant\n les fonctions\n utilisées\n lors de la\n recherche\n de docteurs))
 
-    idajax---->idlistvilles[[Fonction lister_villes prenant\n la liste de toutes les villes de France]]
+    idajax---->idlistvilles[[Fonction\n lister_villes\n prenant\n la liste de\n toutes les\n villes de\n France]]
 
-    idajax--->idvilletapee[[Fonction villeTapee qui est appelée à chaque fois\n que l'utilisateur tape plus de 3 lettres\n dans le champ de recherche de villes\n et qui affiche la ville correspondante]]
+    idajax--->idvilletapee[[Fonction\n villeTapee qui\n est appelée\n à chaque fois\n que l'utilisateur\n tape plus de\n 3 lettres\n dans le champ\n de recherche\n de villes\n et qui affiche\n la ville\n correspondante]]
 
-    idajax-->idrecherche[[Fonction récupérant les entrées de villes,\n professions et docteurs puis qui les enregistre\n avant de rediriger l'utilisateur sur resultats.js]]
+    idajax-->idrecherche[[Fonction\n récupérant les \nentrées de villes,\n professions et\n docteurs puis\n qui les enregistre\n avant de\n rediriger\n l'utilisateur sur\n resultats.js]]
 ```
 
-### Fichier protectionXSS.js ### 
+### Fichier protectionXSS.js ### fait 
 
 ```mermaid
 
@@ -280,23 +280,23 @@ flowchart TD;
     
 ```
 
-### Fichier resultats.js ###
+### Fichier resultats.js ### fait 
 
 ```mermaid
 
-flowchart TD;
+flowchart LR;
 
     %% racine
 
-    idajax((Fichier resultats.js affichant\n les résultats de recherche des utilisateurs))
+    idajax((Fonctionnement\n de la\n page résultats))
 
-    idajax-->iddocteurs[[Fonction afficheDocteurs\n affichant la liste des docteurs\n correspondant à la recherche]]
+    idajax-->idurl(Récupération des\nparamètres\n par la\nfonction\ngetParamsURL)
 
-    idajax-->idurl[[Fonction getParamsURL créant le nouvel URI\n composé des paramètres de requêtes\n pour le backend]]
+    idurl-->idrequest(Récupération de\n la liste des\n docteurs en fonction\n des critères\n de recherche)
 
-    idajax-->idcriteres[[Fonction criteresRecherche remplaçant les 3 critères\n de recherches de l'utilisateur]]
+    idrequest-->idocteurs(Affiche la liste\n des docteurs\n de la recherche\n par la fonction\n afficheDocteurs)
 
-    idajax-->idrequest[[Fonction ajaxRequest récupèrant la liste de\n docteurs en fonction des\n critères de recherche]]
+    
 
 
 ```
