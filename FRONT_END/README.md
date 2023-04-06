@@ -255,13 +255,17 @@ flowchart LR;
     
     %% racine
     
-    idajax((Fichier index.js\n contenant\n les fonctions\n utilisées\n lors de la\n recherche\n de docteurs))
+    idajax((Fichier\nindex.js contenant\n les fonctions utilisées\n lors de la recherche\nde docteurs))
 
-    idajax---->idlistvilles[[Fonction\n lister_villes\n prenant\n la liste de\n toutes les\n villes de\n France]]
+    idajax--au démarrage-->idlisteProfeessions[[Chargement de la liste des professions dans le champ de recherche]]
 
-    idajax--->idvilletapee[[Fonction\n villeTapee qui\n est appelée\n à chaque fois\n que l'utilisateur\n tape plus de\n 3 lettres\n dans le champ\n de recherche\n de villes\n et qui affiche\n la ville\n correspondante]]
+    idajax--au démarrage-->idlisteDocteurs[[Chargement de la liste des docteurs dans le champ de recherche]]
 
-    idajax-->idrecherche[[Fonction\n récupérant les \nentrées de villes,\n professions et\n docteurs puis\n qui les enregistre\n avant de\n rediriger\n l'utilisateur sur\n resultats.js]]
+    idajax--3 lettres rapées-->idlistvilles[[Chargement des villes corrspondant au début du nom tapé]]
+
+    idajax--bouton de recherche appuyé-->idrecherche[[Récupération de la ville, profession et docteur tapés\n et redirection de l'utilisateur sur la page de résultats avec les critères]]
+
+
 ```
 
 ### Fichier protectionXSS.js ### fait 

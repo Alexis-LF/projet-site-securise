@@ -134,10 +134,10 @@ flowchart LR;
 
 flowchart LR;
     %% définitions des classes pour le style (comme le css)
-    classDef fPrincipales fill:#ff9933,stroke:#333,stroke-width:1px;
+    classDef fPrincipales color:#ffffff,fill:#ee7711,stroke:#333,stroke-width:1px;
     classDef fSecondaires fill:#ffff00,stroke:#333,stroke-width:1px;
-    classDef contraintes fill:#00cc66,stroke:#333,stroke-width:1px;
-    classDef fEstime fill:#99ffcc,stroke:#333,stroke-width:1px;
+    classDef contraintes color:#ffffff,fill:#445511,stroke:#333,stroke-width:1px;
+    classDef fEstime fill:#ffffff,stroke:#333,stroke-width:1px;
 
     %% racine
     id1[	projet site sécurisé	]; 
