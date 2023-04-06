@@ -273,7 +273,7 @@ sequenceDiagram
 
 ```mermaid
 
-flowchart TD
+flowchart LR
 
     %% racine
     id1((Démarrage))
