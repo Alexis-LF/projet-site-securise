@@ -1,15 +1,16 @@
 # clés secrètes
 id_rsa*
 *.env
+keys.php
+ca.crt
+ca.key
 # fichiers particuliers
 French-zip-code-3.0.0-SQL.zip
 .fuse_hidden*
 perso.md
-BACK_END/api/*/vendor/*
-BACK_END/api/*/bin/*
 composer.lock
-keys.php
 *attaque-*.txt
+BACK_END/api/*.tar
 
 
 # Pour laravel
@@ -32,7 +33,3 @@ yarn-error.log
 /.idea
 /.vscode
 FRONT_END/frontend-laravel/package-lock.json
-BACK_END/signature/ca.crt
-BACK_END/signature/ca.key
-BACK_END/api/serveur_backend
-BACK_END/api/*.tar
