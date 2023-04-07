@@ -1,0 +1,4 @@
+FROM php:8.1-fpm-alpine
+RUN apk update
+# RUN apk add --upgrade php81-mysqli php81-pdo php81-pdo_mysql php81-zip
+RUN docker-php-ext-install mysqli pdo pdo_mysql
