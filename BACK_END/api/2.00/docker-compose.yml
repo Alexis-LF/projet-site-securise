@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile
     ports: 
       - "3456:80"
+      - "443:443"
     networks:
       - internal
     volumes:
@@ -17,7 +18,7 @@ services:
       - internal
     volumes:
       - ./src/laravel/:/var/www/html/
-            - ./logs/php.log:/var/log/fpm-php.www.log
+      - ./logs/php.log:/var/log/fpm-php.www.log
 networks:
   internal:
     driver: bridge

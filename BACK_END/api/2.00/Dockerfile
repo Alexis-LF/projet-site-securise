@@ -1,11 +1,17 @@
 FROM nginx:alpine
 # 1. copier le code source du backend laravel dans le bon dossier
-# dans /usr/share/nginx/html
-# COPY src/laravel/ /usr/share/nginx/html/
+# géré grâce aux volumes externes
 # 2. copier la config nginx
-# dans /etc/nginx/conf.d/default.conf
 ADD src/nginx/default.conf /etc/nginx/conf.d
+# 3. certificats
+RUN mkdir -p /etc/nginx/certificats
+ADD src/nginx/ca.cnf /etc/nginx/certificats
+RUN apk add openssl
+RUN cd /etc/nginx/certificats && openssl req -x509 -sha256 -days 3650 -newkey rsa:2048 -config ca.cnf -keyout ca.key -out ca.crt
+
+
 
 # Port HTTP (qui peut être redirigé vers un autre port)
 EXPOSE 80
+EXPOSE 443
 
