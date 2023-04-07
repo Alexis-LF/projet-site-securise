@@ -33,3 +33,5 @@ yarn-error.log
 /.idea
 /.vscode
 FRONT_END/frontend-laravel/package-lock.json
+BACK_END/signature/ca.crt
+BACK_END/signature/ca.key
