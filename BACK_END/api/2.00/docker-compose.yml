@@ -1,6 +1,8 @@
 version: "3"
 services:
   nginx:
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,7 +15,7 @@ services:
       - ./src/laravel/:/var/www/html/
       - ./logs/nginx:/var/log/nginx/
   php:
-    image: php:fpm-alpine
+    image: php:8.1-fpm-alpine
     networks:
       - internal
     volumes:

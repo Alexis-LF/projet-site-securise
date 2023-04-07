@@ -1,0 +1,906 @@
+2023/04/07 13:05:49 [emerg] 1#1: host not found in upstream "php" in /etc/nginx/conf.d/default.conf:9
+2023/04/07 13:06:42 [emerg] 1#1: host not found in upstream "php" in /etc/nginx/conf.d/default.conf:9
+2023/04/07 13:07:08 [notice] 1#1: using the "epoll" event method
+2023/04/07 13:07:08 [notice] 1#1: nginx/1.23.4
+2023/04/07 13:07:08 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 13:07:08 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 13:07:08 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 13:07:08 [notice] 1#1: start worker processes
+2023/04/07 13:07:08 [notice] 1#1: start worker process 29
+2023/04/07 13:07:08 [notice] 1#1: start worker process 30
+2023/04/07 13:07:08 [notice] 1#1: start worker process 31
+2023/04/07 13:07:08 [notice] 1#1: start worker process 32
+2023/04/07 13:07:08 [notice] 1#1: start worker process 33
+2023/04/07 13:07:08 [notice] 1#1: start worker process 34
+2023/04/07 13:07:08 [notice] 1#1: start worker process 35
+2023/04/07 13:07:08 [notice] 1#1: start worker process 36
+2023/04/07 13:10:37 [error] 29#29: *1 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1:3456", referrer: "http://127.0.0.1:3456/"
+2023/04/07 13:34:34 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 13:34:34 [notice] 29#29: gracefully shutting down
+2023/04/07 13:34:34 [notice] 32#32: gracefully shutting down
+2023/04/07 13:34:34 [notice] 30#30: gracefully shutting down
+2023/04/07 13:34:34 [notice] 35#35: gracefully shutting down
+2023/04/07 13:34:34 [notice] 31#31: gracefully shutting down
+2023/04/07 13:34:34 [notice] 33#33: gracefully shutting down
+2023/04/07 13:34:34 [notice] 36#36: gracefully shutting down
+2023/04/07 13:34:34 [notice] 34#34: gracefully shutting down
+2023/04/07 13:34:34 [notice] 30#30: exiting
+2023/04/07 13:34:34 [notice] 31#31: exiting
+2023/04/07 13:34:34 [notice] 32#32: exiting
+2023/04/07 13:34:34 [notice] 29#29: exiting
+2023/04/07 13:34:34 [notice] 35#35: exiting
+2023/04/07 13:34:34 [notice] 33#33: exiting
+2023/04/07 13:34:34 [notice] 36#36: exiting
+2023/04/07 13:34:34 [notice] 34#34: exiting
+2023/04/07 13:34:34 [notice] 31#31: exit
+2023/04/07 13:34:34 [notice] 36#36: exit
+2023/04/07 13:34:34 [notice] 29#29: exit
+2023/04/07 13:34:34 [notice] 30#30: exit
+2023/04/07 13:34:34 [notice] 32#32: exit
+2023/04/07 13:34:34 [notice] 35#35: exit
+2023/04/07 13:34:34 [notice] 33#33: exit
+2023/04/07 13:34:34 [notice] 34#34: exit
+2023/04/07 13:34:35 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/07 13:34:35 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 13:34:35 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 13:34:35 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 13:34:35 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 13:34:35 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 13:34:35 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/07 13:34:35 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 13:34:35 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 13:34:35 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/04/07 13:34:35 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 13:34:35 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 13:34:35 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 13:34:35 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 13:34:35 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/04/07 13:34:35 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 13:34:35 [notice] 1#1: exit
+2023/04/07 13:34:41 [notice] 1#1: using the "epoll" event method
+2023/04/07 13:34:41 [notice] 1#1: nginx/1.23.4
+2023/04/07 13:34:41 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 13:34:41 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 13:34:41 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 13:34:41 [notice] 1#1: start worker processes
+2023/04/07 13:34:41 [notice] 1#1: start worker process 29
+2023/04/07 13:34:41 [notice] 1#1: start worker process 30
+2023/04/07 13:34:41 [notice] 1#1: start worker process 31
+2023/04/07 13:34:41 [notice] 1#1: start worker process 32
+2023/04/07 13:34:41 [notice] 1#1: start worker process 33
+2023/04/07 13:34:41 [notice] 1#1: start worker process 34
+2023/04/07 13:34:41 [notice] 1#1: start worker process 35
+2023/04/07 13:34:41 [notice] 1#1: start worker process 36
+2023/04/07 13:34:52 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 13:34:52 [notice] 30#30: gracefully shutting down
+2023/04/07 13:34:52 [notice] 32#32: gracefully shutting down
+2023/04/07 13:34:52 [notice] 35#35: gracefully shutting down
+2023/04/07 13:34:52 [notice] 29#29: gracefully shutting down
+2023/04/07 13:34:52 [notice] 31#31: gracefully shutting down
+2023/04/07 13:34:52 [notice] 31#31: exiting
+2023/04/07 13:34:52 [notice] 36#36: gracefully shutting down
+2023/04/07 13:34:52 [notice] 33#33: gracefully shutting down
+2023/04/07 13:34:52 [notice] 34#34: gracefully shutting down
+2023/04/07 13:34:52 [notice] 30#30: exiting
+2023/04/07 13:34:52 [notice] 32#32: exiting
+2023/04/07 13:34:52 [notice] 30#30: exit
+2023/04/07 13:34:52 [notice] 35#35: exiting
+2023/04/07 13:34:52 [notice] 29#29: exiting
+2023/04/07 13:34:52 [notice] 36#36: exiting
+2023/04/07 13:34:52 [notice] 31#31: exit
+2023/04/07 13:34:52 [notice] 35#35: exit
+2023/04/07 13:34:52 [notice] 33#33: exiting
+2023/04/07 13:34:52 [notice] 34#34: exiting
+2023/04/07 13:34:52 [notice] 32#32: exit
+2023/04/07 13:34:52 [notice] 29#29: exit
+2023/04/07 13:34:52 [notice] 33#33: exit
+2023/04/07 13:34:52 [notice] 36#36: exit
+2023/04/07 13:34:52 [notice] 34#34: exit
+2023/04/07 13:34:52 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 13:34:52 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 13:34:52 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 13:34:52 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 13:34:52 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 13:34:52 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 13:34:52 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 13:34:52 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 13:34:52 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 13:34:52 [notice] 1#1: exit
+2023/04/07 13:37:01 [notice] 1#1: using the "epoll" event method
+2023/04/07 13:37:01 [notice] 1#1: nginx/1.23.4
+2023/04/07 13:37:01 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 13:37:01 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 13:37:01 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 13:37:01 [notice] 1#1: start worker processes
+2023/04/07 13:37:01 [notice] 1#1: start worker process 29
+2023/04/07 13:37:01 [notice] 1#1: start worker process 30
+2023/04/07 13:37:01 [notice] 1#1: start worker process 31
+2023/04/07 13:37:01 [notice] 1#1: start worker process 32
+2023/04/07 13:37:01 [notice] 1#1: start worker process 33
+2023/04/07 13:37:01 [notice] 1#1: start worker process 34
+2023/04/07 13:37:01 [notice] 1#1: start worker process 35
+2023/04/07 13:37:01 [notice] 1#1: start worker process 36
+2023/04/07 14:18:23 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 14:18:23 [notice] 29#29: gracefully shutting down
+2023/04/07 14:18:23 [notice] 34#34: gracefully shutting down
+2023/04/07 14:18:23 [notice] 33#33: gracefully shutting down
+2023/04/07 14:18:23 [notice] 32#32: gracefully shutting down
+2023/04/07 14:18:23 [notice] 35#35: gracefully shutting down
+2023/04/07 14:18:23 [notice] 31#31: gracefully shutting down
+2023/04/07 14:18:23 [notice] 36#36: gracefully shutting down
+2023/04/07 14:18:23 [notice] 30#30: gracefully shutting down
+2023/04/07 14:18:23 [notice] 30#30: exiting
+2023/04/07 14:18:23 [notice] 35#35: exiting
+2023/04/07 14:18:23 [notice] 29#29: exiting
+2023/04/07 14:18:23 [notice] 34#34: exiting
+2023/04/07 14:18:23 [notice] 32#32: exiting
+2023/04/07 14:18:23 [notice] 33#33: exiting
+2023/04/07 14:18:23 [notice] 31#31: exiting
+2023/04/07 14:18:23 [notice] 36#36: exiting
+2023/04/07 14:18:23 [notice] 34#34: exit
+2023/04/07 14:18:23 [notice] 31#31: exit
+2023/04/07 14:18:23 [notice] 29#29: exit
+2023/04/07 14:18:23 [notice] 36#36: exit
+2023/04/07 14:18:23 [notice] 35#35: exit
+2023/04/07 14:18:23 [notice] 32#32: exit
+2023/04/07 14:18:23 [notice] 33#33: exit
+2023/04/07 14:18:23 [notice] 30#30: exit
+2023/04/07 14:18:23 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/07 14:18:23 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 14:18:23 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:18:23 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/04/07 14:18:23 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 14:18:23 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:18:23 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 14:18:23 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 14:18:23 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:18:23 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/07 14:18:23 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 14:18:23 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 14:18:23 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:18:23 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/07 14:18:23 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/04/07 14:18:23 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 14:18:23 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 14:18:23 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/04/07 14:18:23 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 14:18:23 [notice] 1#1: exit
+2023/04/07 14:18:52 [notice] 1#1: using the "epoll" event method
+2023/04/07 14:18:52 [notice] 1#1: nginx/1.23.4
+2023/04/07 14:18:52 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 14:18:52 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 14:18:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 14:18:52 [notice] 1#1: start worker processes
+2023/04/07 14:18:52 [notice] 1#1: start worker process 29
+2023/04/07 14:18:52 [notice] 1#1: start worker process 30
+2023/04/07 14:18:52 [notice] 1#1: start worker process 31
+2023/04/07 14:18:52 [notice] 1#1: start worker process 32
+2023/04/07 14:18:52 [notice] 1#1: start worker process 33
+2023/04/07 14:18:52 [notice] 1#1: start worker process 34
+2023/04/07 14:18:52 [notice] 1#1: start worker process 35
+2023/04/07 14:18:52 [notice] 1#1: start worker process 36
+2023/04/07 14:19:12 [error] 30#30: *2 open() "/var/www/html/favicon.ico" failed (2: No such file or directory), client: 172.20.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/"
+2023/04/07 14:20:14 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 14:20:14 [notice] 29#29: gracefully shutting down
+2023/04/07 14:20:14 [notice] 31#31: gracefully shutting down
+2023/04/07 14:20:14 [notice] 30#30: gracefully shutting down
+2023/04/07 14:20:14 [notice] 32#32: gracefully shutting down
+2023/04/07 14:20:14 [notice] 31#31: exiting
+2023/04/07 14:20:14 [notice] 36#36: gracefully shutting down
+2023/04/07 14:20:14 [notice] 35#35: gracefully shutting down
+2023/04/07 14:20:14 [notice] 29#29: exiting
+2023/04/07 14:20:14 [notice] 34#34: gracefully shutting down
+2023/04/07 14:20:14 [notice] 35#35: exiting
+2023/04/07 14:20:14 [notice] 33#33: gracefully shutting down
+2023/04/07 14:20:14 [notice] 30#30: exiting
+2023/04/07 14:20:14 [notice] 32#32: exiting
+2023/04/07 14:20:14 [notice] 36#36: exiting
+2023/04/07 14:20:14 [notice] 33#33: exiting
+2023/04/07 14:20:14 [notice] 34#34: exiting
+2023/04/07 14:20:14 [notice] 33#33: exit
+2023/04/07 14:20:14 [notice] 32#32: exit
+2023/04/07 14:20:14 [notice] 34#34: exit
+2023/04/07 14:20:14 [notice] 35#35: exit
+2023/04/07 14:20:14 [notice] 31#31: exit
+2023/04/07 14:20:14 [notice] 36#36: exit
+2023/04/07 14:20:14 [notice] 30#30: exit
+2023/04/07 14:20:14 [notice] 29#29: exit
+2023/04/07 14:20:14 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/04/07 14:20:14 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 14:20:14 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 14:20:14 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:20:14 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/04/07 14:20:14 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 14:20:14 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 14:20:14 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 14:20:14 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:20:14 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 14:20:14 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 14:20:14 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:20:14 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/07 14:20:14 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 14:20:14 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:20:14 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/04/07 14:20:14 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 14:20:14 [notice] 1#1: exit
+2023/04/07 14:31:14 [notice] 1#1: using the "epoll" event method
+2023/04/07 14:31:14 [notice] 1#1: nginx/1.23.4
+2023/04/07 14:31:14 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 14:31:14 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 14:31:14 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 14:31:14 [notice] 1#1: start worker processes
+2023/04/07 14:31:14 [notice] 1#1: start worker process 29
+2023/04/07 14:31:14 [notice] 1#1: start worker process 30
+2023/04/07 14:31:14 [notice] 1#1: start worker process 31
+2023/04/07 14:31:14 [notice] 1#1: start worker process 32
+2023/04/07 14:31:14 [notice] 1#1: start worker process 33
+2023/04/07 14:31:14 [notice] 1#1: start worker process 34
+2023/04/07 14:31:14 [notice] 1#1: start worker process 35
+2023/04/07 14:31:14 [notice] 1#1: start worker process 36
+2023/04/07 14:31:26 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET / HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:31:43 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET / HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:31:43 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/"
+2023/04/07 14:32:08 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET / HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:32:08 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/"
+2023/04/07 14:34:38 [crit] 31#31: *8 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /api/ HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:34:39 [crit] 31#31: *8 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/api/"
+2023/04/07 14:34:53 [crit] 31#31: *8 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET / HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:34:53 [crit] 31#31: *8 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/"
+2023/04/07 14:35:43 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 14:35:43 [notice] 30#30: gracefully shutting down
+2023/04/07 14:35:43 [notice] 29#29: gracefully shutting down
+2023/04/07 14:35:43 [notice] 31#31: gracefully shutting down
+2023/04/07 14:35:43 [notice] 35#35: gracefully shutting down
+2023/04/07 14:35:43 [notice] 34#34: gracefully shutting down
+2023/04/07 14:35:43 [notice] 29#29: exiting
+2023/04/07 14:35:43 [notice] 35#35: exiting
+2023/04/07 14:35:43 [notice] 33#33: gracefully shutting down
+2023/04/07 14:35:43 [notice] 31#31: exiting
+2023/04/07 14:35:43 [notice] 36#36: gracefully shutting down
+2023/04/07 14:35:43 [notice] 32#32: gracefully shutting down
+2023/04/07 14:35:43 [notice] 30#30: exiting
+2023/04/07 14:35:43 [notice] 34#34: exiting
+2023/04/07 14:35:43 [notice] 33#33: exiting
+2023/04/07 14:35:43 [notice] 29#29: exit
+2023/04/07 14:35:43 [notice] 32#32: exiting
+2023/04/07 14:35:43 [notice] 31#31: exit
+2023/04/07 14:35:43 [notice] 35#35: exit
+2023/04/07 14:35:43 [notice] 36#36: exiting
+2023/04/07 14:35:43 [notice] 30#30: exit
+2023/04/07 14:35:43 [notice] 34#34: exit
+2023/04/07 14:35:43 [notice] 33#33: exit
+2023/04/07 14:35:43 [notice] 32#32: exit
+2023/04/07 14:35:43 [notice] 36#36: exit
+2023/04/07 14:35:43 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/04/07 14:35:43 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 14:35:43 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:35:43 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/04/07 14:35:43 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 14:35:43 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 14:35:43 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:35:43 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/04/07 14:35:43 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 14:35:43 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:35:43 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/07 14:35:43 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 14:35:43 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 14:35:43 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:35:43 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 14:35:43 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/07 14:35:43 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 14:35:43 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 14:35:43 [notice] 1#1: exit
+2023/04/07 14:36:01 [notice] 1#1: using the "epoll" event method
+2023/04/07 14:36:01 [notice] 1#1: nginx/1.23.4
+2023/04/07 14:36:01 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 14:36:01 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 14:36:01 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 14:36:01 [notice] 1#1: start worker processes
+2023/04/07 14:36:01 [notice] 1#1: start worker process 29
+2023/04/07 14:36:01 [notice] 1#1: start worker process 30
+2023/04/07 14:36:01 [notice] 1#1: start worker process 31
+2023/04/07 14:36:01 [notice] 1#1: start worker process 32
+2023/04/07 14:36:01 [notice] 1#1: start worker process 33
+2023/04/07 14:36:01 [notice] 1#1: start worker process 34
+2023/04/07 14:36:01 [notice] 1#1: start worker process 35
+2023/04/07 14:36:01 [notice] 1#1: start worker process 36
+2023/04/07 14:36:16 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET / HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:36:16 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/"
+2023/04/07 14:36:30 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 14:36:30 [notice] 29#29: gracefully shutting down
+2023/04/07 14:36:30 [notice] 32#32: gracefully shutting down
+2023/04/07 14:36:30 [notice] 30#30: gracefully shutting down
+2023/04/07 14:36:30 [notice] 31#31: gracefully shutting down
+2023/04/07 14:36:30 [notice] 34#34: gracefully shutting down
+2023/04/07 14:36:30 [notice] 34#34: exiting
+2023/04/07 14:36:30 [notice] 35#35: gracefully shutting down
+2023/04/07 14:36:30 [notice] 35#35: exiting
+2023/04/07 14:36:30 [notice] 36#36: gracefully shutting down
+2023/04/07 14:36:30 [notice] 33#33: gracefully shutting down
+2023/04/07 14:36:30 [notice] 29#29: exiting
+2023/04/07 14:36:30 [notice] 33#33: exiting
+2023/04/07 14:36:30 [notice] 32#32: exiting
+2023/04/07 14:36:30 [notice] 31#31: exiting
+2023/04/07 14:36:30 [notice] 30#30: exiting
+2023/04/07 14:36:30 [notice] 36#36: exiting
+2023/04/07 14:36:30 [notice] 29#29: exit
+2023/04/07 14:36:30 [notice] 34#34: exit
+2023/04/07 14:36:30 [notice] 30#30: exit
+2023/04/07 14:36:30 [notice] 35#35: exit
+2023/04/07 14:36:30 [notice] 33#33: exit
+2023/04/07 14:36:30 [notice] 36#36: exit
+2023/04/07 14:36:30 [notice] 32#32: exit
+2023/04/07 14:36:30 [notice] 31#31: exit
+2023/04/07 14:36:30 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/04/07 14:36:30 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 14:36:30 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 14:36:30 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 14:36:30 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:36:30 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/07 14:36:30 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 14:36:30 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 14:36:30 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 14:36:30 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 14:36:30 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 14:36:30 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 14:36:30 [notice] 1#1: exit
+2023/04/07 14:36:46 [notice] 1#1: using the "epoll" event method
+2023/04/07 14:36:46 [notice] 1#1: nginx/1.23.4
+2023/04/07 14:36:46 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 14:36:46 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 14:36:46 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 14:36:46 [notice] 1#1: start worker processes
+2023/04/07 14:36:46 [notice] 1#1: start worker process 29
+2023/04/07 14:36:46 [notice] 1#1: start worker process 30
+2023/04/07 14:36:46 [notice] 1#1: start worker process 31
+2023/04/07 14:36:46 [notice] 1#1: start worker process 32
+2023/04/07 14:36:46 [notice] 1#1: start worker process 33
+2023/04/07 14:36:46 [notice] 1#1: start worker process 34
+2023/04/07 14:36:46 [notice] 1#1: start worker process 35
+2023/04/07 14:36:46 [notice] 1#1: start worker process 36
+2023/04/07 14:36:52 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET / HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:36:52 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/"
+2023/04/07 14:37:38 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /index.php HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:37:38 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/index.php"
+2023/04/07 14:38:07 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /api/2.00/professions HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:38:07 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/api/2.00/professions"
+2023/04/07 14:38:39 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /api/2.00/professions HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:38:39 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/api/2.00/professions"
+2023/04/07 14:38:40 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /api/2.00/professions HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:38:40 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/api/2.00/professions"
+2023/04/07 14:38:42 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /api/2.00/professions HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:38:42 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/api/2.00/professions"
+2023/04/07 14:38:43 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /api/2.00/professions HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:38:43 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/api/2.00/professions"
+2023/04/07 14:38:43 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /api/2.00/professions HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:38:43 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/api/2.00/professions"
+2023/04/07 14:38:44 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /api/2.00/professions HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:38:44 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/api/2.00/professions"
+2023/04/07 14:38:44 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /api/2.00/professions HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:38:44 [crit] 30#30: *2 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/api/2.00/professions"
+2023/04/07 14:39:59 [crit] 31#31: *23 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /api/2.00/professions HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:39:59 [crit] 31#31: *23 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/api/2.00/professions"
+2023/04/07 14:40:04 [crit] 31#31: *23 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET / HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:40:04 [crit] 31#31: *23 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/"
+2023/04/07 14:40:09 [crit] 31#31: *23 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /index.hmlt HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:40:09 [crit] 31#31: *23 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/index.hmlt"
+2023/04/07 14:40:12 [crit] 31#31: *23 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /index.html HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:40:12 [crit] 31#31: *23 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/index.html"
+2023/04/07 14:41:11 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 14:41:11 [notice] 31#31: gracefully shutting down
+2023/04/07 14:41:11 [notice] 35#35: gracefully shutting down
+2023/04/07 14:41:11 [notice] 30#30: gracefully shutting down
+2023/04/07 14:41:11 [notice] 34#34: gracefully shutting down
+2023/04/07 14:41:11 [notice] 36#36: gracefully shutting down
+2023/04/07 14:41:11 [notice] 29#29: gracefully shutting down
+2023/04/07 14:41:11 [notice] 33#33: gracefully shutting down
+2023/04/07 14:41:11 [notice] 30#30: exiting
+2023/04/07 14:41:11 [notice] 32#32: gracefully shutting down
+2023/04/07 14:41:11 [notice] 33#33: exiting
+2023/04/07 14:41:11 [notice] 35#35: exiting
+2023/04/07 14:41:11 [notice] 34#34: exiting
+2023/04/07 14:41:11 [notice] 36#36: exiting
+2023/04/07 14:41:11 [notice] 29#29: exiting
+2023/04/07 14:41:11 [notice] 32#32: exiting
+2023/04/07 14:41:11 [notice] 31#31: exiting
+2023/04/07 14:41:11 [notice] 31#31: exit
+2023/04/07 14:41:11 [notice] 32#32: exit
+2023/04/07 14:41:11 [notice] 34#34: exit
+2023/04/07 14:41:11 [notice] 36#36: exit
+2023/04/07 14:41:11 [notice] 30#30: exit
+2023/04/07 14:41:11 [notice] 35#35: exit
+2023/04/07 14:41:11 [notice] 29#29: exit
+2023/04/07 14:41:11 [notice] 33#33: exit
+2023/04/07 14:41:11 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/07 14:41:11 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 14:41:11 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:41:11 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/04/07 14:41:11 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 14:41:11 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 14:41:11 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 14:41:11 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 14:41:11 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 14:41:11 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 14:41:11 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:41:11 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 14:41:11 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/07 14:41:11 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 14:41:11 [notice] 1#1: exit
+2023/04/07 14:41:27 [notice] 1#1: using the "epoll" event method
+2023/04/07 14:41:27 [notice] 1#1: nginx/1.23.4
+2023/04/07 14:41:27 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 14:41:27 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 14:41:27 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 14:41:27 [notice] 1#1: start worker processes
+2023/04/07 14:41:27 [notice] 1#1: start worker process 29
+2023/04/07 14:41:27 [notice] 1#1: start worker process 30
+2023/04/07 14:41:27 [notice] 1#1: start worker process 31
+2023/04/07 14:41:27 [notice] 1#1: start worker process 32
+2023/04/07 14:41:27 [notice] 1#1: start worker process 33
+2023/04/07 14:41:27 [notice] 1#1: start worker process 34
+2023/04/07 14:41:27 [notice] 1#1: start worker process 35
+2023/04/07 14:41:27 [notice] 1#1: start worker process 36
+2023/04/07 14:41:43 [crit] 31#31: *3 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET / HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:41:43 [crit] 31#31: *3 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/"
+2023/04/07 14:41:47 [crit] 31#31: *3 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /index.html HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:41:47 [crit] 31#31: *3 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/index.html"
+2023/04/07 14:41:48 [crit] 31#31: *3 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /index.html HTTP/1.1", host: "127.0.0.1"
+2023/04/07 14:41:48 [crit] 31#31: *3 realpath() "/var/www/laravel/public" failed (2: No such file or directory), client: 172.20.0.1, server: libdocto.com, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "https://127.0.0.1/index.html"
+2023/04/07 14:43:41 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 14:43:41 [notice] 31#31: gracefully shutting down
+2023/04/07 14:43:41 [notice] 32#32: gracefully shutting down
+2023/04/07 14:43:41 [notice] 33#33: gracefully shutting down
+2023/04/07 14:43:41 [notice] 30#30: gracefully shutting down
+2023/04/07 14:43:41 [notice] 29#29: gracefully shutting down
+2023/04/07 14:43:41 [notice] 34#34: gracefully shutting down
+2023/04/07 14:43:41 [notice] 33#33: exiting
+2023/04/07 14:43:41 [notice] 35#35: gracefully shutting down
+2023/04/07 14:43:41 [notice] 36#36: gracefully shutting down
+2023/04/07 14:43:41 [notice] 31#31: exiting
+2023/04/07 14:43:41 [notice] 30#30: exiting
+2023/04/07 14:43:41 [notice] 29#29: exiting
+2023/04/07 14:43:41 [notice] 34#34: exiting
+2023/04/07 14:43:41 [notice] 32#32: exiting
+2023/04/07 14:43:41 [notice] 31#31: exit
+2023/04/07 14:43:41 [notice] 34#34: exit
+2023/04/07 14:43:41 [notice] 35#35: exiting
+2023/04/07 14:43:41 [notice] 36#36: exiting
+2023/04/07 14:43:41 [notice] 35#35: exit
+2023/04/07 14:43:41 [notice] 29#29: exit
+2023/04/07 14:43:41 [notice] 30#30: exit
+2023/04/07 14:43:41 [notice] 32#32: exit
+2023/04/07 14:43:41 [notice] 33#33: exit
+2023/04/07 14:43:41 [notice] 36#36: exit
+2023/04/07 14:43:41 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/07 14:43:41 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 14:43:41 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 14:43:41 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 14:43:41 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:43:41 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 14:43:41 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/07 14:43:41 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 14:43:41 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:43:41 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/04/07 14:43:41 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 14:43:41 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:43:41 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/04/07 14:43:41 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 14:43:41 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 14:43:41 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:43:41 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/04/07 14:43:41 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 14:43:41 [notice] 1#1: exit
+2023/04/07 14:44:01 [notice] 1#1: using the "epoll" event method
+2023/04/07 14:44:01 [notice] 1#1: nginx/1.23.4
+2023/04/07 14:44:01 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 14:44:01 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 14:44:01 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 14:44:01 [notice] 1#1: start worker processes
+2023/04/07 14:44:01 [notice] 1#1: start worker process 29
+2023/04/07 14:44:01 [notice] 1#1: start worker process 30
+2023/04/07 14:44:01 [notice] 1#1: start worker process 31
+2023/04/07 14:44:01 [notice] 1#1: start worker process 32
+2023/04/07 14:44:01 [notice] 1#1: start worker process 33
+2023/04/07 14:44:01 [notice] 1#1: start worker process 34
+2023/04/07 14:44:01 [notice] 1#1: start worker process 35
+2023/04/07 14:44:01 [notice] 1#1: start worker process 36
+2023/04/07 14:50:21 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 14:50:21 [notice] 31#31: gracefully shutting down
+2023/04/07 14:50:21 [notice] 29#29: gracefully shutting down
+2023/04/07 14:50:21 [notice] 35#35: gracefully shutting down
+2023/04/07 14:50:21 [notice] 32#32: gracefully shutting down
+2023/04/07 14:50:21 [notice] 34#34: gracefully shutting down
+2023/04/07 14:50:21 [notice] 33#33: gracefully shutting down
+2023/04/07 14:50:21 [notice] 36#36: gracefully shutting down
+2023/04/07 14:50:21 [notice] 30#30: gracefully shutting down
+2023/04/07 14:50:21 [notice] 31#31: exiting
+2023/04/07 14:50:21 [notice] 29#29: exiting
+2023/04/07 14:50:21 [notice] 35#35: exiting
+2023/04/07 14:50:21 [notice] 32#32: exiting
+2023/04/07 14:50:21 [notice] 34#34: exiting
+2023/04/07 14:50:21 [notice] 33#33: exiting
+2023/04/07 14:50:21 [notice] 36#36: exiting
+2023/04/07 14:50:21 [notice] 30#30: exiting
+2023/04/07 14:50:21 [notice] 29#29: exit
+2023/04/07 14:50:21 [notice] 32#32: exit
+2023/04/07 14:50:21 [notice] 35#35: exit
+2023/04/07 14:50:21 [notice] 34#34: exit
+2023/04/07 14:50:21 [notice] 31#31: exit
+2023/04/07 14:50:21 [notice] 30#30: exit
+2023/04/07 14:50:21 [notice] 33#33: exit
+2023/04/07 14:50:21 [notice] 36#36: exit
+2023/04/07 14:50:21 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 14:50:21 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 14:50:21 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 14:50:21 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 14:50:21 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 14:50:21 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:50:21 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/07 14:50:21 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/04/07 14:50:21 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 14:50:21 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:50:21 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/07 14:50:21 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 14:50:21 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 14:50:21 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/07 14:50:21 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 14:50:21 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 14:50:21 [notice] 1#1: exit
+2023/04/07 15:07:21 [notice] 1#1: using the "epoll" event method
+2023/04/07 15:07:21 [notice] 1#1: nginx/1.23.4
+2023/04/07 15:07:21 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 15:07:21 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 15:07:21 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 15:07:21 [notice] 1#1: start worker processes
+2023/04/07 15:07:21 [notice] 1#1: start worker process 29
+2023/04/07 15:07:21 [notice] 1#1: start worker process 30
+2023/04/07 15:07:21 [notice] 1#1: start worker process 31
+2023/04/07 15:07:21 [notice] 1#1: start worker process 32
+2023/04/07 15:07:21 [notice] 1#1: start worker process 33
+2023/04/07 15:07:21 [notice] 1#1: start worker process 34
+2023/04/07 15:07:21 [notice] 1#1: start worker process 35
+2023/04/07 15:07:21 [notice] 1#1: start worker process 36
+2023/04/07 15:08:24 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 15:08:24 [notice] 30#30: gracefully shutting down
+2023/04/07 15:08:24 [notice] 29#29: gracefully shutting down
+2023/04/07 15:08:24 [notice] 31#31: gracefully shutting down
+2023/04/07 15:08:24 [notice] 33#33: gracefully shutting down
+2023/04/07 15:08:24 [notice] 32#32: gracefully shutting down
+2023/04/07 15:08:24 [notice] 34#34: gracefully shutting down
+2023/04/07 15:08:24 [notice] 35#35: gracefully shutting down
+2023/04/07 15:08:24 [notice] 36#36: gracefully shutting down
+2023/04/07 15:08:24 [notice] 29#29: exiting
+2023/04/07 15:08:24 [notice] 31#31: exiting
+2023/04/07 15:08:24 [notice] 33#33: exiting
+2023/04/07 15:08:24 [notice] 32#32: exiting
+2023/04/07 15:08:24 [notice] 34#34: exiting
+2023/04/07 15:08:24 [notice] 30#30: exiting
+2023/04/07 15:08:24 [notice] 36#36: exiting
+2023/04/07 15:08:24 [notice] 35#35: exiting
+2023/04/07 15:08:24 [notice] 36#36: exit
+2023/04/07 15:08:24 [notice] 29#29: exit
+2023/04/07 15:08:24 [notice] 31#31: exit
+2023/04/07 15:08:24 [notice] 33#33: exit
+2023/04/07 15:08:24 [notice] 34#34: exit
+2023/04/07 15:08:24 [notice] 32#32: exit
+2023/04/07 15:08:24 [notice] 35#35: exit
+2023/04/07 15:08:24 [notice] 30#30: exit
+2023/04/07 15:08:24 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/04/07 15:08:24 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 15:08:24 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 15:08:24 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:08:24 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/04/07 15:08:24 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 15:08:24 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 15:08:24 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:08:24 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/04/07 15:08:24 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/04/07 15:08:24 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 15:08:24 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:08:24 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 15:08:24 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 15:08:24 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:08:24 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/07 15:08:24 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 15:08:24 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 15:08:24 [notice] 1#1: exit
+2023/04/07 15:08:52 [notice] 1#1: using the "epoll" event method
+2023/04/07 15:08:52 [notice] 1#1: nginx/1.23.4
+2023/04/07 15:08:52 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 15:08:52 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 15:08:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 15:08:52 [notice] 1#1: start worker processes
+2023/04/07 15:08:52 [notice] 1#1: start worker process 29
+2023/04/07 15:08:52 [notice] 1#1: start worker process 30
+2023/04/07 15:08:52 [notice] 1#1: start worker process 31
+2023/04/07 15:08:52 [notice] 1#1: start worker process 32
+2023/04/07 15:08:52 [notice] 1#1: start worker process 33
+2023/04/07 15:08:52 [notice] 1#1: start worker process 34
+2023/04/07 15:08:52 [notice] 1#1: start worker process 35
+2023/04/07 15:08:52 [notice] 1#1: start worker process 36
+2023/04/07 15:17:31 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 15:17:31 [notice] 29#29: gracefully shutting down
+2023/04/07 15:17:31 [notice] 33#33: gracefully shutting down
+2023/04/07 15:17:31 [notice] 34#34: gracefully shutting down
+2023/04/07 15:17:31 [notice] 32#32: gracefully shutting down
+2023/04/07 15:17:31 [notice] 34#34: exiting
+2023/04/07 15:17:31 [notice] 29#29: exiting
+2023/04/07 15:17:31 [notice] 31#31: gracefully shutting down
+2023/04/07 15:17:31 [notice] 36#36: gracefully shutting down
+2023/04/07 15:17:31 [notice] 35#35: gracefully shutting down
+2023/04/07 15:17:31 [notice] 33#33: exiting
+2023/04/07 15:17:31 [notice] 30#30: gracefully shutting down
+2023/04/07 15:17:31 [notice] 32#32: exiting
+2023/04/07 15:17:31 [notice] 31#31: exiting
+2023/04/07 15:17:31 [notice] 36#36: exiting
+2023/04/07 15:17:31 [notice] 35#35: exiting
+2023/04/07 15:17:31 [notice] 30#30: exiting
+2023/04/07 15:17:31 [notice] 34#34: exit
+2023/04/07 15:17:31 [notice] 33#33: exit
+2023/04/07 15:17:31 [notice] 32#32: exit
+2023/04/07 15:17:31 [notice] 29#29: exit
+2023/04/07 15:17:31 [notice] 31#31: exit
+2023/04/07 15:17:31 [notice] 30#30: exit
+2023/04/07 15:17:31 [notice] 36#36: exit
+2023/04/07 15:17:31 [notice] 35#35: exit
+2023/04/07 15:17:31 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/07 15:17:31 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 15:17:31 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:17:31 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/04/07 15:17:31 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 15:17:31 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:17:31 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 15:17:31 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 15:17:31 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:17:31 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/04/07 15:17:31 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 15:17:31 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:17:31 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/04/07 15:17:31 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 15:17:31 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:17:31 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/07 15:17:31 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 15:17:31 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 15:17:31 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 15:17:31 [notice] 1#1: exit
+2023/04/07 15:19:11 [notice] 1#1: using the "epoll" event method
+2023/04/07 15:19:11 [notice] 1#1: nginx/1.23.4
+2023/04/07 15:19:11 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 15:19:11 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 15:19:11 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 15:19:11 [notice] 1#1: start worker processes
+2023/04/07 15:19:11 [notice] 1#1: start worker process 29
+2023/04/07 15:19:11 [notice] 1#1: start worker process 30
+2023/04/07 15:19:11 [notice] 1#1: start worker process 31
+2023/04/07 15:19:11 [notice] 1#1: start worker process 32
+2023/04/07 15:19:11 [notice] 1#1: start worker process 33
+2023/04/07 15:19:11 [notice] 1#1: start worker process 34
+2023/04/07 15:19:11 [notice] 1#1: start worker process 35
+2023/04/07 15:19:11 [notice] 1#1: start worker process 36
+2023/04/07 15:19:54 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 15:19:54 [notice] 29#29: gracefully shutting down
+2023/04/07 15:19:54 [notice] 30#30: gracefully shutting down
+2023/04/07 15:19:54 [notice] 31#31: gracefully shutting down
+2023/04/07 15:19:54 [notice] 32#32: gracefully shutting down
+2023/04/07 15:19:54 [notice] 32#32: exiting
+2023/04/07 15:19:54 [notice] 33#33: gracefully shutting down
+2023/04/07 15:19:54 [notice] 34#34: gracefully shutting down
+2023/04/07 15:19:54 [notice] 35#35: gracefully shutting down
+2023/04/07 15:19:54 [notice] 36#36: gracefully shutting down
+2023/04/07 15:19:54 [notice] 36#36: exiting
+2023/04/07 15:19:54 [notice] 29#29: exiting
+2023/04/07 15:19:54 [notice] 31#31: exiting
+2023/04/07 15:19:54 [notice] 30#30: exiting
+2023/04/07 15:19:54 [notice] 29#29: exit
+2023/04/07 15:19:54 [notice] 33#33: exiting
+2023/04/07 15:19:54 [notice] 34#34: exiting
+2023/04/07 15:19:54 [notice] 35#35: exiting
+2023/04/07 15:19:54 [notice] 32#32: exit
+2023/04/07 15:19:54 [notice] 36#36: exit
+2023/04/07 15:19:54 [notice] 30#30: exit
+2023/04/07 15:19:54 [notice] 31#31: exit
+2023/04/07 15:19:54 [notice] 33#33: exit
+2023/04/07 15:19:54 [notice] 34#34: exit
+2023/04/07 15:19:54 [notice] 35#35: exit
+2023/04/07 15:19:54 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/04/07 15:19:54 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 15:19:54 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 15:19:54 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:19:54 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/04/07 15:19:54 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 15:19:54 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 15:19:54 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 15:19:54 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:19:54 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/07 15:19:54 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/04/07 15:19:54 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 15:19:54 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:19:54 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 15:19:54 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 15:19:54 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:19:54 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/07 15:19:54 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 15:19:54 [notice] 1#1: exit
+2023/04/07 15:20:19 [notice] 1#1: using the "epoll" event method
+2023/04/07 15:20:19 [notice] 1#1: nginx/1.23.4
+2023/04/07 15:20:19 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 15:20:19 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 15:20:19 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 15:20:19 [notice] 1#1: start worker processes
+2023/04/07 15:20:19 [notice] 1#1: start worker process 29
+2023/04/07 15:20:19 [notice] 1#1: start worker process 30
+2023/04/07 15:20:19 [notice] 1#1: start worker process 31
+2023/04/07 15:20:19 [notice] 1#1: start worker process 32
+2023/04/07 15:20:19 [notice] 1#1: start worker process 33
+2023/04/07 15:20:19 [notice] 1#1: start worker process 34
+2023/04/07 15:20:19 [notice] 1#1: start worker process 35
+2023/04/07 15:20:19 [notice] 1#1: start worker process 36
+2023/04/07 15:23:03 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 15:23:03 [notice] 29#29: gracefully shutting down
+2023/04/07 15:23:03 [notice] 29#29: exiting
+2023/04/07 15:23:03 [notice] 30#30: gracefully shutting down
+2023/04/07 15:23:03 [notice] 33#33: gracefully shutting down
+2023/04/07 15:23:03 [notice] 33#33: exiting
+2023/04/07 15:23:03 [notice] 31#31: gracefully shutting down
+2023/04/07 15:23:03 [notice] 31#31: exiting
+2023/04/07 15:23:03 [notice] 32#32: gracefully shutting down
+2023/04/07 15:23:03 [notice] 36#36: gracefully shutting down
+2023/04/07 15:23:03 [notice] 34#34: gracefully shutting down
+2023/04/07 15:23:03 [notice] 35#35: gracefully shutting down
+2023/04/07 15:23:03 [notice] 29#29: exit
+2023/04/07 15:23:03 [notice] 30#30: exiting
+2023/04/07 15:23:03 [notice] 33#33: exit
+2023/04/07 15:23:03 [notice] 32#32: exiting
+2023/04/07 15:23:03 [notice] 36#36: exiting
+2023/04/07 15:23:03 [notice] 34#34: exiting
+2023/04/07 15:23:03 [notice] 31#31: exit
+2023/04/07 15:23:03 [notice] 35#35: exiting
+2023/04/07 15:23:03 [notice] 32#32: exit
+2023/04/07 15:23:03 [notice] 30#30: exit
+2023/04/07 15:23:03 [notice] 36#36: exit
+2023/04/07 15:23:03 [notice] 34#34: exit
+2023/04/07 15:23:03 [notice] 35#35: exit
+2023/04/07 15:23:03 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/04/07 15:23:03 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 15:23:03 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 15:23:03 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 15:23:03 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:23:03 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 15:23:03 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/07 15:23:03 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 15:23:03 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 15:23:03 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 15:23:03 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 15:23:03 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:23:03 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/07 15:23:03 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/07 15:23:03 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 15:23:03 [notice] 1#1: exit
+2023/04/07 15:23:07 [notice] 1#1: using the "epoll" event method
+2023/04/07 15:23:07 [notice] 1#1: nginx/1.23.4
+2023/04/07 15:23:07 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 15:23:07 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 15:23:07 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 15:23:07 [notice] 1#1: start worker processes
+2023/04/07 15:23:07 [notice] 1#1: start worker process 29
+2023/04/07 15:23:07 [notice] 1#1: start worker process 30
+2023/04/07 15:23:07 [notice] 1#1: start worker process 31
+2023/04/07 15:23:07 [notice] 1#1: start worker process 32
+2023/04/07 15:23:07 [notice] 1#1: start worker process 33
+2023/04/07 15:23:07 [notice] 1#1: start worker process 34
+2023/04/07 15:23:07 [notice] 1#1: start worker process 35
+2023/04/07 15:23:07 [notice] 1#1: start worker process 36
+2023/04/07 15:23:08 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 15:23:08 [notice] 29#29: gracefully shutting down
+2023/04/07 15:23:08 [notice] 29#29: exiting
+2023/04/07 15:23:08 [notice] 31#31: gracefully shutting down
+2023/04/07 15:23:08 [notice] 30#30: gracefully shutting down
+2023/04/07 15:23:08 [notice] 33#33: gracefully shutting down
+2023/04/07 15:23:08 [notice] 34#34: gracefully shutting down
+2023/04/07 15:23:08 [notice] 32#32: gracefully shutting down
+2023/04/07 15:23:08 [notice] 35#35: gracefully shutting down
+2023/04/07 15:23:08 [notice] 36#36: gracefully shutting down
+2023/04/07 15:23:08 [notice] 31#31: exiting
+2023/04/07 15:23:08 [notice] 30#30: exiting
+2023/04/07 15:23:08 [notice] 33#33: exiting
+2023/04/07 15:23:08 [notice] 29#29: exit
+2023/04/07 15:23:08 [notice] 34#34: exiting
+2023/04/07 15:23:08 [notice] 32#32: exiting
+2023/04/07 15:23:08 [notice] 35#35: exiting
+2023/04/07 15:23:08 [notice] 33#33: exit
+2023/04/07 15:23:08 [notice] 36#36: exiting
+2023/04/07 15:23:08 [notice] 31#31: exit
+2023/04/07 15:23:08 [notice] 30#30: exit
+2023/04/07 15:23:08 [notice] 36#36: exit
+2023/04/07 15:23:08 [notice] 34#34: exit
+2023/04/07 15:23:08 [notice] 32#32: exit
+2023/04/07 15:23:08 [notice] 35#35: exit
+2023/04/07 15:23:08 [notice] 1#1: signal 17 (SIGCHLD) received from 33
+2023/04/07 15:23:08 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 15:23:08 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:23:08 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/07 15:23:08 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 15:23:08 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 15:23:08 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:23:08 [notice] 1#1: signal 17 (SIGCHLD) received from 31
+2023/04/07 15:23:08 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/07 15:23:08 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 15:23:08 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 15:23:08 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 15:23:08 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:23:08 [notice] 1#1: signal 17 (SIGCHLD) received from 32
+2023/04/07 15:23:08 [notice] 1#1: signal 17 (SIGCHLD) received from 36
+2023/04/07 15:23:08 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 15:23:08 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:23:08 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/07 15:23:08 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 15:23:08 [notice] 1#1: exit
+2023/04/07 15:26:14 [notice] 1#1: using the "epoll" event method
+2023/04/07 15:26:14 [notice] 1#1: nginx/1.23.4
+2023/04/07 15:26:14 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 15:26:14 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 15:26:14 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 15:26:14 [notice] 1#1: start worker processes
+2023/04/07 15:26:14 [notice] 1#1: start worker process 29
+2023/04/07 15:26:14 [notice] 1#1: start worker process 30
+2023/04/07 15:26:14 [notice] 1#1: start worker process 31
+2023/04/07 15:26:14 [notice] 1#1: start worker process 32
+2023/04/07 15:26:14 [notice] 1#1: start worker process 33
+2023/04/07 15:26:14 [notice] 1#1: start worker process 34
+2023/04/07 15:26:14 [notice] 1#1: start worker process 35
+2023/04/07 15:26:14 [notice] 1#1: start worker process 36
+2023/04/07 15:26:55 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2023/04/07 15:26:55 [notice] 29#29: gracefully shutting down
+2023/04/07 15:26:55 [notice] 30#30: gracefully shutting down
+2023/04/07 15:26:55 [notice] 33#33: gracefully shutting down
+2023/04/07 15:26:55 [notice] 35#35: gracefully shutting down
+2023/04/07 15:26:55 [notice] 36#36: gracefully shutting down
+2023/04/07 15:26:55 [notice] 36#36: exiting
+2023/04/07 15:26:55 [notice] 32#32: gracefully shutting down
+2023/04/07 15:26:55 [notice] 34#34: gracefully shutting down
+2023/04/07 15:26:55 [notice] 34#34: exiting
+2023/04/07 15:26:55 [notice] 31#31: gracefully shutting down
+2023/04/07 15:26:55 [notice] 31#31: exiting
+2023/04/07 15:26:55 [notice] 29#29: exiting
+2023/04/07 15:26:55 [notice] 30#30: exiting
+2023/04/07 15:26:55 [notice] 33#33: exiting
+2023/04/07 15:26:55 [notice] 35#35: exiting
+2023/04/07 15:26:55 [notice] 32#32: exiting
+2023/04/07 15:26:55 [notice] 36#36: exit
+2023/04/07 15:26:55 [notice] 34#34: exit
+2023/04/07 15:26:55 [notice] 31#31: exit
+2023/04/07 15:26:55 [notice] 33#33: exit
+2023/04/07 15:26:55 [notice] 32#32: exit
+2023/04/07 15:26:55 [notice] 29#29: exit
+2023/04/07 15:26:55 [notice] 30#30: exit
+2023/04/07 15:26:55 [notice] 35#35: exit
+2023/04/07 15:26:55 [notice] 1#1: signal 17 (SIGCHLD) received from 29
+2023/04/07 15:26:55 [notice] 1#1: worker process 29 exited with code 0
+2023/04/07 15:26:55 [notice] 1#1: worker process 32 exited with code 0
+2023/04/07 15:26:55 [notice] 1#1: worker process 34 exited with code 0
+2023/04/07 15:26:55 [notice] 1#1: worker process 33 exited with code 0
+2023/04/07 15:26:55 [notice] 1#1: worker process 36 exited with code 0
+2023/04/07 15:26:55 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:26:55 [notice] 1#1: signal 17 (SIGCHLD) received from 34
+2023/04/07 15:26:55 [notice] 1#1: signal 17 (SIGCHLD) received from 35
+2023/04/07 15:26:55 [notice] 1#1: worker process 35 exited with code 0
+2023/04/07 15:26:55 [notice] 1#1: signal 29 (SIGIO) received
+2023/04/07 15:26:55 [notice] 1#1: signal 17 (SIGCHLD) received from 30
+2023/04/07 15:26:55 [notice] 1#1: worker process 30 exited with code 0
+2023/04/07 15:26:55 [notice] 1#1: worker process 31 exited with code 0
+2023/04/07 15:26:55 [notice] 1#1: exit
+2023/04/07 15:29:17 [emerg] 1#1: host not found in upstream "php" in /etc/nginx/conf.d/default.conf:16
+2023/04/07 15:30:02 [notice] 1#1: using the "epoll" event method
+2023/04/07 15:30:02 [notice] 1#1: nginx/1.23.4
+2023/04/07 15:30:02 [notice] 1#1: built by gcc 12.2.1 20220924 (Alpine 12.2.1_git20220924-r4) 
+2023/04/07 15:30:02 [notice] 1#1: OS: Linux 6.2.9-200.fc37.x86_64
+2023/04/07 15:30:02 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1024:1024
+2023/04/07 15:30:02 [notice] 1#1: start worker processes
+2023/04/07 15:30:02 [notice] 1#1: start worker process 29
+2023/04/07 15:30:02 [notice] 1#1: start worker process 30
+2023/04/07 15:30:02 [notice] 1#1: start worker process 31
+2023/04/07 15:30:02 [notice] 1#1: start worker process 32
+2023/04/07 15:30:02 [notice] 1#1: start worker process 33
+2023/04/07 15:30:02 [notice] 1#1: start worker process 34
+2023/04/07 15:30:02 [notice] 1#1: start worker process 35
+2023/04/07 15:30:02 [notice] 1#1: start worker process 36
