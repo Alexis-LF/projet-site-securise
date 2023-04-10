@@ -3,8 +3,14 @@
 - 2.00 et ultérieur
 ## Architecture
 - Docker, installé sous Linux ou Windows
-  - *sous Linux : [Composer pour PHP d'installé](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)*
-  - *sous Windows : [WSL 2 (testé avec Ubuntu)](https://learn.microsoft.com/fr-fr/windows/wsl/install)*
+  - *sous Linux :* 
+    - *PHP et PHP FPM* : php8.1 
+    - sudo apt update
+    - sudo apt upgrade
+    - sudo apt install php8.1
+    - https://www.digitalocean.com/community/tutorials/how-to-install-composer-on-ubuntu-20-04-quickstart
+  - *sous Windows* : 
+    - *[WSL 2 (testé avec Ubuntu)](https://learn.microsoft.com/fr-fr/windows/wsl/install)*
 ## Fonctionnement
 ### 1. Créer l'image
 #### 1.1. Constantes d'environnement
