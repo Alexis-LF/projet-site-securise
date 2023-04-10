@@ -7,20 +7,20 @@
 Définir les valeurs de la premièr ligne du fichier [FRONT_END/src/javascript/define.js](src/javascript/define.js)
  - Attribuer à la variable `BASE_URL` l'adresse IP **du backend** (127.0.0.1 si en local sur sa machine) puis le **port** choisi **lors du lancement du backend** (séparés par `:`).
 >Pour plus de précisions concernant l'adresse IP et le port à marquer, se référer à [BACK_END/INSTALL.md](../BACK_END/INSTALL.md).
- - la variable `API_VERSION` peut aussi être modifiée pour utiliser une version plus récente que la 1.00.
+ - la variable `API_VERSION` doit être à  **2.00**.
 #### Compiler l'image Docker
 Une fois l' étape précédente établie
 1. Se placer dans le dossier `FRONT_END`
 2. Dans un terminal, lancer la commande
     ```bash
-    docker build -t projet_m1_frontend:1.0 .
+    docker build -t projet_m1_frontend:2.0 .
     ```
     Une fois l'image créée, il n'est pas nécessaire de la créer de nouveau pour relancer le serveur, sauf si les fichers sources tel `Define.js` ont été modifiés
 ### Lancer un conteneur serveur frontend
 #### Commande
 Une fois l'image créée, lancer la commane suivante en changeant les paramètres en majusucules :
 ```bash
-docker run --rm --detach -p PORT:80/tcp  --name NOM_DU_SERVEUR projet_m1_frontend:1.0
+docker run --rm --detach -p PORT:80/tcp  --name NOM_DU_SERVEUR projet_m1_frontend:2.0
 ```
 #### Paramètres
 1. Il faut remplacer les paramètres suivants de la commande précédente conformément au ficher `FRONT_END/javascript/define.js`pour lier la connexion du Front end au back end. 
@@ -59,7 +59,7 @@ docker export -o NOM_DU_SERVEUR.tar NOM_DU_SERVEUR
 Ensuite, extraire l'archive (comme un .zip) créée dans le dossier courant.
 
 
-### Schema Mermaid Pages du site ### 
+# Schémas de fonctionnement du frontend 
 ## Page non connecté 
 
 ```mermaid
@@ -109,8 +109,6 @@ flowchart TD;
     id2--recherche\n docteurs-->idrecherchebis[[Page resultats\nPossibilité de\n prise de rdv\n avec les docteurs\n demandés]];
    
 ```
-
-# Schema Mermaid #
 
 ## Relations entre fichiers JS et fichiers HTML ##
 
@@ -268,7 +266,7 @@ flowchart LR;
 
 ```
 
-### Fichier protectionXSS.js ### fait 
+### Fichier protectionXSS.js ###
 
 ```mermaid
 
@@ -284,7 +282,7 @@ flowchart TD;
     
 ```
 
-### Fichier resultats.js ### fait 
+### Fichier resultats.js ###
 
 ```mermaid
 

@@ -6,7 +6,7 @@
 1. Se placer dans le dossier `projet-site-securise/BDD/docker_bdd/`
 2. Dans un terminal, lancer la commande
 ```bash
-docker build -t projet_m1_bdd:1.0 .
+docker build -t projet_m1_bdd:2.0 .
 ```
 3. Une fois l'image créée, il n'est pas nécessaire de la créer de nouveau pour relancer le serveur, sauf si les fichers sources ont été modifiés
 ### Lancer un conteneur serveur base de données
@@ -15,7 +15,7 @@ Les modifications de la base de données par le site (ajout de nouveaux utilisat
 #### Commande
 Une fois l'image créée, lancer la commane suivante :
 ```bash
-docker run --rm --detach --name NOM_DU_SERVEUR --env MARIADB_USER=USER_BACKEND --env MARIADB_PASSWORD="MDP_BACKEND" --env MARIADB_ROOT_PASSWORD="MDP_ROOT"  -p PORT:3306/tcp projet_m1_bdd:1.0
+docker run --rm --detach --name NOM_DU_SERVEUR --env MARIADB_USER=USER_BACKEND --env MARIADB_PASSWORD="MDP_BACKEND" --env MARIADB_ROOT_PASSWORD="MDP_ROOT"  -p PORT:3306/tcp projet_m1_bdd:2.0
 ```
 #### Paramètres
 1. Il faut remplacer les paramètres suivants de la commande précédente conformément au ficher `projet-site-securise/BACK_END/api/<version>/.env` pour lier la connexion de l'API (back end) à la base de données. 

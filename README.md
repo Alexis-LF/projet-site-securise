@@ -2,6 +2,8 @@
 Projet M1 pédagogique d'élaboration d'un site web avec une version sécurisée et non sécurisée
 
 # Installation
+> Pour installer la **version non sécurisée** : se rendre sur la branche `non_secure`.
+
 1. Télécharger le code source (sur la branche *main*)
 2. Installer la base de données : [BDD/README.md](BDD/README.md)
 3. Installer le backend : [BACK_END/INSTALL.md](BACK_END/INSTALL.md)
