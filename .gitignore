@@ -13,3 +13,18 @@ keys.php
 FRONT_END/fronend-larvel/*
 # site sécurisé
 BACK_END/example-docker-app/*
+vendor/autoload.php
+vendor/bin/carbon
+vendor/bin/carbon.bat
+vendor/composer/autoload_classmap.php
+vendor/composer/autoload_files.php
+vendor/composer/autoload_namespaces.php
+vendor/composer/autoload_psr4.php
+vendor/composer/autoload_real.php
+vendor/composer/autoload_static.php
+vendor/composer/ClassLoader.php
+vendor/composer/installed.json
+vendor/composer/installed.php
+vendor/composer/InstalledVersions.php
+vendor/composer/LICENSE
+vendor/composer/platform_check.php
