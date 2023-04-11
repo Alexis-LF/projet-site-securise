@@ -1,5 +1,5 @@
 // Définition de l'URL de base pour les requêtes API
-const BASE_URL = "http://127.0.0.1:8000/api";
+const BASE_URL = "https://127.0.0.1/api";
 // Définition de la version de l'API
 const API_VERSION = "2.00";
 
