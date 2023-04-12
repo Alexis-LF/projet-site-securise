@@ -55,7 +55,7 @@ function ajaxRequest(type, url, callback, data = null, api_token = null) {
 
   // On ajoute une fonction à exécuter lorsque la requête est terminée
   xhr.onload = () => {
-    if (blocChargement.innerHTML === "Chargement...") {
+    if ((blocChargement != undefined) && (blocChargement.innerHTML === "Chargement...")) {
       blocChargement.innerHTML="";
     }
 
