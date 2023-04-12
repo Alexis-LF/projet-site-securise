@@ -49,4 +49,5 @@ vendor/composer/InstalledVersions.php
 vendor/composer/LICENSE
 vendor/composer/platform_check.php
 
-BACK_END/api/2.00/logs/*
+access.log
+errror.log
