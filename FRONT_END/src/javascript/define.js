@@ -1,4 +1,4 @@
-const BASE_URL="http://127.0.0.1:5678";
+const BASE_URL="http://127.0.0.1:10002";
 const API_VERSION="1.00";
 
 const URL_DOCUMENT="index.php/documents?mail=MAIL";
